@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Sentinel Peak</title>
+    <title>Services - Sentinel Peak Advisors | Web Design & Digital Marketing</title>
+    <meta name="description" content="Professional web design, digital marketing, and brand development services. Custom websites, SEO optimization, social media marketing, and digital strategy consulting.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -255,6 +256,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
             font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--color-text);
@@ -265,6 +269,26 @@
 
         .logo:hover {
             opacity: 0.7;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            transition: all var(--transition-medium);
+        }
+
+        .logo-text {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                display: none;
+            }
+            .logo-image {
+                height: 36px;
+            }
         }
 
         .nav-menu {
@@ -826,7 +850,10 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo">Sentinel Peak</a>
+            <a href="index.html" class="logo">
+                <img src="images/logos/sentinel-peak-logo-new.svg" alt="Sentinel Peak Advisors" class="logo-image">
+                <span class="logo-text">Sentinel Peak Advisors</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link active">Services</a></li>
@@ -841,8 +868,8 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>Our Services</h1>
-                <p>Comprehensive digital solutions designed to elevate your brand and drive measurable growth</p>
+                <h1>Why 80-90% of Agencies Fail Business Owners</h1>
+                <p>Most agencies overcomplicate everything, focus on vanity metrics, and lock you into contracts. Our Web Elevation & Social Growth Accelerator delivers real results without the BS.</p>
             </div>
         </div>
     </section>
@@ -855,19 +882,19 @@
                     <div class="service-header">
                         <span class="service-icon-large">01</span>
                         <div>
-                            <h3>Web Design & Development</h3>
-                            <div class="service-price">Starting at $2,999</div>
+                            <h3>48-Hour Website Delivery</h3>
+                            <div class="service-price">$2,497 (vs industry $8,000+)</div>
                         </div>
                     </div>
-                    <p class="service-description">Transform your online presence with custom, responsive websites that not only look stunning but also convert visitors into loyal customers. Our expert team combines cutting-edge design with powerful functionality.</p>
+                    <p class="service-description">While other agencies take 6-12 weeks and charge premium prices, our Rapid Revenue-Ready Framework delivers conversion-optimized websites in just 48 hours. No delays, no excuses, no BS.</p>
                     <ul class="service-features">
-                        <li>Custom responsive web design</li>
-                        <li>Mobile-first development approach</li>
-                        <li>SEO optimization & performance tuning</li>
-                        <li>Content management system integration</li>
-                        <li>E-commerce functionality</li>
-                        <li>Analytics & conversion tracking</li>
-                        <li>Ongoing maintenance & support</li>
+                        <li>48-hour delivery guarantee</li>
+                        <li>Lead-generating website design</li>
+                        <li>Mobile-responsive & fast-loading</li>
+                        <li>Built-in SEO optimization</li>
+                        <li>Contact form & conversion tracking</li>
+                        <li>90-day performance guarantee</li>
+                        <li>No long-term contracts required</li>
                     </ul>
                     <a href="contact.html" class="service-link">Get Started →</a>
                 </div>
@@ -876,19 +903,19 @@
                     <div class="service-header">
                         <span class="service-icon-large">02</span>
                         <div>
-                            <h3>Social Media Marketing</h3>
-                            <div class="service-price">Starting at $1,499/month</div>
+                            <h3>Lead-Generation Social Strategy</h3>
+                            <div class="service-price">$497-997/month (no fluff)</div>
                         </div>
                     </div>
-                    <p class="service-description">Build meaningful connections with your audience through strategic social media campaigns that drive engagement, increase brand awareness, and generate qualified leads across all major platforms.</p>
+                    <p class="service-description">Forget vanity metrics and "brand awareness." Our Engagement-to-Conversion Blueprint ensures every social post strategically funnels qualified prospects into your sales pipeline. Real leads, not just likes.</p>
                     <ul class="service-features">
-                        <li>Strategic social media planning</li>
-                        <li>Content creation & curation</li>
-                        <li>Community management</li>
-                        <li>Paid advertising campaigns</li>
-                        <li>Influencer collaboration</li>
-                        <li>Performance analytics & reporting</li>
-                        <li>Brand reputation management</li>
+                        <li>Lead-focused content strategy</li>
+                        <li>Conversion-optimized posting</li>
+                        <li>Direct pipeline integration</li>
+                        <li>ROI tracking (not vanity metrics)</li>
+                        <li>Platform optimization for business growth</li>
+                        <li>Weekly lead generation reports</li>
+                        <li>Cancel anytime (no contracts)</li>
                     </ul>
                     <a href="contact.html" class="service-link">Get Started →</a>
                 </div>
@@ -897,19 +924,19 @@
                     <div class="service-header">
                         <span class="service-icon-large">03</span>
                         <div>
-                            <h3>Digital Marketing Strategy</h3>
-                            <div class="service-price">Starting at $2,499/month</div>
+                            <h3>Complete Growth Acceleration</h3>
+                            <div class="service-price">$1,497/month (full-service)</div>
                         </div>
                     </div>
-                    <p class="service-description">Comprehensive digital marketing strategies that integrate multiple channels to maximize your online visibility, drive qualified traffic, and increase conversions through data-driven approaches.</p>
+                    <p class="service-description">Stop juggling multiple agencies and platforms. Our complete Web Elevation & Social Growth Accelerator handles everything from website optimization to lead generation - all focused on one thing: growing your revenue.</p>
                     <ul class="service-features">
-                        <li>Search engine optimization (SEO)</li>
-                        <li>Pay-per-click advertising (PPC)</li>
-                        <li>Email marketing automation</li>
-                        <li>Content marketing strategy</li>
-                        <li>Conversion rate optimization</li>
-                        <li>Marketing analytics & insights</li>
-                        <li>Multi-channel campaign management</li>
+                        <li>Website + social media integration</li>
+                        <li>Lead generation automation</li>
+                        <li>Revenue-focused optimization</li>
+                        <li>Complete pipeline management</li>
+                        <li>Monthly growth strategy sessions</li>
+                        <li>Performance guarantees included</li>
+                        <li>One point of contact (no confusion)</li>
                     </ul>
                     <a href="contact.html" class="service-link">Get Started →</a>
                 </div>
@@ -918,19 +945,19 @@
                     <div class="service-header">
                         <span class="service-icon-large">04</span>
                         <div>
-                            <h3>Brand Development</h3>
-                            <div class="service-price">Starting at $3,999</div>
+                            <h3>Anti-Agency Guarantee</h3>
+                            <div class="service-price">Risk-free partnership</div>
                         </div>
                     </div>
-                    <p class="service-description">Create a powerful brand identity that resonates with your target audience and sets you apart from competitors. From logo design to comprehensive brand guidelines, we build lasting impressions.</p>
+                    <p class="service-description">We're so confident in our approach that we offer what no other agency will: complete transparency, no long-term contracts, and a 90-day money-back guarantee if you don't see measurable growth.</p>
                     <ul class="service-features">
-                        <li>Brand strategy & positioning</li>
-                        <li>Logo & visual identity design</li>
-                        <li>Brand guidelines & style guide</li>
-                        <li>Marketing collateral design</li>
-                        <li>Brand voice & messaging</li>
-                        <li>Digital asset creation</li>
-                        <li>Brand implementation support</li>
+                        <li>No long-term contracts (month-to-month)</li>
+                        <li>Complete price transparency (no hidden fees)</li>
+                        <li>90-day performance guarantee</li>
+                        <li>Dedicated project manager</li>
+                        <li>Weekly progress reports</li>
+                        <li>Your platforms, your ownership</li>
+                        <li>Cancel anytime (no penalties)</li>
                     </ul>
                     <a href="contact.html" class="service-link">Get Started →</a>
                 </div>
@@ -942,61 +969,61 @@
     <section class="pricing-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Pricing</div>
-                <h2 class="section-title slide-up stagger-1">Choose Your Package</h2>
-                <p class="section-subtitle slide-up stagger-2">Flexible pricing options designed to fit businesses of all sizes</p>
+                <div class="section-badge slide-up">Simple, Transparent Pricing</div>
+                <h2 class="section-title slide-up stagger-1">No Hidden Fees, No Long Contracts, No BS</h2>
+                <p class="section-subtitle slide-up stagger-2">While other agencies lock you into expensive contracts, we offer month-to-month partnerships with guaranteed results.</p>
             </div>
             
             <div class="pricing-grid">
                 <div class="pricing-card scale-in">
                     <div class="pricing-header">
-                        <h3>Starter</h3>
-                        <div class="price">$999</div>
-                        <div class="price-period">per month</div>
+                        <h3>Website Launch</h3>
+                        <div class="price">$2,497</div>
+                        <div class="price-period">one-time (48-hour delivery)</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Custom website design</li>
-                        <li>Mobile responsive layout</li>
-                        <li>Basic SEO optimization</li>
-                        <li>Contact form integration</li>
-                        <li>Monthly performance reports</li>
-                        <li>Email support</li>
+                        <li>48-hour website delivery</li>
+                        <li>Lead-generating design</li>
+                        <li>Mobile-responsive & fast</li>
+                        <li>Built-in SEO optimization</li>
+                        <li>Contact forms & tracking</li>
+                        <li>90-day performance guarantee</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
 
                 <div class="pricing-card featured scale-in stagger-1">
                     <div class="pricing-header">
-                        <h3>Growth</h3>
-                        <div class="price">$1,999</div>
-                        <div class="price-period">per month</div>
+                        <h3>Growth Partnership</h3>
+                        <div class="price">$997</div>
+                        <div class="price-period">per month (no contracts)</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Everything in Starter</li>
-                        <li>Social media management</li>
-                        <li>Content creation & strategy</li>
-                        <li>Advanced SEO & analytics</li>
-                        <li>Email marketing campaigns</li>
-                        <li>Priority support</li>
-                        <li>Bi-weekly strategy calls</li>
+                        <li>Website + social media</li>
+                        <li>Lead generation focus</li>
+                        <li>Conversion optimization</li>
+                        <li>Monthly strategy sessions</li>
+                        <li>Performance tracking & reports</li>
+                        <li>Cancel anytime</li>
+                        <li>90-day guarantee</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
 
                 <div class="pricing-card scale-in stagger-2">
                     <div class="pricing-header">
-                        <h3>Enterprise</h3>
-                        <div class="price">$3,999</div>
-                        <div class="price-period">per month</div>
+                        <h3>Scale Accelerator</h3>
+                        <div class="price">$1,497</div>
+                        <div class="price-period">per month (full-service)</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Everything in Growth</li>
-                        <li>Custom development projects</li>
-                        <li>Advanced marketing automation</li>
-                        <li>Dedicated account manager</li>
-                        <li>24/7 priority support</li>
-                        <li>Custom integrations</li>
-                        <li>Weekly strategy sessions</li>
+                        <li>Complete growth acceleration</li>
+                        <li>Advanced lead automation</li>
+                        <li>Multi-platform optimization</li>
+                        <li>Dedicated project manager</li>
+                        <li>Weekly strategy calls</li>
+                        <li>Priority support & updates</li>
+                        <li>Performance guarantees</li>
                     </ul>
                     <a href="contact.html" class="btn btn-primary">Get Started</a>
                 </div>
@@ -1008,9 +1035,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to get started?</h2>
-                <p class="cta-description">Let's discuss your project and create a custom solution that drives real results for your business.</p>
-                <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+                <h2 class="cta-title">Ready to stop wasting money on agencies that don't deliver?</h2>
+                <p class="cta-description">Limited capacity: We only take 5 new clients per month. Book your free consultation before spots fill up.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1020,8 +1050,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Sentinel Peak</h3>
-                    <p>We craft exceptional digital experiences that elevate brands and drive meaningful connections between businesses and their audiences.</p>
+                    <h3>Sentinel Peak Advisors</h3>
+                    <p>The anti-agency approach to digital marketing. We deliver results in 48 hours without the overwhelm, contracts, or vanity metrics.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">IG</a>
                         <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
@@ -1031,10 +1061,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">Local SEO</a></li>
-                        <li><a href="services.html">Brand Development</a></li>
-                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">48-Hour Websites</a></li>
+                        <li><a href="services.html">Lead Generation</a></li>
+                        <li><a href="services.html">Social Media Strategy</a></li>
+                        <li><a href="services.html">Partnership Guarantee</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1048,13 +1078,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>📧 hello@sentinelpeaksolutions.com</p>
-                    <p>📞 (555) 123-4567</p>
-                    <p>📍 Mountain View, CA</p>
+                    <p>📧 info@sentinelpeaksolutions.com</p>
+                    <p>📞 (650) 586-5889</p>
+                    <p>📍 Fresno, CA</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
             </div>
         </div>
     </footer>

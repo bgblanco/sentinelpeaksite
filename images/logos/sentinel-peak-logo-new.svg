@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mountains/Peaks -->
+  <path d="M200 700 L350 450 L500 600 L650 350 L800 550 L950 400 L1024 500 L1024 750 L0 750 L0 500 Z" fill="#666666" opacity="0.3"/>
+  <path d="M150 650 L300 400 L450 550 L600 300 L750 500 L900 350 L1024 450 L1024 700 L0 700 L0 450 Z" fill="#4a90a4"/>
+  
+  <!-- City Buildings -->
+  <rect x="250" y="300" width="40" height="350" fill="#666666"/>
+  <rect x="310" y="250" width="50" height="400" fill="#4a4a4a"/>
+  <rect x="380" y="200" width="45" height="450" fill="#666666"/>
+  <rect x="450" y="180" width="60" height="470" fill="#4a4a4a"/>
+  <rect x="530" y="220" width="45" height="430" fill="#666666"/>
+  <rect x="600" y="280" width="40" height="370" fill="#4a4a4a"/>
+  <rect x="660" y="260" width="50" height="390" fill="#666666"/>
+  <rect x="730" y="240" width="45" height="410" fill="#4a4a4a"/>
+  
+  <!-- Building details -->
+  <rect x="260" y="320" width="8" height="12" fill="#4a90a4"/>
+  <rect x="275" y="340" width="8" height="12" fill="#4a90a4"/>
+  <rect x="260" y="360" width="8" height="12" fill="#4a90a4"/>
+  
+  <rect x="325" y="280" width="10" height="15" fill="#4a90a4"/>
+  <rect x="340" y="300" width="10" height="15" fill="#4a90a4"/>
+  <rect x="325" y="320" width="10" height="15" fill="#4a90a4"/>
+  
+  <!-- Connecting swoosh -->
+  <path d="M100 600 Q300 500 500 550 Q700 450 900 500" stroke="#4a90a4" stroke-width="8" fill="none" opacity="0.6"/>
+  
+  <!-- Text -->
+  <text x="512" y="800" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="#4a4a4a">
+    SENTINEL PEAK
+  </text>
+  <text x="512" y="860" text-anchor="middle" font-family="Arial, sans-serif" font-size="40" font-weight="normal" fill="#666666" letter-spacing="8">
+    ADVISORS
+  </text>
+</svg>

@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Sentinel Peak Solutions</title>
+    <title>Contact - Sentinel Peak Advisors | Get A Free Consultation</title>
+    <meta name="description" content="Ready to elevate your digital presence? Contact Sentinel Peak Advisors for a free consultation. Web design, digital marketing, and strategy services in Mountain View, CA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZs.woff2" as="font" type="font/woff2" crossorigin>
     <style>
-        /* === GLOBAL STYLES === */
+        /* === CSS CUSTOM PROPERTIES === */
+        :root {
+            /* Typography Scale */
+            --font-size-xs: clamp(0.75rem, 0.5vw + 0.65rem, 0.875rem);
+            --font-size-sm: clamp(0.875rem, 0.75vw + 0.75rem, 1rem);
+            --font-size-base: clamp(1rem, 1vw + 0.85rem, 1.125rem);
+            --font-size-lg: clamp(1.125rem, 1.5vw + 0.9rem, 1.375rem);
+            --font-size-xl: clamp(1.25rem, 2vw + 1rem, 1.75rem);
+            --font-size-2xl: clamp(1.5rem, 3vw + 1.2rem, 2.25rem);
+            --font-size-3xl: clamp(2rem, 4vw + 1.5rem, 3rem);
+            --font-size-4xl: clamp(2.5rem, 6vw + 2rem, 4rem);
+            --font-size-5xl: clamp(3rem, 8vw + 2.5rem, 6rem);
+            --font-size-6xl: clamp(4rem, 12vw + 3rem, 8rem);
+            
+            /* Spacing Scale */
+            --space-xs: clamp(0.25rem, 0.5vw + 0.125rem, 0.5rem);
+            --space-sm: clamp(0.5rem, 1vw + 0.25rem, 1rem);
+            --space-md: clamp(1rem, 2vw + 0.5rem, 2rem);
+            --space-lg: clamp(1.5rem, 3vw + 0.75rem, 3rem);
+            --space-xl: clamp(2rem, 4vw + 1rem, 4rem);
+            --space-2xl: clamp(3rem, 6vw + 1.5rem, 6rem);
+            --space-3xl: clamp(4rem, 8vw + 2rem, 8rem);
+            --space-4xl: clamp(6rem, 12vw + 3rem, 12rem);
+            
+            /* Grid System */
+            --grid-max-width: 1200px;
+            --grid-gutter: clamp(1rem, 4vw, 2rem);
+            --grid-margin: clamp(1rem, 5vw, 3rem);
+            
+            /* Colors */
+            --color-bg: #000000;
+            --color-text: #ffffff;
+            --color-text-muted: rgba(255, 255, 255, 0.6);
+            --color-border: rgba(255, 255, 255, 0.1);
+            --color-surface: rgba(255, 255, 255, 0.02);
+            
+            /* Transitions */
+            --transition-fast: 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-medium: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 6px;
+            --radius-lg: 12px;
+            --radius-xl: 20px;
+        }
+        
+        /* === GLOBAL RESET & BASE === */
         * {
             margin: 0;
             padding: 0;
@@ -14,179 +67,308 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0f0f0f;
-            color: #ffffff;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-size: var(--font-size-base);
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            user-select: none;
+            font-feature-settings: 'kern' 1, 'liga' 1;
+            text-rendering: optimizeLegibility;
         }
 
+        /* === GRID SYSTEM === */
         .container {
-            max-width: 1200px;
+            max-width: var(--grid-max-width);
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 var(--grid-margin);
+        }
+        
+        /* === FLUID TYPOGRAPHY === */
+        h1, .h1 {
+            font-size: var(--font-size-6xl);
+            font-weight: 300;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+        
+        h2, .h2 {
+            font-size: var(--font-size-5xl);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+        
+        h3, .h3 {
+            font-size: var(--font-size-4xl);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
+        h4, .h4 {
+            font-size: var(--font-size-3xl);
+            font-weight: 500;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+        
+        h5, .h5 {
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        h6, .h6 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        
+        p {
+            font-size: var(--font-size-base);
+            line-height: 1.7;
+            max-width: 65ch;
+        }
+        
+        .text-sm {
+            font-size: var(--font-size-sm);
+        }
+        
+        .text-lg {
+            font-size: var(--font-size-lg);
+        }
+
+        /* === CUSTOM CURSOR === */
+        .cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cursor.active {
+            transform: scale(1.5);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* === HEADER & NAVIGATION === */
         header {
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
             position: fixed;
             top: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            border-bottom: 1px solid #333;
-            transition: all 0.3s ease;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            transition: all var(--transition-medium);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: var(--space-md) 0;
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #00d4ff;
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-text);
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all var(--transition-medium);
+            letter-spacing: -0.02em;
         }
 
-        .logo:hover {
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+        .logo-image {
+            height: 40px;
+            width: auto;
+            transition: all var(--transition-medium);
+        }
+
+        .logo-text {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                display: none;
+            }
+            .logo-image {
+                height: 36px;
+            }
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: var(--space-lg);
         }
 
         .nav-links a {
-            color: #ffffff;
+            color: var(--color-text-muted);
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: var(--font-size-sm);
+            transition: all var(--transition-medium);
             position: relative;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-md);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
+            bottom: -2px;
+            left: 50%;
             width: 0;
-            height: 2px;
-            background: #00d4ff;
-            transition: width 0.3s ease;
+            height: 1px;
+            background: var(--color-text);
+            transition: all var(--transition-medium);
+            transform: translateX(-50%);
         }
 
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        .nav-links a:hover,
         .nav-links a.active {
-            color: #00d4ff;
+            color: var(--color-text);
         }
 
+        .nav-links a:hover::after,
         .nav-links a.active::after {
-            width: 100%;
+            width: 80%;
         }
 
         /* === PAGE HEADER === */
         .page-header {
-            padding: 8rem 0 4rem;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            padding: var(--space-4xl) 0 var(--space-2xl);
+            background: linear-gradient(135deg, var(--color-bg) 0%, rgba(255, 255, 255, 0.02) 100%);
             text-align: center;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .page-header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ffffff 30%, #00d4ff 60%, #ffffff 90%);
+            font-size: var(--font-size-5xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+            background: linear-gradient(135deg, var(--color-text) 0%, rgba(255, 255, 255, 0.7) 50%, var(--color-text) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -0.03em;
+            line-height: 1;
         }
 
         .page-header p {
-            font-size: 1.3rem;
-            color: #cccccc;
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.6;
         }
 
         /* === CONTACT SECTION === */
         .contact-section {
-            padding: 6rem 0;
-            background: #1a1a1a;
+            padding: var(--space-3xl) 0;
+            background: var(--color-surface);
+            position: relative;
         }
 
         .contact-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: var(--space-2xl);
             align-items: start;
         }
 
         /* === CONTACT FORM === */
         .contact-form {
-            background: #252525;
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.03);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--color-border);
+            backdrop-filter: blur(10px);
+            transition: all var(--transition-medium);
+        }
+
+        .contact-form:hover {
+            border-color: rgba(255, 255, 255, 0.2);
         }
 
         .form-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+            font-weight: 300;
+            letter-spacing: -0.02em;
         }
 
         .form-subtitle {
-            color: #cccccc;
-            margin-bottom: 2rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-xl);
             line-height: 1.6;
+            font-size: var(--font-size-base);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-lg);
         }
 
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            gap: var(--space-md);
         }
 
         label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: #ffffff;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
             font-weight: 500;
+            font-size: var(--font-size-sm);
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 1rem;
-            background: #1a1a1a;
-            border: 2px solid #333;
-            border-radius: 10px;
-            color: #ffffff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+            transition: all var(--transition-medium);
             font-family: inherit;
         }
 
@@ -194,28 +376,36 @@
         select:focus,
         textarea:focus {
             outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         textarea {
             resize: vertical;
             min-height: 120px;
+            line-height: 1.6;
         }
 
+        /* === BUTTONS === */
         .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-md) var(--space-xl);
+            font-size: var(--font-size-base);
+            font-weight: 500;
             text-decoration: none;
-            border: none;
-            border-radius: 50px;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
             cursor: pointer;
-            transition: all 0.4s ease;
+            transition: all var(--transition-medium);
             position: relative;
             overflow: hidden;
             width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--color-text);
+            backdrop-filter: blur(10px);
         }
 
         .btn::before {
@@ -226,92 +416,101 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.6s;
+            transition: left var(--transition-slow);
         }
 
         .btn:hover::before {
             left: 100%;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
-            color: #ffffff;
-            border: 2px solid transparent;
-            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+        .btn:active {
+            transform: translateY(-1px);
         }
 
         /* === CONTACT INFO === */
         .contact-info {
-            padding: 1rem 0;
+            padding: var(--space-md) 0;
         }
 
         .info-title {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+            font-weight: 300;
+            letter-spacing: -0.02em;
         }
 
         .info-subtitle {
-            color: #cccccc;
-            margin-bottom: 3rem;
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-2xl);
             line-height: 1.6;
+            font-size: var(--font-size-base);
         }
 
         .contact-methods {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
         }
 
         .contact-method {
             display: flex;
             align-items: center;
-            padding: 1.5rem;
-            background: #252525;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
+            padding: var(--space-lg);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-medium);
+            backdrop-filter: blur(10px);
         }
 
         .contact-method:hover {
-            border-color: #00d4ff;
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
         }
 
         .method-icon {
-            font-size: 2rem;
-            margin-right: 1.5rem;
-            color: #00d4ff;
+            font-size: var(--font-size-2xl);
+            margin-right: var(--space-lg);
+            opacity: 0.8;
         }
 
         .method-info h3 {
-            color: #ffffff;
-            margin-bottom: 0.25rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+            font-size: var(--font-size-lg);
+            font-weight: 500;
         }
 
         .method-info p {
-            color: #cccccc;
+            color: var(--color-text-muted);
+            font-size: var(--font-size-base);
         }
 
         /* === OFFICE HOURS === */
         .office-hours {
-            background: #252525;
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid #333;
-            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            margin-bottom: var(--space-xl);
+            backdrop-filter: blur(10px);
         }
 
         .office-hours h3 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-xl);
+            font-weight: 500;
         }
 
         .hours-list {
@@ -321,9 +520,10 @@
         .hours-list li {
             display: flex;
             justify-content: space-between;
-            padding: 0.5rem 0;
-            color: #cccccc;
-            border-bottom: 1px solid #333;
+            padding: var(--space-sm) 0;
+            color: var(--color-text-muted);
+            border-bottom: 1px solid var(--color-border);
+            font-size: var(--font-size-sm);
         }
 
         .hours-list li:last-child {
@@ -335,7 +535,8 @@
         }
 
         .time {
-            color: #00d4ff;
+            color: var(--color-text);
+            opacity: 0.9;
         }
 
         /* === SOCIAL LINKS === */
@@ -344,120 +545,135 @@
         }
 
         .social-section h3 {
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-xl);
+            font-weight: 500;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: var(--space-md);
         }
 
         .social-links a {
-            display: inline-block;
-            padding: 1rem;
-            background: #333;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border);
             border-radius: 50%;
-            transition: all 0.3s ease;
-            font-size: 1.5rem;
-            color: #cccccc;
+            transition: all var(--transition-medium);
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
             text-decoration: none;
+            backdrop-filter: blur(10px);
         }
 
         .social-links a:hover {
-            background: #00d4ff;
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: var(--color-text);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* === FAQ SECTION === */
         .faq-section {
-            padding: 6rem 0;
-            background: #0f0f0f;
+            padding: var(--space-3xl) 0;
+            background: var(--color-bg);
         }
 
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: #ffffff;
-            font-weight: 700;
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+            font-weight: 300;
+            letter-spacing: -0.02em;
         }
 
         .section-subtitle {
             text-align: center;
-            font-size: 1.2rem;
-            color: #cccccc;
-            margin-bottom: 4rem;
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-2xl);
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
 
         .faq-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 2rem;
+            gap: var(--space-xl);
         }
 
         .faq-item {
-            background: #1a1a1a;
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-medium);
+            backdrop-filter: blur(10px);
         }
 
         .faq-item:hover {
-            border-color: #00d4ff;
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
         }
 
         .faq-question {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            font-weight: 600;
+            font-size: var(--font-size-xl);
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+            font-weight: 500;
         }
 
         .faq-answer {
-            color: #cccccc;
-            line-height: 1.6;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            font-size: var(--font-size-base);
         }
 
         /* === FOOTER === */
         footer {
-            background: #0a0a0a;
-            padding: 4rem 0 2rem;
-            border-top: 1px solid #333;
+            background: rgba(0, 0, 0, 0.5);
+            padding: var(--space-2xl) 0 var(--space-xl);
+            border-top: 1px solid var(--color-border);
+            backdrop-filter: blur(20px);
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
         }
 
         .footer-section h3 {
-            color: #00d4ff;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-xl);
+            font-weight: 500;
         }
 
         .footer-section p,
         .footer-section a {
-            color: #cccccc;
+            color: var(--color-text-muted);
             text-decoration: none;
             line-height: 1.8;
-            transition: color 0.3s ease;
+            transition: color var(--transition-medium);
+            font-size: var(--font-size-base);
         }
 
         .footer-section a:hover {
-            color: #00d4ff;
+            color: var(--color-text);
         }
 
         .footer-links {
@@ -465,14 +681,15 @@
         }
 
         .footer-links li {
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-xs);
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            color: #888;
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
         }
 
         /* === MOBILE RESPONSIVE === */
@@ -481,13 +698,9 @@
                 display: none;
             }
 
-            .container {
-                padding: 0 1rem;
-            }
-
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 2rem;
+                gap: var(--space-xl);
             }
 
             .form-row {
@@ -499,12 +712,48 @@
             }
 
             .contact-form {
-                padding: 2rem;
+                padding: var(--space-xl);
             }
 
             .social-links {
                 flex-wrap: wrap;
             }
+
+            .page-header {
+                padding: var(--space-3xl) 0 var(--space-xl);
+            }
+
+            .faq-item {
+                padding: var(--space-lg);
+            }
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .fade-in-up.delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .fade-in-up.delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in-up.delay-3 {
+            animation-delay: 0.3s;
         }
     </style>
 </head>
@@ -512,7 +761,10 @@
     <!-- HEADER & NAVIGATION -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">Sentinel Peak Solutions</a>
+            <a href="index.html" class="logo">
+                <img src="images/logos/sentinel-peak-logo-new.svg" alt="Sentinel Peak Advisors" class="logo-image">
+                <span class="logo-text">Sentinel Peak Advisors</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
@@ -526,8 +778,8 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <h1>Get In Touch</h1>
-            <p>Ready to elevate your digital presence? Let's discuss your project and create something amazing together.</p>
+            <h1>48-Hour Website Delivery. No Contracts. No Excuses.</h1>
+            <p>Unlike other agencies that waste your time with endless meetings and months of delays, we deliver results in 48 hours. Get your high-converting website and strategic marketing plan – with a money-back guarantee if you're not completely satisfied.</p>
         </div>
     </section>
 
@@ -537,10 +789,15 @@
             <div class="contact-container">
                 <!-- CONTACT FORM -->
                 <div class="contact-form">
-                    <h2 class="form-title">Start Your Project</h2>
-                    <p class="form-subtitle">Tell us about your project and we'll get back to you within 24 hours with a customized proposal.</p>
+                    <h2 class="form-title">Get Your Website in 48 Hours</h2>
+                    <p class="form-subtitle">No long contracts. No hidden fees. No marketing overwhelm. Just results. We'll contact you within 2 hours to discuss your project and provide a transparent quote.</p>
                     
-                    <form action="thankyou.html" method="POST">
+                    <form name="contact" action="thankyou.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                        <!-- Hidden honeypot field for spam protection -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstName">First Name *</label>
@@ -572,10 +829,10 @@
                             <label for="service">Service Interested In *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="web-design">Web Design & Development</option>
-                                <option value="social-media">Social Media Marketing</option>
-                                <option value="digital-strategy">Digital Marketing Strategy</option>
-                                <option value="branding">Brand Development</option>
+                                <option value="48hr-website">48-Hour Website Delivery ($2,497)</option>
+                                <option value="social-media">Strategic Social Media ($997/month)</option>
+                                <option value="complete-package">Complete Package ($3,497)</option>
+                                <option value="consultation">Free Strategy Consultation</option>
                                 <option value="custom">Custom Solution</option>
                             </select>
                         </div>
@@ -584,46 +841,70 @@
                             <label for="budget">Project Budget</label>
                             <select id="budget" name="budget">
                                 <option value="">Select budget range</option>
-                                <option value="under-5k">Under $5,000</option>
+                                <option value="under-3k">Under $3,000</option>
+                                <option value="3k-5k">$3,000 - $5,000</option>
                                 <option value="5k-10k">$5,000 - $10,000</option>
-                                <option value="10k-25k">$10,000 - $25,000</option>
-                                <option value="25k-50k">$25,000 - $50,000</option>
-                                <option value="over-50k">$50,000+</option>
+                                <option value="10k-plus">$10,000+</option>
+                                <option value="not-sure">Not Sure Yet</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="timeline">Project Timeline</label>
+                            <label for="timeline">When Do You Need This Done?</label>
                             <select id="timeline" name="timeline">
                                 <option value="">Select timeline</option>
-                                <option value="asap">ASAP</option>
+                                <option value="48-hours">48 Hours (Our Specialty)</option>
+                                <option value="asap">This Week</option>
                                 <option value="1-month">Within 1 month</option>
                                 <option value="2-3-months">2-3 months</option>
-                                <option value="3-6-months">3-6 months</option>
-                                <option value="6-months-plus">6+ months</option>
+                                <option value="not-urgent">Not Urgent</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Project Details *</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project, goals, and any specific requirements..." required></textarea>
+                            <label for="message">What's Your Biggest Challenge Right Now? *</label>
+                            <textarea id="message" name="message" placeholder="Tell us what's frustrating you most about your current website, marketing, or digital presence. The more specific, the better we can help..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Get My 48-Hour Solution</button>
                     </form>
                 </div>
 
                 <!-- CONTACT INFORMATION -->
                 <div class="contact-info">
-                    <h2 class="info-title">Contact Information</h2>
-                    <p class="info-subtitle">Prefer to reach out directly? We're available through multiple channels and always ready to help.</p>
+                    <h2 class="info-title">Why Choose Us Over Other Agencies?</h2>
+                    <p class="info-subtitle">We're not your typical agency. No long contracts, no hidden fees, no endless meetings. Just fast results and transparent pricing.</p>
                     
                     <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">⚡</div>
+                            <div class="method-info">
+                                <h3>48-Hour Delivery</h3>
+                                <p>While others take months, we deliver in 48 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">💰</div>
+                            <div class="method-info">
+                                <h3>Transparent Pricing</h3>
+                                <p>$2,497 websites (vs industry $8,000+)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">🛡️</div>
+                            <div class="method-info">
+                                <h3>Money-Back Guarantee</h3>
+                                <p>100% satisfaction or full refund</p>
+                            </div>
+                        </div>
+                        
                         <div class="contact-method">
                             <div class="method-icon">📧</div>
                             <div class="method-info">
                                 <h3>Email</h3>
-                                <p>hello@sentinelpeaksolutions.com</p>
+                                <p>info@sentinelpeaksolutions.com</p>
                             </div>
                         </div>
                         
@@ -631,25 +912,27 @@
                             <div class="method-icon">📞</div>
                             <div class="method-info">
                                 <h3>Phone</h3>
-                                <p>(555) 123-4567</p>
+                                <p>650-586-5889</p>
                             </div>
                         </div>
                         
                         <div class="contact-method">
                             <div class="method-icon">📍</div>
                             <div class="method-info">
-                                <h3>Address</h3>
-                                <p>123 Peak Street<br>Mountain View, CA 94041</p>
+                                <h3>Location</h3>
+                                <p>Fresno, CA<br>Serving Nationwide</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="office-hours">
-                        <h3>Office Hours</h3>
+                        <h3>Our Guarantees</h3>
                         <ul class="hours-list">
-                            <li><span class="day">Monday - Friday</span><span class="time">9:00 AM - 6:00 PM</span></li>
-                            <li><span class="day">Saturday</span><span class="time">10:00 AM - 4:00 PM</span></li>
-                            <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+                            <li><span class="day">Delivery</span><span class="time">48 hours or less</span></li>
+                            <li><span class="day">Response Time</span><span class="time">Within 2 hours</span></li>
+                            <li><span class="day">Contract Length</span><span class="time">No long-term contracts</span></li>
+                            <li><span class="day">Hidden Fees</span><span class="time">Zero. Ever.</span></li>
+                            <li><span class="day">Satisfaction</span><span class="time">100% guaranteed</span></li>
                         </ul>
                     </div>
                     
@@ -670,38 +953,38 @@
     <!-- FAQ SECTION -->
     <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <p class="section-subtitle">Quick answers to common questions about our services and process</p>
+            <h2 class="section-title">Tired of Agency BS? We Get It.</h2>
+            <p class="section-subtitle">Here's how we're different from every other agency that's let you down</p>
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3 class="faq-question">How long does a typical project take?</h3>
-                    <p class="faq-answer">Project timelines vary depending on scope and complexity. A standard website typically takes 4-8 weeks, while comprehensive branding projects may take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+                    <h3 class="faq-question">Do you really deliver websites in 48 hours?</h3>
+                    <p class="faq-answer">Yes. While other agencies drag projects out for months to justify their high fees, we've streamlined our process to deliver high-converting websites in 48 hours. No excuses, no delays.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">What's included in your web design service?</h3>
-                    <p class="faq-answer">Our web design service includes custom design, responsive development, SEO optimization, content management system integration, analytics setup, and 3 months of post-launch support.</p>
+                    <h3 class="faq-question">Why are your prices so much lower than other agencies?</h3>
+                    <p class="faq-answer">We don't have the overhead of fancy offices or unnecessary staff. We focus on results, not fluff. Our $2,497 websites outperform $10,000+ agency sites because we prioritize conversion over pretty pictures.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Do you work with businesses outside Mountain View?</h3>
-                    <p class="faq-answer">Absolutely! While we're based in Mountain View, we work with clients nationwide. Most of our collaboration happens virtually, and we're experienced in remote project management.</p>
+                    <h3 class="faq-question">What if I'm not satisfied with the results?</h3>
+                    <p class="faq-answer">Unlike other agencies that hide behind contracts, we offer a 100% money-back guarantee. If you're not completely satisfied with your website within 30 days, we'll refund every penny. No questions asked.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">What's your payment structure?</h3>
-                    <p class="faq-answer">We typically work with a 50% deposit to begin the project and 50% upon completion. For larger projects, we can arrange milestone-based payments. All pricing is transparent with no hidden fees.</p>
+                    <h3 class="faq-question">Do you require long-term contracts like other agencies?</h3>
+                    <p class="faq-answer">Absolutely not. We don't trap clients in long-term contracts because we're confident in our results. Pay for the project, get your website, and decide if you want to work with us again. That's it.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Do you provide ongoing support after launch?</h3>
-                    <p class="faq-answer">Yes! We include 3 months of complimentary support with every project. After that, we offer monthly maintenance packages to keep your website secure, updated, and performing optimally.</p>
+                    <h3 class="faq-question">How do I know you won't disappear after taking my money?</h3>
+                    <p class="faq-answer">We're not a fly-by-night operation. We're based in Fresno, CA, with real contact information and a money-back guarantee. Plus, we only collect 50% upfront – the rest after you're completely satisfied.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Can you help improve my existing website?</h3>
-                    <p class="faq-answer">Definitely! We offer website audits, redesigns, and optimization services. Whether you need a complete overhaul or specific improvements, we can help enhance your existing digital presence.</p>
+                    <h3 class="faq-question">What if I've been burned by agencies before?</h3>
+                    <p class="faq-answer">We understand completely – 80-90% of business owners feel this way. That's exactly why we do things differently. No retainers, no monthly minimums, no platform lock-in, and results you can see immediately.</p>
                 </div>
             </div>
         </div>
@@ -712,7 +995,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Sentinel Peak Solutions</h3>
+                    <h3>Sentinel Peak Advisors</h3>
                     <p>Transforming businesses through innovative web design and strategic digital marketing.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook">📘</a>
@@ -744,16 +1027,160 @@
                 
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>📧 hello@sentinelpeaksolutions.com</p>
-                    <p>📞 (555) 123-4567</p>
-                    <p>📍 Mountain View, CA</p>
+                    <p>📧 info@sentinelpeaksolutions.com</p>
+                    <p>📞 650-586-5889</p>
+                    <p>📍 Fresno, CA</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <script>
+        // === CUSTOM CURSOR ===
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
+            
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor interactions
+        const interactiveElements = document.querySelectorAll('a, button, .btn, input, select, textarea');
+        
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+            });
+        });
+
+        // === SCROLL ANIMATIONS ===
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animations
+        const animatedElements = document.querySelectorAll('.contact-form, .contact-info, .faq-item, .contact-method');
+        animatedElements.forEach((el, index) => {
+            el.style.opacity = '0';
+            el.classList.add(`delay-${Math.min(index % 4, 3)}`);
+            observer.observe(el);
+        });
+
+        // === SMOOTH SCROLL FOR NAVIGATION ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // === FORM ENHANCEMENTS ===
+        const form = document.querySelector('form');
+        const inputs = document.querySelectorAll('input, select, textarea');
+
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('focused');
+            });
+        });
+
+        // Form submission
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Simple form validation
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.style.borderColor = 'rgba(255, 100, 100, 0.5)';
+                    } else {
+                        field.style.borderColor = '';
+                    }
+                });
+                
+                if (isValid) {
+                    // Show success message (in a real app, you'd submit to a server)
+                    const button = form.querySelector('.btn');
+                    const originalText = button.textContent;
+                    button.textContent = 'Message Sent!';
+                    button.style.background = 'rgba(100, 255, 100, 0.2)';
+                    
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        form.reset();
+                    }, 2000);
+                }
+            });
+        }
+
+        // === HEADER SCROLL EFFECT ===
+        const header = document.querySelector('header');
+        let lastScrollTop = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                header.style.background = 'rgba(0, 0, 0, 0.8)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>

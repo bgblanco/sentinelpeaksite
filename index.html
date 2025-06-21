@@ -3,7 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel Peak - Digital Excellence</title>
+    <title>Sentinel Peak Advisors - Digital Excellence & Web Design</title>
+    <meta name="description" content="Professional web design and digital marketing services. We craft exceptional digital experiences that elevate brands and drive meaningful connections. Get a free consultation today.">
+    <meta name="keywords" content="web design, digital marketing, web development, brand design, SEO, digital strategy">
+    <meta name="author" content="Sentinel Peak Advisors">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sentinelpeakadvisors.com">
+    <meta property="og:title" content="Sentinel Peak Advisors - Digital Excellence & Web Design">
+    <meta property="og:description" content="Professional web design and digital marketing services. We craft exceptional digital experiences that elevate brands and drive meaningful connections.">
+    <meta property="og:image" content="https://sentinelpeakadvisors.com/images/logos/sentinel-peak-logo-new.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sentinelpeakadvisors.com">
+    <meta property="twitter:title" content="Sentinel Peak Advisors - Digital Excellence & Web Design">
+    <meta property="twitter:description" content="Professional web design and digital marketing services. We craft exceptional digital experiences that elevate brands and drive meaningful connections.">
+    <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/logos/sentinel-peak-logo-new.svg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/logos/sentinel-peak-logo-new.svg">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -277,6 +307,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
             font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--color-text);
@@ -287,6 +320,26 @@
 
         .logo:hover {
             opacity: 0.7;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            transition: all var(--transition-medium);
+        }
+
+        .logo-text {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                display: none;
+            }
+            .logo-image {
+                height: 36px;
+            }
         }
 
         .nav-menu {
@@ -1119,7 +1172,10 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo">Sentinel Peak</a>
+            <a href="index.html" class="logo">
+                <img src="images/logos/sentinel-peak-logo-new.svg" alt="Sentinel Peak Advisors" class="logo-image">
+                <span class="logo-text">Sentinel Peak Advisors</span>
+            </a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
@@ -1135,12 +1191,12 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">Digital Excellence</div>
-                    <h1 class="h1">Sentinel Peak</h1>
-                    <p class="hero-subtitle">We craft exceptional digital experiences that elevate brands and drive meaningful connections between businesses and their audiences.</p>
+                    <div class="hero-badge">The Anti-Agency Approach</div>
+                    <h1 class="h1">Finally, a Digital Partner That Works As Hard As You Do</h1>
+                    <p class="hero-subtitle">80-90% of business owners see agencies as "money drain machines." We're different. Get a high-performing, lead-generating website and strategic social media presence in 48 hours – without the overwhelm, long contracts, or vanity metrics.</p>
                     <div class="hero-buttons">
-                        <a href="portfolio.html" class="btn btn-primary">View Our Work</a>
-                        <a href="contact.html" class="btn btn-secondary">Start a Project</a>
+                        <a href="contact.html" class="btn btn-primary">Get Your 48-Hour Website</a>
+                        <a href="tel:650-586-5889" class="btn btn-secondary">Call Now: (650) 586-5889</a>
                     </div>
                 </div>
             </div>
@@ -1151,28 +1207,28 @@
     <section class="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">What We Do</div>
-                <h2 class="h2">We create digital experiences that matter</h2>
-                <p class="section-subtitle">Our expertise spans web design, brand development, and digital strategy, helping businesses build meaningful connections with their audiences.</p>
+                <div class="section-badge">The Problem With Agencies</div>
+                <h2 class="h2">Why 80-90% of agencies drain your budget without delivering results</h2>
+                <p class="section-subtitle">Most agencies overcomplicate everything, lock you into long contracts, and focus on vanity metrics instead of real business growth. Our Web Elevation & Social Growth Accelerator changes everything.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <span class="service-icon">01</span>
-                    <h3 class="service-title">Digital Strategy</h3>
-                    <p class="service-description">Comprehensive digital planning that aligns technology with business objectives to drive growth and enhance user engagement.</p>
-                    <a href="services.html" class="service-link">Explore →</a>
+                    <h3 class="service-title">48-Hour Website Delivery</h3>
+                    <p class="service-description">While other agencies take 6-12 weeks, our Rapid Revenue-Ready Framework delivers conversion-optimized websites in 48 hours. No delays, no excuses.</p>
+                    <a href="services.html" class="service-link">Learn How →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">02</span>
-                    <h3 class="service-title">Brand & Identity</h3>
-                    <p class="service-description">Cohesive brand systems that communicate your values and differentiate you in the marketplace through thoughtful design.</p>
-                    <a href="services.html" class="service-link">Explore →</a>
+                    <h3 class="service-title">Lead Generation Focus</h3>
+                    <p class="service-description">Forget vanity metrics. Our Engagement-to-Conversion Blueprint ensures every social post and website element drives qualified prospects into your sales pipeline.</p>
+                    <a href="services.html" class="service-link">See Results →</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">03</span>
-                    <h3 class="service-title">Web Development</h3>
-                    <p class="service-description">Custom web solutions built with modern technologies that deliver exceptional performance and user experiences.</p>
-                    <a href="services.html" class="service-link">Explore →</a>
+                    <h3 class="service-title">Partnership Guarantee</h3>
+                    <p class="service-description">No long-term contracts. No platform lock-in. No hidden fees. If you don't see measurable growth in 90 days, we'll refund your investment.</p>
+                    <a href="services.html" class="service-link">Get Started →</a>
                 </div>
             </div>
         </div>
@@ -1182,9 +1238,9 @@
     <section class="portfolio-preview">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Selected Work</div>
-                <h2 class="h2 slide-up stagger-1">Projects that define excellence</h2>
-                <p class="text-lg slide-up stagger-2" style="color: var(--color-text-muted);">Each project represents our commitment to creating digital experiences that resonate with audiences and drive results.</p>
+                <div class="section-badge slide-up">Real Results</div>
+                <h2 class="h2 slide-up stagger-1">What happens when you partner with us</h2>
+                <p class="text-lg slide-up stagger-2" style="color: var(--color-text-muted);">Every website we deliver focuses on one thing: generating more leads and revenue for your business. Here's proof.</p>
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item scale-in stagger-1">
@@ -1193,8 +1249,8 @@
                     </div>
                     <div class="portfolio-overlay">
                         <div class="portfolio-content">
-                            <p class="portfolio-category">Brand Identity</p>
-                            <h3 class="portfolio-title">Elevate Wellness</h3>
+                            <p class="portfolio-category">48-Hour Delivery</p>
+                            <h3 class="portfolio-title">+340% Lead Increase</h3>
                         </div>
                     </div>
                 </div>
@@ -1204,8 +1260,8 @@
                     </div>
                     <div class="portfolio-overlay">
                         <div class="portfolio-content">
-                            <p class="portfolio-category">Web Development</p>
-                            <h3 class="portfolio-title">Meridian Finance</h3>
+                            <p class="portfolio-category">Local Business</p>
+                            <h3 class="portfolio-title">$50K in 3 Months</h3>
                         </div>
                     </div>
                 </div>
@@ -1215,8 +1271,8 @@
                     </div>
                     <div class="portfolio-overlay">
                         <div class="portfolio-content">
-                            <p class="portfolio-category">Digital Strategy</p>
-                            <h3 class="portfolio-title">Atlas Ventures</h3>
+                            <p class="portfolio-category">Social + Web</p>
+                            <h3 class="portfolio-title">5X Online Visibility</h3>
                         </div>
                     </div>
                 </div>
@@ -1228,9 +1284,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2 class="h2 fade-in">Let's create something exceptional together</h2>
-                <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">Ready to elevate your digital presence? We'd love to discuss how we can help bring your vision to life.</p>
-                <a href="contact.html" class="btn btn-primary fade-in stagger-2">Start a Conversation</a>
+                <h2 class="h2 fade-in">Ready to stop wasting money on agencies that don't deliver?</h2>
+                <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new clients per month to ensure quality delivery. Book your 48-hour website consultation before spots fill up.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary fade-in stagger-2">Book Free Consultation</a>
+                    <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call: (650) 586-5889</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1240,8 +1299,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Sentinel Peak</h3>
-                    <p>We craft exceptional digital experiences that elevate brands and drive meaningful connections between businesses and their audiences.</p>
+                    <h3>Sentinel Peak Advisors</h3>
+                    <p>The anti-agency approach to digital marketing. We deliver results in 48 hours without the overwhelm, contracts, or vanity metrics.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">IG</a>
                         <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
@@ -1251,10 +1310,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">Local SEO</a></li>
-                        <li><a href="services.html">Brand Development</a></li>
-                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">48-Hour Websites</a></li>
+                        <li><a href="services.html">Lead Generation</a></li>
+                        <li><a href="services.html">Social Media Strategy</a></li>
+                        <li><a href="services.html">Partnership Guarantee</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1268,13 +1327,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>📧 hello@sentinelpeaksolutions.com</p>
-                    <p>📞 (555) 123-4567</p>
-                    <p>📍 Mountain View, CA</p>
+                    <p>📧 info@sentinelpeaksolutions.com</p>
+                    <p>📞 (650) 586-5889</p>
+                    <p>📍 Fresno, CA</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
             </div>
         </div>
     </footer>

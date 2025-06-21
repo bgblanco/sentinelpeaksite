@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="200" height="200" fill="#ffffff"/>
+  
+  <!-- Buildings (Gray) -->
+  <rect x="60" y="80" width="8" height="60" fill="#7a7a7a"/>
+  <rect x="70" y="70" width="10" height="70" fill="#7a7a7a"/>
+  <rect x="82" y="60" width="8" height="80" fill="#7a7a7a"/>
+  <rect x="92" y="50" width="12" height="90" fill="#7a7a7a"/>
+  <rect x="106" y="45" width="10" height="95" fill="#7a7a7a"/>
+  <rect x="118" y="55" width="8" height="85" fill="#7a7a7a"/>
+  <rect x="128" y="65" width="10" height="75" fill="#7a7a7a"/>
+  
+  <!-- Buildings (Teal) -->
+  <rect x="50" y="85" width="8" height="55" fill="#4a9b9b"/>
+  <rect x="40" y="95" width="8" height="45" fill="#4a9b9b"/>
+  <rect x="30" y="105" width="8" height="35" fill="#4a9b9b"/>
+  <rect x="140" y="75" width="8" height="65" fill="#4a9b9b"/>
+  <rect x="150" y="85" width="10" height="55" fill="#4a9b9b"/>
+  
+  <!-- Mountain Peaks -->
+  <path d="M 25 140 L 45 110 L 65 140 Z" fill="#7a7a7a"/>
+  <path d="M 55 140 L 80 105 L 105 140 Z" fill="#6a6a6a"/>
+  <path d="M 95 140 L 125 100 L 155 140 Z" fill="#7a7a7a"/>
+  <path d="M 145 140 L 170 115 L 185 140 Z" fill="#6a6a6a"/>
+  
+  <!-- Text -->
+  <text x="100" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7a7a7a">SENTINEL PEAK</text>
+  <text x="100" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#7a7a7a" letter-spacing="1.5px">ADVISORS</text>
+</svg>

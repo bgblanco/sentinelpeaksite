@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Sentinel Peak</title>
+    <title>About - Sentinel Peak Advisors | Our Story & Team</title>
+    <meta name="description" content="Learn about Sentinel Peak Advisors - experienced digital strategists and designers helping businesses reach new heights through exceptional digital experiences since 2019.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -230,6 +231,9 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
             font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--color-text);
@@ -240,6 +244,26 @@
 
         .logo:hover {
             opacity: 0.7;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            transition: all var(--transition-medium);
+        }
+
+        .logo-text {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .logo-text {
+                display: none;
+            }
+            .logo-image {
+                height: 36px;
+            }
         }
 
         .nav-menu {
@@ -827,7 +851,7 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo">Sentinel Peak</a>
+            <a href="index.html" class="logo"><img src="images/logos/sentinel-peak-logo-new.svg" alt="Sentinel Peak Advisors" class="logo-image"><span class="logo-text">Sentinel Peak Advisors</span></a>
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
@@ -842,8 +866,8 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>About Sentinel Peak</h1>
-                <p>Pioneering digital excellence through innovative design and strategic marketing solutions</p>
+                <h1>We're Business Owners' Advocates</h1>
+                <p>We understand what it's like to be burned by agencies. That's why we built an anti-agency approach that puts your success first.</p>
             </div>
         </div>
     </section>
@@ -853,11 +877,11 @@
         <div class="container">
             <div class="story-content">
                 <div class="story-text slide-up">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2019, <span class="story-highlight">Sentinel Peak</span> emerged from a simple yet powerful vision: to help businesses reach new heights through exceptional digital experiences.</p>
-                    <p>Our founders, experienced digital strategists and designers, recognized that many businesses struggled to establish a meaningful online presence that truly represented their brand and connected with their audience.</p>
-                    <p>Today, we've grown into a trusted partner for businesses ranging from innovative startups to established enterprises, helping them navigate the digital landscape with confidence and achieve measurable results.</p>
-                    <p>We believe that great design isn't just about aesthetics—it's about creating experiences that drive engagement, build trust, and ultimately grow your business.</p>
+                    <h2>Why We Exist</h2>
+                    <p>We've seen too many business owners get burned by agencies that overpromise, underdeliver, and disappear with their money. <span class="story-highlight">We're different because we understand your pain.</span></p>
+                    <p>Our founder experienced the same frustrations: long contracts, vanity metrics instead of real results, and agencies that treated his business like just another number. That's when we decided to build something better.</p>
+                    <p>Today, we deliver what other agencies promise but can't deliver: <strong>real results in 48 hours, transparent pricing, and no long-term contracts.</strong> We only succeed when you succeed.</p>
+                    <p>We believe business owners deserve partners, not vendors. That's why we guarantee our work and focus on what actually matters: growing your revenue.</p>
                 </div>
                 <div class="story-image slide-up stagger-1">
                     <div>Our Team at Work</div>
@@ -870,46 +894,46 @@
     <section class="values-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Values</div>
-                <h2 class="section-title slide-up stagger-1">Our Core Values</h2>
-                <p class="section-subtitle slide-up stagger-2">The principles that guide everything we do and shape our approach to every project</p>
+                <div class="section-badge slide-up">What We DON'T Do</div>
+                <h2 class="section-title slide-up stagger-1">Why We're Different from Every Other Agency</h2>
+                <p class="section-subtitle slide-up stagger-2">We break every rule that makes business owners hate agencies. Here's our promise to you.</p>
             </div>
             
             <div class="values-grid">
                 <div class="value-card scale-in">
-                    <div class="value-icon">🎯</div>
-                    <h3>Results-Driven</h3>
-                    <p>Every design decision and marketing strategy is guided by data and focused on achieving your business objectives. We measure success by your success.</p>
+                    <div class="value-icon">⚡</div>
+                    <h3>No Long-Term Contracts</h3>
+                    <p>Month-to-month partnerships only. If we're not delivering results, you can leave anytime. No penalties, no guilt trips, no BS.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-1">
-                    <div class="value-icon">🚀</div>
-                    <h3>Innovation</h3>
-                    <p>We stay ahead of digital trends and technologies, ensuring your brand remains competitive in an ever-evolving digital landscape.</p>
+                    <div class="value-icon">🎯</div>
+                    <h3>No Vanity Metrics</h3>
+                    <p>We don't care about likes, impressions, or "brand awareness." We focus on leads, sales, and revenue. Real business growth only.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-2">
-                    <div class="value-icon">🤝</div>
-                    <h3>Partnership</h3>
-                    <p>We view our clients as partners, not just customers. Your success is our success, and we're committed to building long-term relationships.</p>
+                    <div class="value-icon">💰</div>
+                    <h3>No Hidden Fees</h3>
+                    <p>Complete price transparency. What we quote is what you pay. No surprise charges, no scope creep, no "additional fees."</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-3">
-                    <div class="value-icon">⚡</div>
-                    <h3>Excellence</h3>
-                    <p>We never settle for "good enough." Our team is dedicated to delivering exceptional quality in every project, no matter the size or scope.</p>
+                    <div class="value-icon">🚀</div>
+                    <h3>No Endless Delays</h3>
+                    <p>48-hour website delivery, guaranteed. No "just one more week" excuses. We deliver when we say we will, or you don't pay.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-4">
-                    <div class="value-icon">🎨</div>
-                    <h3>Creativity</h3>
-                    <p>We believe that creative solutions drive results. Our team combines artistic vision with strategic thinking to create truly impactful designs.</p>
+                    <div class="value-icon">🤝</div>
+                    <h3>No Platform Lock-In</h3>
+                    <p>You own your website, social accounts, and data. We'll never hold your digital assets hostage or make you dependent on our platforms.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-5">
-                    <div class="value-icon">🔍</div>
-                    <h3>Transparency</h3>
-                    <p>Open communication and honest feedback are the foundation of our client relationships. You'll always know exactly what we're working on and why.</p>
+                    <div class="value-icon">📊</div>
+                    <h3>No Communication Blackouts</h3>
+                    <p>Weekly progress reports, dedicated project manager, and direct access to our team. You'll never wonder what's happening with your project.</p>
                 </div>
             </div>
         </div>
@@ -919,57 +943,49 @@
     <section class="team-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Team</div>
-                <h2 class="section-title slide-up stagger-1">Meet Our Team</h2>
-                <p class="section-subtitle slide-up stagger-2">The talented professionals behind your digital success</p>
+                <div class="section-badge slide-up">Our Guarantee</div>
+                <h2 class="section-title slide-up stagger-1">We Put Our Money Where Our Mouth Is</h2>
+                <p class="section-subtitle slide-up stagger-2">Unlike other agencies, we guarantee our work with real consequences if we don't deliver</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-member fade-in">
-                    <div class="member-avatar">AS</div>
-                    <h3>Alex Santiago</h3>
-                    <div class="member-role">Founder & Creative Director</div>
-                    <p class="member-bio">10+ years of experience in digital design and strategy. Alex leads our creative vision and ensures every project exceeds expectations.</p>
+                    <div class="member-avatar">⏱️</div>
+                    <h3>48-Hour Guarantee</h3>
+                    <div class="member-role">Website Delivery Promise</div>
+                    <p class="member-bio">Your website will be live and generating leads within 48 hours, or you don't pay a dime. No excuses, no delays.</p>
                     <div class="member-social">
-                        <a href="#">💼</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📷</a>
+                        <a href="contact.html">📞 Book Now</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-1">
-                    <div class="member-avatar">MR</div>
-                    <h3>Maya Rodriguez</h3>
-                    <div class="member-role">Lead Developer</div>
-                    <p class="member-bio">Full-stack developer with expertise in modern web technologies. Maya brings ideas to life with clean, efficient code.</p>
+                    <div class="member-avatar">📊</div>
+                    <h3>90-Day Results Guarantee</h3>
+                    <div class="member-role">Performance Promise</div>
+                    <p class="member-bio">If you don't see measurable growth in leads or sales within 90 days, we'll refund your entire investment. That's how confident we are.</p>
                     <div class="member-social">
-                        <a href="#">💼</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📷</a>
+                        <a href="contact.html">📞 Get Started</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-2">
-                    <div class="member-avatar">JC</div>
-                    <h3>Jordan Chen</h3>
-                    <div class="member-role">Digital Marketing Strategist</div>
-                    <p class="member-bio">Data-driven marketing expert who creates campaigns that drive engagement and conversions across all digital channels.</p>
+                    <div class="member-avatar">🔒</div>
+                    <h3>No Contract Lock-In</h3>
+                    <div class="member-role">Freedom Promise</div>
+                    <p class="member-bio">Month-to-month only. Cancel anytime without penalties. We earn your business every single month through results, not contracts.</p>
                     <div class="member-social">
-                        <a href="#">💼</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📷</a>
+                        <a href="contact.html">📞 Learn More</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-3">
-                    <div class="member-avatar">ST</div>
-                    <h3>Sam Taylor</h3>
-                    <div class="member-role">UX/UI Designer</div>
-                    <p class="member-bio">User experience specialist focused on creating intuitive, accessible designs that delight users and drive conversions.</p>
+                    <div class="member-avatar">💰</div>
+                    <h3>Price Transparency</h3>
+                    <div class="member-role">No Hidden Fees Promise</div>
+                    <p class="member-bio">What we quote is what you pay. No surprise charges, no scope creep, no "additional fees." Complete transparency, always.</p>
                     <div class="member-social">
-                        <a href="#">💼</a>
-                        <a href="#">🐦</a>
-                        <a href="#">📷</a>
+                        <a href="services.html">📞 View Pricing</a>
                     </div>
                 </div>
             </div>
@@ -980,27 +996,27 @@
     <section class="stats-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Impact</div>
-                <h2 class="section-title slide-up stagger-1">Our Impact</h2>
-                <p class="section-subtitle slide-up stagger-2">Numbers that showcase our commitment to client success</p>
+                <div class="section-badge slide-up">Real Results</div>
+                <h2 class="section-title slide-up stagger-1">Why Business Owners Choose Us</h2>
+                <p class="section-subtitle slide-up stagger-2">Unlike other agencies, we measure success by what actually matters to your business</p>
             </div>
             
             <div class="stats-grid">
                 <div class="stat-item scale-in">
-                    <span class="stat-number">150+</span>
-                    <span class="stat-label">Projects Completed</span>
+                    <span class="stat-number">48hrs</span>
+                    <span class="stat-label">Average Delivery Time</span>
                 </div>
                 <div class="stat-item scale-in stagger-1">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Client Satisfaction</span>
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Long-Term Contracts</span>
                 </div>
                 <div class="stat-item scale-in stagger-2">
-                    <span class="stat-number">250%</span>
-                    <span class="stat-label">Average ROI Increase</span>
+                    <span class="stat-number">340%</span>
+                    <span class="stat-label">Average Lead Increase</span>
                 </div>
                 <div class="stat-item scale-in stagger-3">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support Available</span>
+                    <span class="stat-number">90 Day</span>
+                    <span class="stat-label">Money-Back Guarantee</span>
                 </div>
             </div>
         </div>
@@ -1010,9 +1026,12 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to work together?</h2>
-                <p class="cta-description">Let's discuss how our team can help elevate your digital presence and drive real business results.</p>
-                <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                <h2 class="cta-title">Ready to stop getting burned by agencies?</h2>
+                <p class="cta-description">Limited capacity: We only take 5 new clients per month. Book your free consultation and see why we're different.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1022,8 +1041,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Sentinel Peak</h3>
-                    <p>We craft exceptional digital experiences that elevate brands and drive meaningful connections between businesses and their audiences.</p>
+                    <h3>Sentinel Peak Advisors</h3>
+                    <p>The anti-agency approach to digital marketing. We deliver results in 48 hours without the overwhelm, contracts, or vanity metrics.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">IG</a>
                         <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
@@ -1033,10 +1052,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Website Design</a></li>
-                        <li><a href="services.html">Local SEO</a></li>
-                        <li><a href="services.html">Brand Development</a></li>
-                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">48-Hour Websites</a></li>
+                        <li><a href="services.html">Lead Generation</a></li>
+                        <li><a href="services.html">Social Media Strategy</a></li>
+                        <li><a href="services.html">Partnership Guarantee</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1050,13 +1069,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p>📧 hello@sentinelpeaksolutions.com</p>
-                    <p>📞 (555) 123-4567</p>
-                    <p>📍 Mountain View, CA</p>
+                    <p>📧 info@sentinelpeaksolutions.com</p>
+                    <p>📞 (650) 586-5889</p>
+                    <p>📍 Fresno, CA</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
             </div>
         </div>
     </footer>
