@@ -1,0 +1,14 @@
+Create a modern, responsive homepage for a dark-themed web design and social media agency called Sentinel Peak Solutions. 
+
+Use clean HTML and CSS (prefer Tailwind but vanilla CSS is fine). Make sure to include:
+
+- A glowing hero section with headline, subheadline, and CTA buttons
+- A services grid with 3–4 cards
+- An animated portfolio preview section
+- A testimonials slider (static HTML for now is fine)
+- Simple pricing cards (3 tiers)
+- A strong dark footer with contact info and links
+
+Keep the layout mobile-first, clean, and easy to customize.
+
+

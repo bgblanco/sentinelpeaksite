@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Sentinel Peak Solutions</title>
+    <style>
+        /* === GLOBAL STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f0f0f;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* === HEADER & NAVIGATION === */
+        header {
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            color: #00d4ff;
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        /* === PAGE HEADER === */
+        .page-header {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ffffff 30%, #00d4ff 60%, #ffffff 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* === PORTFOLIO FILTER === */
+        .portfolio-filter {
+            padding: 3rem 0;
+            background: #1a1a1a;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            color: #cccccc;
+            border: 2px solid #333;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #00d4ff;
+            color: #0f0f0f;
+            border-color: #00d4ff;
+        }
+
+        /* === PORTFOLIO GRID === */
+        .portfolio-section {
+            padding: 4rem 0 6rem;
+            background: #1a1a1a;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .portfolio-item {
+            background: #252525;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid #333;
+            position: relative;
+            group: portfolio-item;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 153, 204, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image::before {
+            opacity: 1;
+        }
+
+        .portfolio-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #888;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .portfolio-content {
+            padding: 2rem;
+        }
+
+        .portfolio-category {
+            color: #00d4ff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .portfolio-content p {
+            color: #cccccc;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: #333;
+            color: #cccccc;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .portfolio-link {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .portfolio-link::after {
+            content: ' →';
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* === CASE STUDIES SECTION === */
+        .case-studies {
+            padding: 6rem 0;
+            background: #0f0f0f;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 3rem;
+        }
+
+        .case-study {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid #333;
+            transition: all 0.4s ease;
+        }
+
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+        }
+
+        .case-study-header {
+            margin-bottom: 2rem;
+        }
+
+        .case-study h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-study-industry {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .case-study-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1rem;
+            background: #252525;
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #00d4ff;
+            display: block;
+        }
+
+        .stat-label {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .case-study p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        /* === CTA SECTION === */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: #0a0a0a;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #cccccc;
+            text-decoration: none;
+            line-height: 1.8;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #00d4ff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 0.8rem;
+            background: #333;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: #00d4ff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #888;
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .portfolio-grid,
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .case-study {
+                padding: 2rem;
+            }
+
+            .case-study-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Sentinel Peak Solutions</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Explore our latest projects and see how we've helped businesses transform their digital presence</p>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO FILTER -->
+    <section class="portfolio-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">Web Design</button>
+                <button class="filter-btn">E-Commerce</button>
+                <button class="filter-btn">Branding</button>
+                <button class="filter-btn">Social Media</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GRID -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">TechFlow E-Commerce Platform</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">E-Commerce</div>
+                        <h3>TechFlow Electronics</h3>
+                        <p>Complete e-commerce platform redesign resulting in 250% increase in online sales and improved user experience across all devices.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">E-Commerce</span>
+                            <span class="tag">SEO</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">GreenEarth Sustainability Brand</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Branding</div>
+                        <h3>GreenEarth Sustainability</h3>
+                        <p>Complete brand identity and website development for environmental consulting firm, establishing their market presence.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Content Strategy</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">Velocity Fitness App</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design</div>
+                        <h3>Velocity Fitness Studio</h3>
+                        <p>Modern fitness studio website with class booking system and member portal, increasing membership sign-ups by 180%.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Booking System</span>
+                            <span class="tag">Social Media</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">Artisan Cafe Social Campaign</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Social Media</div>
+                        <h3>Artisan Coffee Collective</h3>
+                        <p>Comprehensive social media strategy and website redesign that tripled online engagement and doubled foot traffic.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Photography</span>
+                            <span class="tag">Content Creation</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">InnovateTech SaaS Platform</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design</div>
+                        <h3>InnovateTech Solutions</h3>
+                        <p>SaaS platform interface design and marketing website that improved user onboarding by 300% and reduced churn rate.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SaaS Design</span>
+                            <span class="tag">UX/UI</span>
+                            <span class="tag">Conversion Optimization</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">Luxury Real Estate Portfolio</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Web Design</div>
+                        <h3>Peak Properties Group</h3>
+                        <p>Luxury real estate website with property showcase, virtual tours, and lead generation system that increased qualified leads by 220%.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Real Estate</span>
+                            <span class="tag">Lead Generation</span>
+                            <span class="tag">Virtual Tours</span>
+                        </div>
+                        <a href="#" class="portfolio-link">View Case Study</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES SECTION -->
+    <section class="case-studies">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">Detailed case studies showcasing the measurable impact of our work</p>
+            
+            <div class="case-study-grid">
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <h3>TechFlow Electronics</h3>
+                        <div class="case-study-industry">E-Commerce • Technology</div>
+                    </div>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <span class="stat-number">250%</span>
+                            <span class="stat-label">Sales Increase</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">180%</span>
+                            <span class="stat-label">Traffic Growth</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">65%</span>
+                            <span class="stat-label">Conversion Rate</span>
+                        </div>
+                    </div>
+                    <p>Complete e-commerce platform redesign with focus on user experience, mobile optimization, and conversion rate optimization. Implemented advanced analytics and A/B testing to continuously improve performance.</p>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <h3>Velocity Fitness Studio</h3>
+                        <div class="case-study-industry">Health & Fitness</div>
+                    </div>
+                    <div class="case-study-stats">
+                        <div class="stat">
+                            <span class="stat-number">320%</span>
+                            <span class="stat-label">Member Sign-ups</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">150%</span>
+                            <span class="stat-label">Social Engagement</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">45%</span>
+                            <span class="stat-label">Retention Rate</span>
+                        </div>
+                    </div>
+                    <p>Integrated booking system with social media marketing campaign, resulting in significant membership growth and improved customer retention through enhanced digital experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Create Your Success Story?</h2>
+                <p>Let's discuss how we can help transform your business with strategic design and marketing solutions.</p>
+                <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sentinel Peak Solutions</h3>
+                    <p>Transforming businesses through innovative web design and strategic digital marketing.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Web Design</a></li>
+                        <li><a href="services.html">Social Media Marketing</a></li>
+                        <li><a href="services.html">Digital Strategy</a></li>
+                        <li><a href="services.html">Brand Development</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="contact.html">Get Quote</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>📧 hello@sentinelpeaksolutions.com</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📍 Mountain View, CA</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
