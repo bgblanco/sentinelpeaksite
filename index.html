@@ -325,9 +325,13 @@
         }
 
         .logo-image {
-            height: 40px;
+            height: 56px;
             width: auto;
             transition: all var(--transition-medium);
+        }
+        
+        .logo:hover .logo-image {
+            transform: scale(1.05);
         }
 
         .logo-text {
@@ -340,7 +344,7 @@
                 display: none;
             }
             .logo-image {
-                height: 36px;
+                height: 48px;
             }
         }
 
@@ -406,11 +410,41 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
-            animation: subtleMove 12s ease-in-out infinite alternate;
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 30%);
+            animation: shimmer 8s ease-in-out infinite alternate;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
+                radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 60%);
+            animation: shimmer 10s ease-in-out infinite alternate-reverse;
+            opacity: 0.8;
         }
 
+        @keyframes shimmer {
+            0% { 
+                opacity: 0.3;
+                transform: translateX(-5px) translateY(-3px) scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateX(3px) translateY(2px) scale(1.02);
+            }
+            100% { 
+                opacity: 0.4;
+                transform: translateX(5px) translateY(3px) scale(1.01);
+            }
+        }
+        
         @keyframes subtleMove {
             0% { 
                 opacity: 0.3;
@@ -478,11 +512,18 @@
             line-height: 1.1;
             margin-bottom: clamp(1.5rem, 4vw, 2rem);
             color: #ffffff;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 3s ease-in-out infinite alternate;
             letter-spacing: -0.02em;
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 30%, rgba(255, 255, 255, 0.9) 60%, #ffffff 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 100%;
+            animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 3s ease-in-out infinite alternate, text-shimmer 4s linear infinite;
         }
 
         .hero-subtitle {
@@ -525,16 +566,20 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            opacity: 0;
-            transition: opacity 0.3s;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
         }
 
         .btn:hover::before {
-            opacity: 1;
+            left: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .btn-primary {
@@ -567,6 +612,23 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        @keyframes text-glow {
+            0% { 
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); 
+                filter: brightness(1);
+            }
+            100% { 
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.3); 
+                filter: brightness(1.1);
+            }
+        }
+        
+        @keyframes text-shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* === SERVICES SECTION === */
@@ -938,6 +1000,25 @@
                 width: 100%;
                 max-width: 250px;
                 justify-content: center;
+            }
+            
+            /* Optimize animations for mobile performance */
+            .hero-title {
+                animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 4s ease-in-out infinite alternate;
+            }
+            
+            .hero::before {
+                animation: shimmer 12s ease-in-out infinite alternate;
+            }
+            
+            .hero::after {
+                animation: shimmer 15s ease-in-out infinite alternate-reverse;
+                opacity: 0.6;
+            }
+            
+            .btn:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             }
 
             .services-grid {
