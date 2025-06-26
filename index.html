@@ -20,10 +20,10 @@
     <meta property="twitter:url" content="https://sentinelpeakadvisors.com">
     <meta property="twitter:title" content="Sentinel Peak Advisors - Social Media Management That Actually Generates Leads">
     <meta property="twitter:description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
-    <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/logos/sentinel-peak-logo-new.svg">
+    <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/sentinel-peak-logo.png">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="images/logos/sentinel-peak-logo-new.svg">
+    <link rel="icon" type="image/png" href="images/sentinel-peak-logo.png">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEC0PMZ1SE"></script>
@@ -66,7 +66,7 @@
             /* Grid System */
             --grid-max-width: 1200px;
             --grid-gutter: clamp(1rem, 4vw, 2rem);
-            --grid-margin: clamp(1rem, 5vw, 3rem);
+            --grid-margin: clamp(1rem, 3vw, 2rem);
             
             /* Colors */
             --color-bg: #000000;
@@ -425,16 +425,36 @@
         .hero-grid {
             position: relative;
             z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding-top: 120px;
+            padding: clamp(100px, 20vh, 150px) 0 clamp(60px, 10vh, 100px);
+            text-align: center;
         }
 
         .hero-content {
-            text-align: left;
-            max-width: 800px;
+            width: 100%;
+            max-width: none;
+            position: relative;
+            z-index: 3;
+        }
+        
+
+        .hero-image-section {
+            padding: 2rem 0 4rem;
+            text-align: center;
+        }
+        
+        .hero-showcase-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 12px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-showcase-image:hover {
+            opacity: 1;
+            transform: translateY(-5px);
         }
 
         .hero-badge {
@@ -453,33 +473,38 @@
         }
 
         .hero-title {
-            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-size: clamp(2rem, 6vw, 4rem);
             font-weight: 300;
-            line-height: 0.95;
-            margin-bottom: 2rem;
+            line-height: 1.1;
+            margin-bottom: clamp(1.5rem, 4vw, 2rem);
             color: #ffffff;
             animation: fadeInUp 0.8s ease-out 0.4s both;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.02em;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-
         .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.6);
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: rgba(255, 255, 255, 0.7);
             font-weight: 400;
-            margin-bottom: 4rem;
-            line-height: 1.6;
+            margin-bottom: clamp(2.5rem, 6vw, 3rem);
+            line-height: 1.5;
             animation: fadeInUp 0.8s ease-out 0.6s both;
             letter-spacing: 0.01em;
-            max-width: 600px;
+            max-width: 85%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 2rem;
-            justify-content: flex-start;
+            gap: clamp(1rem, 3vw, 2rem);
+            justify-content: center;
             flex-wrap: wrap;
             animation: fadeInUp 0.8s ease-out 0.8s both;
+            max-width: 100%;
         }
 
         .btn {
@@ -616,6 +641,22 @@
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
             position: relative;
             cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-image {
+            opacity: 1;
+            transform: scale(1.02);
         }
 
         .service-card::before {
@@ -765,6 +806,26 @@
             z-index: 2;
             max-width: 600px;
         }
+        
+        .cta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .cta-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-image:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
 
         .cta-title {
             font-size: clamp(2rem, 4vw, 2.5rem);
@@ -895,6 +956,26 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .hero-showcase-image {
+                max-width: 400px;
+            }
+            
+            .cta-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -905,6 +986,10 @@
 
             .hero-subtitle {
                 font-size: clamp(0.9rem, 3vw, 1.1rem);
+            }
+            
+            .hero-showcase-image {
+                max-width: 300px;
             }
 
             .service-card {
@@ -1196,7 +1281,7 @@
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
             <a href="index.html" class="logo">
-                <img src="images/logos/sentinel-peak-logo-new.svg" alt="Sentinel Peak Advisors" class="logo-image">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
                 <span class="logo-text">Sentinel Peak Advisors</span>
             </a>
             <ul class="nav-menu">
@@ -1215,13 +1300,20 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="hero-badge">Social Media That Actually Works</div>
-                    <h1 class="h1">The Only Social Media Management Service That Turns Followers Into Customers</h1>
-                    <p class="hero-subtitle">While other agencies focus on vanity metrics, we integrate advanced CRM technology to turn your social media presence into a lead-generating machine. Real prospects, real conversations, real revenue – starting at $697/month with no long-term contracts.</p>
+                    <h1 class="hero-title">Social Media That Actually Generates Leads</h1>
+                    <p class="hero-subtitle">Turn followers into customers with CRM-integrated social media management. Real leads, real revenue – starting at $697/month.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="btn btn-primary">Start Generating Leads Today</a>
                         <a href="tel:650-586-5889" class="btn btn-secondary">Call Now: (650) 586-5889</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Hero Image Section -->
+        <div class="hero-image-section">
+            <div class="container">
+                <img src="images/hero-social-media-workspace.png" alt="Professional analyzing social media lead generation data" class="hero-showcase-image">
             </div>
         </div>
     </section>
@@ -1236,18 +1328,21 @@
             </div>
             <div class="services-grid">
                 <div class="service-card">
+                    <img src="images/crm-integration.png" alt="Social media platforms connecting to CRM system with lead tracking and analytics" class="service-image">
                     <span class="service-icon">01</span>
                     <h3 class="service-title">Advanced CRM Integration</h3>
                     <p class="service-description">While others just post content, we integrate your social media directly with advanced CRM technology. Every comment, DM, and engagement becomes a tracked lead in your sales pipeline.</p>
                     <a href="services.html" class="service-link">See How It Works →</a>
                 </div>
                 <div class="service-card">
+                    <img src="images/lead-focused-content-strategy.png" alt="Lead-focused content strategy workspace with content calendar and engagement metrics" class="service-image">
                     <span class="service-icon">02</span>
                     <h3 class="service-title">Lead-Focused Content Strategy</h3>
                     <p class="service-description">Forget viral posts that don't pay. Our content is strategically designed to attract, engage, and convert your ideal customers into qualified leads and paying clients.</p>
                     <a href="services.html" class="service-link">See Results →</a>
                 </div>
                 <div class="service-card">
+                    <img src="images/roi-guarantee.png" alt="ROI dashboard showing positive growth results with business handshake guarantee" class="service-image">
                     <span class="service-icon">03</span>
                     <h3 class="service-title">ROI Guarantee</h3>
                     <p class="service-description">No long-term contracts. No vanity metric reports. No hidden fees. If you don't see measurable lead generation and revenue growth in 90 days, we'll refund your investment.</p>
@@ -1261,12 +1356,17 @@
     <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="h2 fade-in">Ready to turn your social media into a lead-generating machine?</h2>
-                <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new social media clients per month to ensure quality results. Book your free lead generation strategy session before spots fill up.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary fade-in stagger-2">Book Free Strategy Session</a>
-                    <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call: (650) 586-5889</a>
+            <div class="cta-grid">
+                <div class="cta-content">
+                    <h2 class="h2 fade-in">Ready to turn your social media into a lead-generating machine?</h2>
+                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new social media clients per month to ensure quality results. Book your free lead generation strategy session before spots fill up.</p>
+                    <div class="hero-buttons">
+                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Book Free Strategy Session</a>
+                        <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call: (650) 586-5889</a>
+                    </div>
+                </div>
+                <div class="cta-image-container">
+                    <img src="images/cta-partnership.png" alt="Business partnership handshake with growth charts showing successful collaboration" class="cta-image fade-in stagger-3">
                 </div>
             </div>
         </div>
