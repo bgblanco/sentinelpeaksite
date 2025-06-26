@@ -13,7 +13,7 @@
     <meta property="og:url" content="https://sentinelpeakadvisors.com">
     <meta property="og:title" content="Sentinel Peak Advisors - Social Media Management That Actually Generates Leads">
     <meta property="og:description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
-    <meta property="og:image" content="https://sentinelpeakadvisors.com/images/logos/sentinel-peak-logo-new.svg">
+    <meta property="og:image" content="https://static.wixstatic.com/media/09c8f9_dd0aca6c1b6243d7ad12bd3d95b3643c~mv2.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -42,16 +42,16 @@
         /* === CSS CUSTOM PROPERTIES === */
         :root {
             /* Typography Scale */
-            --font-size-xs: clamp(0.75rem, 0.5vw + 0.65rem, 0.875rem);
-            --font-size-sm: clamp(0.875rem, 0.75vw + 0.75rem, 1rem);
-            --font-size-base: clamp(1rem, 1vw + 0.85rem, 1.125rem);
-            --font-size-lg: clamp(1.125rem, 1.5vw + 0.9rem, 1.375rem);
-            --font-size-xl: clamp(1.25rem, 2vw + 1rem, 1.75rem);
-            --font-size-2xl: clamp(1.5rem, 3vw + 1.2rem, 2.25rem);
-            --font-size-3xl: clamp(2rem, 4vw + 1.5rem, 3rem);
-            --font-size-4xl: clamp(2.5rem, 6vw + 2rem, 4rem);
-            --font-size-5xl: clamp(3rem, 8vw + 2.5rem, 6rem);
-            --font-size-6xl: clamp(4rem, 12vw + 3rem, 8rem);
+            --font-size-xs: clamp(0.8rem, 0.5vw + 0.7rem, 0.875rem);
+            --font-size-sm: clamp(0.9rem, 0.75vw + 0.8rem, 1rem);
+            --font-size-base: clamp(1rem, 1vw + 0.9rem, 1.125rem);
+            --font-size-lg: clamp(1.125rem, 1.5vw + 0.95rem, 1.375rem);
+            --font-size-xl: clamp(1.3rem, 2vw + 1.1rem, 1.75rem);
+            --font-size-2xl: clamp(1.6rem, 3vw + 1.3rem, 2.25rem);
+            --font-size-3xl: clamp(2.2rem, 4vw + 1.6rem, 3rem);
+            --font-size-4xl: clamp(2.8rem, 6vw + 2.2rem, 4rem);
+            --font-size-5xl: clamp(3.5rem, 8vw + 2.8rem, 6rem);
+            --font-size-6xl: clamp(4.5rem, 12vw + 3.5rem, 8rem);
             
             /* Spacing Scale */
             --space-xs: clamp(0.25rem, 0.5vw + 0.125rem, 0.5rem);
@@ -111,6 +111,8 @@
             user-select: none;
             font-feature-settings: 'kern' 1, 'liga' 1;
             text-rendering: optimizeLegibility;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* === ADVANCED GRID SYSTEM === */
@@ -863,7 +865,7 @@
             }
 
             .container {
-                padding: 0 1rem;
+                padding: 0 1.5rem;
             }
 
             .hero-buttons {
@@ -873,7 +875,7 @@
 
             .btn {
                 width: 100%;
-                max-width: 280px;
+                max-width: 250px;
                 justify-content: center;
             }
 
@@ -897,11 +899,32 @@
 
         @media (max-width: 480px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: clamp(2rem, 8vw, 2.5rem);
+                line-height: 1;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 3vw, 1.1rem);
             }
 
             .service-card {
-                padding: 1.5rem;
+                padding: 1.5rem 1rem;
+            }
+            
+            .service-title {
+                font-size: clamp(1.1rem, 4vw, 1.25rem);
+            }
+            
+            .service-description {
+                font-size: clamp(0.85rem, 3vw, 0.9rem);
+            }
+            
+            .section-title {
+                font-size: clamp(1.75rem, 6vw, 2.5rem);
+            }
+            
+            .cta-title {
+                font-size: clamp(1.5rem, 5vw, 2rem);
             }
         }
         
