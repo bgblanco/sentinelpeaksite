@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel Peak Advisors - Social Media Management That Actually Generates Leads</title>
-    <meta name="description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
+    <title>Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads</title>
+    <meta name="description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
     <meta name="keywords" content="social media management, lead generation, CRM integration, social media marketing, business growth, ROI tracking">
     <meta name="author" content="Sentinel Peak Advisors">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sentinelpeakadvisors.com">
-    <meta property="og:title" content="Sentinel Peak Advisors - Social Media Management That Actually Generates Leads">
-    <meta property="og:description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
+    <meta property="og:title" content="Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads">
+    <meta property="og:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
     <meta property="og:image" content="https://static.wixstatic.com/media/09c8f9_dd0aca6c1b6243d7ad12bd3d95b3643c~mv2.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sentinelpeakadvisors.com">
-    <meta property="twitter:title" content="Sentinel Peak Advisors - Social Media Management That Actually Generates Leads">
-    <meta property="twitter:description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
+    <meta property="twitter:title" content="Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads">
+    <meta property="twitter:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
     <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/sentinel-peak-logo.png">
     
     <!-- Favicon and App Icons -->
@@ -427,10 +427,13 @@
         }
 
         .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
             position: relative;
             z-index: 2;
             padding: clamp(100px, 20vh, 150px) 0 clamp(60px, 10vh, 100px);
-            text-align: center;
         }
 
         .hero-content {
@@ -438,13 +441,16 @@
             max-width: none;
             position: relative;
             z-index: 3;
+            text-align: left;
+        }
+        
+        .hero-image-container {
+            position: relative;
+            z-index: 3;
+            text-align: center;
         }
         
 
-        .hero-image-section {
-            padding: 2rem 0 4rem;
-            text-align: center;
-        }
         
         .hero-showcase-image {
             width: 100%;
@@ -484,9 +490,6 @@
             color: #ffffff;
             animation: fadeInUp 0.8s ease-out 0.4s both;
             letter-spacing: -0.02em;
-            max-width: 90%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hero-subtitle {
@@ -497,9 +500,6 @@
             line-height: 1.5;
             animation: fadeInUp 0.8s ease-out 0.6s both;
             letter-spacing: 0.01em;
-            max-width: 85%;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .hero-buttons {
@@ -787,6 +787,7 @@
             opacity: 0.9;
         }
 
+
         /* === CTA SECTION === */
         .cta-section {
             background: #000000;
@@ -961,6 +962,16 @@
                 text-align: center;
             }
             
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
@@ -973,13 +984,14 @@
             }
             
             .hero-showcase-image {
-                max-width: 400px;
+                max-width: 70vw;
             }
             
             .cta-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
         }
 
         @media (max-width: 480px) {
@@ -993,7 +1005,7 @@
             }
             
             .hero-showcase-image {
-                max-width: 300px;
+                max-width: 85vw;
             }
 
             .service-card {
@@ -1015,6 +1027,7 @@
             .cta-title {
                 font-size: clamp(1.5rem, 5vw, 2rem);
             }
+            
         }
         
         /* === ADVANCED HOVER STATES === */
@@ -1303,21 +1316,17 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">Social Media That Actually Works</div>
-                    <h1 class="hero-title">Social Media That Actually Generates Leads</h1>
-                    <p class="hero-subtitle">Turn followers into customers with CRM-integrated social media management. Real leads, real revenue – starting at $697/month.</p>
+                    <div class="hero-badge">Immediate Impact. Lasting Growth.</div>
+                    <h1 class="hero-title">Get Your Website in 1 Day + Social Media That Actually Generates Leads</h1>
+                    <p class="hero-subtitle">No more getting burned by marketing companies that disappear or don't deliver. Get a professional website launched in 1 day, plus ongoing social media that actually brings in customers – not just likes.</p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary">Start Generating Leads Today</a>
-                        <a href="tel:650-586-5889" class="btn btn-secondary">Call Now: (650) 586-5889</a>
+                        <a href="contact.html" class="btn btn-primary">Get Your Website + Marketing Started</a>
+                        <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
                     </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Hero Image Section -->
-        <div class="hero-image-section">
-            <div class="container">
-                <img src="images/hero-social-media-workspace.png" alt="Professional analyzing social media lead generation data" class="hero-showcase-image">
+                <div class="hero-image-container">
+                    <img src="images/hero-business-owner-analytics.png" alt="Hardworking small business owner in his 40s analyzing website and marketing analytics on computer dashboard" class="hero-showcase-image">
+                </div>
             </div>
         </div>
     </section>
@@ -1326,30 +1335,30 @@
     <section class="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">The Social Media Problem</div>
-                <h2 class="h2">Why most social media "experts" waste your money on likes and followers</h2>
-                <p class="section-subtitle">Most social media agencies focus on vanity metrics that don't pay the bills. We integrate advanced CRM technology to turn every post, comment, and interaction into qualified leads for your business.</p>
+                <div class="section-badge">The Marketing Problem</div>
+                <h2 class="h2">Why most marketing companies waste your time and money without delivering real results</h2>
+                <p class="section-subtitle">Most marketing companies either disappear mid-project or focus on vanity metrics that don't pay the bills. We deliver immediate results with a professional website in 1 day, plus ongoing social media that actually generates leads for your business.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="images/crm-integration.png" alt="Social media platforms connecting to CRM system with lead tracking and analytics" class="service-image">
+                    <img src="images/before-after-24hour-website.png" alt="Split screen showing tired frustrated business owner on left transforming to successful happy business owner with 24:00 timer on right" class="service-image">
                     <span class="service-icon">01</span>
-                    <h3 class="service-title">Advanced CRM Integration</h3>
-                    <p class="service-description">While others just post content, we integrate your social media directly with advanced CRM technology. Every comment, DM, and engagement becomes a tracked lead in your sales pipeline.</p>
+                    <h3 class="service-title">Professional Website in 1 Day</h3>
+                    <p class="service-description">No more waiting weeks or months for a website. Unlike web design companies that disappear or take forever, we deliver a professional, mobile-ready website that generates leads in just 1 day. Immediate impact for your business.</p>
                     <a href="services.html" class="service-link">See How It Works →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/lead-focused-content-strategy.png" alt="Lead-focused content strategy workspace with content calendar and engagement metrics" class="service-image">
+                    <img src="images/happy-business-owner-social-media.png" alt="Happy smiling 50-year-old small business owner working on social media strategy planning with sticky notes and laptop" class="service-image">
                     <span class="service-icon">02</span>
-                    <h3 class="service-title">Lead-Focused Content Strategy</h3>
-                    <p class="service-description">Forget viral posts that don't pay. Our content is strategically designed to attract, engage, and convert your ideal customers into qualified leads and paying clients.</p>
+                    <h3 class="service-title">Social Media That Actually Works</h3>
+                    <p class="service-description">No more wasting time posting with no results. Our social media marketing focuses on bringing in actual customers, not just likes and followers. Real engagement that turns into real business.</p>
                     <a href="services.html" class="service-link">See Results →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/roi-guarantee.png" alt="ROI dashboard showing positive growth results with business handshake guarantee" class="service-image">
+                    <img src="images/trust-building-partnership-handshake.png" alt="Professional business handshake over desk with analytics charts showing trust-building partnership and measurable marketing results" class="service-image">
                     <span class="service-icon">03</span>
-                    <h3 class="service-title">ROI Guarantee</h3>
-                    <p class="service-description">No long-term contracts. No vanity metric reports. No hidden fees. If you don't see measurable lead generation and revenue growth in 90 days, we'll refund your investment.</p>
+                    <h3 class="service-title">Complete Marketing Solution</h3>
+                    <p class="service-description">Your website and social media work together as one powerful system. No more dealing with multiple marketing companies that don't communicate. One partner, clear communication, real results you can measure.</p>
                     <a href="services.html" class="service-link">Get Started →</a>
                 </div>
             </div>
@@ -1362,15 +1371,15 @@
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-content">
-                    <h2 class="h2 fade-in">Ready to turn your social media into a lead-generating machine?</h2>
-                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new social media clients per month to ensure quality results. Book your free lead generation strategy session before spots fill up.</p>
+                    <h2 class="h2 fade-in">Ready to get your website launched and start generating leads immediately?</h2>
+                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new clients per month to ensure quality results. Get your website in 1 day and start your social media marketing that actually works. Book your free strategy session before spots fill up.</p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Book Free Strategy Session</a>
+                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Get Started - Free Strategy Session</a>
                         <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call: (650) 586-5889</a>
                     </div>
                 </div>
                 <div class="cta-image-container">
-                    <img src="images/cta-partnership.png" alt="Business partnership handshake with growth charts showing successful collaboration" class="cta-image fade-in stagger-3">
+                    <img src="images/diverse-successful-business-owners.png" alt="Diverse group of successful small business owners including Latino entrepreneurs confidently holding phones and devices showing digital marketing success" class="cta-image fade-in stagger-3">
                 </div>
             </div>
         </div>
@@ -1382,15 +1391,15 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking.</p>
+                    <p>Professional websites delivered in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Social Media Management</a></li>
-                        <li><a href="services.html">CRM Integration</a></li>
-                        <li><a href="services.html">Lead Generation Strategy</a></li>
-                        <li><a href="services.html">ROI Guarantee</a></li>
+                        <li><a href="services.html">1-Day Website Design</a></li>
+                        <li><a href="services.html">Social Media Marketing</a></li>
+                        <li><a href="services.html">Complete Marketing Solution</a></li>
+                        <li><a href="services.html">Local Business Experts</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

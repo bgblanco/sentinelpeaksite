@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Sentinel Peak Advisors | Our Work & Case Studies</title>
-    <meta name="description" content="View our portfolio of successful web design and digital marketing projects. Case studies, client success stories, and examples of our professional work.">
+    <title>Portfolio - Sentinel Peak Advisors | Real Results: 1-Day Websites + Lead Generation</title>
+    <meta name="description" content="See real results from our 1-day websites and social media marketing that generates leads. Client success stories, case studies, and proof that our approach works.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -424,6 +424,132 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
+        /* === INDUSTRY STATS === */
+        .industry-stats {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/business-success-contrast.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .industry-stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #ffffff;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .stat-percentage,
+        .stat-plus,
+        .stat-unit {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: inline-block;
+            margin-left: 0.25rem;
+            vertical-align: top;
+            padding-top: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            margin-top: 1rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            
+            .stat-item {
+                padding: 1.5rem 1rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* === TRUST BADGES === */
+        .trust-badges {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.75rem 0;
+        }
+        
+        .trust-badges-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .trust-badge-icon {
+            width: 16px;
+            height: 16px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .trust-badges-container {
+                gap: 1.5rem;
+                justify-content: space-around;
+            }
+            
+            .trust-badge {
+                font-size: 0.7rem;
+            }
+        }
+
         /* === PORTFOLIO GRID === */
         .portfolio-section {
             background: #000000;
@@ -474,6 +600,65 @@
             color: var(--color-text-muted);
             font-size: var(--font-size-lg);
             border-bottom: 1px solid var(--color-border);
+        }
+        
+        .portfolio-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        
+        .portfolio-image > * {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .portfolio-image.civil-engineering::before {
+            background-image: url('images/civil-engineering-website.png');
+        }
+        
+        .portfolio-image.dental::before {
+            background-image: url('images/dental-website.png');
+        }
+        
+        .portfolio-image.sushi-restaurant::before {
+            background-image: url('images/sushi-restaurant-website.png');
+        }
+        
+        .portfolio-image.ecommerce::before {
+            background-image: url('images/ecommerce-website.png');
+        }
+        
+        .portfolio-image.wholesale-hardware::before {
+            background-image: url('images/wholesale-hardware-website.png');
+        }
+        
+        .portfolio-image.automotive-wheels::before {
+            background-image: url('images/automotive-wheels-website.png');
+        }
+        
+        .portfolio-image.law-firm::before {
+            background-image: url('images/law-firm-branding-website.png');
+        }
+        
+        .portfolio-image.luxury-real-estate::before {
+            background-image: url('images/luxury-real-estate-website.png');
+        }
+        
+        .portfolio-image.modern-saas::before {
+            background-image: url('images/modern-saas-website.png');
+        }
+        
+        .portfolio-image.luxury-artisan::before {
+            background-image: url('images/luxury-artisan-cutlery-website.png');
         }
 
         .portfolio-content {
@@ -611,6 +796,40 @@
             padding: 3rem;
             border: 1px solid var(--color-border);
             transition: all 0.4s ease;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+        
+        .case-study-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+        
+        .case-study-content {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .case-study {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem;
+            }
+            
+            .case-study-image {
+                width: 100px;
+                height: 100px;
+                align-self: center;
+            }
+            
+            .case-study-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .case-study:hover {
@@ -673,7 +892,9 @@
 
         /* === CTA SECTION === */
         .cta-section {
-            background: #000000;
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('images/diverse-business-success.jpg');
+            background-size: cover;
+            background-position: center;
             padding: 10rem 0;
             position: relative;
             text-align: left;
@@ -886,13 +1107,45 @@
             </ul>
         </nav>
     </div>
+    
+    <!-- TRUST BADGES -->
+    <div class="trust-badges">
+        <div class="container">
+            <div class="trust-badges-container">
+                <div class="trust-badge">
+                    <svg class="trust-badge-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    Licensed & Insured
+                </div>
+                <div class="trust-badge">
+                    <svg class="trust-badge-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                    Local Business
+                </div>
+                <div class="trust-badge">
+                    <svg class="trust-badge-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    Established 2024
+                </div>
+                <div class="trust-badge">
+                    <svg class="trust-badge-icon" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                    </svg>
+                    24hr Delivery
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>Social Media That Actually Pays the Bills</h1>
-                <p>While other agencies focus on likes and followers, we turn social media into a lead-generating machine. Every post, comment, and interaction tracked directly to revenue. Here's the proof.</p>
+                <h1>Real Results: 1-Day Websites + Social Media That Generates Leads</h1>
+                <p>While other marketing companies focus on likes and followers, we deliver websites in 1 day and turn social media into a lead-generating machine. Every post, comment, and interaction tracked directly to revenue. Here's the proof.</p>
             </div>
         </div>
     </section>
@@ -901,14 +1154,42 @@
     <section class="portfolio-filter">
         <div class="container">
             <div class="filter-buttons">
-                <button class="filter-btn active">All Results</button>
-                <button class="filter-btn">48-Hour Delivery</button>
-                <button class="filter-btn">Healthcare</button>
-                <button class="filter-btn">Legal Services</button>
-                <button class="filter-btn">E-commerce</button>
-                <button class="filter-btn">Real Estate</button>
-                <button class="filter-btn">B2B</button>
-                <button class="filter-btn">Home Services</button>
+                <button class="filter-btn active">All Industries</button>
+                <button class="filter-btn">Restaurant Websites</button>
+                <button class="filter-btn">Medical Practice Sites</button>
+                <button class="filter-btn">Law Firm Marketing</button>
+                <button class="filter-btn">Online Store Setup</button>
+                <button class="filter-btn">Realtor Lead Gen</button>
+                <button class="filter-btn">B2B Lead Systems</button>
+                <button class="filter-btn">Contractor Marketing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- INDUSTRY STATS SECTION -->
+    <section class="industry-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item scale-in">
+                    <div class="stat-number" data-target="67">0</div>
+                    <div class="stat-percentage">%</div>
+                    <div class="stat-label">of Marketing Companies<br>Disappear Mid-Project</div>
+                </div>
+                <div class="stat-item scale-in stagger-1">
+                    <div class="stat-number" data-target="80">0</div>
+                    <div class="stat-percentage">%</div>
+                    <div class="stat-label">of Small Businesses<br>Frustrated with Marketing</div>
+                </div>
+                <div class="stat-item scale-in stagger-2">
+                    <div class="stat-number" data-target="6">0</div>
+                    <div class="stat-plus">+</div>
+                    <div class="stat-label">Months Average<br>Website Project Timeline</div>
+                </div>
+                <div class="stat-item scale-in stagger-3">
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-unit">hrs</div>
+                    <div class="stat-label">Our Website<br>Delivery Standard</div>
+                </div>
             </div>
         </div>
     </section>
@@ -917,93 +1198,193 @@
     <section class="portfolio-section">
         <div class="container">
             <div class="portfolio-grid">
-                <!-- Manufacturing B2B -->
+                <!-- Civil Engineering Agency -->
                 <div class="portfolio-item scale-in">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        LinkedIn + CRM = $180K New Business
+                    <div class="portfolio-image civil-engineering" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Professional Design + Project Showcase = Major Contracts
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">B2B Manufacturing</div>
-                        <h3>"Finally stopped cold calling prospects"</h3>
-                        <p>LinkedIn content + CRM automation generated $180K in qualified leads within 6 months. Owner went from chasing prospects to having them call him. Every comment and connection tracked directly into sales pipeline.</p>
+                        <div class="portfolio-category">Civil Engineering</div>
+                        <h3>"Government contracts started reaching out after seeing our professional website"</h3>
+                        <p>High-end civil engineering website delivered in 1 day with clean grid layout showcasing major infrastructure projects. Professional presentation led to 3 government contract inquiries within first month. Project portfolio now speaks louder than any sales pitch.</p>
+                        <!-- Midjourney Prompt: 'landing page for a civil engineering agency, road marking, elegant website, clean grid thumbnail layout, masonry layout, seamless navigation menu, high-end UI/UX design, sharp and detailed visuals, minimalistic yet dynamic composition, refined typography, Figma and Dribbble inspired, polished and professional finish, construction cone' -->
                         <div class="portfolio-tags">
-                            <span class="tag">LinkedIn Strategy</span>
-                            <span class="tag">CRM Integration</span>
-                            <span class="tag">Qualified Leads</span>
+                            <span class="tag">Project Showcase</span>
+                            <span class="tag">Clean Grid Layout</span>
+                            <span class="tag">Government Contracts</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Similar Results</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Engineering Website</a>
                     </div>
                 </div>
 
-                <!-- Beauty Salon -->
+                <!-- Dental Clinic -->
                 <div class="portfolio-item scale-in stagger-1">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        Instagram + Booking = 3-Month Waitlist
+                    <div class="portfolio-image dental" style="background: linear-gradient(135deg, #4facfe 0%, #00d2ff 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Modern Design + Online Booking = Booked Solid
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">Beauty & Wellness</div>
-                        <h3>"My calendar filled up overnight"</h3>
-                        <p>Instagram stories + automated booking system created 3-month waitlist in 30 days. Every DM and comment automatically converts to appointment leads. Owner stopped advertising and still can't keep up with demand.</p>
+                        <div class="portfolio-category">Healthcare</div>
+                        <h3>"Patients now book online instead of calling during business hours"</h3>
+                        <p>Professional dental website delivered in 1 day with modern, patient-friendly design and integrated booking system. Online appointments increased 300% while phone interruptions decreased dramatically. Patients love the convenience and our staff loves the efficiency.</p>
+                        <!-- Midjourney Prompt: 'ui/ux design for a beautiful landing page for a dental clinic, modern and ultrarealistic mockup' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Instagram Strategy</span>
-                            <span class="tag">Auto Booking</span>
-                            <span class="tag">3-Month Waitlist</span>
+                            <span class="tag">Online Booking</span>
+                            <span class="tag">Modern Design</span>
+                            <span class="tag">Patient-Friendly</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Similar Results</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Dental Website</a>
                     </div>
                 </div>
 
-                <!-- Consulting Firm -->
+                <!-- Sushi Restaurant -->
                 <div class="portfolio-item scale-in stagger-2">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        LinkedIn + CRM = $45K/Month
+                    <div class="portfolio-image sushi-restaurant" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Visual Menu + Online Orders = 200% Revenue
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">Professional Services</div>
-                        <h3>"Prospects started calling me instead"</h3>
-                        <p>LinkedIn thought leadership + CRM automation generated $45K monthly recurring revenue. Went from cold pitching to having qualified prospects book strategy calls. Every engagement tracked from comment to contract.</p>
+                        <div class="portfolio-category">Restaurant</div>
+                        <h3>"Customers started ordering online after seeing our beautiful food photos"</h3>
+                        <p>Professional sushi restaurant website delivered in 1 day with stunning food photography and visual menu layout. Online orders increased 200% while phone orders decreased. Customers love browsing dishes with high-quality photos before deciding what to order.</p>
+                        <!-- Midjourney Prompt: 'menu of a sushi restaurant with a lot of plats and photo of the plates' -->
                         <div class="portfolio-tags">
-                            <span class="tag">LinkedIn Content</span>
-                            <span class="tag">Thought Leadership</span>
-                            <span class="tag">$45K Monthly</span>
+                            <span class="tag">Visual Menu</span>
+                            <span class="tag">Food Photography</span>
+                            <span class="tag">Online Ordering</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Similar Results</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Restaurant Website</a>
                     </div>
                 </div>
 
-                <!-- Tech Startup -->
+                <!-- E-commerce Store -->
                 <div class="portfolio-item scale-in stagger-3">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #00d4aa 0%, #00c9ff 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        Social + Email = 15% Trial Conversion
+                    <div class="portfolio-image ecommerce" style="background: linear-gradient(135deg, #ff6b35 0%, #f39c12 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Modern Design + UX Focus = 40% More Sales
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">SaaS Startup</div>
-                        <h3>"Finally stopped buying expensive ads"</h3>
-                        <p>Social media content + email automation achieved 15% trial conversion rate organically. CRM integration tracks every social interaction to paid subscription. Went from $10K ad spend to $0 with better results.</p>
+                        <div class="portfolio-category">E-commerce</div>
+                        <h3>"Our conversion rate jumped from 1.2% to 4.8% after the website redesign"</h3>
+                        <p>Modern e-commerce website delivered in 1 day with UX-focused interface, large product cards, and streamlined checkout process. Conversion rate increased 300% while cart abandonment dropped 60%. Professional design builds instant trust with online shoppers.</p>
+                        <!-- Midjourney Prompt: 'modern e-commerce website homepage concept, widescreen, desktop mockup, UX-focused interface, large product cards, rounded buttons, minimalistic UI, grey and bright orange color scheme, soft shadows, sans-serif font, high contrast elements, professional and playful vibe' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Organic Growth</span>
-                            <span class="tag">Email Automation</span>
-                            <span class="tag">15% Conversion</span>
+                            <span class="tag">UX-Focused Design</span>
+                            <span class="tag">High Conversion</span>
+                            <span class="tag">Modern Interface</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Similar Results</a>
+                        <a href="contact.html" class="portfolio-link">Get Your E-commerce Store</a>
                     </div>
                 </div>
 
-                <!-- HVAC Service -->
+                <!-- Wholesale Hardware Business -->
                 <div class="portfolio-item scale-in stagger-4">
-                    <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        Facebook + Reviews = #1 Local HVAC
+                    <div class="portfolio-image wholesale-hardware" style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Clean Design + B2B Focus = Major Distributors
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">Home Services</div>
-                        <h3>"My phone won't stop ringing"</h3>
-                        <p>Facebook local targeting + automated review system made them #1 HVAC company in their area. CRM captures every comment and emergency call. Went from competing with 20+ companies to customers specifically asking for them.</p>
+                        <div class="portfolio-category">Wholesale B2B</div>
+                        <h3>"Large contractors started placing bulk orders through our professional website"</h3>
+                        <p>Clean, modern wholesale hardware website delivered in 1 day with B2B-focused design and bulk ordering system. Major distributors and contractors now place orders directly online instead of calling. Professional presentation elevated our brand from small supplier to trusted industry partner.</p>
+                        <!-- Midjourney Prompt: 'clean modern home page layout for a wholesale hardware business in white black and red accents' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Facebook Local</span>
-                            <span class="tag">Review Automation</span>
-                            <span class="tag">#1 Local</span>
+                            <span class="tag">B2B Focus</span>
+                            <span class="tag">Bulk Ordering</span>
+                            <span class="tag">Professional Design</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Similar Results</a>
+                        <a href="contact.html" class="portfolio-link">Get Your B2B Website</a>
+                    </div>
+                </div>
+
+                <!-- Automotive Wheels E-commerce -->
+                <div class="portfolio-item scale-in stagger-5">
+                    <div class="portfolio-image automotive-wheels" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        3D Design + Dark UI = Premium Auto Brand
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Automotive E-commerce</div>
+                        <h3>"Car enthusiasts finally found a professional wheel store they could trust"</h3>
+                        <p>Specialized automotive wheels e-commerce website delivered in 1 day with 3D product visualization and dark, premium UI design. Online sales increased 350% as car enthusiasts appreciated the professional presentation. Premium design elevated brand from basic parts seller to trusted performance specialist.</p>
+                        <!-- Midjourney Prompt: 'ecommerce website homepage UI for wheels store, UI design, no moockup, dark colors, 3d design' -->
+                        <div class="portfolio-tags">
+                            <span class="tag">3D Visualization</span>
+                            <span class="tag">Premium UI</span>
+                            <span class="tag">Automotive Specialist</span>
+                        </div>
+                        <a href="contact.html" class="portfolio-link">Get Your Auto Store</a>
+                    </div>
+                </div>
+
+                <!-- Law Firm Branding & Website -->
+                <div class="portfolio-item scale-in stagger-6">
+                    <div class="portfolio-image law-firm" style="background: linear-gradient(135deg, #8b4513 0%, #cd853f 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Sophisticated Branding + Trust Design = Premium Clients
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Legal Services</div>
+                        <h3>"Corporate clients started seeking us out after seeing our professional rebrand"</h3>
+                        <p>Sophisticated law firm branding and website delivered in 1 day with warm, trust-building design and complete visual identity system. High-value clients began approaching the firm directly instead of shopping around. Professional presentation elevated perception from local practice to premium legal partner.</p>
+                        <!-- Midjourney Prompt: 'A sophisticated branding composition showing a warm-toned logo design for a modern law firm, displayed on clean stationery, digital screens, and a minimal website mockup. The visual identity blends solidity and motion a symbol that evokes both trust and strategic vision. Background includes warm, inviting tones (terracotta, soft sand, muted blues), with subtle accents of innovation. Surrounding elements show human-centered imagery: portraits of empathetic lawyers in real business contexts, client collaboration moments, and subtle references to growth and opportunity. Clear, elegant, and emotionally resonant design.' -->
+                        <div class="portfolio-tags">
+                            <span class="tag">Complete Branding</span>
+                            <span class="tag">Trust-Building Design</span>
+                            <span class="tag">Premium Clients</span>
+                        </div>
+                        <a href="contact.html" class="portfolio-link">Get Your Legal Brand</a>
+                    </div>
+                </div>
+
+                <!-- Luxury Real Estate -->
+                <div class="portfolio-item scale-in stagger-7">
+                    <div class="portfolio-image luxury-real-estate" style="background: linear-gradient(135deg, #1e3a8a 0%, #1f2937 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Luxury Design + Global Properties = Elite Clients
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Luxury Real Estate</div>
+                        <h3>"Ultra-high-net-worth clients began inquiring about our Caribbean portfolio"</h3>
+                        <p>Luxury real estate website delivered in 1 day featuring elegant hero sections, Caribbean villa showcases, and sophisticated dark blue design aesthetic. Elite international buyers started making direct inquiries instead of working through brokers. Premium presentation attracted the caliber of clients the firm always wanted.</p>
+                        <!-- Midjourney Prompt: 'Design of website for real estate company that sells global luxury properties and homes, using dark blue and black color palette. The design should feature an elegant hero section with images showcasing luxurious villa in the caribbean, sleek typography, modern elements like icons or other symbols representing the advanced technology used by drive to create digital marketing materials. Include call-to-action buttons for contact information and sections such as 'our Port Norval golf club'' -->
+                        <div class="portfolio-tags">
+                            <span class="tag">Luxury Properties</span>
+                            <span class="tag">Global Portfolio</span>
+                            <span class="tag">Elite Clients</span>
+                        </div>
+                        <a href="contact.html" class="portfolio-link">Get Your Luxury Site</a>
+                    </div>
+                </div>
+
+                <!-- Modern SaaS Company -->
+                <div class="portfolio-item scale-in stagger-8">
+                    <div class="portfolio-image modern-saas" style="background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Glassmorphism UI + Multi-Product = Tech Leader
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">SaaS Technology</div>
+                        <h3>"Enterprise clients started requesting demos after seeing our modern interface"</h3>
+                        <p>Modern SaaS website delivered in 1 day featuring glassmorphism UI, 4 distinct product sections with color-coded infographics, and seamless integration of collaborative workspace imagery. Enterprise prospects began requesting product demos directly instead of comparing competitors. Cutting-edge design positioned company as innovation leader.</p>
+                        <!-- Midjourney Prompt: 'modern minimalist SaaS company website and PowerPoint design samples in 16:9 layout. uplight,style raw, sleek white interface with glassmorphism UI, clean layout, friendly typography, bright lighting, soft shadows. accent colors: vibrant purple, magenta, ocean blue, teal, 4 distinct product sections each color coded circular infographic showing process for the 4 products in separate panel. overlay of people working on laptops and computers, diversity, collaborative workspace, seamless integration of website UI and whitepaper layout mockups' -->
+                        <div class="portfolio-tags">
+                            <span class="tag">Glassmorphism UI</span>
+                            <span class="tag">Multi-Product</span>
+                            <span class="tag">Enterprise Ready</span>
+                        </div>
+                        <a href="contact.html" class="portfolio-link">Get Your SaaS Site</a>
+                    </div>
+                </div>
+
+                <!-- Ultra-Luxury Artisan Cutlery -->
+                <div class="portfolio-item scale-in stagger-9">
+                    <div class="portfolio-image luxury-artisan" style="background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                        Artisan Luxury + Premium Design = Collector Market
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="portfolio-category">Luxury Artisan</div>
+                        <h3>"Knife collectors worldwide started placing custom orders through our website"</h3>
+                        <p>Ultra-luxury artisan cutlery website delivered in 1 day featuring minimalist beige aesthetic, elegant typography, and premium product photography. International collectors began commissioning custom pieces directly instead of waiting for craft shows. Sophisticated design elevated handcrafted knives to investment-grade art pieces.</p>
+                        <!-- Midjourney Prompt: 'Ultra-luxury homepage design for "DJ Legacy Artisan Cutlery" minimalist layout on warm beige background, elegant black serif logo and navigation, full-width hero shot of a hand-forged knife with subtle gold accents, refined grid of four knife collection cards with high-contrast product photos, sleek newsletter signup form, stylish footer with social icons; clean white space, premium editorial typography, Dribbble/Behance quality, Adobe XD mockup feel' -->
+                        <div class="portfolio-tags">
+                            <span class="tag">Ultra-Luxury</span>
+                            <span class="tag">Artisan Craft</span>
+                            <span class="tag">Collector Market</span>
+                        </div>
+                        <a href="contact.html" class="portfolio-link">Get Your Artisan Site</a>
                     </div>
                 </div>
             </div>
@@ -1015,75 +1396,87 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge slide-up">Real Client Stories</div>
-                <h2 class="section-title slide-up stagger-1">What Happens When Social Media Actually Works</h2>
+                <h2 class="section-title slide-up stagger-1">What Happens When You Get Your Website Fast + Social Media That Actually Works</h2>
                 <p class="section-subtitle slide-up stagger-2">No likes, followers, or engagement rate reports. Just business owners who stopped wasting money on vanity metrics and started generating real revenue.</p>
             </div>
             
             <div class="case-study-grid">
                 <div class="case-study fade-in">
-                    <div class="case-study-header">
-                        <h3>"I stopped paying for Facebook ads completely"</h3>
-                        <div class="case-study-industry">Jennifer Martinez, Local Restaurant Owner</div>
+                    <!-- Midjourney Prompt: 'Professional Latina restaurant owner in her 40s standing confidently in her bustling restaurant kitchen, customers visible dining in background, warm lighting, authentic atmosphere, showing success and pride, realistic photography style, --ar 1:1 --v 6' -->
+                    <img src="images/restaurant-owner-jennifer.png" alt="Jennifer Martinez, Restaurant Owner" class="case-study-image">
+                    <div class="case-study-content">
+                        <div class="case-study-header">
+                            <h3>"I canceled my $3K Facebook ad budget and I'm making more money than ever"</h3>
+                            <div class="case-study-industry">Jennifer Martinez, Local Restaurant Owner</div>
+                        </div>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <span class="stat-number">$25K</span>
+                                <span class="stat-label">Monthly Revenue</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">Zero</span>
+                                <span class="stat-label">Ad Spend</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">187</span>
+                                <span class="stat-label">New Customers</span>
+                            </div>
+                        </div>
+                        <p>"Those Facebook ads were eating my profits alive with barely any customers to show for it. Now Instagram posts and automated DM responses bring in $25K monthly in direct orders. Every comment about our food turns into a reservation or takeout order. Best part? Zero ad spend."</p>
                     </div>
-                    <div class="case-study-stats">
-                        <div class="stat">
-                            <span class="stat-number">$25K</span>
-                            <span class="stat-label">Monthly Revenue</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">Zero</span>
-                            <span class="stat-label">Ad Spend</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">187</span>
-                            <span class="stat-label">New Customers</span>
-                        </div>
-                    </div>
-                    <p>"I was spending $3K/month on Facebook ads with terrible results. Now our Instagram + CRM automation brings in $25K monthly in direct orders. Every comment and DM turns into a tracked customer. I haven't spent a dollar on ads in 6 months."</p>
                 </div>
 
                 <div class="case-study fade-in stagger-1">
-                    <div class="case-study-header">
-                        <h3>"My social media runs itself now"</h3>
-                        <div class="case-study-industry">Marcus Thompson, B2B Consulting Firm</div>
+                    <!-- Midjourney Prompt: 'Professional African American business consultant in his 50s in modern office setting, confident posture, multiple monitors showing business analytics, LinkedIn open on screen, successful consultant aesthetic, realistic photography, --ar 1:1 --v 6' -->
+                    <img src="images/consultant-marcus.png" alt="Marcus Thompson, B2B Consultant" class="case-study-image">
+                    <div class="case-study-content">
+                        <div class="case-study-header">
+                            <h3>"I went from cold calling 50 people a week to having prospects call me"</h3>
+                            <div class="case-study-industry">Marcus Thompson, B2B Consulting Firm</div>
+                        </div>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <span class="stat-number">$45K</span>
+                                <span class="stat-label">Monthly Revenue</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Qualified Leads/Week</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">Zero</span>
+                                <span class="stat-label">Cold Calling</span>
+                            </div>
+                        </div>
+                        <p>"Cold calling was soul-crushing and barely worked - maybe 1 out of 50 calls turned into anything. Now LinkedIn posts and automated follow-ups bring me 12 qualified prospects weekly who actually want to talk to me. I stopped chasing and started attracting."</p>
                     </div>
-                    <div class="case-study-stats">
-                        <div class="stat">
-                            <span class="stat-number">$45K</span>
-                            <span class="stat-label">Monthly Revenue</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">12</span>
-                            <span class="stat-label">Qualified Leads/Week</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">Zero</span>
-                            <span class="stat-label">Cold Calling</span>
-                        </div>
-                    </div>
-                    <p>"I used to cold call 50 prospects a week with maybe 1 conversion. Now LinkedIn content + CRM automation brings me 12 qualified prospects weekly who book strategy calls themselves. Every comment and connection is tracked to revenue. I focus on serving clients, not chasing them."</p>
                 </div>
 
                 <div class="case-study fade-in stagger-3">
-                    <div class="case-study-header">
-                        <h3>"Finally stopped throwing money at agencies"</h3>
-                        <div class="case-study-industry">Sarah Chen, Local Beauty Salon Owner</div>
+                    <!-- Midjourney Prompt: 'Asian American salon owner in her 30s in upscale beauty salon, modern styling chairs, clients getting services in background, professional and successful atmosphere, warm lighting, realistic photography style, --ar 1:1 --v 6' -->
+                    <img src="images/salon-owner-sarah.png" alt="Sarah Chen, Salon Owner" class="case-study-image">
+                    <div class="case-study-content">
+                        <div class="case-study-header">
+                            <h3>"Three marketing companies took my money and left me with nothing to show for it"</h3>
+                            <div class="case-study-industry">Sarah Chen, Local Beauty Salon Owner</div>
+                        </div>
+                        <div class="case-study-stats">
+                            <div class="stat">
+                                <span class="stat-number">$30K</span>
+                                <span class="stat-label">Monthly Revenue</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3-Month</span>
+                                <span class="stat-label">Booking Waitlist</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">Zero</span>
+                                <span class="stat-label">Wasted Ad Spend</span>
+                            </div>
+                        </div>
+                        <p>"$18K down the drain on marketing companies who gave me pretty posts but zero appointments. My calendar was still empty after 18 months of their 'strategy.' Now my website launched in 1 day and Instagram actually fills my appointment book. I'm booked solid for 3 months."</p>
                     </div>
-                    <div class="case-study-stats">
-                        <div class="stat">
-                            <span class="stat-number">$30K</span>
-                            <span class="stat-label">Monthly Revenue</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3-Month</span>
-                            <span class="stat-label">Booking Waitlist</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">Zero</span>
-                            <span class="stat-label">Wasted Ad Spend</span>
-                        </div>
-                    </div>
-                    <p>"I spent $18K on three different social media agencies over 18 months. All I got were pretty posts and follower reports while my calendar stayed empty. Now Instagram + automated booking has me booked 3 months out and I haven't spent a dollar on ads."</p>
                 </div>
             </div>
         </div>
@@ -1093,8 +1486,8 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to turn your social media into a lead-generating machine?</h2>
-                <p class="cta-description">Limited capacity: We only take 5 new social media clients per month. Book your free lead generation strategy session before spots fill up.</p>
+                <h2 class="cta-title">Ready to get your website in 1 day and start generating leads immediately?</h2>
+                <p class="cta-description">Limited capacity: We only take 5 new clients per month for website + marketing services. Get your website in 1 day and start generating leads immediately. Book your free strategy session before spots fill up.</p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn btn-primary">Book Free Strategy Session</a>
                     <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
@@ -1109,14 +1502,14 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking.</p>
+                    <p>Professional websites delivered in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Social Starter - $697</a></li>
-                        <li><a href="services.html">Lead Generator - $997</a></li>
-                        <li><a href="services.html">Growth Accelerator - $1,497</a></li>
+                        <li><a href="services.html">24-Hour Launch + Lead Generator - $697</a></li>
+                        <li><a href="services.html">Express Website + Growth Accelerator - $997</a></li>
+                        <li><a href="services.html">Instant Impact + Market Dominator - $1,497</a></li>
                         <li><a href="services.html">CRM Integration</a></li>
                     </ul>
                 </div>
@@ -1291,6 +1684,41 @@
         if (window.innerWidth <= 768) {
             document.body.classList.remove('has-custom-cursor');
         }
+        
+        // Animated Counter for Stats
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            let increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+        
+        // Initialize stats animation when they come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const target = parseInt(statNumber.getAttribute('data-target'));
+                    animateCounter(statNumber, target);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe all stat items
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat-item').forEach(item => {
+                statsObserver.observe(item);
+            });
+        });
     </script>
 </body>
 </html>
