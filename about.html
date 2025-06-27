@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - Sentinel Peak Advisors | No More Marketing Horror Stories</title>
-    <meta name="description" content="We understand what it's like to get burned by marketing companies. That's why we built an anti-agency approach: 1-day websites, no contracts, guaranteed results.">
+    <meta name="description" content="We understand what it's like to get burned by marketing companies. That's why we built an anti-agency approach: 1-day websites, no contracts, results commitment.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -237,39 +237,46 @@
             padding: var(--space-md) 0;
         }
 
+        /* === BRAND CONTAINER === */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--color-text);
             text-decoration: none;
-            letter-spacing: -0.02em;
             transition: all var(--transition-medium);
         }
 
         .logo:hover {
-            opacity: 0.7;
+            opacity: 0.8;
+            transform: scale(1.02);
         }
 
         .logo-image {
-            height: 40px;
+            height: 55px;
             width: auto;
             transition: all var(--transition-medium);
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
         }
 
-        .logo-text {
-            font-size: var(--font-size-base);
+        .company-name {
+            font-size: 1.1rem;
             font-weight: 600;
+            color: #00d4ff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
         @media (max-width: 768px) {
-            .logo-text {
+            .company-name {
                 display: none;
             }
             .logo-image {
-                height: 36px;
+                height: 50px;
             }
         }
 
@@ -818,10 +825,207 @@
             color: #888888;
         }
 
-        /* === RESPONSIVE DESIGN === */
+        /* === MOBILE HEADER ENHANCEMENTS === */
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-wrapper {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px) !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 9998 !important;
+            }
+            
+            .navbar {
+                padding: 1.5rem 0;
+                position: relative;
+            }
+            
+            .navbar::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -5%;
+                width: 110%;
+                height: 100%;
+                background: 
+                    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+                pointer-events: none;
+            }
+            
+            .logo {
+                z-index: 10;
+                position: relative;
+            }
+            
+            .logo-image {
+                height: 42px;
+                filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
+            }
+            
+            .logo-text {
                 display: none;
+            }
+            
+            /* Mobile Menu Button */
+            .mobile-menu-btn {
+                display: block !important;
+                background: none !important;
+                border: none !important;
+                color: #ffffff !important;
+                font-size: 1.5rem !important;
+                cursor: pointer !important;
+                padding: 0.5rem !important;
+                border-radius: 6px !important;
+                transition: all 0.3s ease !important;
+                position: relative !important;
+                z-index: 10000 !important;
+            }
+            
+            .mobile-menu-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
+            }
+            
+            /* Hamburger Icon */
+            .hamburger {
+                width: 24px;
+                height: 18px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: 0.3s ease-in-out;
+            }
+            
+            .hamburger span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: #ffffff;
+                border-radius: 1px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: 0.25s ease-in-out;
+            }
+            
+            .hamburger span:nth-child(1) { top: 0px; }
+            .hamburger span:nth-child(2) { top: 8px; }
+            .hamburger span:nth-child(3) { top: 16px; }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+            
+            /* Mobile Menu Overlay */
+            .nav-menu {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100vh !important;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%) !important;
+                backdrop-filter: blur(20px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 3rem 2rem !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(-100%) !important;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                z-index: 9999 !important;
+            }
+            
+            /* Mobile Menu Header */
+            .mobile-menu-header {
+                text-align: center;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.5s ease;
+            }
+            
+            .mobile-menu-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 1rem;
+                filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+            }
+            
+            .mobile-menu-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
+            }
+            
+            .mobile-menu-tagline {
+                font-size: 0.875rem;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.4;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            /* Mobile Menu Navigation */
+            .mobile-menu-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .nav-menu.active {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+            }
+            
+            .nav-menu li {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active .mobile-menu-header {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0.1s;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu.active li:nth-child(1) { transition-delay: 0.3s; }
+            .nav-menu.active li:nth-child(2) { transition-delay: 0.4s; }
+            .nav-menu.active li:nth-child(3) { transition-delay: 0.5s; }
+            
+            .nav-link {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
             }
 
             .container {
@@ -848,6 +1052,12 @@
                 text-align: center;
             }
         }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="has-custom-cursor">
@@ -858,14 +1068,32 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo"><img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image"><span class="logo-text">Sentinel Peak Advisors</span></a>
+            <div class="brand-container">
+                <a href="index.html" class="logo">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                </a>
+                <span class="company-name">Sentinel Peak Advisors</span>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link active">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <div class="mobile-menu-header">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
+                    <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
+                </div>
+                <div class="mobile-menu-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </div>
             </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </nav>
     </div>
 
@@ -874,7 +1102,7 @@
         <div class="container">
             <div class="page-header-content fade-in">
                 <h1>We're Business Owners' Advocates</h1>
-                <p>We understand what it's like to get burned by marketing companies. That's why we built an anti-agency approach: 1-day websites, no contracts, guaranteed results.</p>
+                <p>We've been where you are. Burned by marketing companies that disappear, don't deliver, or treat you like just another check. That's why we built an anti-agency: 1-day websites, no contracts, results commitment.</p>
             </div>
         </div>
     </section>
@@ -885,10 +1113,10 @@
             <div class="story-content">
                 <div class="story-text slide-up">
                     <h2>Why We Exist</h2>
-                    <p>We've seen too many business owners get burned by marketing companies that overpromise, underdeliver, and disappear with their money. <span class="story-highlight">We're different because we understand your pain.</span></p>
-                    <p>Our founder experienced the same frustrations: long contracts, vanity metrics instead of real results, and marketing companies that treated his business like just another number. That's when we decided to build something better.</p>
-                    <p>Today, we deliver what other agencies promise but can't deliver: <strong>real results in 48 hours, transparent pricing, and no long-term contracts.</strong> We only succeed when you succeed.</p>
-                    <p>We believe business owners deserve partners, not vendors. That's why we guarantee our work and focus on what actually matters: growing your revenue.</p>
+                    <p>We've seen too many business owners get burned by marketing companies that overpromise, underdeliver, and take your money then go silent. <span class="story-highlight">We're different because we understand your pain.</span></p>
+                    <p>Our founder experienced the same frustrations: long contracts, impressive charts with no real sales, and marketing companies that treated his business like just another number. That's when we decided to build something better.</p>
+                    <p>Today, we deliver what other agencies promise but can't deliver: <strong>real results in 1 day, transparent pricing, and no long-term contracts.</strong> We only succeed when you succeed.</p>
+                    <p>We believe business owners deserve partners, not vendors. That's why we're committed to delivering results and focus on what actually matters: growing your revenue.</p>
                 </div>
                 <div class="story-image slide-up stagger-1">
                     <div>Our Team at Work</div>
@@ -903,7 +1131,7 @@
             <div class="section-header">
                 <div class="section-badge slide-up">What We DON'T Do</div>
                 <h2 class="section-title slide-up stagger-1">Why We're Different from Every Other Marketing Company</h2>
-                <p class="section-subtitle slide-up stagger-2">We break every rule that makes business owners hate marketing companies. Here's our promise to you.</p>
+                <p class="section-subtitle slide-up stagger-2">We break every rule that makes business owners hate marketing companies. Here's our commitment to you.</p>
             </div>
             
             <div class="values-grid">
@@ -915,8 +1143,8 @@
                 
                 <div class="value-card scale-in stagger-1">
                     <div class="value-icon">🎯</div>
-                    <h3>No Vanity Metrics</h3>
-                    <p>We don't care about likes, impressions, or "brand awareness." We focus on leads, sales, and revenue. Real business growth only.</p>
+                    <h3>No Meaningless Reports</h3>
+                    <p>We don't care about likes, impressions, or "brand awareness." We focus on leads, sales, and revenue that actually pay your bills. Real business growth only.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-2">
@@ -928,7 +1156,7 @@
                 <div class="value-card scale-in stagger-3">
                     <div class="value-icon">🚀</div>
                     <h3>No Endless Delays</h3>
-                    <p>48-hour website delivery, guaranteed. No "just one more week" excuses. We deliver when we say we will, or you don't pay.</p>
+                    <p>1-day website delivery, committed. No "just one more week" excuses. We deliver when we say we will, or you don't pay.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-4">
@@ -950,17 +1178,17 @@
     <section class="team-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Our Guarantee</div>
+                <div class="section-badge slide-up">Our Commitment</div>
                 <h2 class="section-title slide-up stagger-1">We Put Our Money Where Our Mouth Is</h2>
-                <p class="section-subtitle slide-up stagger-2">Unlike other marketing companies, we guarantee our work with real consequences if we don't deliver</p>
+                <p class="section-subtitle slide-up stagger-2">Unlike other marketing companies, we're committed to our work with real focus on delivering results</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-member fade-in">
                     <div class="member-avatar">⏱️</div>
-                    <h3>48-Hour Guarantee</h3>
-                    <div class="member-role">Website Delivery Promise</div>
-                    <p class="member-bio">Your website will be live and generating leads within 48 hours, or you don't pay a dime. No excuses, no delays.</p>
+                    <h3>1-Day Commitment</h3>
+                    <div class="member-role">Website Delivery Focus</div>
+                    <p class="member-bio">We're focused on getting your website live and generating leads within 1 day. Fast delivery is our priority, no excuses or delays.</p>
                     <div class="member-social">
                         <a href="contact.html">📞 Book Now</a>
                     </div>
@@ -968,9 +1196,9 @@
                 
                 <div class="team-member fade-in stagger-1">
                     <div class="member-avatar">📊</div>
-                    <h3>90-Day Results Guarantee</h3>
-                    <div class="member-role">Performance Promise</div>
-                    <p class="member-bio">If you don't see measurable growth in leads or sales within 90 days, we'll refund your entire investment. That's how confident we are.</p>
+                    <h3>90-Day Results Focus</h3>
+                    <div class="member-role">Performance Commitment</div>
+                    <p class="member-bio">We're dedicated to helping you see measurable growth in leads and sales within 90 days. Our focus is on your success from day one.</p>
                     <div class="member-social">
                         <a href="contact.html">📞 Get Started</a>
                     </div>
@@ -979,7 +1207,7 @@
                 <div class="team-member fade-in stagger-2">
                     <div class="member-avatar">🔒</div>
                     <h3>No Contract Lock-In</h3>
-                    <div class="member-role">Freedom Promise</div>
+                    <div class="member-role">Freedom Commitment</div>
                     <p class="member-bio">Month-to-month only. Cancel anytime without penalties. We earn your business every single month through results, not contracts.</p>
                     <div class="member-social">
                         <a href="contact.html">📞 Learn More</a>
@@ -989,7 +1217,7 @@
                 <div class="team-member fade-in stagger-3">
                     <div class="member-avatar">💰</div>
                     <h3>Price Transparency</h3>
-                    <div class="member-role">No Hidden Fees Promise</div>
+                    <div class="member-role">No Hidden Fees Commitment</div>
                     <p class="member-bio">What we quote is what you pay. No surprise charges, no scope creep, no "additional fees." Complete transparency, always.</p>
                     <div class="member-social">
                         <a href="services.html">📞 View Pricing</a>
@@ -1010,7 +1238,7 @@
             
             <div class="stats-grid">
                 <div class="stat-item scale-in">
-                    <span class="stat-number">48hrs</span>
+                    <span class="stat-number">1 Day</span>
                     <span class="stat-label">Average Delivery Time</span>
                 </div>
                 <div class="stat-item scale-in stagger-1">
@@ -1023,7 +1251,7 @@
                 </div>
                 <div class="stat-item scale-in stagger-3">
                     <span class="stat-number">90 Day</span>
-                    <span class="stat-label">Money-Back Guarantee</span>
+                    <span class="stat-label">Performance Focus</span>
                 </div>
             </div>
         </div>
@@ -1049,7 +1277,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>The anti-agency approach to digital marketing. We deliver results in 48 hours without the overwhelm, contracts, or vanity metrics.</p>
+                    <p>The anti-agency approach to digital marketing. We focus on fast delivery and real results without the overwhelm, contracts, or vanity metrics.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">IG</a>
                         <a href="#" class="social-link" aria-label="LinkedIn">LI</a>
@@ -1059,10 +1287,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">48-Hour Websites</a></li>
+                        <li><a href="services.html">1-Day Websites</a></li>
                         <li><a href="services.html">Lead Generation</a></li>
                         <li><a href="services.html">Social Media Strategy</a></li>
-                        <li><a href="services.html">Partnership Guarantee</a></li>
+                        <li><a href="services.html">Partnership Commitment</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1220,6 +1448,65 @@
         document.addEventListener('mouseenter', () => {
             cursor.style.opacity = '1';
             cursorDot.style.opacity = '1';
+        });
+        
+        // Mobile Menu Toggle - Wrapped in DOMContentLoaded for reliability
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing mobile menu...');
+            
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            console.log('Mobile menu elements:', { mobileMenuBtn, navMenu, navLinks: navLinks.length });
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu button clicked');
+                    
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    
+                    console.log('Menu active state:', navMenu.classList.contains('active'));
+                });
+                
+                // Close mobile menu when clicking on nav links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        console.log('Nav link clicked, closing menu');
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (mobileMenuBtn && navMenu.classList.contains('active') && 
+                        !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        console.log('Clicked outside menu, closing');
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Handle resize to close mobile menu on desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            } else {
+                console.error('Mobile menu elements not found!');
+            }
         });
         
         // Disable custom cursor on mobile

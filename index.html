@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads</title>
-    <meta name="description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
+    <meta name="description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that ignore you after the first payment.">
     <meta name="keywords" content="social media management, lead generation, CRM integration, social media marketing, business growth, ROI tracking">
     <meta name="author" content="Sentinel Peak Advisors">
     
@@ -12,14 +12,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sentinelpeakadvisors.com">
     <meta property="og:title" content="Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads">
-    <meta property="og:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
+    <meta property="og:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that ignore you after the first payment.">
     <meta property="og:image" content="https://static.wixstatic.com/media/09c8f9_dd0aca6c1b6243d7ad12bd3d95b3643c~mv2.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sentinelpeakadvisors.com">
     <meta property="twitter:title" content="Sentinel Peak Advisors - 1-Day Websites + Social Media That Actually Generates Leads">
-    <meta property="twitter:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
+    <meta property="twitter:description" content="Get a professional website in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that ignore you after the first payment.">
     <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/sentinel-peak-logo.png">
     
     <!-- Favicon and App Icons -->
@@ -312,39 +312,240 @@
             padding: var(--space-md) 0;
         }
 
+        /* === BRAND CONTAINER === */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--color-text);
             text-decoration: none;
-            letter-spacing: -0.02em;
             transition: all var(--transition-medium);
         }
 
         .logo:hover {
-            opacity: 0.7;
+            opacity: 0.8;
+            transform: scale(1.02);
         }
 
         .logo-image {
-            height: 40px;
+            height: 55px;
             width: auto;
             transition: all var(--transition-medium);
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
         }
 
-        .logo-text {
-            font-size: var(--font-size-base);
+        .company-name {
+            font-size: 1.1rem;
             font-weight: 600;
+            color: #00d4ff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
+        /* === MOBILE HEADER ENHANCEMENTS === */
         @media (max-width: 768px) {
-            .logo-text {
+            .nav-wrapper {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px) !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 9998 !important;
+            }
+            
+            .navbar {
+                padding: var(--space-lg) 0;
+                position: relative;
+            }
+            
+            .navbar::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -5%;
+                width: 110%;
+                height: 100%;
+                background: 
+                    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+                pointer-events: none;
+            }
+            
+            .logo {
+                z-index: 10;
+                position: relative;
+            }
+            
+            .company-name {
                 display: none;
             }
+            
             .logo-image {
-                height: 36px;
+                height: 50px;
+                filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
+            }
+            
+            /* Mobile Menu Button */
+            .mobile-menu-btn {
+                display: block !important;
+                background: none !important;
+                border: none !important;
+                color: var(--color-text) !important;
+                font-size: 1.5rem !important;
+                cursor: pointer !important;
+                padding: 0.5rem !important;
+                border-radius: 6px !important;
+                transition: all 0.3s ease !important;
+                position: relative !important;
+                z-index: 10000 !important;
+            }
+            
+            .mobile-menu-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
+            }
+            
+            /* Hamburger Icon */
+            .hamburger {
+                width: 24px;
+                height: 18px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: 0.3s ease-in-out;
+            }
+            
+            .hamburger span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: var(--color-text);
+                border-radius: 1px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: 0.25s ease-in-out;
+            }
+            
+            .hamburger span:nth-child(1) { top: 0px; }
+            .hamburger span:nth-child(2) { top: 8px; }
+            .hamburger span:nth-child(3) { top: 16px; }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+            
+            /* Mobile Menu Overlay */
+            .nav-menu {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100vh !important;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%) !important;
+                backdrop-filter: blur(20px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 3rem 2rem !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(-100%) !important;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                z-index: 9999 !important;
+            }
+            
+            /* Mobile Menu Header */
+            .mobile-menu-header {
+                text-align: center;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.5s ease;
+            }
+            
+            .mobile-menu-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 1rem;
+                filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+            }
+            
+            .mobile-menu-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
+            }
+            
+            
+            /* Mobile Menu Navigation */
+            .mobile-menu-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .nav-menu.active {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+            }
+            
+            .nav-menu li {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active .mobile-menu-header {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0.1s;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu.active li:nth-child(1) { transition-delay: 0.3s; }
+            .nav-menu.active li:nth-child(2) { transition-delay: 0.4s; }
+            .nav-menu.active li:nth-child(3) { transition-delay: 0.5s; }
+            
+            .nav-link {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
             }
         }
 
@@ -1297,17 +1498,32 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo">
-                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
-                <span class="logo-text">Sentinel Peak Advisors</span>
-            </a>
+            <div class="brand-container">
+                <a href="index.html" class="logo">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                </a>
+                <span class="company-name">Sentinel Peak Advisors</span>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <div class="mobile-menu-header">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
+                    <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
+                </div>
+                <div class="mobile-menu-nav">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </div>
             </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </nav>
     </div>
 
@@ -1318,7 +1534,7 @@
                 <div class="hero-content">
                     <div class="hero-badge">Immediate Impact. Lasting Growth.</div>
                     <h1 class="hero-title">Get Your Website in 1 Day + Social Media That Actually Generates Leads</h1>
-                    <p class="hero-subtitle">No more getting burned by marketing companies that disappear or don't deliver. Get a professional website launched in 1 day, plus ongoing social media that actually brings in customers – not just likes.</p>
+                    <p class="hero-subtitle">Why wait weeks or months for a website? Get a professional website launched in 1 day, plus ongoing social media that brings in customers immediately – not just likes.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="btn btn-primary">Get Your Website + Marketing Started</a>
                         <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
@@ -1336,15 +1552,15 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">The Marketing Problem</div>
-                <h2 class="h2">Why most marketing companies waste your time and money without delivering real results</h2>
-                <p class="section-subtitle">Most marketing companies either disappear mid-project or focus on vanity metrics that don't pay the bills. We deliver immediate results with a professional website in 1 day, plus ongoing social media that actually generates leads for your business.</p>
+                <h2 class="h2">Why wait months for a website when you need results now?</h2>
+                <p class="section-subtitle">Most agencies take 2-6 months to deliver a website. We deliver professional websites in 1 day, plus ongoing social media that generates immediate results for your business. Speed matters when you're losing potential customers every day.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <img src="images/before-after-24hour-website.png" alt="Split screen showing tired frustrated business owner on left transforming to successful happy business owner with 24:00 timer on right" class="service-image">
                     <span class="service-icon">01</span>
                     <h3 class="service-title">Professional Website in 1 Day</h3>
-                    <p class="service-description">No more waiting weeks or months for a website. Unlike web design companies that disappear or take forever, we deliver a professional, mobile-ready website that generates leads in just 1 day. Immediate impact for your business.</p>
+                    <p class="service-description">Launch your professional website today, not next month. Our streamlined process delivers a mobile-ready, lead-generating website in just 1 day. Start capturing customers immediately while competitors are still waiting for theirs.</p>
                     <a href="services.html" class="service-link">See How It Works →</a>
                 </div>
                 <div class="service-card">
@@ -1358,7 +1574,7 @@
                     <img src="images/trust-building-partnership-handshake.png" alt="Professional business handshake over desk with analytics charts showing trust-building partnership and measurable marketing results" class="service-image">
                     <span class="service-icon">03</span>
                     <h3 class="service-title">Complete Marketing Solution</h3>
-                    <p class="service-description">Your website and social media work together as one powerful system. No more dealing with multiple marketing companies that don't communicate. One partner, clear communication, real results you can measure.</p>
+                    <p class="service-description">Your website and social media work together from day one as a powerful lead-generation system. Integrated approach means faster results and better performance than managing separate vendors.</p>
                     <a href="services.html" class="service-link">Get Started →</a>
                 </div>
             </div>
@@ -1391,7 +1607,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>Professional websites delivered in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver.</p>
+                    <p>Professional websites delivered in 1 day + social media marketing that generates immediate results. Speed meets quality for businesses that need to start capturing customers now.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
@@ -1486,6 +1702,65 @@
             btn.addEventListener('mouseup', function() {
                 this.style.transform = 'translateY(-2px)';
             });
+        });
+        
+        // Mobile Menu Toggle - Wrapped in DOMContentLoaded for reliability
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing mobile menu...');
+            
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            console.log('Mobile menu elements:', { mobileMenuBtn, navMenu, navLinks: navLinks.length });
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu button clicked');
+                    
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    
+                    console.log('Menu active state:', navMenu.classList.contains('active'));
+                });
+                
+                // Close mobile menu when clicking on nav links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        console.log('Nav link clicked, closing menu');
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (mobileMenuBtn && navMenu.classList.contains('active') && 
+                        !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        console.log('Clicked outside menu, closing');
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Handle resize to close mobile menu on desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            } else {
+                console.error('Mobile menu elements not found!');
+            }
         });
         
         // Custom Cursor

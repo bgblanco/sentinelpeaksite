@@ -272,39 +272,46 @@
             padding: var(--space-md) 0;
         }
 
+        /* === BRAND CONTAINER === */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            font-size: var(--font-size-lg);
-            font-weight: 600;
-            color: var(--color-text);
             text-decoration: none;
-            letter-spacing: -0.02em;
             transition: all var(--transition-medium);
         }
 
         .logo:hover {
-            opacity: 0.7;
+            opacity: 0.8;
+            transform: scale(1.02);
         }
 
         .logo-image {
-            height: 40px;
+            height: 55px;
             width: auto;
             transition: all var(--transition-medium);
+            filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
         }
 
-        .logo-text {
-            font-size: var(--font-size-base);
+        .company-name {
+            font-size: 1.1rem;
             font-weight: 600;
+            color: #00d4ff;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
         @media (max-width: 768px) {
-            .logo-text {
+            .company-name {
                 display: none;
             }
             .logo-image {
-                height: 36px;
+                height: 50px;
             }
         }
 
@@ -829,10 +836,207 @@
             color: #888888;
         }
 
-        /* === RESPONSIVE DESIGN === */
+        /* === MOBILE HEADER ENHANCEMENTS === */
         @media (max-width: 768px) {
-            .nav-menu {
+            .nav-wrapper {
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px) !important;
+                position: sticky !important;
+                top: 0 !important;
+                z-index: 9998 !important;
+            }
+            
+            .navbar {
+                padding: 1.5rem 0;
+                position: relative;
+            }
+            
+            .navbar::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -5%;
+                width: 110%;
+                height: 100%;
+                background: 
+                    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+                pointer-events: none;
+            }
+            
+            .logo {
+                z-index: 10;
+                position: relative;
+            }
+            
+            .logo-image {
+                height: 42px;
+                filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
+            }
+            
+            .logo-text {
                 display: none;
+            }
+            
+            /* Mobile Menu Button */
+            .mobile-menu-btn {
+                display: block !important;
+                background: none !important;
+                border: none !important;
+                color: #ffffff !important;
+                font-size: 1.5rem !important;
+                cursor: pointer !important;
+                padding: 0.5rem !important;
+                border-radius: 6px !important;
+                transition: all 0.3s ease !important;
+                position: relative !important;
+                z-index: 10000 !important;
+            }
+            
+            .mobile-menu-btn:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
+            }
+            
+            /* Hamburger Icon */
+            .hamburger {
+                width: 24px;
+                height: 18px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: 0.3s ease-in-out;
+            }
+            
+            .hamburger span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: #ffffff;
+                border-radius: 1px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: 0.25s ease-in-out;
+            }
+            
+            .hamburger span:nth-child(1) { top: 0px; }
+            .hamburger span:nth-child(2) { top: 8px; }
+            .hamburger span:nth-child(3) { top: 16px; }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(1) {
+                top: 8px;
+                transform: rotate(135deg);
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+            
+            .mobile-menu-btn.active .hamburger span:nth-child(3) {
+                top: 8px;
+                transform: rotate(-135deg);
+            }
+            
+            /* Mobile Menu Overlay */
+            .nav-menu {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100vh !important;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%) !important;
+                backdrop-filter: blur(20px) !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 3rem 2rem !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                transform: translateY(-100%) !important;
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+                z-index: 9999 !important;
+            }
+            
+            /* Mobile Menu Header */
+            .mobile-menu-header {
+                text-align: center;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.5s ease;
+            }
+            
+            .mobile-menu-logo {
+                width: 80px;
+                height: 80px;
+                margin-bottom: 1rem;
+                filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.1));
+            }
+            
+            .mobile-menu-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.02em;
+            }
+            
+            .mobile-menu-tagline {
+                font-size: 0.875rem;
+                color: rgba(255, 255, 255, 0.7);
+                line-height: 1.4;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+            
+            /* Mobile Menu Navigation */
+            .mobile-menu-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: center;
+            }
+            
+            .nav-menu.active {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: translateY(0) !important;
+            }
+            
+            .nav-menu li {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active .mobile-menu-header {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0.1s;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu.active li:nth-child(1) { transition-delay: 0.3s; }
+            .nav-menu.active li:nth-child(2) { transition-delay: 0.4s; }
+            .nav-menu.active li:nth-child(3) { transition-delay: 0.5s; }
+            
+            .nav-link {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                background: rgba(255, 255, 255, 0.1);
+                transform: scale(1.05);
             }
 
             .container {
@@ -857,6 +1061,12 @@
                 font-size: 2.5rem;
             }
         }
+        
+        @media (min-width: 769px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="has-custom-cursor">
@@ -867,17 +1077,32 @@
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
-            <a href="index.html" class="logo">
-                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
-                <span class="logo-text">Sentinel Peak Advisors</span>
-            </a>
+            <div class="brand-container">
+                <a href="index.html" class="logo">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                </a>
+                <span class="company-name">Sentinel Peak Advisors</span>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="services.html" class="nav-link active">Services</a></li>
-                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <div class="mobile-menu-header">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
+                    <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
+                </div>
+                <div class="mobile-menu-nav">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="services.html" class="nav-link active">Services</a></li>
+                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </div>
             </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
         </nav>
     </div>
 
@@ -886,7 +1111,7 @@
         <div class="container">
             <div class="page-header-content fade-in">
                 <h1>Get Your Website in 1 Day + Social Media Marketing That Actually Generates Leads</h1>
-                <p>No more getting burned by marketing companies that disappear or focus on vanity metrics. Get a professional website delivered in 1 day, plus ongoing social media marketing that actually brings in customers and revenue.</p>
+                <p>Clear packages, transparent pricing, no hidden fees. Here's exactly what you get: a professional website delivered in 1 day, plus ongoing social media marketing with measurable results you can track.</p>
             </div>
         </div>
     </section>
@@ -962,13 +1187,13 @@
                     <div class="service-header">
                         <span class="service-icon-large">04</span>
                         <div>
-                            <h3>Marketing Partnership You Can Trust</h3>
-                            <div class="service-price">Performance-focused collaboration</div>
+                            <h3>Complete Transparency & Value</h3>
+                            <div class="service-price">What you get with every package</div>
                         </div>
                     </div>
-                    <p class="service-description">We're so confident in our website and marketing services that we're dedicated to delivering results. Unlike marketing companies that disappear or don't deliver, we offer complete transparency, no long contracts, and a 90-day performance focus with transparent reporting.</p>
+                    <p class="service-description">Every package includes complete transparency with no hidden costs or surprises. You get clear deliverables, regular reporting, and flexible month-to-month terms. Here's exactly what's included with every service level.</p>
                     <ul class="service-features">
-                        <li>No marketing companies that disappear mid-project</li>
+                        <li>Dedicated account manager and direct communication</li>
                         <li>No long-term contracts (month-to-month)</li>
                         <li>90-day results commitment</li>
                         <li>Complete price transparency (no hidden fees)</li>
@@ -988,7 +1213,7 @@
             <div class="section-header">
                 <div class="section-badge slide-up">Simple, Transparent Pricing</div>
                 <h2 class="section-title slide-up stagger-1">No Hidden Fees, No Long Contracts, Real Results</h2>
-                <p class="section-subtitle slide-up stagger-2">While other marketing companies focus on vanity metrics or disappear mid-project, we offer month-to-month partnerships with measurable results you can track.</p>
+                <p class="section-subtitle slide-up stagger-2">Three clear packages with everything included. Month-to-month flexibility means you only pay when you're getting results. See exactly what's included and what it costs below.</p>
             </div>
             
             <div class="pricing-grid">
@@ -1130,6 +1355,65 @@
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.fade-in, .slide-up, .scale-in');
             animatedElements.forEach(el => observer.observe(el));
+        });
+        
+        // Mobile Menu Toggle - Wrapped in DOMContentLoaded for reliability
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing mobile menu...');
+            
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            console.log('Mobile menu elements:', { mobileMenuBtn, navMenu, navLinks: navLinks.length });
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log('Mobile menu button clicked');
+                    
+                    this.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    
+                    console.log('Menu active state:', navMenu.classList.contains('active'));
+                });
+                
+                // Close mobile menu when clicking on nav links
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        console.log('Nav link clicked, closing menu');
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.classList.remove('active');
+                            navMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (mobileMenuBtn && navMenu.classList.contains('active') && 
+                        !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        console.log('Clicked outside menu, closing');
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+                
+                // Handle resize to close mobile menu on desktop
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth > 768 && mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            } else {
+                console.error('Mobile menu elements not found!');
+            }
         });
         
         // Smooth scrolling for internal links
