@@ -22,8 +22,12 @@
     <meta property="twitter:description" content="The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking - not vanity metrics.">
     <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/sentinel-peak-logo.png">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/sentinel-peak-logo.png">
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEC0PMZ1SE"></script>
@@ -325,13 +329,9 @@
         }
 
         .logo-image {
-            height: 56px;
+            height: 40px;
             width: auto;
             transition: all var(--transition-medium);
-        }
-        
-        .logo:hover .logo-image {
-            transform: scale(1.05);
         }
 
         .logo-text {
@@ -344,7 +344,7 @@
                 display: none;
             }
             .logo-image {
-                height: 48px;
+                height: 36px;
             }
         }
 
@@ -410,41 +410,11 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.02) 0%, transparent 30%);
-            animation: shimmer 8s ease-in-out infinite alternate;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 60% 30%, rgba(255, 255, 255, 0.02) 0%, transparent 40%),
-                radial-gradient(circle at 10% 80%, rgba(255, 255, 255, 0.015) 0%, transparent 60%);
-            animation: shimmer 10s ease-in-out infinite alternate-reverse;
-            opacity: 0.8;
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
+            animation: subtleMove 12s ease-in-out infinite alternate;
         }
 
-        @keyframes shimmer {
-            0% { 
-                opacity: 0.3;
-                transform: translateX(-5px) translateY(-3px) scale(1);
-            }
-            50% {
-                opacity: 0.6;
-                transform: translateX(3px) translateY(2px) scale(1.02);
-            }
-            100% { 
-                opacity: 0.4;
-                transform: translateX(5px) translateY(3px) scale(1.01);
-            }
-        }
-        
         @keyframes subtleMove {
             0% { 
                 opacity: 0.3;
@@ -490,27 +460,6 @@
             opacity: 1;
             transform: translateY(-5px);
         }
-        
-        /* Enhanced styling for hero logo */
-        .hero-logo {
-            animation: fadeInUp 1s ease-out 0.8s both, gentle-float 6s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
-            max-width: 500px !important;
-        }
-        
-        .hero-logo:hover {
-            transform: translateY(-8px) scale(1.02);
-            filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
-        }
-        
-        @keyframes gentle-float {
-            0%, 100% { 
-                transform: translateY(0px); 
-            }
-            50% { 
-                transform: translateY(-10px); 
-            }
-        }
 
         .hero-badge {
             display: inline-block;
@@ -533,18 +482,11 @@
             line-height: 1.1;
             margin-bottom: clamp(1.5rem, 4vw, 2rem);
             color: #ffffff;
-            animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 3s ease-in-out infinite alternate;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
             letter-spacing: -0.02em;
             max-width: 90%;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
-            background: linear-gradient(135deg, #ffffff 30%, rgba(255, 255, 255, 0.9) 60%, #ffffff 90%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-size: 200% 100%;
-            animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 3s ease-in-out infinite alternate, text-shimmer 4s linear infinite;
         }
 
         .hero-subtitle {
@@ -587,20 +529,16 @@
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+            background: rgba(255, 255, 255, 0.05);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 1;
         }
 
         .btn-primary {
@@ -633,23 +571,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-        
-        @keyframes text-glow {
-            0% { 
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3); 
-                filter: brightness(1);
-            }
-            100% { 
-                text-shadow: 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.3); 
-                filter: brightness(1.1);
-            }
-        }
-        
-        @keyframes text-shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         /* === SERVICES SECTION === */
@@ -1022,25 +943,6 @@
                 max-width: 250px;
                 justify-content: center;
             }
-            
-            /* Optimize animations for mobile performance */
-            .hero-title {
-                animation: fadeInUp 0.8s ease-out 0.4s both, text-glow 4s ease-in-out infinite alternate;
-            }
-            
-            .hero::before {
-                animation: shimmer 12s ease-in-out infinite alternate;
-            }
-            
-            .hero::after {
-                animation: shimmer 15s ease-in-out infinite alternate-reverse;
-                opacity: 0.6;
-            }
-            
-            .btn:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
 
             .services-grid {
                 grid-template-columns: 1fr;
@@ -1074,11 +976,6 @@
                 max-width: 400px;
             }
             
-            .hero-logo {
-                max-width: 350px !important;
-                animation: fadeInUp 1s ease-out 0.8s both, gentle-float 8s ease-in-out infinite;
-            }
-            
             .cta-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1097,11 +994,6 @@
             
             .hero-showcase-image {
                 max-width: 300px;
-            }
-            
-            .hero-logo {
-                max-width: 250px !important;
-                animation: fadeInUp 1s ease-out 0.8s both, gentle-float 10s ease-in-out infinite;
             }
 
             .service-card {
@@ -1425,7 +1317,7 @@
         <!-- Hero Image Section -->
         <div class="hero-image-section">
             <div class="container">
-                <img src="images/IMG_9328-removebg.png" alt="Sentinel Peak Advisors - Premium Digital Marketing Agency" class="hero-showcase-image hero-logo">
+                <img src="images/hero-social-media-workspace.png" alt="Professional analyzing social media lead generation data" class="hero-showcase-image">
             </div>
         </div>
     </section>

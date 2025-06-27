@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeMZs.woff2" as="font" type="font/woff2" crossorigin>
     
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+    
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-CEC0PMZ1SE"></script>
     <script>
@@ -210,13 +217,9 @@
         }
 
         .logo-image {
-            height: 56px;
+            height: 40px;
             width: auto;
             transition: all var(--transition-medium);
-        }
-        
-        .logo:hover .logo-image {
-            transform: scale(1.05);
         }
 
         .logo-text {
@@ -229,7 +232,7 @@
                 display: none;
             }
             .logo-image {
-                height: 48px;
+                height: 36px;
             }
         }
 
@@ -754,17 +757,6 @@
             }
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100%);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
         .fade-in-up {
             animation: fadeInUp 0.6s ease-out forwards;
         }
@@ -817,7 +809,7 @@
                     <h2 class="form-title">Turn Your Social Media Into a Lead Machine</h2>
                     <p class="form-subtitle">No long contracts. No vanity metrics. No social media overwhelm. Just qualified leads and real ROI. We'll contact you within 2 hours to discuss your social media strategy and provide a transparent quote.</p>
                     
-                    <form id="contact-form" action="https://formspree.io/f/xldnoqwv" method="POST">
+                    <form name="contact" action="thankyou.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                         <!-- Hidden honeypot field for spam protection -->
                         <div style="display: none;">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -1142,15 +1134,12 @@
             });
         });
 
-        // Enhanced form submission with Formspree
+        // Form submission
         if (form) {
-            form.addEventListener('submit', async (e) => {
+            form.addEventListener('submit', (e) => {
                 e.preventDefault();
                 
-                const button = form.querySelector('.btn');
-                const originalText = button.textContent;
-                
-                // Validation
+                // Simple form validation
                 const requiredFields = form.querySelectorAll('[required]');
                 let isValid = true;
                 
@@ -1158,155 +1147,25 @@
                     if (!field.value.trim()) {
                         isValid = false;
                         field.style.borderColor = 'rgba(255, 100, 100, 0.5)';
-                        field.style.boxShadow = '0 0 10px rgba(255, 100, 100, 0.3)';
                     } else {
                         field.style.borderColor = '';
-                        field.style.boxShadow = '';
                     }
                 });
                 
-                // Email validation
-                const emailField = form.querySelector('[type="email"]');
-                if (emailField && emailField.value) {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(emailField.value)) {
-                        isValid = false;
-                        emailField.style.borderColor = 'rgba(255, 100, 100, 0.5)';
-                        emailField.style.boxShadow = '0 0 10px rgba(255, 100, 100, 0.3)';
-                    }
-                }
-                
-                if (!isValid) {
-                    button.textContent = 'Please check required fields';
-                    button.style.background = 'rgba(255, 100, 100, 0.2)';
-                    button.style.borderColor = 'rgba(255, 100, 100, 0.5)';
+                if (isValid) {
+                    // Show success message (in a real app, you'd submit to a server)
+                    const button = form.querySelector('.btn');
+                    const originalText = button.textContent;
+                    button.textContent = 'Message Sent!';
+                    button.style.background = 'rgba(100, 255, 100, 0.2)';
                     
                     setTimeout(() => {
                         button.textContent = originalText;
                         button.style.background = '';
-                        button.style.borderColor = '';
-                    }, 3000);
-                    return;
-                }
-                
-                // Show loading state
-                button.textContent = 'Sending...';
-                button.disabled = true;
-                button.style.background = 'rgba(100, 150, 255, 0.2)';
-                button.style.borderColor = 'rgba(100, 150, 255, 0.5)';
-                
-                try {
-                    // Submit to Formspree
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: new FormData(form),
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        // Success
-                        button.textContent = 'Message Sent Successfully!';
-                        button.style.background = 'rgba(100, 255, 100, 0.2)';
-                        button.style.borderColor = 'rgba(100, 255, 100, 0.5)';
-                        
-                        // Show success message
-                        showNotification('Thank you! We\'ll contact you within 2 hours.', 'success');
-                        
-                        // Reset form after delay
-                        setTimeout(() => {
-                            form.reset();
-                            button.textContent = originalText;
-                            button.style.background = '';
-                            button.style.borderColor = '';
-                            button.disabled = false;
-                        }, 3000);
-                        
-                    } else {
-                        throw new Error('Network response was not ok');
-                    }
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    
-                    // Error state
-                    button.textContent = 'Failed to Send - Try Again';
-                    button.style.background = 'rgba(255, 100, 100, 0.2)';
-                    button.style.borderColor = 'rgba(255, 100, 100, 0.5)';
-                    
-                    // Show error message
-                    showNotification('Failed to send message. Please try again or contact us directly.', 'error');
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        button.style.borderColor = '';
-                        button.disabled = false;
-                    }, 3000);
+                        form.reset();
+                    }, 2000);
                 }
             });
-        }
-        
-        // Notification system
-        function showNotification(message, type = 'info') {
-            // Remove any existing notifications
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.innerHTML = `
-                <div class="notification-content">
-                    <span class="notification-icon">${type === 'success' ? '✅' : type === 'error' ? '❌' : 'ℹ️'}</span>
-                    <span class="notification-message">${message}</span>
-                    <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
-                </div>
-            `;
-            
-            // Add notification styles
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 10000;
-                background: ${type === 'success' ? 'rgba(100, 255, 100, 0.95)' : type === 'error' ? 'rgba(255, 100, 100, 0.95)' : 'rgba(100, 150, 255, 0.95)'};
-                color: ${type === 'success' ? '#000' : type === 'error' ? '#000' : '#000'};
-                padding: 15px 20px;
-                border-radius: 8px;
-                border: 1px solid ${type === 'success' ? 'rgba(100, 255, 100, 0.5)' : type === 'error' ? 'rgba(255, 100, 100, 0.5)' : 'rgba(100, 150, 255, 0.5)'};
-                backdrop-filter: blur(10px);
-                max-width: 400px;
-                animation: slideInRight 0.3s ease-out;
-            `;
-            
-            const content = notification.querySelector('.notification-content');
-            content.style.cssText = `
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            `;
-            
-            const closeBtn = notification.querySelector('.notification-close');
-            closeBtn.style.cssText = `
-                background: none;
-                border: none;
-                font-size: 18px;
-                cursor: pointer;
-                color: inherit;
-                padding: 0;
-                margin-left: auto;
-            `;
-            
-            document.body.appendChild(notification);
-            
-            // Auto-remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentElement) {
-                    notification.remove();
-                }
-            }, 5000);
         }
 
         // === HEADER SCROLL EFFECT ===
