@@ -947,19 +947,16 @@
                 <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
                 <span class="logo-text">Sentinel Peak Advisors</span>
             </a>
-            <ul class="nav-links">
-                <div class="mobile-menu-header">
-                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
-                    <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
-                </div>
-                <div class="mobile-menu-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </div>
+            <!-- Desktop Navigation -->
+            <ul class="nav-links desktop-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <div class="hamburger">
                     <span></span>
@@ -969,6 +966,21 @@
             </button>
         </nav>
     </header>
+    
+    <!-- Mobile Menu Overlay (Separate from desktop nav) -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
+            <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </div>
 
     <!-- PAGE HEADER -->
     <section class="page-header">

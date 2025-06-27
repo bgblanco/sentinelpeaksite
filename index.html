@@ -451,24 +451,24 @@
             }
             
             /* Mobile Menu Overlay */
-            .nav-menu {
-                position: fixed !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: 100vh !important;
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%) !important;
-                backdrop-filter: blur(20px) !important;
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: space-between !important;
-                align-items: center !important;
-                padding: 3rem 2rem !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                transform: translateY(-100%) !important;
-                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-                z-index: 9999 !important;
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, rgba(0, 0, 0, 0.98) 0%, rgba(10, 10, 10, 0.99) 100%);
+                backdrop-filter: blur(20px);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 3rem 2rem;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-100%);
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                z-index: 9999;
             }
             
             /* Mobile Menu Header */
@@ -503,43 +503,51 @@
                 align-items: center;
             }
             
-            .nav-menu.active {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: translateY(0) !important;
+            .mobile-menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
             }
             
-            .nav-menu li {
+            .mobile-menu-nav a {
                 opacity: 0;
                 transform: translateY(30px);
                 transition: all 0.3s ease;
-            }
-            
-            .nav-menu.active .mobile-menu-header {
-                opacity: 1;
-                transform: translateY(0);
-                transition-delay: 0.1s;
-            }
-            
-            .nav-menu.active li {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .nav-menu.active li:nth-child(1) { transition-delay: 0.3s; }
-            .nav-menu.active li:nth-child(2) { transition-delay: 0.4s; }
-            .nav-menu.active li:nth-child(3) { transition-delay: 0.5s; }
-            
-            .nav-link {
+                color: var(--color-text-muted);
+                text-decoration: none;
+                font-weight: 400;
                 font-size: 1.5rem;
                 padding: 1rem 2rem;
                 border-radius: 8px;
                 transition: all 0.3s ease;
             }
             
-            .nav-link:hover {
+            .mobile-menu-overlay.active .mobile-menu-header {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0.1s;
+            }
+            
+            .mobile-menu-overlay.active .mobile-menu-nav a {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .mobile-menu-overlay.active .mobile-menu-nav a:nth-child(1) { transition-delay: 0.3s; }
+            .mobile-menu-overlay.active .mobile-menu-nav a:nth-child(2) { transition-delay: 0.4s; }
+            .mobile-menu-overlay.active .mobile-menu-nav a:nth-child(3) { transition-delay: 0.5s; }
+            .mobile-menu-overlay.active .mobile-menu-nav a:nth-child(4) { transition-delay: 0.6s; }
+            .mobile-menu-overlay.active .mobile-menu-nav a:nth-child(5) { transition-delay: 0.7s; }
+            
+            .mobile-menu-nav a:hover {
                 background: rgba(255, 255, 255, 0.1);
                 transform: scale(1.05);
+                color: #ffffff;
+            }
+            
+            .mobile-menu-nav a.active {
+                color: #00d4ff;
+                background: rgba(0, 212, 255, 0.1);
             }
         }
         
@@ -1504,19 +1512,16 @@
                 </a>
                 <span class="company-name">Sentinel Peak Advisors</span>
             </div>
-            <ul class="nav-menu">
-                <div class="mobile-menu-header">
-                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
-                    <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
-                </div>
-                <div class="mobile-menu-nav">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </div>
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu desktop-nav">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
+            
+            <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                 <div class="hamburger">
                     <span></span>
@@ -1524,6 +1529,21 @@
                     <span></span>
                 </div>
             </button>
+        </nav>
+    </div>
+    
+    <!-- Mobile Menu Overlay (Separate from desktop nav) -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-header">
+            <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="mobile-menu-logo">
+            <h2 class="mobile-menu-title">Sentinel Peak Advisors</h2>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </nav>
     </div>
 
@@ -1709,31 +1729,31 @@
             console.log('Initializing mobile menu...');
             
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+            const mobileNavLinks = document.querySelectorAll('.mobile-menu-nav a');
             
-            console.log('Mobile menu elements:', { mobileMenuBtn, navMenu, navLinks: navLinks.length });
+            console.log('Mobile menu elements:', { mobileMenuBtn, mobileMenuOverlay, mobileNavLinks: mobileNavLinks.length });
             
-            if (mobileMenuBtn && navMenu) {
+            if (mobileMenuBtn && mobileMenuOverlay) {
                 mobileMenuBtn.addEventListener('click', function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     console.log('Mobile menu button clicked');
                     
                     this.classList.toggle('active');
-                    navMenu.classList.toggle('active');
-                    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+                    mobileMenuOverlay.classList.toggle('active');
+                    document.body.style.overflow = mobileMenuOverlay.classList.contains('active') ? 'hidden' : '';
                     
-                    console.log('Menu active state:', navMenu.classList.contains('active'));
+                    console.log('Menu active state:', mobileMenuOverlay.classList.contains('active'));
                 });
                 
                 // Close mobile menu when clicking on nav links
-                navLinks.forEach(link => {
+                mobileNavLinks.forEach(link => {
                     link.addEventListener('click', function() {
                         console.log('Nav link clicked, closing menu');
                         if (mobileMenuBtn) {
                             mobileMenuBtn.classList.remove('active');
-                            navMenu.classList.remove('active');
+                            mobileMenuOverlay.classList.remove('active');
                             document.body.style.overflow = '';
                         }
                     });
@@ -1741,11 +1761,11 @@
                 
                 // Close mobile menu when clicking outside
                 document.addEventListener('click', function(e) {
-                    if (mobileMenuBtn && navMenu.classList.contains('active') && 
-                        !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    if (mobileMenuBtn && mobileMenuOverlay.classList.contains('active') && 
+                        !mobileMenuOverlay.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                         console.log('Clicked outside menu, closing');
                         mobileMenuBtn.classList.remove('active');
-                        navMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
                         document.body.style.overflow = '';
                     }
                 });
@@ -1754,12 +1774,12 @@
                 window.addEventListener('resize', function() {
                     if (window.innerWidth > 768 && mobileMenuBtn) {
                         mobileMenuBtn.classList.remove('active');
-                        navMenu.classList.remove('active');
+                        mobileMenuOverlay.classList.remove('active');
                         document.body.style.overflow = '';
                     }
                 });
             } else {
-                console.error('Mobile menu elements not found!');
+                console.error('Mobile menu elements not found:', { mobileMenuBtn, mobileMenuOverlay });
             }
         });
         
