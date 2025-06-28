@@ -913,11 +913,11 @@
                     <h2 class="form-title">Submit Your Application for Consideration</h2>
                     <p class="form-subtitle">EXTREMELY LIMITED: Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website in 24 hours plus strategic marketing. We'll contact qualified applicants within 2 hours.</p>
                     
-                    <form name="contact" action="thankyou.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-                        <!-- Hidden honeypot field for spam protection -->
-                        <div style="display: none;">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </div>
+                    <form name="contact" action="https://formspree.io/f/xldnoqwv" method="POST">
+                        <!-- Hidden field for redirect after submission -->
+                        <input type="hidden" name="_next" value="thankyou.html">
+                        <!-- Formspree subject line -->
+                        <input type="hidden" name="_subject" value="New Business Application Submission">
                         
                         <div class="form-row">
                             <div class="form-group">
