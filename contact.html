@@ -893,9 +893,7 @@
                     <h2 class="form-title">Submit Your Application for Consideration</h2>
                     <p class="form-subtitle">EXTREMELY LIMITED: Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website in 24 hours plus strategic marketing. We'll contact qualified applicants within 2 hours.</p>
                     
-                    <form name="contact" action="https://formspree.io/f/xldnoqwv" method="POST">
-                        <!-- Hidden field for redirect after submission -->
-                        <input type="hidden" name="_next" value="https://sentinelpeaksolutions.com/thankyou.html">
+                    <form action="https://formspree.io/f/xldnoqwv" method="POST">
                         <!-- Formspree subject line -->
                         <input type="hidden" name="_subject" value="New Business Application Submission">
                         
@@ -968,6 +966,15 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Submit Application for Review</button>
+                        
+                        <!-- Debug: Simple test form -->
+                        <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.1);">
+                        <h3 style="color: #fff; margin-bottom: 1rem;">QUICK TEST (Remove after testing)</h3>
+                        <form action="https://formspree.io/f/xldnoqwv" method="POST" style="background: rgba(255,0,0,0.1); padding: 1rem; border-radius: 8px;">
+                            <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;">
+                            <textarea name="message" placeholder="Test message" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;"></textarea>
+                            <button type="submit" style="padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px;">Test Submit</button>
+                        </form>
                     </form>
                 </div>
 
