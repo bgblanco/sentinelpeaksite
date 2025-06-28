@@ -966,16 +966,17 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Submit Application for Review</button>
-                        
-                        <!-- Debug: Simple test form -->
-                        <hr style="margin: 2rem 0; border-color: rgba(255,255,255,0.1);">
-                        <h3 style="color: #fff; margin-bottom: 1rem;">QUICK TEST (Remove after testing)</h3>
-                        <form action="https://formspree.io/f/xldnoqwv" method="POST" style="background: rgba(255,0,0,0.1); padding: 1rem; border-radius: 8px;">
-                            <input type="email" name="email" placeholder="Your email" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;">
-                            <textarea name="message" placeholder="Test message" required style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem;"></textarea>
-                            <button type="submit" style="padding: 0.5rem 1rem; background: #007bff; color: white; border: none; border-radius: 4px;">Test Submit</button>
-                        </form>
                     </form>
+                    
+                    <!-- ULTRA SIMPLE TEST - NOW OUTSIDE THE MAIN FORM -->
+                    <div style="background: red; padding: 20px; margin: 20px 0;">
+                        <h3 style="color: white;">BASIC TEST - Does this reach Formspree?</h3>
+                        <form action="https://formspree.io/f/xldnoqwv" method="POST">
+                            <input type="email" name="email" placeholder="test@test.com" required>
+                            <input type="text" name="test" value="basic test" required>
+                            <button type="submit">SEND TEST</button>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- CONTACT INFORMATION -->
