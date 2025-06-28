@@ -341,43 +341,106 @@
         .company-name {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #00d4ff;
+            color: #ffffff;
             letter-spacing: -0.02em;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        /* === HAMBURGER MENU === */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+        
+        .hamburger-line {
+            width: 24px;
+            height: 2px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 1px;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding-top: 100px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .mobile-nav-links li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 400;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+        
+        .mobile-nav-link:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
         }
 
         /* === MOBILE HEADER ENHANCEMENTS === */
         @media (max-width: 768px) {
             .nav-wrapper {
-                background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%) !important;
+                background: rgba(0, 0, 0, 0.95) !important;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
                 backdrop-filter: blur(10px) !important;
-                position: sticky !important;
-                top: 0 !important;
-                z-index: 9998 !important;
             }
             
             .navbar {
-                padding: var(--space-lg) 0;
-                position: relative;
-            }
-            
-            .navbar::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: -5%;
-                width: 110%;
-                height: 100%;
-                background: 
-                    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.01) 0%, transparent 50%);
-                pointer-events: none;
-            }
-            
-            .logo {
-                z-index: 10;
-                position: relative;
+                padding: 1rem 0;
             }
             
             .company-name {
@@ -385,23 +448,22 @@
             }
             
             .logo-image {
-                height: 50px;
-                filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
+                height: 48px;
             }
             
-            /* Make desktop navigation work on mobile */
+            /* Hide desktop navigation on mobile */
             .nav-menu {
-                display: flex !important;
-                gap: var(--space-lg);
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none !important;
             }
             
+            /* Show hamburger menu on mobile */
+            .hamburger-menu {
+                display: flex;
+            }
             
             .page-header h1 {
                 font-size: 2.5rem;
             }
-            
         }
         
 
@@ -516,6 +578,7 @@
             background: #000000;
             overflow: hidden;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 1;
         }
 
         .hero::before {
@@ -694,6 +757,7 @@
             background: #000000;
             padding: 10rem 0;
             position: relative;
+            z-index: 2;
         }
 
         .services::before {
@@ -910,6 +974,7 @@
             padding: 10rem 0;
             position: relative;
             text-align: left;
+            z-index: 3;
         }
 
         .cta-section::before {
@@ -1048,6 +1113,25 @@
 
             .container {
                 padding: 0 1.5rem;
+            }
+            
+            /* Ensure hero doesn't interfere with subsequent sections on mobile */
+            .hero {
+                position: relative;
+                transform: none !important;
+                z-index: 1;
+            }
+            
+            .services {
+                position: relative;
+                z-index: 2;
+                background: #000000;
+            }
+            
+            .cta-section {
+                position: relative;
+                z-index: 3;
+                background: #000000;
             }
 
             .hero-buttons {
@@ -1428,6 +1512,24 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             
+            <!-- Mobile Hamburger Menu -->
+            <button class="hamburger-menu" id="hamburgerMenu" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <!-- Mobile Navigation Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
         </nav>
     </div>
     
@@ -1719,19 +1821,51 @@
             });
         });
         
-        // Add subtle parallax effect to hero background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const heroElement = document.querySelector('.hero');
-            if (heroElement) {
-                const rate = scrolled * -0.5;
-                heroElement.style.transform = `translateY(${rate}px)`;
-            }
-        });
+        // Add subtle parallax effect to hero background (desktop only)
+        if (window.innerWidth > 768) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroElement = document.querySelector('.hero');
+                if (heroElement) {
+                    const rate = scrolled * -0.5;
+                    heroElement.style.transform = `translateY(${rate}px)`;
+                }
+            });
+        }
         
         // Initialize loading effects
         window.addEventListener('load', () => {
             addLoadingEffect();
+        });
+        
+        // Hamburger Menu Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (hamburgerMenu && mobileMenu) {
+                hamburgerMenu.addEventListener('click', () => {
+                    hamburgerMenu.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerMenu.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    });
+                });
+                
+                // Close menu when clicking outside
+                mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === mobileMenu) {
+                        hamburgerMenu.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            }
         });
     </script>
 </body>

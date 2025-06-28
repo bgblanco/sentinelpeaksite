@@ -276,9 +276,8 @@
         .company-name {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #00d4ff;
+            color: #ffffff;
             letter-spacing: -0.02em;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
         .nav-menu {
@@ -1055,33 +1054,46 @@
 
         /* === RESPONSIVE DESIGN === */
         @media (max-width: 768px) {
+            .nav-wrapper {
+                background: rgba(0, 0, 0, 0.95) !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+                backdrop-filter: blur(10px) !important;
+            }
+            
+            .navbar {
+                padding: 1.25rem 0;
+            }
+            
             .company-name {
                 display: none;
             }
             .logo-image {
-                height: 50px;
+                height: 48px;
             }
             
-            /* Make desktop navigation work on mobile */
+            /* Clean mobile navigation */
             .nav-menu {
-                gap: var(--space-sm);
+                gap: 0.75rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
             .nav-link {
-                font-size: var(--font-size-xs);
-                padding: var(--space-xs) var(--space-sm);
-                border-radius: 4px;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: rgba(255, 255, 255, 0.9);
+                transition: all 0.2s ease;
             }
             
             .nav-link:hover,
             .nav-link.active {
-                background: rgba(0, 212, 255, 0.1);
-                border-color: rgba(0, 212, 255, 0.3);
-                color: #00d4ff;
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.25);
+                color: #ffffff;
+                transform: translateY(-1px);
             }
 
             .container {

@@ -222,17 +222,26 @@
             transition: all var(--transition-medium);
         }
 
-        .logo-text {
-            font-size: var(--font-size-base);
+        /* === BRAND CONTAINER === */
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .company-name {
+            font-size: 1.1rem;
             font-weight: 600;
+            color: #ffffff;
+            letter-spacing: -0.02em;
         }
 
         @media (max-width: 768px) {
-            .logo-text {
+            .company-name {
                 display: none;
             }
             .logo-image {
-                height: 36px;
+                height: 48px;
             }
         }
 
@@ -716,33 +725,36 @@
 
         /* === MOBILE RESPONSIVE === */
         @media (max-width: 768px) {
-            .logo-text {
+            .company-name {
                 display: none;
             }
             .logo-image {
-                height: 36px;
+                height: 48px;
             }
             
-            /* Make desktop navigation work on mobile */
+            /* Clean mobile navigation */
             .nav-links {
-                gap: var(--space-sm);
+                gap: 0.75rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
             
             .nav-links a {
-                font-size: var(--font-size-xs);
-                padding: var(--space-xs) var(--space-sm);
-                border-radius: 4px;
-                background: rgba(255, 255, 255, 0.05);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                font-size: 0.875rem;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+                color: rgba(255, 255, 255, 0.9);
+                transition: all 0.2s ease;
             }
             
             .nav-links a:hover,
             .nav-links a.active {
-                background: rgba(0, 212, 255, 0.1);
-                border-color: rgba(0, 212, 255, 0.3);
-                color: #00d4ff;
+                background: rgba(255, 255, 255, 0.15);
+                border-color: rgba(255, 255, 255, 0.25);
+                color: #ffffff;
+                transform: translateY(-1px);
             }
 
             .contact-container {
@@ -808,10 +820,12 @@
     <!-- HEADER & NAVIGATION -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">
-                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
-                <span class="logo-text">Sentinel Peak Advisors</span>
-            </a>
+            <div class="brand-container">
+                <a href="index.html" class="logo">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                </a>
+                <span class="company-name">Sentinel Peak Advisors</span>
+            </div>
             <!-- Desktop Navigation -->
             <ul class="nav-links desktop-nav">
                 <li><a href="index.html">Home</a></li>
