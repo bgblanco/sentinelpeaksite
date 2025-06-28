@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Sentinel Peak Advisors | Get Your Website in 1 Day + Start Generating Leads</title>
-    <meta name="description" content="Get your website in 1 day + social media marketing that generates leads. Limited spots available - only 5 new clients per month. Book your free strategy session now.">
+    <title>Apply - Sentinel Peak Advisors | Exclusive Business Growth Programs</title>
+    <meta name="description" content="Apply for exclusive business growth programs. Significant upfront investment required. Only 3 qualified businesses accepted monthly. Professional website in 24 hours.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -277,6 +277,8 @@
         .nav-links a:hover {
             color: #00d4ff;
             text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         }
 
         .nav-links a:hover::after,
@@ -295,6 +297,26 @@
             background: linear-gradient(135deg, var(--color-bg) 0%, rgba(255, 255, 255, 0.02) 100%);
             text-align: center;
             position: relative;
+            background-image: url('images/digital-workspace-cube.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 2;
         }
 
         .page-header::before {
@@ -456,9 +478,10 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(0, 212, 255, 0.6);
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
         }
 
         .btn:active {
@@ -504,9 +527,10 @@
         }
 
         .contact-method:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-2px);
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(0, 212, 255, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
         }
 
         .method-icon {
@@ -654,9 +678,10 @@
         }
 
         .faq-item:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.04);
-            transform: translateY(-2px);
+            border-color: rgba(0, 212, 255, 0.4);
+            background: rgba(0, 212, 255, 0.04);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.2);
         }
 
         .faq-question {
@@ -704,7 +729,9 @@
         }
 
         .footer-section a:hover {
-            color: var(--color-text);
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            transform: translateX(3px);
         }
 
         .footer-links {
@@ -751,10 +778,11 @@
             
             .nav-links a:hover,
             .nav-links a.active {
-                background: rgba(255, 255, 255, 0.15);
-                border-color: rgba(255, 255, 255, 0.25);
-                color: #ffffff;
+                background: rgba(0, 212, 255, 0.15);
+                border-color: rgba(0, 212, 255, 0.4);
+                color: #00d4ff;
                 transform: translateY(-1px);
+                box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
             }
 
             .contact-container {
@@ -787,6 +815,35 @@
             }
         }
 
+        /* === UNIVERSAL BLUE GLOW HOVER SYSTEM === */
+        .glow-hover {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .glow-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-hover-strong:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 212, 255, 0.6);
+        }
+        
+        .glow-hover-accent:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+        }
+        
+        .glow-hover-button:hover {
+            background: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+        
         /* === ANIMATIONS === */
         @keyframes fadeInUp {
             from {
@@ -842,8 +899,8 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <h1>Get Started Risk-Free. Website in 1 Day. Cancel Anytime.</h1>
-            <p>Ready to get your website and start generating leads? Simple process, no long commitments, results you can see immediately. Here's how easy it is to get started.</p>
+            <h1>Apply for Exclusive Business Growth Programs</h1>
+            <p>Extremely limited acceptance: Only 3 qualified businesses monthly. Significant upfront investment required. Professional website delivered in 24 hours plus strategic marketing.</p>
         </div>
     </section>
 
@@ -853,8 +910,8 @@
             <div class="contact-container">
                 <!-- CONTACT FORM -->
                 <div class="contact-form">
-                    <h2 class="form-title">Get Your Website in 1 Day + Start Generating Leads Immediately</h2>
-                    <p class="form-subtitle">LIMITED SPOTS: Only 5 new clients per month. Get your professional website in 1 day + social media that generates real leads. Month-to-month only, cancel anytime, 90-day results commitment. We'll contact you within 2 hours with next steps.</p>
+                    <h2 class="form-title">Submit Your Application for Consideration</h2>
+                    <p class="form-subtitle">EXTREMELY LIMITED: Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website in 24 hours plus strategic marketing. We'll contact qualified applicants within 2 hours.</p>
                     
                     <form name="contact" action="thankyou.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                         <!-- Hidden honeypot field for spam protection -->
@@ -893,10 +950,10 @@
                             <label for="service">Service Interested In *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
-                                <option value="24hour-launch-lead-generator">24-Hour Launch + Lead Generator ($697/month)</option>
-                                <option value="express-website-growth-accelerator">Express Website + Growth Accelerator ($997/month)</option>
-                                <option value="instant-impact-market-dominator">Instant Impact + Market Dominator ($1,497/month)</option>
-                                <option value="consultation">Free Strategy Consultation</option>
+                                <option value="fast-launch-program">Fast Launch Program ($2,497 setup + $697/month)</option>
+                                <option value="growth-accelerator-program">Growth Accelerator Program ($3,497 setup + $997/month)</option>
+                                <option value="market-dominator-program">Market Dominator Program ($4,997 setup + $1,497/month)</option>
+                                <option value="qualification-call">Schedule Qualification Call</option>
                                 <option value="custom">Custom Solution</option>
                             </select>
                         </div>
@@ -905,10 +962,10 @@
                             <label for="budget">Monthly Marketing Budget</label>
                             <select id="budget" name="budget">
                                 <option value="">Select budget range</option>
-                                <option value="under-1k">Under $1,000/month</option>
-                                <option value="1k-2k">$1,000 - $2,000/month</option>
-                                <option value="2k-5k">$2,000 - $5,000/month</option>
-                                <option value="5k-plus">$5,000+/month</option>
+                                <option value="2k-3k">$2,000 - $3,000/month (minimum)</option>
+                                <option value="3k-5k">$3,000 - $5,000/month</option>
+                                <option value="5k-10k">$5,000 - $10,000/month</option>
+                                <option value="10k-plus">$10,000+/month</option>
                                 <option value="not-sure">Not Sure Yet</option>
                             </select>
                         </div>
@@ -917,7 +974,7 @@
                             <label for="timeline">When Do You Need Your Website + Marketing?</label>
                             <select id="timeline" name="timeline">
                                 <option value="">Select timeline</option>
-                                <option value="asap">ASAP - I need my website and leads now</option>
+                                <option value="asap">ASAP - Ready to invest and start immediately</option>
                                 <option value="this-week">This Week</option>
                                 <option value="1-month">Within 1 month</option>
                                 <option value="2-3-months">2-3 months</option>
@@ -930,29 +987,29 @@
                             <textarea id="message" name="message" placeholder="Tell us what's frustrating you most: Need a website fast? Getting likes but no customers? Been burned by companies that stop returning calls? Spending money with no ROI? The more specific, the better we can help..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">Get My Website + Marketing Strategy</button>
+                        <button type="submit" class="btn btn-primary">Submit Application for Review</button>
                     </form>
                 </div>
 
                 <!-- CONTACT INFORMATION -->
                 <div class="contact-info">
-                    <h2 class="info-title">Ready to Get Started? Here's What Happens Next</h2>
-                    <p class="info-subtitle">Simple process, zero risk, immediate results. See exactly what you get and how easy it is to start generating leads with your new website.</p>
+                    <h2 class="info-title">Application Process for Qualified Businesses</h2>
+                    <p class="info-subtitle">Exclusive programs with significant upfront investment. See exactly what qualified businesses receive and our ironclad commitments.</p>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
                             <div class="method-icon">⚡</div>
                             <div class="method-info">
-                                <h3>1-Day Website Delivery</h3>
-                                <p>Professional website delivered in 1 day, not months</p>
+                                <h3>24-Hour Website Guarantee</h3>
+                                <p>Professional website delivered in 24 hours, guaranteed</p>
                             </div>
                         </div>
                         
                         <div class="contact-method">
                             <div class="method-icon">💰</div>
                             <div class="method-info">
-                                <h3>No Hidden Costs</h3>
-                                <p>Website included in monthly packages starting at $697</p>
+                                <h3>Transparent Investment</h3>
+                                <p>Setup investments from $2,497 + monthly fees from $697</p>
                             </div>
                         </div>
                         
@@ -1062,10 +1119,10 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">24-Hour Launch + Lead Generator ($697/month)</a></li>
-                        <li><a href="services.html">Express Website + Growth Accelerator ($997/month)</a></li>
-                        <li><a href="services.html">Instant Impact + Market Dominator ($1,497/month)</a></li>
-                        <li><a href="services.html">CRM Integration</a></li>
+                        <li><a href="services.html">Fast Launch Program ($2,497 setup)</a></li>
+                        <li><a href="services.html">Growth Accelerator ($3,497 setup)</a></li>
+                        <li><a href="services.html">Market Dominator ($4,997 setup)</a></li>
+                        <li><a href="services.html">Application Required</a></li>
                     </ul>
                 </div>
                 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Sentinel Peak Advisors | Real Results: 1-Day Websites + Lead Generation</title>
-    <meta name="description" content="See real results from our 1-day websites and social media marketing that generates leads. Client success stories, case studies, and proof that our approach works.">
+    <meta name="description" content="See real results from our exclusive business growth programs and 24-hour websites. Client success stories, case studies, and proof that our premium approach works.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -222,6 +222,35 @@
                 display: none;
             }
         }
+        
+        /* === UNIVERSAL BLUE GLOW HOVER SYSTEM === */
+        .glow-hover {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .glow-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-hover-strong:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 212, 255, 0.6);
+        }
+        
+        .glow-hover-accent:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+        }
+        
+        .glow-hover-button:hover {
+            background: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
 
         /* === NAVIGATION BAR === */
         .nav-wrapper {
@@ -313,6 +342,8 @@
         .nav-link:hover {
             color: #00d4ff;
             text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         }
 
         .nav-link:hover::after,
@@ -417,9 +448,11 @@
 
         .filter-btn:hover,
         .filter-btn.active {
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            border-color: rgba(0, 212, 255, 0.4);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
         }
 
         /* === INDUSTRY STATS === */
@@ -460,8 +493,8 @@
 
         .stat-item:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
         }
 
         .stat-number {
@@ -581,9 +614,9 @@
         }
 
         .portfolio-item:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.05);
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
         }
 
         .portfolio-image {
@@ -832,8 +865,8 @@
 
         .case-study:hover {
             transform: translateY(-5px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.05);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
         }
 
         .case-study-header {
@@ -969,8 +1002,10 @@
         }
 
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-1px);
+            background: #00d4ff;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
         .btn-primary:active {
@@ -1010,7 +1045,9 @@
         }
 
         .footer-section a:hover {
-            color: #ffffff;
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            transform: translateX(3px);
         }
 
         .footer-links {
@@ -1090,10 +1127,11 @@
             
             .nav-link:hover,
             .nav-link.active {
-                background: rgba(255, 255, 255, 0.15);
-                border-color: rgba(255, 255, 255, 0.25);
-                color: #ffffff;
+                background: rgba(0, 212, 255, 0.15);
+                border-color: rgba(0, 212, 255, 0.4);
+                color: #00d4ff;
                 transform: translateY(-1px);
+                box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
             }
 
             .container {
@@ -1244,8 +1282,11 @@
             <div class="portfolio-grid">
                 <!-- Civil Engineering Agency -->
                 <div class="portfolio-item scale-in">
-                    <div class="portfolio-image civil-engineering" style="background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
-                        Professional Design + Project Showcase = Major Contracts
+                    <div class="portfolio-image civil-engineering" style="position: relative; overflow: hidden;">
+                        <img src="images/municipal-networking.png" alt="Professional municipal meeting demonstrating community leadership and government networking relationships" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; padding: 1rem; font-size: 1.2rem; font-weight: 600; text-align: center;">
+                            Professional Design + Project Showcase = Major Contracts
+                        </div>
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Civil Engineering</div>
@@ -1551,9 +1592,9 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">24-Hour Launch + Lead Generator - $697</a></li>
-                        <li><a href="services.html">Express Website + Growth Accelerator - $997</a></li>
-                        <li><a href="services.html">Instant Impact + Market Dominator - $1,497</a></li>
+                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
+                        <li><a href="services.html">Growth Accelerator - $3,497 setup</a></li>
+                        <li><a href="services.html">Market Dominator - $4,997 setup</a></li>
                         <li><a href="services.html">CRM Integration</a></li>
                     </ul>
                 </div>

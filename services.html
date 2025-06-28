@@ -247,6 +247,35 @@
                 display: none;
             }
         }
+        
+        /* === UNIVERSAL BLUE GLOW HOVER SYSTEM === */
+        .glow-hover {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .glow-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-hover-strong:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 212, 255, 0.6);
+        }
+        
+        .glow-hover-accent:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+        }
+        
+        .glow-hover-button:hover {
+            background: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
 
         /* === NAVIGATION BAR === */
         .nav-wrapper {
@@ -347,6 +376,8 @@
         .nav-link:hover {
             color: #00d4ff;
             text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         }
 
         .nav-link:hover::after,
@@ -436,6 +467,23 @@
             transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
             position: relative;
             cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card-detailed:hover .service-image {
+            opacity: 1;
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
         .service-card-detailed::before {
@@ -454,7 +502,9 @@
         }
 
         .service-card-detailed:hover {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(0, 212, 255, 0.03);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
         }
 
         .service-header {
@@ -609,9 +659,9 @@
         }
 
         .pricing-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.05);
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
         }
 
         .pricing-card.featured {
@@ -711,8 +761,10 @@
         }
 
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-1px);
+            background: #00d4ff;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
         .btn-primary:active {
@@ -793,7 +845,9 @@
         }
 
         .footer-section a:hover {
-            color: #ffffff;
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            transform: translateX(3px);
         }
 
         .footer-links {
@@ -874,10 +928,11 @@
             
             .nav-link:hover,
             .nav-link.active {
-                background: rgba(255, 255, 255, 0.15);
-                border-color: rgba(255, 255, 255, 0.25);
-                color: #ffffff;
+                background: rgba(0, 212, 255, 0.15);
+                border-color: rgba(0, 212, 255, 0.4);
+                color: #00d4ff;
                 transform: translateY(-1px);
+                box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
             }
 
             .container {
@@ -936,8 +991,8 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>Get Your Website in 1 Day + Social Media Marketing That Actually Generates Leads</h1>
-                <p>Clear packages, transparent pricing, no hidden fees. Here's exactly what you get: a professional website delivered in 1 day, plus ongoing social media marketing with measurable results you can track.</p>
+                <h1>Exclusive Business Growth Programs - Limited Acceptance</h1>
+                <p>Only 3 qualified businesses accepted monthly. Professional website delivered in 1 day plus strategic social media marketing that actually generates results. Apply below for consideration.</p>
             </div>
         </div>
     </section>
@@ -947,14 +1002,15 @@
         <div class="container">
             <div class="services-grid">
                 <div class="service-card-detailed fade-in">
+                    <img src="images/service-fast-launch-workspace.png" alt="Professional consultant working intensively at multi-monitor setup demonstrating speed and technical competence for fast launch programs" class="service-image">
                     <div class="service-header">
                         <span class="service-icon-large">01</span>
                         <div>
-                            <h3>24-Hour Launch + Lead Generator</h3>
-                            <div class="service-price">$697/month (no contracts)</div>
+                            <h3>Fast Launch Program</h3>
+                            <div class="service-price">$2,497 setup + $697/month</div>
                         </div>
                     </div>
-                    <p class="service-description">Perfect for businesses that need a professional website fast plus social media that actually works. Get your website delivered in 1 day, then we manage your social media to generate real leads, not just likes.</p>
+                    <p class="service-description">For qualified businesses needing immediate market presence. Professional website delivered in 24 hours plus strategic social media management. Total program value: $6,197+. Your investment: $2,497 setup + $697 monthly.</p>
                     <ul class="service-features">
                         <li>Professional website delivered in 1 day</li>
                         <li>2 social media platforms (Facebook + Instagram or LinkedIn)</li>
@@ -964,18 +1020,19 @@
                         <li>Monthly lead reports (not vanity metrics)</li>
                         <li>90-day results commitment</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Started →</a>
+                    <a href="contact.html" class="service-link">Apply Now →</a>
                 </div>
 
                 <div class="service-card-detailed fade-in stagger-1">
+                    <img src="images/service-growth-accelerator-training.png" alt="Business consultant presenting growth strategies and data visualization to engaged team showing scaling expertise and measurable results" class="service-image">
                     <div class="service-header">
                         <span class="service-icon-large">02</span>
                         <div>
-                            <h3>Express Website + Growth Accelerator</h3>
-                            <div class="service-price">$997/month (most popular)</div>
+                            <h3>Growth Accelerator Program</h3>
+                            <div class="service-price">$3,497 setup + $997/month</div>
                         </div>
                     </div>
-                    <p class="service-description">Our most popular package for businesses serious about growth. Professional website in 1 day plus complete social media marketing that actually generates leads. Unlike marketing companies that disappear, we deliver results you can measure.</p>
+                    <p class="service-description">Our most selective program for growth-focused businesses. Professional website in 24 hours plus comprehensive social media strategy. Total program value: $11,997+. Your investment: $3,497 setup + $997 monthly.</p>
                     <ul class="service-features">
                         <li>Professional website delivered in 1 day</li>
                         <li>3 social media platforms (Facebook, Instagram, LinkedIn)</li>
@@ -985,18 +1042,19 @@
                         <li>Weekly lead generation and ROI reports</li>
                         <li>Dedicated account manager and monthly strategy calls</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Started →</a>
+                    <a href="contact.html" class="service-link">Apply Now →</a>
                 </div>
 
                 <div class="service-card-detailed fade-in stagger-2">
+                    <img src="images/service-market-dominator-boardroom.png" alt="Confident business leader presenting premium strategies in executive boardroom demonstrating market authority and enterprise leadership" class="service-image">
                     <div class="service-header">
                         <span class="service-icon-large">03</span>
                         <div>
-                            <h3>Instant Impact + Market Dominator</h3>
-                            <div class="service-price">$1,497/month (full-service)</div>
+                            <h3>Market Dominator Program</h3>
+                            <div class="service-price">$4,997 setup + $1,497/month</div>
                         </div>
                     </div>
-                    <p class="service-description">For businesses ready to dominate their market. Professional website in 1 day plus complete marketing solution with advanced automation and multi-channel lead generation. Maximum growth, maximum results - delivered reliably.</p>
+                    <p class="service-description">Elite program for market-leading businesses. Professional website in 24 hours plus complete marketing dominance system. Total program value: $21,997+. Your investment: $4,997 setup + $1,497 monthly.</p>
                     <ul class="service-features">
                         <li>Professional website delivered in 1 day</li>
                         <li>All social platforms + Google My Business optimization</li>
@@ -1006,28 +1064,28 @@
                         <li>Custom sales funnels and conversion optimization</li>
                         <li>Weekly strategy calls + priority support</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Started →</a>
+                    <a href="contact.html" class="service-link">Apply Now →</a>
                 </div>
 
                 <div class="service-card-detailed fade-in stagger-3">
                     <div class="service-header">
                         <span class="service-icon-large">04</span>
                         <div>
-                            <h3>Complete Transparency & Value</h3>
-                            <div class="service-price">What you get with every package</div>
+                            <h3>Program Guarantees & Commitments</h3>
+                            <div class="service-price">What every accepted business receives</div>
                         </div>
                     </div>
-                    <p class="service-description">Every package includes complete transparency with no hidden costs or surprises. You get clear deliverables, regular reporting, and flexible month-to-month terms. Here's exactly what's included with every service level.</p>
+                    <p class="service-description">Every program includes ironclad commitments with no hidden costs. Unlike agencies that overpromise, we guarantee reliable delivery and transparent communication. Here's what every accepted business receives.</p>
                     <ul class="service-features">
-                        <li>Dedicated account manager and direct communication</li>
-                        <li>No long-term contracts (month-to-month)</li>
-                        <li>90-day results commitment</li>
-                        <li>Complete price transparency (no hidden fees)</li>
-                        <li>You own all accounts and data</li>
-                        <li>Clear communication and weekly reports</li>
-                        <li>Cancel anytime (no penalties)</li>
+                        <li>24-hour website delivery guarantee</li>
+                        <li>Dedicated account manager and direct access</li>
+                        <li>Month-to-month flexibility (no long contracts)</li>
+                        <li>Weekly reporting and communication guarantee</li>
+                        <li>Complete ownership of all accounts and data</li>
+                        <li>Transparent pricing with no hidden fees</li>
+                        <li>90-day satisfaction guarantee</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Started →</a>
+                    <a href="contact.html" class="service-link">Apply Now →</a>
                 </div>
             </div>
         </div>
@@ -1038,62 +1096,62 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge slide-up">Simple, Transparent Pricing</div>
-                <h2 class="section-title slide-up stagger-1">No Hidden Fees, No Long Contracts, Real Results</h2>
-                <p class="section-subtitle slide-up stagger-2">Three clear packages with everything included. Month-to-month flexibility means you only pay when you're getting results. See exactly what's included and what it costs below.</p>
+                <h2 class="section-title slide-up stagger-1">Exclusive Programs for Qualified Businesses Only</h2>
+                <p class="section-subtitle slide-up stagger-2">Three elite programs with significant upfront investment. Month-to-month flexibility after setup means you only continue when getting results. Application required for acceptance.</p>
             </div>
             
             <div class="pricing-grid">
                 <div class="pricing-card scale-in">
                     <div class="pricing-header">
-                        <h3>24-Hour Launch + Lead Generator</h3>
-                        <div class="price">$697</div>
-                        <div class="price-period">per month (no contracts)</div>
+                        <h3>Fast Launch Program</h3>
+                        <div class="price">$2,497</div>
+                        <div class="price-period">setup + $697/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website in 1 day</li>
-                        <li>2 social media platforms</li>
-                        <li>12 lead-focused posts/month</li>
-                        <li>Website + social lead tracking</li>
-                        <li>Monthly lead reports</li>
-                        <li>90-day results commitment</li>
+                        <li>Professional website delivered in 24 hours</li>
+                        <li>2 strategic social media platforms</li>
+                        <li>12 lead-focused posts monthly</li>
+                        <li>Integrated website + social tracking</li>
+                        <li>Monthly performance reports</li>
+                        <li>90-day satisfaction guarantee</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
                 </div>
 
                 <div class="pricing-card featured scale-in stagger-1">
                     <div class="pricing-header">
-                        <h3>Express Website + Growth Accelerator</h3>
-                        <div class="price">$997</div>
-                        <div class="price-period">per month (most popular)</div>
+                        <h3>Growth Accelerator Program</h3>
+                        <div class="price">$3,497</div>
+                        <div class="price-period">setup + $997/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website in 1 day</li>
-                        <li>3 social media platforms</li>
-                        <li>20 lead-focused posts/month</li>
-                        <li>Advanced lead tracking automation</li>
+                        <li>Professional website delivered in 24 hours</li>
+                        <li>3 strategic social media platforms</li>
+                        <li>20 lead-focused posts monthly</li>
+                        <li>Advanced automation and tracking</li>
                         <li>Complete engagement management</li>
-                        <li>Weekly reports & strategy calls</li>
+                        <li>Weekly reports and strategy calls</li>
                         <li>Dedicated account manager</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
                 </div>
 
                 <div class="pricing-card scale-in stagger-2">
                     <div class="pricing-header">
-                        <h3>Instant Impact + Market Dominator</h3>
-                        <div class="price">$1,497</div>
-                        <div class="price-period">per month (full-service)</div>
+                        <h3>Market Dominator Program</h3>
+                        <div class="price">$4,997</div>
+                        <div class="price-period">setup + $1,497/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website in 1 day</li>
-                        <li>All platforms + Google My Business</li>
-                        <li>30 posts/month + video content</li>
-                        <li>Multi-channel lead capture</li>
-                        <li>Custom sales funnels</li>
-                        <li>Weekly strategy calls</li>
-                        <li>Priority support</li>
+                        <li>Professional website delivered in 24 hours</li>
+                        <li>All platforms plus Google My Business</li>
+                        <li>30 posts monthly plus video content</li>
+                        <li>Multi-channel lead capture systems</li>
+                        <li>Custom sales funnels and automation</li>
+                        <li>Weekly strategy calls and priority support</li>
+                        <li>Complete market domination strategy</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -1103,11 +1161,11 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to get your website launched and start generating leads immediately?</h2>
-                <p class="cta-description">Limited capacity: We only take 5 new clients per month for website + marketing services. Get your website in 1 day and start generating leads immediately. Book your free strategy session before spots fill up.</p>
+                <h2 class="cta-title">Ready to Apply for Our Exclusive Business Growth Programs?</h2>
+                <p class="cta-description">Extremely limited acceptance: Only 3 qualified businesses accepted monthly. Significant upfront investment required. If accepted, your website launches in 24 hours and strategic marketing begins immediately. Apply below for consideration.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Book Free Strategy Session</a>
-                    <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
+                    <a href="contact.html" class="btn btn-primary">Submit Application</a>
+                    <a href="tel:650-586-5889" class="btn btn-secondary">Qualification Call: (650) 586-5889</a>
                 </div>
             </div>
         </div>
@@ -1124,9 +1182,9 @@
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Social Starter - $697</a></li>
-                        <li><a href="services.html">Lead Generator - $997</a></li>
-                        <li><a href="services.html">Growth Accelerator - $1,497</a></li>
+                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
+                        <li><a href="services.html">Growth Accelerator - $3,497 setup</a></li>
+                        <li><a href="services.html">Market Dominator - $4,997 setup</a></li>
                         <li><a href="services.html">CRM Integration</a></li>
                     </ul>
                 </div>

@@ -288,6 +288,35 @@
             }
         }
 
+        /* === UNIVERSAL BLUE GLOW HOVER SYSTEM === */
+        .glow-hover {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .glow-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .glow-hover-strong:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            border-color: rgba(0, 212, 255, 0.6);
+        }
+        
+        .glow-hover-accent:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+        }
+        
+        .glow-hover-button:hover {
+            background: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+
         /* === NAVIGATION BAR === */
         .nav-wrapper {
             position: fixed;
@@ -327,8 +356,8 @@
         }
 
         .logo:hover {
-            opacity: 0.8;
-            transform: scale(1.02);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
 
         .logo-image {
@@ -358,6 +387,14 @@
             cursor: pointer;
             padding: 8px;
             z-index: 1001;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .hamburger-menu:hover {
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
         
         .hamburger-line {
@@ -427,8 +464,9 @@
         }
         
         .mobile-nav-link:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
+            background: rgba(0, 212, 255, 0.1);
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
         }
 
         /* === MOBILE HEADER ENHANCEMENTS === */
@@ -502,6 +540,8 @@
         .nav-link:hover {
             color: #00d4ff;
             text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
         }
 
         .nav-link:hover::after,
@@ -644,6 +684,7 @@
         .hero-showcase-image:hover {
             opacity: 1;
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
         }
 
         .hero-badge {
@@ -727,7 +768,10 @@
         }
 
         .btn-primary:hover {
-            background: rgba(255, 255, 255, 0.9);
+            background: #00d4ff;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
         .btn-secondary {
@@ -737,8 +781,11 @@
         }
 
         .btn-secondary:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            color: #ffffff;
+            border-color: rgba(0, 212, 255, 0.4);
+            color: #00d4ff;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
 
         @keyframes fadeInUp {
@@ -841,6 +888,7 @@
         .service-card:hover .service-image {
             opacity: 1;
             transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
         .service-card::before {
@@ -859,7 +907,9 @@
         }
 
         .service-card:hover {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(0, 212, 255, 0.03);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
         }
 
         .service-icon {
@@ -901,7 +951,8 @@
         }
 
         .service-link:hover {
-            color: #ffffff;
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
             transform: translateX(3px);
         }
 
@@ -1011,6 +1062,7 @@
         .cta-image:hover {
             opacity: 1;
             transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
         }
 
         .cta-title {
@@ -1063,7 +1115,9 @@
         }
 
         .footer-section a:hover {
-            color: #ffffff;
+            color: #00d4ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            transform: translateX(3px);
         }
 
         .footer-links {
@@ -1537,8 +1591,8 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>1-Day Websites + Social Media Marketing That Actually Generates Leads</h1>
-                <p>Stop waiting months for a website and getting burned by marketing companies. Get your professional website delivered in 1 day, plus ongoing social media marketing with measurable results you can track directly to revenue.</p>
+                <h1>Exclusive Business Growth Programs - Limited Acceptance</h1>
+                <p>Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website delivered in 24 hours plus strategic social media marketing with measurable results.</p>
             </div>
         </div>
     </section>
@@ -1549,15 +1603,15 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="hero-badge">Immediate Impact. Lasting Growth.</div>
-                    <h1 class="hero-title">Get Your Website in 1 Day + Social Media That Actually Generates Leads</h1>
-                    <p class="hero-subtitle">Why wait weeks or months for a website? Get a professional website launched in 1 day, plus ongoing social media that brings in customers immediately – not just likes.</p>
+                    <h1 class="hero-title">Apply for Exclusive Business Growth Programs</h1>
+                    <p class="hero-subtitle">Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website delivered in 24 hours plus strategic social media that actually generates results.</p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary">Get Your Website + Marketing Started</a>
-                        <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
+                        <a href="contact.html" class="btn btn-primary">Submit Application</a>
+                        <a href="tel:650-586-5889" class="btn btn-secondary">Qualification Call: (650) 586-5889</a>
                     </div>
                 </div>
                 <div class="hero-image-container">
-                    <img src="images/hero-business-owner-analytics.png" alt="Hardworking small business owner in his 40s analyzing website and marketing analytics on computer dashboard" class="hero-showcase-image">
+                    <img src="images/hero-strategic-consultant-analytics.png" alt="Strategic business consultant analyzing digital marketing data on multiple monitors in modern office workspace" class="hero-showcase-image">
                 </div>
             </div>
         </div>
@@ -1568,30 +1622,30 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">The Marketing Problem</div>
-                <h2 class="h2">Why wait months for a website when you need results now?</h2>
-                <p class="section-subtitle">Most agencies take 2-6 months to deliver a website. We deliver professional websites in 1 day, plus ongoing social media that generates immediate results for your business. Speed matters when you're losing potential customers every day.</p>
+                <h2 class="h2">Three Exclusive Programs for Qualified Businesses Only</h2>
+                <p class="section-subtitle">Significant upfront investment required. Only 3 businesses accepted monthly. Professional websites delivered in 24 hours plus strategic social media marketing that actually generates results.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
-                    <img src="images/before-after-24hour-website.png" alt="Split screen showing tired frustrated business owner on left transforming to successful happy business owner with 24:00 timer on right" class="service-image">
+                    <img src="images/service-modern-workspace.png" alt="Modern digital marketing workspace with multiple screens showing analytics and data visualization for 1-day website delivery" class="service-image">
                     <span class="service-icon">01</span>
-                    <h3 class="service-title">Professional Website in 1 Day</h3>
-                    <p class="service-description">Launch your professional website today, not next month. Our streamlined process delivers a mobile-ready, lead-generating website in just 1 day. Start capturing customers immediately while competitors are still waiting for theirs.</p>
-                    <a href="services.html" class="service-link">See How It Works →</a>
+                    <h3 class="service-title">Fast Launch Program</h3>
+                    <p class="service-description">$2,497 setup + $697/month. Professional website delivered in 24 hours plus strategic social media management. Total program value: $6,197+. Application required for acceptance.</p>
+                    <a href="services.html" class="service-link">Apply Now →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/happy-business-owner-social-media.png" alt="Happy smiling 50-year-old small business owner working on social media strategy planning with sticky notes and laptop" class="service-image">
+                    <img src="images/service-celebrating-success.png" alt="Professional business owner celebrating successful social media marketing results with fist pump at laptop in modern office" class="service-image">
                     <span class="service-icon">02</span>
-                    <h3 class="service-title">Social Media That Actually Works</h3>
-                    <p class="service-description">No more wasting time posting with no results. Our social media marketing focuses on bringing in actual customers, not just likes and followers. Real engagement that turns into real business.</p>
-                    <a href="services.html" class="service-link">See Results →</a>
+                    <h3 class="service-title">Growth Accelerator Program</h3>
+                    <p class="service-description">$3,497 setup + $997/month. Our most selective program for growth-focused businesses. Professional website plus comprehensive social media strategy. Total program value: $11,997+.</p>
+                    <a href="services.html" class="service-link">Apply Now →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/trust-building-partnership-handshake.png" alt="Professional business handshake over desk with analytics charts showing trust-building partnership and measurable marketing results" class="service-image">
+                    <img src="images/service-partnership-success.png" alt="Two successful business partners celebrating with high-five in modern office workspace showing collaboration and partnership results" class="service-image">
                     <span class="service-icon">03</span>
-                    <h3 class="service-title">Complete Marketing Solution</h3>
-                    <p class="service-description">Your website and social media work together from day one as a powerful lead-generation system. Integrated approach means faster results and better performance than managing separate vendors.</p>
-                    <a href="services.html" class="service-link">Get Started →</a>
+                    <h3 class="service-title">Market Dominator Program</h3>
+                    <p class="service-description">$4,997 setup + $1,497/month. Elite program for market-leading businesses. Complete marketing dominance system with advanced automation. Total program value: $21,997+.</p>
+                    <a href="services.html" class="service-link">Apply Now →</a>
                 </div>
             </div>
         </div>
@@ -1603,15 +1657,15 @@
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-content">
-                    <h2 class="h2 fade-in">Ready to get your website launched and start generating leads immediately?</h2>
-                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">We only take 5 new clients per month to ensure quality results. Get your website in 1 day and start your social media marketing that actually works. Book your free strategy session before spots fill up.</p>
+                    <h2 class="h2 fade-in">Ready to Apply for Our Exclusive Business Growth Programs?</h2>
+                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">Extremely limited acceptance: Only 3 qualified businesses accepted monthly. Significant upfront investment required. If accepted, your website launches in 24 hours and strategic marketing begins immediately.</p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Get Started - Free Strategy Session</a>
-                        <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call: (650) 586-5889</a>
+                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Submit Application</a>
+                        <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Qualification Call: (650) 586-5889</a>
                     </div>
                 </div>
                 <div class="cta-image-container">
-                    <img src="images/diverse-successful-business-owners.png" alt="Diverse group of successful small business owners including Latino entrepreneurs confidently holding phones and devices showing digital marketing success" class="cta-image fade-in stagger-3">
+                    <img src="images/social-media-accessibility.png" alt="Diverse business owners celebrating social media marketing success showing inclusive growth and accessibility" class="cta-image fade-in stagger-3">
                 </div>
             </div>
         </div>
@@ -1623,15 +1677,15 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>Professional websites delivered in 1 day + social media marketing that generates immediate results. Speed meets quality for businesses that need to start capturing customers now.</p>
+                    <p>Exclusive business growth programs with significant upfront investment. Professional websites delivered in 24 hours plus strategic social media marketing. Only 3 qualified businesses accepted monthly.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">1-Day Website Design</a></li>
-                        <li><a href="services.html">Social Media Marketing</a></li>
-                        <li><a href="services.html">Complete Marketing Solution</a></li>
-                        <li><a href="services.html">Local Business Experts</a></li>
+                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
+                        <li><a href="services.html">Growth Accelerator - $3,497 setup</a></li>
+                        <li><a href="services.html">Market Dominator - $4,997 setup</a></li>
+                        <li><a href="services.html">Application Required</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
