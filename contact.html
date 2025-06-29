@@ -894,6 +894,7 @@
                     <p class="form-subtitle">EXTREMELY LIMITED: Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website in 24 hours plus strategic marketing. We'll contact qualified applicants within 2 hours.</p>
                     
                     <form action="https://formspree.io/f/xldnoqwv" method="POST">
+                        <input type="hidden" name="_next" value="thankyou.html">
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -1220,11 +1221,9 @@
             });
         });
 
-        // Form submission
+        // Form validation (without preventing submission)
         if (form) {
             form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
                 // Simple form validation
                 const requiredFields = form.querySelectorAll('[required]');
                 let isValid = true;
@@ -1238,18 +1237,8 @@
                     }
                 });
                 
-                if (isValid) {
-                    // Show success message (in a real app, you'd submit to a server)
-                    const button = form.querySelector('.btn');
-                    const originalText = button.textContent;
-                    button.textContent = 'Message Sent!';
-                    button.style.background = 'rgba(100, 255, 100, 0.2)';
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        form.reset();
-                    }, 2000);
+                if (!isValid) {
+                    e.preventDefault(); // Only prevent submission if validation fails
                 }
             });
         }
