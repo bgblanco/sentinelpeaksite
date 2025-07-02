@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Sentinel Peak Advisors | 1-Day Websites + Social Media Marketing</title>
-    <meta name="description" content="Get your professional website in 1 day plus social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver results.">
+    <title>Services - Sentinel Peak Advisors | Website & Digital Marketing Solutions</title>
+    <meta name="description" content="Professional website renovations, social media management, and comprehensive digital marketing programs. Choose from individual services or complete packages designed for every business size and budget.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -456,6 +456,18 @@
             position: relative;
             z-index: 2;
             margin-bottom: 6rem;
+        }
+        
+        /* Individual services use 2-column layout on larger screens */
+        .services-detailed:first-of-type .services-grid {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .services-detailed:first-of-type .services-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .service-card-detailed {
@@ -991,15 +1003,76 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>Exclusive Business Growth Programs - Limited Acceptance</h1>
-                <p>Only 3 qualified businesses accepted monthly. Professional website delivered in 1 day plus strategic social media marketing that actually generates results. Apply below for consideration.</p>
+                <h1>Professional Website & Digital Marketing Services</h1>
+                <p>From individual website renovations to comprehensive marketing programs, we deliver professional results quickly. Choose the service level that fits your business needs and budget.</p>
             </div>
         </div>
     </section>
 
-    <!-- DETAILED SERVICES SECTION -->
+    <!-- INDIVIDUAL SERVICES SECTION -->
     <section class="services-detailed">
         <div class="container">
+            <div class="section-header">
+                <div class="section-badge slide-up">Individual Services</div>
+                <h2 class="section-title slide-up stagger-1">Perfect for Local Businesses</h2>
+                <p class="section-subtitle slide-up stagger-2">Professional individual services designed for businesses that need specific solutions. Quality work at affordable prices with fast turnaround times.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card-detailed fade-in">
+                    <img src="images/website-renovation-service.png" alt="Professional website renovation service featuring modern aesthetic design with clean layouts and responsive elements" class="service-image">
+                    <div class="service-header">
+                        <span class="service-icon-large">💻</span>
+                        <div>
+                            <h3>Website Renovation</h3>
+                            <div class="service-price">Starting at $997</div>
+                        </div>
+                    </div>
+                    <p class="service-description">Professional website updates and redesigns for local businesses. Modern, mobile-responsive design delivered quickly. Perfect for refreshing your online presence without the need for ongoing services.</p>
+                    <ul class="service-features">
+                        <li>Modern, mobile-responsive design</li>
+                        <li>Professional content optimization</li>
+                        <li>SEO-friendly structure and performance</li>
+                        <li>Contact forms and lead capture setup</li>
+                        <li>Social media integration</li>
+                        <li>Training on how to update content</li>
+                        <li>30-day support and adjustments included</li>
+                    </ul>
+                    <a href="contact.html" class="service-link">Get Your Quote →</a>
+                </div>
+
+                <div class="service-card-detailed fade-in stagger-1">
+                    <img src="images/social-media-management-service.png" alt="Social media management service featuring YouTube, Twitter, and Instagram platform logos for comprehensive social media presence" class="service-image">
+                    <div class="service-header">
+                        <span class="service-icon-large">📱</span>
+                        <div>
+                            <h3>Social Media Management</h3>
+                            <div class="service-price">Starting at $397/month</div>
+                        </div>
+                    </div>
+                    <p class="service-description">Monthly social media management for consistent online presence. Content creation, posting, and engagement management. Great for busy business owners who want professional social media without the complexity.</p>
+                    <ul class="service-features">
+                        <li>Content creation and scheduling</li>
+                        <li>2 platforms (Facebook + Instagram recommended)</li>
+                        <li>8-12 posts per month</li>
+                        <li>Basic engagement management</li>
+                        <li>Monthly performance reporting</li>
+                        <li>Hashtag research and optimization</li>
+                        <li>No long-term contracts</li>
+                    </ul>
+                    <a href="contact.html" class="service-link">Get Started →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREMIUM PROGRAMS SECTION -->
+    <section class="services-detailed">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge slide-up">Premium Programs</div>
+                <h2 class="section-title slide-up stagger-1">Comprehensive Growth Solutions</h2>
+                <p class="section-subtitle slide-up stagger-2">Complete marketing programs for businesses ready to scale. Website plus ongoing strategic marketing with dedicated account management and advanced features.</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card-detailed fade-in">
                     <img src="images/service-fast-launch-workspace.png" alt="Professional consultant working intensively at multi-monitor setup demonstrating speed and technical competence for fast launch programs" class="service-image">
@@ -1096,8 +1169,8 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-badge slide-up">Simple, Transparent Pricing</div>
-                <h2 class="section-title slide-up stagger-1">Exclusive Programs for Qualified Businesses Only</h2>
-                <p class="section-subtitle slide-up stagger-2">Three elite programs with significant upfront investment. Month-to-month flexibility after setup means you only continue when getting results. Application required for acceptance.</p>
+                <h2 class="section-title slide-up stagger-1">Premium Marketing Programs</h2>
+                <p class="section-subtitle slide-up stagger-2">Comprehensive programs for businesses ready to scale. Month-to-month flexibility after setup means you only continue when getting results. Professional service with measurable outcomes.</p>
             </div>
             
             <div class="pricing-grid">
@@ -1161,11 +1234,11 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to Apply for Our Exclusive Business Growth Programs?</h2>
-                <p class="cta-description">Extremely limited acceptance: Only 3 qualified businesses accepted monthly. Significant upfront investment required. If accepted, your website launches in 24 hours and strategic marketing begins immediately. Apply below for consideration.</p>
+                <h2 class="cta-title">Ready to Grow Your Business Online?</h2>
+                <p class="cta-description">Whether you need a simple website renovation or a comprehensive marketing program, we have the right solution for your business. Professional service, fast delivery, and measurable results guaranteed.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Submit Application</a>
-                    <a href="tel:650-586-5889" class="btn btn-secondary">Qualification Call: (650) 586-5889</a>
+                    <a href="contact.html" class="btn btn-primary">Get Your Free Quote</a>
+                    <a href="tel:650-586-5889" class="btn btn-secondary">Call Now: (650) 586-5889</a>
                 </div>
             </div>
         </div>
@@ -1177,15 +1250,15 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>Professional websites delivered in 1 day + social media marketing that actually generates leads. No more getting burned by marketing companies that disappear or don't deliver.</p>
+                    <p>Professional web and digital marketing solutions for businesses of all sizes. From individual website renovations to comprehensive marketing programs, we deliver quality results with fast turnaround times.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Services</h3>
                     <ul class="footer-links">
+                        <li><a href="services.html">Website Renovation - Starting at $997</a></li>
+                        <li><a href="services.html">Social Media Management - $397/month</a></li>
                         <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
-                        <li><a href="services.html">Growth Accelerator - $3,497 setup</a></li>
-                        <li><a href="services.html">Market Dominator - $4,997 setup</a></li>
-                        <li><a href="services.html">CRM Integration</a></li>
+                        <li><a href="services.html">Growth & Dominator Programs</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
