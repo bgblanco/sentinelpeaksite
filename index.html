@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel Peak Advisors - Professional Website & Digital Marketing Solutions</title>
-    <meta name="description" content="Professional website renovations, social media management, and comprehensive digital marketing programs. Fast delivery, quality results, and services for every business size and budget.">
-    <meta name="keywords" content="social media management, lead generation, CRM integration, social media marketing, business growth, ROI tracking">
+    <title>Sentinel Peak Advisors - Complete Business Automation Platform & Professional Team</title>
+    <meta name="description" content="Get your complete business team today. Customer service, marketing, operations, and content creation staff working 24/7. Stop losing money to daily business problems with our automation platform.">
+    <meta name="keywords" content="business automation, customer service automation, marketing automation, operations management, content creation, business team, automated workflows, business efficiency">
     <meta name="author" content="Sentinel Peak Advisors">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sentinelpeakadvisors.com">
-    <meta property="og:title" content="Sentinel Peak Advisors - Professional Website & Digital Marketing Solutions">
-    <meta property="og:description" content="Professional website renovations, social media management, and comprehensive digital marketing programs. Fast delivery, quality results, and services for every business size and budget.">
+    <meta property="og:title" content="Sentinel Peak Advisors - Complete Business Automation Platform & Professional Team">
+    <meta property="og:description" content="Get your complete business team today. Customer service, marketing, operations, and content creation staff working 24/7. Stop losing money to daily business problems with our automation platform.">
     <meta property="og:image" content="https://static.wixstatic.com/media/09c8f9_dd0aca6c1b6243d7ad12bd3d95b3643c~mv2.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sentinelpeakadvisors.com">
-    <meta property="twitter:title" content="Sentinel Peak Advisors - Professional Website & Digital Marketing Solutions">
-    <meta property="twitter:description" content="Professional website renovations, social media management, and comprehensive digital marketing programs. Fast delivery, quality results, and services for every business size and budget.">
+    <meta property="twitter:title" content="Sentinel Peak Advisors - Complete Business Automation Platform & Professional Team">
+    <meta property="twitter:description" content="Get your complete business team today. Customer service, marketing, operations, and content creation staff working 24/7. Stop losing money to daily business problems with our automation platform.">
     <meta property="twitter:image" content="https://sentinelpeakadvisors.com/images/sentinel-peak-logo.png">
     
     <!-- Favicon and App Icons -->
@@ -239,51 +239,26 @@
         /* === CUSTOM CURSOR === */
         .cursor {
             position: fixed;
+            top: 0;
+            left: 0;
             width: 20px;
             height: 20px;
-            border: 1px solid var(--color-text);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            transition: all 0.1s ease;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .cursor-dot {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: var(--color-text);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transition: none;
-            transform: translate(-50%, -50%);
-        }
-        
-        .cursor.hover {
-            width: 60px;
-            height: 60px;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .cursor.click {
-            width: 16px;
-            height: 16px;
-        }
-        
-        body.has-custom-cursor {
-            cursor: none;
-        }
-        
-        body.has-custom-cursor * {
-            cursor: none !important;
+        .cursor.active {
+            transform: scale(1.5);
+            background: rgba(255, 255, 255, 0.2);
         }
         
         @media (max-width: 768px) {
-            .cursor,
-            .cursor-dot {
+            .cursor {
                 display: none;
             }
         }
@@ -380,42 +355,69 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
-            background: none;
-            border: none;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            padding: 8px;
+            padding: 12px;
             z-index: 1001;
-            border-radius: 6px;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hamburger-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .hamburger-menu:hover::before {
+            left: 100%;
         }
         
         .hamburger-menu:hover {
             background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
         
         .hamburger-line {
-            width: 24px;
+            width: 20px;
             height: 2px;
             background: #ffffff;
-            margin: 3px 0;
-            transition: all 0.3s ease;
-            border-radius: 1px;
+            margin: 2px 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .hamburger-menu.active {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
         }
         
         .hamburger-menu.active .hamburger-line:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: rotate(45deg) translate(5px, 5px);
+            background: #00d4ff;
         }
         
         .hamburger-menu.active .hamburger-line:nth-child(2) {
             opacity: 0;
+            transform: scale(0);
         }
         
         .hamburger-menu.active .hamburger-line:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
+            transform: rotate(-45deg) translate(5px, -5px);
+            background: #00d4ff;
         }
         
         .mobile-menu {
@@ -426,12 +428,26 @@
             width: 100%;
             height: 100vh;
             background: rgba(0, 0, 0, 0.98);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            padding-top: 100px;
+            padding: 100px 2rem 2rem;
             opacity: 0;
             transform: translateY(-20px);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         .mobile-menu.active {
@@ -440,33 +456,161 @@
             transform: translateY(0);
         }
         
+        .mobile-menu-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .mobile-menu-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-header {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        
+        .mobile-menu-title {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .mobile-menu-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+        
         .mobile-nav-links {
             list-style: none;
             padding: 0;
             margin: 0;
-            text-align: center;
         }
         
         .mobile-nav-links li {
             margin: 0;
             padding: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.5s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.6s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.7s; }
+        
+        .mobile-menu.active .mobile-nav-links li {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .mobile-nav-link {
             display: block;
             color: #ffffff;
             text-decoration: none;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 400;
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .mobile-nav-link:hover::before {
+            left: 100%;
         }
         
         .mobile-nav-link:hover {
             background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
             color: #00d4ff;
+            transform: translateX(8px);
             text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        .mobile-menu-footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-footer {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.8s;
+        }
+        
+        .mobile-contact-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-phone {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-phone:hover {
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .mobile-cta {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .mobile-cta:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
 
         /* === MOBILE HEADER ENHANCEMENTS === */
@@ -506,12 +650,19 @@
         
 
         .nav-menu {
-            display: flex !important;
+            display: flex;
             list-style: none;
             gap: var(--space-xl);
             align-items: center;
             position: relative;
             z-index: 1000;
+        }
+        
+        /* Hide desktop navigation on mobile */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none !important;
+            }
         }
 
         .nav-link {
@@ -703,13 +854,15 @@
         }
 
         .hero-title {
-            font-size: clamp(2rem, 6vw, 4rem);
+            font-size: clamp(1.5rem, 5vw, 4rem);
             font-weight: 300;
-            line-height: 1.1;
+            line-height: 1.3;
             margin-bottom: clamp(1.5rem, 4vw, 2rem);
             color: #ffffff;
             animation: fadeInUp 0.8s ease-out 0.4s both;
             letter-spacing: -0.02em;
+            word-break: break-word;
+            hyphens: auto;
         }
 
         .hero-subtitle {
@@ -797,6 +950,92 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+
+        /* === PAIN POINTS SECTION === */
+        .pain-points-section {
+            background: #000000;
+            padding: 8rem 0;
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .pain-points-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .pain-point-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pain-point-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff4444, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .pain-point-card:hover::before {
+            opacity: 1;
+        }
+
+        .pain-point-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 68, 68, 0.15);
+            border-color: rgba(255, 68, 68, 0.2);
+        }
+
+        .pain-point-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .pain-point-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .pain-point-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pain-point-cost {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #ff4444;
+            background: rgba(255, 68, 68, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            border: 1px solid rgba(255, 68, 68, 0.2);
         }
 
         /* === SERVICES SECTION === */
@@ -1188,6 +1427,11 @@
                 z-index: 1;
             }
             
+            .hero-title {
+                font-size: clamp(1.25rem, 6vw, 2.5rem);
+                line-height: 1.4;
+            }
+            
             .services {
                 position: relative;
                 z-index: 2;
@@ -1262,8 +1506,8 @@
 
         @media (max-width: 480px) {
             .hero-title {
-                font-size: clamp(2rem, 8vw, 2.5rem);
-                line-height: 1;
+                font-size: clamp(1.1rem, 8vw, 1.8rem);
+                line-height: 1.4;
             }
 
             .hero-subtitle {
@@ -1294,6 +1538,80 @@
                 font-size: clamp(1.5rem, 5vw, 2rem);
             }
             
+        }
+        
+        /* === CAPABILITIES SECTION === */
+        .capabilities-section {
+            background: #000000;
+            padding: 8rem 0;
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .capabilities-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .capability-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .capability-card:hover::before {
+            opacity: 1;
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.2);
+        }
+
+        .capability-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.8;
+        }
+
+        .capability-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .capability-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         /* === ADVANCED HOVER STATES === */
@@ -1556,10 +1874,9 @@
         }
     </style>
 </head>
-<body class="has-custom-cursor">
+<body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-    <div class="cursor-dot"></div>
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
         <nav class="navbar container">
@@ -1587,13 +1904,30 @@
             
             <!-- Mobile Navigation Menu -->
             <div class="mobile-menu" id="mobileMenu">
-                <ul class="mobile-nav-links">
-                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
-                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-                </ul>
+                <div class="mobile-menu-content">
+                    <div class="mobile-menu-header">
+                        <div class="mobile-menu-title">Complete Business Team</div>
+                        <div class="mobile-menu-subtitle">Professional automation platform working 24/7 for your business</div>
+                    </div>
+                    
+                    <nav>
+                        <ul class="mobile-nav-links">
+                            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                            <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                            <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                            <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                            <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="mobile-menu-footer">
+                        <div class="mobile-contact-info">
+                            <a href="tel:650-586-5889" class="mobile-phone">(650) 586-5889</a>
+                            <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.6);">Free consultation available</div>
+                        </div>
+                        <a href="contact.html" class="mobile-cta">Get Your Business Team</a>
+                    </div>
+                </div>
             </div>
             
         </nav>
@@ -1614,9 +1948,9 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">Fast Results. Professional Service.</div>
-                    <h1 class="hero-title">Get Your Business Online & Growing</h1>
-                    <p class="hero-subtitle">From single website renovations to comprehensive digital marketing programs, we deliver professional results quickly. Choose from our range of services designed for local businesses and growth-focused companies.</p>
+                    <div class="hero-badge">Complete Business Automation Platform</div>
+                    <h1 class="hero-title">Stop Business Losses</h1>
+                    <p class="hero-subtitle">Missing calls, manual scheduling, lost leads, and customer service interruptions cost local businesses $50,000+ annually. We provide complete business automation platforms with customer management, automated communications, and professional systems that run your business while you focus on growth.</p>
                     <div class="hero-buttons">
                         <a href="contact.html" class="btn btn-primary">Get Started Today</a>
                         <a href="tel:650-586-5889" class="btn btn-secondary">Free Consultation: (650) 586-5889</a>
@@ -1629,67 +1963,139 @@
         </div>
     </section>
 
+    <!-- PAIN POINTS SECTION -->
+    <section class="pain-points-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Daily Business Problems</div>
+                <h2 class="h2">How Much Money Are You Losing Every Day?</h2>
+                <p class="section-subtitle">Most local businesses lose $50,000+ annually from operational inefficiencies. Missing calls, manual processes, and poor customer management drain your profits while you work harder, not smarter.</p>
+            </div>
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">📞</div>
+                    <h3 class="pain-point-title">Missed Calls = Lost Revenue</h3>
+                    <p class="pain-point-description">Every missed call costs you $200-500 in lost business. Without dedicated phone coverage, you're losing customers to competitors who answer on the first ring.</p>
+                    <div class="pain-point-cost">$18,000+ Lost Annually</div>
+                </div>
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">⏰</div>
+                    <h3 class="pain-point-title">Manual Scheduling Chaos</h3>
+                    <p class="pain-point-description">Phone tag, double bookings, and no-shows waste hours daily. Manual scheduling creates customer frustration and reduces appointment booking rates by 40%.</p>
+                    <div class="pain-point-cost">$15,000+ Lost Annually</div>
+                </div>
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">👥</div>
+                    <h3 class="pain-point-title">Poor Customer Follow-up</h3>
+                    <p class="pain-point-description">Leads go cold, customers feel ignored, and repeat business drops. Without systematic follow-up, you lose 60% of potential repeat customers.</p>
+                    <div class="pain-point-cost">$12,000+ Lost Annually</div>
+                </div>
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">📊</div>
+                    <h3 class="pain-point-title">No Marketing Analytics</h3>
+                    <p class="pain-point-description">Wasted ad spend, unclear ROI, and missed opportunities. Without tracking, you're throwing money at marketing that may not work.</p>
+                    <div class="pain-point-cost">$8,000+ Lost Annually</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICES SECTION -->
     <section class="services">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Our Services</div>
-                <h2 class="h2">Professional Web & Marketing Solutions for Every Business</h2>
-                <p class="section-subtitle">Choose from individual services perfect for local businesses or comprehensive programs for aggressive growth. All delivered with professional quality and fast turnaround times.</p>
+                <div class="section-badge">Complete Business Team</div>
+                <h2 class="h2">Your Dedicated Business Staff - Ready to Work Today</h2>
+                <p class="section-subtitle">Get a complete professional team without the overhead. Our business automation platform provides dedicated staff members who handle customer service, marketing, operations, and content creation 24/7.</p>
             </div>
             <div class="services-grid">
                 <!-- Individual Services -->
                 <div class="service-card">
-                    <img src="images/website-renovation-service.png" alt="Professional website renovation service featuring modern aesthetic design with clean layouts and responsive elements" class="service-image">
-                    <span class="service-icon">💻</span>
-                    <h3 class="service-title">Website Renovation</h3>
-                    <p class="service-description">Professional website updates and redesigns for local businesses. Modern, mobile-responsive design delivered quickly. Perfect for refreshing your online presence. Starting at $997.</p>
+                    <img src="images/website-renovation-service.png" alt="Professional customer service representative managing client communications and appointment scheduling" class="service-image">
+                    <span class="service-icon">📞</span>
+                    <h3 class="service-title">Customer Service Representative</h3>
+                    <p class="service-description">Dedicated customer service staff handles all client communications, appointment scheduling, and follow-ups. Never miss another call or opportunity. Responds to inquiries within minutes, books appointments automatically, and manages your customer relationships 24/7.</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/social-media-management-service.png" alt="Social media management service featuring YouTube, Twitter, and Instagram platform logos for comprehensive social media presence" class="service-image">
-                    <span class="service-icon">📱</span>
-                    <h3 class="service-title">Social Media Management</h3>
-                    <p class="service-description">Monthly social media management for consistent online presence. Content creation, posting, and engagement management. Great for busy business owners. Starting at $397/month.</p>
+                    <img src="images/social-media-management-service.png" alt="Professional marketing manager developing strategic campaigns and analyzing customer data" class="service-image">
+                    <span class="service-icon">📊</span>
+                    <h3 class="service-title">Marketing Manager</h3>
+                    <p class="service-description">Your dedicated marketing expert creates campaigns, manages social media, and tracks performance. Develops targeted strategies, manages ad spend, and optimizes conversion rates. Provides detailed analytics and ROI reporting so you know exactly what's working.</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
                 
                 <!-- Premium Programs -->
                 <div class="service-card">
-                    <img src="images/service-partnership-success.png" alt="Fast Launch Program showing comprehensive website and social media marketing bundle with rapid deployment" class="service-image">
-                    <span class="service-icon">🚀</span>
-                    <h3 class="service-title">Fast Launch Program</h3>
-                    <p class="service-description">Complete website + social media bundle. New website deployed in 24 hours plus monthly social media management. Perfect for new businesses or major rebrands. $2,497 setup + $697/month.</p>
+                    <img src="images/service-partnership-success.png" alt="Professional operations coordinator managing business workflows and automated systems" class="service-image">
+                    <span class="service-icon">⚙️</span>
+                    <h3 class="service-title">Operations Coordinator</h3>
+                    <p class="service-description">Dedicated operations staff manages your business workflows, automates repetitive tasks, and ensures smooth daily operations. Handles inventory tracking, order processing, and payment collection. Keeps your business running efficiently while you focus on growth.</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
                 <div class="service-card">
-                    <img src="images/service-modern-workspace.png" alt="Growth Accelerator Program showing advanced marketing analytics and comprehensive digital strategy implementation" class="service-image">
-                    <span class="service-icon">📈</span>
-                    <h3 class="service-title">Growth Accelerator Program</h3>
-                    <p class="service-description">Advanced marketing program for growth-focused businesses. Website, social media, and performance tracking with dedicated account management. $3,497 setup + $997/month.</p>
-                    <a href="services.html" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <img src="images/service-celebrating-success.png" alt="Market Dominator Program showing enterprise-level marketing automation and market leadership tools" class="service-image">
-                    <span class="service-icon">👑</span>
-                    <h3 class="service-title">Market Dominator Program</h3>
-                    <p class="service-description">Elite marketing dominance system for market leaders. Complete automation, advanced analytics, and comprehensive market coverage. $4,997 setup + $1,497/month.</p>
+                    <img src="images/service-modern-workspace.png" alt="Professional content creator developing engaging marketing materials and business communications" class="service-image">
+                    <span class="service-icon">✍️</span>
+                    <h3 class="service-title">Content Creator</h3>
+                    <p class="service-description">Professional content specialist creates all your marketing materials, social media posts, and business communications. Produces engaging content tailored to your audience, maintains consistent brand voice, and ensures your message resonates across all platforms.</p>
                     <a href="services.html" class="service-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CAPABILITIES SECTION -->
+    <section class="capabilities-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Proprietary Business Platform</div>
+                <h2 class="h2">Advanced Business Automation Technology</h2>
+                <p class="section-subtitle">Our proprietary business automation platform integrates customer management, communications, and operations into one seamless system. Get enterprise-level capabilities without the enterprise costs.</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">🔄</div>
+                    <h3 class="capability-title">Complete Workflow Automation</h3>
+                    <p class="capability-description">Automatic lead capture, appointment scheduling, follow-up sequences, and customer communication. Your business runs 24/7 without manual intervention.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">📱</div>
+                    <h3 class="capability-title">Multi-Channel Communication</h3>
+                    <p class="capability-description">SMS, email, voicemail, and social media messaging from one centralized platform. Never miss a customer interaction across any channel.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">📊</div>
+                    <h3 class="capability-title">Real-Time Analytics Dashboard</h3>
+                    <p class="capability-description">Track every lead, conversion, and revenue source with detailed reporting. Make data-driven decisions with comprehensive business intelligence.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🎯</div>
+                    <h3 class="capability-title">Smart Customer Segmentation</h3>
+                    <p class="capability-description">Automatically categorize customers based on behavior, preferences, and value. Deliver personalized experiences that increase retention and lifetime value.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">💰</div>
+                    <h3 class="capability-title">Integrated Payment Processing</h3>
+                    <p class="capability-description">Accept payments, manage subscriptions, and automate invoicing. Streamline your revenue collection with secure, PCI-compliant processing.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">🏗️</div>
+                    <h3 class="capability-title">Custom Business Builder</h3>
+                    <p class="capability-description">Build websites, landing pages, and funnels without technical skills. Our drag-and-drop builder creates professional results in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-grid">
                 <div class="cta-content">
-                    <h2 class="h2 fade-in">Ready to Grow Your Business Online?</h2>
-                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">Whether you need a simple website renovation or a comprehensive marketing program, we have the right solution for your business. Professional service, fast delivery, and measurable results guaranteed.</p>
+                    <h2 class="h2 fade-in">Ready to Stop Losing Money Every Day?</h2>
+                    <p class="text-lg fade-in stagger-1" style="color: var(--color-text-muted);">Your complete business team is ready to start working today. Customer service, marketing, operations, and content creation - all handled professionally while you focus on growing your business. Stop the daily losses and start the automation.</p>
                     <div class="hero-buttons">
-                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Get Your Free Quote</a>
+                        <a href="contact.html" class="btn btn-primary fade-in stagger-2">Get Your Business Team</a>
                         <a href="tel:650-586-5889" class="btn btn-secondary fade-in stagger-2">Call Now: (650) 586-5889</a>
                     </div>
                 </div>
@@ -1706,15 +2112,15 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>Professional web and digital marketing solutions for businesses of all sizes. From individual website renovations to comprehensive marketing programs, we deliver quality results with fast turnaround times.</p>
+                    <p>Complete business automation platform providing dedicated staff for customer service, marketing, operations, and content creation. Stop losing money to daily business problems and get your professional team working 24/7.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3>Your Business Team</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Website Renovation - Starting at $997</a></li>
-                        <li><a href="services.html">Social Media Management - $397/month</a></li>
-                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
-                        <li><a href="services.html">Growth & Dominator Programs</a></li>
+                        <li><a href="services.html">Customer Service Representative</a></li>
+                        <li><a href="services.html">Marketing Manager</a></li>
+                        <li><a href="services.html">Operations Coordinator</a></li>
+                        <li><a href="services.html">Content Creator</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1804,81 +2210,44 @@
         });
         
         
-        // Custom Cursor
+        // === CUSTOM CURSOR ===
         const cursor = document.querySelector('.cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
         let mouseX = 0;
         let mouseY = 0;
         let cursorX = 0;
         let cursorY = 0;
-        let dotX = 0;
-        let dotY = 0;
-        
-        // Track mouse movement
+
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-        
-        // Animate cursor
+
         function animateCursor() {
-            // Smooth following for main cursor
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
             
-            // Instant following for dot
-            dotX = mouseX;
-            dotY = mouseY;
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
             
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
-            cursorDot.style.left = dotX + 'px';
-            cursorDot.style.top = dotY + 'px';
             
             requestAnimationFrame(animateCursor);
         }
-        
-        // Start cursor animation
-        if (window.innerWidth > 768) {
-            animateCursor();
-        }
-        
+        animateCursor();
+
         // Cursor interactions
-        const interactiveElements = document.querySelectorAll('a, button, .btn, .service-card, .portfolio-item, .logo, .nav-link');
+        const interactiveElements = document.querySelectorAll('a, button, .btn, input, select, textarea, .service-card, .portfolio-item, .logo, .nav-link');
         
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
+                cursor.classList.add('active');
             });
             
             el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-            
-            el.addEventListener('mousedown', () => {
-                cursor.classList.add('click');
-            });
-            
-            el.addEventListener('mouseup', () => {
-                cursor.classList.remove('click');
+                cursor.classList.remove('active');
             });
         });
-        
-        // Hide cursor when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            cursorDot.style.opacity = '0';
-        });
-        
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-            cursorDot.style.opacity = '1';
-        });
-        
-        // Disable custom cursor on mobile
-        if (window.innerWidth <= 768) {
-            document.body.classList.remove('has-custom-cursor');
-        }
         
         // Progressive content loading
         function addLoadingEffect() {
@@ -1921,35 +2290,81 @@
             addLoadingEffect();
         });
         
-        // Hamburger Menu Functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerMenu = document.getElementById('hamburgerMenu');
-            const mobileMenu = document.getElementById('mobileMenu');
+        // === MOBILE MENU FUNCTIONALITY ===
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function() {
+            const isActive = hamburgerMenu.classList.contains('active');
             
-            if (hamburgerMenu && mobileMenu) {
-                hamburgerMenu.addEventListener('click', () => {
-                    hamburgerMenu.classList.toggle('active');
-                    mobileMenu.classList.toggle('active');
-                });
-                
-                // Close menu when clicking on a link
-                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-                mobileNavLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        hamburgerMenu.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                    });
-                });
-                
-                // Close menu when clicking outside
-                mobileMenu.addEventListener('click', (e) => {
-                    if (e.target === mobileMenu) {
-                        hamburgerMenu.classList.remove('active');
-                        mobileMenu.classList.remove('active');
-                    }
-                });
+            if (isActive) {
+                // Close menu
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                // Open menu
+                hamburgerMenu.classList.add('active');
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         });
+        
+        // Close mobile menu when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Handle mobile menu responsiveness
+        const navMenu = document.querySelector('.nav-menu');
+        
+        function checkScreenSize() {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                navMenu.style.display = 'none';
+                hamburgerMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'flex';
+                hamburgerMenu.style.display = 'none';
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+        
+        // Initial check
+        checkScreenSize();
+        
+        // Check on window resize
+        window.addEventListener('resize', checkScreenSize);
     </script>
 </body>
 </html>

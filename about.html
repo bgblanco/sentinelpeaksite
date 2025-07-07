@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Sentinel Peak Advisors | No More Marketing Horror Stories</title>
-    <meta name="description" content="We understand what it's like to get burned by marketing companies. That's why we built exclusive business growth programs: 24-hour websites, no contracts, premium investment.">
+    <title>About - Sentinel Peak Advisors | Technical Expertise Meets Business Automation</title>
+    <meta name="description" content="From critical infrastructure engineer to business automation expert. Learn how deep technical expertise helps businesses stop losing $50,000+ annually to operational inefficiencies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -164,51 +164,26 @@
         /* === CUSTOM CURSOR === */
         .cursor {
             position: fixed;
+            top: 0;
+            left: 0;
             width: 20px;
             height: 20px;
-            border: 1px solid var(--color-text);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
-            transition: all 0.1s ease;
-            transform: translate(-50%, -50%);
-            mix-blend-mode: difference;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .cursor-dot {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: var(--color-text);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            transition: none;
-            transform: translate(-50%, -50%);
-        }
-        
-        .cursor.hover {
-            width: 60px;
-            height: 60px;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .cursor.click {
-            width: 16px;
-            height: 16px;
-        }
-        
-        body.has-custom-cursor {
-            cursor: none;
-        }
-        
-        body.has-custom-cursor * {
-            cursor: none !important;
+        .cursor.active {
+            transform: scale(1.5);
+            background: rgba(255, 255, 255, 0.2);
         }
         
         @media (max-width: 768px) {
-            .cursor,
-            .cursor-dot {
+            .cursor {
                 display: none;
             }
         }
@@ -323,6 +298,270 @@
 
         .nav-link.active {
             color: #ffffff;
+        }
+
+        /* === HAMBURGER MENU === */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            padding: 12px;
+            z-index: 1001;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hamburger-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .hamburger-menu:hover::before {
+            left: 100%;
+        }
+        
+        .hamburger-menu:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .hamburger-line {
+            width: 20px;
+            height: 2px;
+            background: #ffffff;
+            margin: 2px 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .hamburger-menu.active {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background: #00d4ff;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            background: #00d4ff;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 100px 2rem 2rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .mobile-menu-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-header {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        
+        .mobile-menu-title {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .mobile-menu-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-nav-links li {
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.5s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.6s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.7s; }
+        
+        .mobile-menu.active .mobile-nav-links li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .mobile-nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .mobile-nav-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            transform: translateX(8px);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        .mobile-menu-footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-footer {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.8s;
+        }
+        
+        .mobile-contact-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-phone {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-phone:hover {
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .mobile-cta {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .mobile-cta:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
         }
 
         /* === PAGE HEADER === */
@@ -915,10 +1154,9 @@
         }
     </style>
 </head>
-<body class="has-custom-cursor">
+<body>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
-    <div class="cursor-dot"></div>
     
     <!-- NAVIGATION BAR -->
     <div class="nav-wrapper" id="navbar">
@@ -938,7 +1176,41 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             
+            <!-- Mobile Hamburger Menu -->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
         </nav>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Complete Business Team</div>
+                <div class="mobile-menu-subtitle">Professional automation platform with dedicated staff working 24/7</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:+14238555055" class="mobile-phone">(423) 855-5055</a>
+                    <div class="mobile-menu-subtitle">Ready to automate your business operations?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Business Team Today</a>
+            </div>
+        </div>
     </div>
     
 
@@ -946,8 +1218,8 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>We're Business Owners' Advocates</h1>
-                <p>We've been where you are. Burned by marketing companies that disappear, don't deliver, or treat you like just another check. That's why we built exclusive business growth programs: 24-hour websites, no contracts, premium investment.</p>
+                <h1>The Real Cost of Keeping Up</h1>
+                <p>Business owners lose $50,000+ annually trying to keep up with technology trends, automation tools, and digital infrastructure. We built a complete business automation platform because entrepreneurs need to focus on growth, not learning new software every month.</p>
             </div>
         </div>
     </section>
@@ -957,11 +1229,11 @@
         <div class="container">
             <div class="story-content">
                 <div class="story-text slide-up">
-                    <h2>Why We Exist</h2>
-                    <p>We've seen too many business owners get burned by marketing companies that overpromise, underdeliver, and take your money then go silent. <span class="story-highlight">We're different because we understand your pain.</span></p>
-                    <p>Our founder experienced the same frustrations: long contracts, impressive charts with no real sales, and marketing companies that treated his business like just another number. That's when we decided to build something better.</p>
-                    <p>Today, we deliver what other agencies promise but can't deliver: <strong>real results in 1 day, transparent pricing, and no long-term contracts.</strong> We only succeed when you succeed.</p>
-                    <p>We believe business owners deserve partners, not vendors. That's why we're committed to delivering results and focus on what actually matters: growing your revenue.</p>
+                    <h2>From Critical Infrastructure to Business Automation</h2>
+                    <p>I started businesses at a young age and quickly learned that <span class="story-highlight">staying ahead of technology isn't optional—it's survival.</span> With a computer science background and a passion for building things, I was creating websites in high school while other students were figuring out email.</p>
+                    <p>My career path took me through critical infrastructure—engineering custom alarm monitoring equipment for power grids and essential systems. Later, as a power grid operator for our electric utility, I managed systems where downtime means entire communities lose power. <strong>When infrastructure fails, people suffer.</strong></p>
+                    <p>That experience taught me something crucial: <span class="story-highlight">reliable automation isn't a luxury, it's a necessity.</span> The same precision required to keep lights on for thousands of people applies to keeping your business running smoothly.</p>
+                    <p>My current role allows me to give back to the community, and this company is another way to help business owners like myself. <strong>You've built something amazing—you just need the right tools and systems to support it.</strong></p>
                 </div>
                 <div class="story-image slide-up stagger-1">
                     <img src="images/workspace-behind-shoulder.png" alt="Professional consultant working with multiple monitors showing technical expertise and sophisticated workspace environment" class="story-workspace-image">
@@ -974,46 +1246,46 @@
     <section class="values-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">What We DON'T Do</div>
-                <h2 class="section-title slide-up stagger-1">Why We're Different from Every Other Marketing Company</h2>
-                <p class="section-subtitle slide-up stagger-2">We break every rule that makes business owners hate marketing companies. Here's our commitment to you.</p>
+                <div class="section-badge slide-up">The Business Problem</div>
+                <h2 class="section-title slide-up stagger-1">Why Most Businesses Can't Keep Up</h2>
+                <p class="section-subtitle slide-up stagger-2">Technology moves fast, but business owners can't afford to become full-time tech experts. Here's what's really costing you money every day.</p>
             </div>
             
             <div class="values-grid">
                 <div class="value-card scale-in">
-                    <div class="value-icon">⚡</div>
-                    <h3>No Long-Term Contracts</h3>
-                    <p>Month-to-month partnerships only. If we're not delivering results, you can leave anytime. No penalties, no guilt trips, no BS.</p>
+                    <div class="value-icon">📞</div>
+                    <h3>Learning New Software Every Month</h3>
+                    <p>Business owners spend 10+ hours monthly learning new tools, updating systems, and troubleshooting tech issues. That's $8,000+ annually in lost productive time.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-1">
-                    <div class="value-icon">🎯</div>
-                    <h3>No Meaningless Reports</h3>
-                    <p>We don't care about likes, impressions, or "brand awareness." We focus on leads, sales, and revenue that actually pay your bills. Real business growth only.</p>
+                    <div class="value-icon">⏰</div>
+                    <h3>Manual Customer Management</h3>
+                    <p>Without automation, businesses lose 40% of potential customers to poor follow-up and slow response times. Manual processes cost $15,000+ in lost revenue annually.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-2">
                     <div class="value-icon">💰</div>
-                    <h3>No Hidden Fees</h3>
-                    <p>Complete price transparency. What we quote is what you pay. No surprise charges, no scope creep, no "additional fees."</p>
+                    <h3>Disconnected Business Systems</h3>
+                    <p>When your website, customer data, and communication tools don't talk to each other, you lose leads and waste time. Integration gaps cost $12,000+ annually.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-3">
-                    <div class="value-icon">🚀</div>
-                    <h3>No Endless Delays</h3>
-                    <p>24-hour website delivery, guaranteed. No "just one more week" excuses. We deliver when we say we will, with ironclad commitments.</p>
+                    <div class="value-icon">📊</div>
+                    <h3>No Real-Time Business Intelligence</h3>
+                    <p>Making decisions without data means wasted marketing spend and missed opportunities. Poor analytics cost businesses $10,000+ annually in inefficient operations.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-4">
-                    <div class="value-icon">🤝</div>
-                    <h3>No Platform Lock-In</h3>
-                    <p>You own your website, social accounts, and data. We'll never hold your digital assets hostage or make you dependent on our platforms.</p>
+                    <div class="value-icon">🔧</div>
+                    <h3>Constant Tech Maintenance</h3>
+                    <p>Updates, security patches, backups, and troubleshooting steal focus from growing your business. Technical maintenance costs $8,000+ annually in distraction.</p>
                 </div>
                 
                 <div class="value-card scale-in stagger-5">
-                    <div class="value-icon">📊</div>
-                    <h3>No Communication Blackouts</h3>
-                    <p>Weekly progress reports, dedicated project manager, and direct access to our team. You'll never wonder what's happening with your project.</p>
+                    <div class="value-icon">🎯</div>
+                    <h3>Keeping Up with Digital Trends</h3>
+                    <p>New platforms, changing algorithms, and evolving customer expectations require constant adaptation. Falling behind costs $7,000+ annually in competitive disadvantage.</p>
                 </div>
             </div>
         </div>
@@ -1023,49 +1295,49 @@
     <section class="team-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Our Commitment</div>
-                <h2 class="section-title slide-up stagger-1">We Put Our Money Where Our Mouth Is</h2>
-                <p class="section-subtitle slide-up stagger-2">Unlike other marketing companies, we're committed to our work with real focus on delivering results</p>
+                <div class="section-badge slide-up">The Solution</div>
+                <h2 class="section-title slide-up stagger-1">Your Complete Business Team</h2>
+                <p class="section-subtitle slide-up stagger-2">We've built systems and tools that give you a complete professional team without the overhead. Focus on growth while we handle everything else.</p>
             </div>
             
             <div class="team-grid">
                 <div class="team-member fade-in">
-                    <div class="member-avatar">⏱️</div>
-                    <h3>1-Day Commitment</h3>
-                    <div class="member-role">Website Delivery Focus</div>
-                    <p class="member-bio">We're focused on getting your website live and generating leads within 1 day. Fast delivery is our priority, no excuses or delays.</p>
+                    <div class="member-avatar">📞</div>
+                    <h3>Customer Service Representative</h3>
+                    <div class="member-role">24/7 Customer Management</div>
+                    <p class="member-bio">Handles all customer communications, appointment scheduling, and follow-ups. Never miss another call or opportunity with dedicated customer service staff.</p>
                     <div class="member-social">
-                        <a href="contact.html">📞 Apply Now</a>
+                        <a href="contact.html">📞 Learn More</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-1">
                     <div class="member-avatar">📊</div>
-                    <h3>90-Day Results Focus</h3>
-                    <div class="member-role">Performance Commitment</div>
-                    <p class="member-bio">We're dedicated to helping you see measurable growth in leads and sales within 90 days. Our focus is on your success from day one.</p>
+                    <h3>Marketing Manager</h3>
+                    <div class="member-role">Strategy & Analytics Expert</div>
+                    <p class="member-bio">Creates campaigns, manages social media, and tracks performance. Provides detailed analytics and ROI reporting so you know exactly what's working.</p>
                     <div class="member-social">
-                        <a href="contact.html">📞 Apply Now</a>
+                        <a href="contact.html">📞 Learn More</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-2">
-                    <div class="member-avatar">🔒</div>
-                    <h3>No Contract Lock-In</h3>
-                    <div class="member-role">Freedom Commitment</div>
-                    <p class="member-bio">Month-to-month only. Cancel anytime without penalties. We earn your business every single month through results, not contracts.</p>
+                    <div class="member-avatar">⚙️</div>
+                    <h3>Operations Coordinator</h3>
+                    <div class="member-role">Automation & Efficiency</div>
+                    <p class="member-bio">Manages workflows, automates repetitive tasks, and ensures smooth daily operations. Keeps your business running efficiently while you focus on growth.</p>
                     <div class="member-social">
                         <a href="contact.html">📞 Learn More</a>
                     </div>
                 </div>
                 
                 <div class="team-member fade-in stagger-3">
-                    <div class="member-avatar">💰</div>
-                    <h3>Price Transparency</h3>
-                    <div class="member-role">No Hidden Fees Commitment</div>
-                    <p class="member-bio">What we quote is what you pay. No surprise charges, no scope creep, no "additional fees." Complete transparency, always.</p>
+                    <div class="member-avatar">✍️</div>
+                    <h3>Content Creator</h3>
+                    <div class="member-role">Professional Communications</div>
+                    <p class="member-bio">Creates all marketing materials, social media posts, and business communications. Maintains consistent brand voice across all platforms.</p>
                     <div class="member-social">
-                        <a href="services.html">📞 View Pricing</a>
+                        <a href="contact.html">📞 Learn More</a>
                     </div>
                 </div>
             </div>
@@ -1076,27 +1348,27 @@
     <section class="stats-section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Real Results</div>
-                <h2 class="section-title slide-up stagger-1">Why Business Owners Choose Us</h2>
-                <p class="section-subtitle slide-up stagger-2">Unlike other agencies, we measure success by what actually matters to your business</p>
+                <div class="section-badge slide-up">Our Mission</div>
+                <h2 class="section-title slide-up stagger-1">Helping Business Owners Focus on Growth</h2>
+                <p class="section-subtitle slide-up stagger-2">We understand the struggle of keeping up with technology because we've been there. Our mission is taking these problems away completely.</p>
             </div>
             
             <div class="stats-grid">
                 <div class="stat-item scale-in">
-                    <span class="stat-number">1 Day</span>
-                    <span class="stat-label">Average Delivery Time</span>
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Turnkey Solutions</span>
                 </div>
                 <div class="stat-item scale-in stagger-1">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Long-Term Contracts</span>
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Business Automation</span>
                 </div>
                 <div class="stat-item scale-in stagger-2">
-                    <span class="stat-number">340%</span>
-                    <span class="stat-label">Average Lead Increase</span>
+                    <span class="stat-number">$50K+</span>
+                    <span class="stat-label">Annual Losses Prevented</span>
                 </div>
                 <div class="stat-item scale-in stagger-3">
-                    <span class="stat-number">90 Day</span>
-                    <span class="stat-label">Performance Focus</span>
+                    <span class="stat-number">Zero</span>
+                    <span class="stat-label">Tech Learning Required</span>
                 </div>
             </div>
         </div>
@@ -1106,10 +1378,10 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to stop getting burned by agencies?</h2>
-                <p class="cta-description">Limited capacity: We only take 5 new clients per month. Book your free consultation and see why we're different.</p>
+                <h2 class="cta-title">Ready to Stop Losing Money Every Day?</h2>
+                <p class="cta-description">Your complete business team is ready to start working today. Let us handle the technology so you can focus on what you do best—growing your business.</p>
                 <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="contact.html" class="btn btn-primary">Get Your Business Team</a>
                     <a href="tel:650-586-5889" class="btn btn-secondary">Call: (650) 586-5889</a>
                 </div>
             </div>
@@ -1122,15 +1394,15 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3>Sentinel Peak Advisors</h3>
-                    <p>Exclusive business growth programs with significant upfront investment. We focus on 24-hour delivery and premium results for qualified businesses only.</p>
+                    <p>Complete business automation platform providing dedicated staff for customer service, marketing, operations, and content creation. Stop losing money to daily business problems and get your professional team working 24/7.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3>Your Business Team</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
-                        <li><a href="services.html">Growth Accelerator - $3,497 setup</a></li>
-                        <li><a href="services.html">Market Dominator - $4,997 setup</a></li>
-                        <li><a href="services.html">Application Required</a></li>
+                        <li><a href="services.html">Customer Service Representative</a></li>
+                        <li><a href="services.html">Marketing Manager</a></li>
+                        <li><a href="services.html">Operations Coordinator</a></li>
+                        <li><a href="services.html">Content Creator</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1219,82 +1491,120 @@
             });
         });
         
-        // Custom Cursor
+        // === CUSTOM CURSOR ===
         const cursor = document.querySelector('.cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
         let mouseX = 0;
         let mouseY = 0;
         let cursorX = 0;
         let cursorY = 0;
-        let dotX = 0;
-        let dotY = 0;
-        
-        // Track mouse movement
+
         document.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
-        
-        // Animate cursor
+
         function animateCursor() {
-            // Smooth following for main cursor
-            cursorX += (mouseX - cursorX) * 0.1;
-            cursorY += (mouseY - cursorY) * 0.1;
+            const dx = mouseX - cursorX;
+            const dy = mouseY - cursorY;
             
-            // Instant following for dot
-            dotX = mouseX;
-            dotY = mouseY;
+            cursorX += dx * 0.1;
+            cursorY += dy * 0.1;
             
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
-            cursorDot.style.left = dotX + 'px';
-            cursorDot.style.top = dotY + 'px';
             
             requestAnimationFrame(animateCursor);
         }
-        
-        // Start cursor animation
-        if (window.innerWidth > 768) {
-            animateCursor();
-        }
-        
+        animateCursor();
+
         // Cursor interactions
-        const interactiveElements = document.querySelectorAll('a, button, .btn, .value-card, .team-member, .logo, .nav-link');
+        const interactiveElements = document.querySelectorAll('a, button, .btn, input, select, textarea, .value-card, .team-member, .logo, .nav-link');
         
         interactiveElements.forEach(el => {
             el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
+                cursor.classList.add('active');
             });
             
             el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
+                cursor.classList.remove('active');
             });
+        });
+        
+        // === MOBILE MENU FUNCTIONALITY ===
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function() {
+            const isActive = hamburgerMenu.classList.contains('active');
             
-            el.addEventListener('mousedown', () => {
-                cursor.classList.add('click');
+            if (isActive) {
+                // Close menu
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                // Open menu
+                hamburgerMenu.classList.add('active');
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Handle mobile menu responsiveness
+        const navMenu = document.querySelector('.nav-menu');
+        
+        function checkScreenSize() {
+            const isMobile = window.innerWidth <= 768;
             
-            el.addEventListener('mouseup', () => {
-                cursor.classList.remove('click');
-            });
-        });
-        
-        // Hide cursor when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-            cursorDot.style.opacity = '0';
-        });
-        
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-            cursorDot.style.opacity = '1';
-        });
-        
-        
-        // Disable custom cursor on mobile
-        if (window.innerWidth <= 768) {
-            document.body.classList.remove('has-custom-cursor');
+            if (isMobile) {
+                navMenu.style.display = 'none';
+                hamburgerMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'flex';
+                hamburgerMenu.style.display = 'none';
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
         }
+        
+        // Initial check
+        checkScreenSize();
+        
+        // Check on window resize
+        window.addEventListener('resize', checkScreenSize);
     </script>
 </body>
 </html>

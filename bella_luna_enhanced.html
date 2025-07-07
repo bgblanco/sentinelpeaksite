@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bella Luna Ristorante - Authentic Italian fine dining in Historic Downtown District featuring farm-to-table cuisine and award-winning wine pairings.">
+    <meta property="og:title" content="Bella Luna Ristorante - Authentic Italian Fine Dining">
+    <meta property="og:description" content="Four generations of Tuscan tradition meets modern culinary excellence. Reserve your table today.">
+    <meta property="og:type" content="restaurant">
+    
+    <title>Bella Luna Ristorante - Authentic Italian Fine Dining | Historic Downtown</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Bella Luna Ristorante",
+        "description": "Authentic Italian fine dining restaurant featuring farm-to-table cuisine",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Historic Downtown District",
+            "addressLocality": "Downtown",
+            "addressRegion": "State",
+            "postalCode": "12345"
+        },
+        "telephone": "(555) 123-4567",
+        "email": "reservations@bellalunaristorante.com",
+        "url": "https://bellalunaristorante.com",
+        "servesCuisine": "Italian",
+        "priceRange": "$$$",
+        "acceptsReservations": true
+    }
+    </script>
+    
+    <style>
+        :root {
+            /* Color Palette - Sophisticated Restaurant Colors */
+            --gold-primary: #D4AF37;
+            --gold-light: #F4E4BC;
+            --forest-green: #2F5233;
+            --cream: #FAF7F0;
+            --charcoal: #2C2C2C;
+            --warm-white: #FEFCF7;
+            --burgundy: #722F37;
+            --sage: #9CAF88;
+            
+            /* Typography */
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            /* Spacing System */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2.5rem;
+            --space-xl: 4rem;
+            --space-2xl: 6rem;
+            
+            /* Transitions */
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--charcoal);
+            background-color: var(--warm-white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(47, 82, 51, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+
+        .navigation.scrolled {
+            background: rgba(47, 82, 51, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--gold-primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-lg);
+        }
+
+        .nav-link {
+            color: var(--warm-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--gold-primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .reservation-btn {
+            background: var(--gold-primary);
+            color: var(--charcoal);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            border: 2px solid var(--gold-primary);
+        }
+
+        .reservation-btn:hover {
+            background: transparent;
+            color: var(--gold-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            position: relative;
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--charcoal) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: var(--space-xl) var(--space-md);
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-family: var(--font-serif);
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            color: var(--warm-white);
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            letter-spacing: -0.02em;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: var(--gold-light);
+            margin-bottom: var(--space-lg);
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.9s forwards;
+        }
+
+        .btn-primary {
+            background: var(--gold-primary);
+            color: var(--charcoal);
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            border: 2px solid var(--gold-primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--warm-white);
+            padding: var(--space-md) var(--space-lg);
+            border: 2px solid var(--warm-white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary:hover {
+            background: var(--warm-white);
+            color: var(--charcoal);
+            transform: translateY(-2px);
+        }
+
+        /* Section Base */
+        .section {
+            padding: var(--space-2xl) var(--space-md);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            color: var(--forest-green);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--burgundy);
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: var(--space-md);
+            color: var(--charcoal);
+            line-height: 1.7;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Chef Section */
+        .chef {
+            background: var(--warm-white);
+        }
+
+        .chef-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .chef-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .chef-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .chef-info h3 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            color: var(--forest-green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .chef-title {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+        }
+
+        .awards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+
+        .award {
+            background: var(--gold-light);
+            padding: var(--space-md);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .award-year {
+            font-weight: 700;
+            color: var(--burgundy);
+            font-size: 1.1rem;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: var(--forest-green);
+            color: var(--warm-white);
+        }
+
+        .menu .section-title {
+            color: var(--gold-primary);
+        }
+
+        .menu-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .menu-category h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+            margin-bottom: var(--space-md);
+            text-align: center;
+        }
+
+        .menu-items {
+            list-style: none;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid rgba(244, 228, 188, 0.2);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-info h4 {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            font-size: 1.1rem;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--gold-light);
+            line-height: 1.5;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            margin-left: var(--space-md);
+            flex-shrink: 0;
+        }
+
+        /* Reservation Section */
+        .reservation {
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .reservation-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .reservation p {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-lg);
+            color: var(--charcoal);
+        }
+
+        .reservation-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .phone-number {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--burgundy);
+            text-decoration: none;
+            font-weight: 700;
+            margin: var(--space-md) 0;
+            display: block;
+        }
+
+        .phone-number:hover {
+            color: var(--gold-primary);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--charcoal);
+            color: var(--warm-white);
+        }
+
+        .contact .section-title {
+            color: var(--gold-primary);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-xl);
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--gold-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-item {
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-item strong {
+            color: var(--gold-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--forest-green);
+            color: var(--warm-white);
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-serif);
+            color: var(--gold-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+        }
+
+        .social-link {
+            color: var(--warm-white);
+            font-size: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            color: var(--gold-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .about-grid,
+            .chef-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .menu-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .reservation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        .nav-link:focus,
+        .reservation-btn:focus,
+        .btn-primary:focus,
+        .btn-secondary:focus {
+            outline: 2px solid var(--gold-primary);
+            outline-offset: 2px;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-slow);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navigation" id="navigation">
+        <div class="nav-container">
+            <a href="#home" class="logo">Bella Luna</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#chef" class="nav-link">Chef</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#reservation" class="reservation-btn">Reserve Table</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Bella Luna Ristorante</h1>
+            <p class="hero-subtitle">Four generations of Tuscan tradition meets modern culinary excellence</p>
+            <div class="hero-cta">
+                <a href="#reservation" class="btn-primary">Reserve Your Table</a>
+                <a href="#menu" class="btn-secondary">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <h3>Authentic Italian Heritage</h3>
+                    <p>Nestled in the heart of Historic Downtown District, Bella Luna Ristorante brings you four generations of authentic Tuscan recipes passed down through the Benedetti family.</p>
+                    <p>Our intimate 50-seat dining room creates the perfect atmosphere for special occasions, romantic dinners, and unforgettable culinary experiences. Every dish is crafted with locally-sourced ingredients from our 20+ year partnerships with regional farms.</p>
+                    <p>From our handmade pasta prepared fresh daily to our award-winning wine cellar featuring over 200 selections, we honor tradition while embracing culinary innovation.</p>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bella Luna Restaurant Interior" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="chef" class="section chef">
+        <div class="container">
+            <h2 class="section-title">Chef Marco Benedetti</h2>
+            <div class="chef-grid">
+                <div class="chef-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1583394293214-28ceabcce128?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Chef Marco Benedetti" loading="lazy">
+                </div>
+                <div class="chef-info fade-in">
+                    <h3>Master of Tuscan Cuisine</h3>
+                    <p class="chef-title">Executive Chef & Owner</p>
+                    <p>Trained in the renowned kitchens of Florence and mentored by Michelin-starred chefs, Chef Marco brings authentic Italian techniques combined with innovative modern presentations.</p>
+                    <p>His passion for sustainable sourcing and farm-to-table practices has earned Bella Luna recognition as a leader in conscious dining. Every dish tells a story of tradition, craftsmanship, and respect for ingredients.</p>
+                    
+                    <div class="awards">
+                        <div class="award">
+                            <div class="award-year">2023</div>
+                            <div>James Beard Nominee</div>
+                        </div>
+                        <div class="award">
+                            <div class="award-year">2022</div>
+                            <div>Wine Spectator Award</div>
+                        </div>
+                        <div class="award">
+                            <div class="award-year">2021</div>
+                            <div>AAA Four Diamond</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div class="container">
+            <h2 class="section-title">Menu Highlights</h2>
+            <div class="menu-categories">
+                <div class="menu-category fade-in">
+                    <h3>Antipasti</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Burrata di Puglia</h4>
+                                <p class="item-description">Fresh burrata, heirloom tomatoes, basil oil, aged balsamic</p>
+                            </div>
+                            <span class="item-price">$18</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Crudo di Tonno</h4>
+                                <p class="item-description">Yellowfin tuna, blood orange, fennel, Sicilian olive oil</p>
+                            </div>
+                            <span class="item-price">$24</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Antipasto della Casa</h4>
+                                <p class="item-description">Chef's selection of cured meats, cheeses, marinated vegetables</p>
+                            </div>
+                            <span class="item-price">$28</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-category fade-in">
+                    <h3>Primi Piatti</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Pappardelle al Cinghiale</h4>
+                                <p class="item-description">House-made pasta, wild boar ragu, Pecorino Romano</p>
+                            </div>
+                            <span class="item-price">$32</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Risotto ai Porcini</h4>
+                                <p class="item-description">Carnaroli rice, porcini mushrooms, truffle oil, Parmigiano</p>
+                            </div>
+                            <span class="item-price">$28</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Gnocchi di Ricotta</h4>
+                                <p class="item-description">Handmade ricotta gnocchi, sage butter, toasted hazelnuts</p>
+                            </div>
+                            <span class="item-price">$26</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-category fade-in">
+                    <h3>Secondi Piatti</h3>
+                    <ul class="menu-items">
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Bistecca alla Fiorentina</h4>
+                                <p class="item-description">Dry-aged T-bone steak, rosemary, local olive oil (for two)</p>
+                            </div>
+                            <span class="item-price">$85</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Branzino in Crosta</h4>
+                                <p class="item-description">Mediterranean sea bass, herb crust, lemon confit</p>
+                            </div>
+                            <span class="item-price">$38</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="item-info">
+                                <h4>Osso Buco alla Milanese</h4>
+                                <p class="item-description">Braised veal shank, saffron risotto, gremolata</p>
+                            </div>
+                            <span class="item-price">$42</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="section reservation">
+        <div class="container">
+            <h2 class="section-title">Reserve Your Table</h2>
+            <div class="reservation-content fade-in">
+                <p>Experience the finest in Italian dining. Reservations recommended for our intimate dining room.</p>
+                
+                <a href="tel:+15551234567" class="phone-number">(555) 123-4567</a>
+                
+                <div class="reservation-buttons">
+                    <a href="tel:+15551234567" class="btn-primary">Call for Reservations</a>
+                    <a href="mailto:reservations@bellalunaristorante.com" class="btn-secondary">Email Inquiry</a>
+                </div>
+                
+                <p style="margin-top: var(--space-lg); font-size: 0.9rem; color: var(--burgundy);">
+                    <strong>Hours:</strong> Tuesday-Saturday 5:00 PM - 10:00 PM<br>
+                    <strong>Private Dining:</strong> Available for groups of 12-50
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <h3>Location</h3>
+                    <div class="contact-item">
+                        <strong>Address:</strong><br>
+                        Historic Downtown District<br>
+                        Downtown, State 12345
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> (555) 123-4567<br>
+                        <strong>Email:</strong> info@bellalunaristorante.com
+                    </div>
+                </div>
+                
+                <div class="contact-info fade-in">
+                    <h3>Hours</h3>
+                    <div class="contact-item">
+                        <strong>Dinner Service:</strong><br>
+                        Tuesday - Saturday: 5:00 PM - 10:00 PM<br>
+                        Sunday - Monday: Closed
+                    </div>
+                    <div class="contact-item">
+                        <strong>Private Events:</strong><br>
+                        Available by appointment<br>
+                        Groups of 12-50 guests
+                    </div>
+                </div>
+                
+                <div class="contact-info fade-in">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                        <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                        <a href="#" class="social-link" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Bella Luna Ristorante</h4>
+                <p>Four generations of authentic Italian cuisine in the heart of Historic Downtown District.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p>
+                    <a href="#menu" style="color: var(--warm-white); text-decoration: none;">Menu</a><br>
+                    <a href="#reservation" style="color: var(--warm-white); text-decoration: none;">Reservations</a><br>
+                    <a href="#contact" style="color: var(--warm-white); text-decoration: none;">Contact</a>
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>
+                    (555) 123-4567<br>
+                    info@bellalunaristorante.com<br>
+                    Historic Downtown District
+                </p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(244, 228, 188, 0.2); padding-top: var(--space-md); text-align: center;">
+            <p>&copy; 2024 Bella Luna Ristorante. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navigation');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

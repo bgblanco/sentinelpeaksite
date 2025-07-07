@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/sentinel-peak-logo.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
-    <meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-TileColor" content="#000000">
     <meta name="theme-color" content="#000000">
     
     <!-- Google Analytics -->
@@ -355,6 +355,269 @@
             color: #ffffff;
         }
 
+        /* === HAMBURGER MENU === */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            padding: 12px;
+            z-index: 1001;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hamburger-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .hamburger-menu:hover::before {
+            left: 100%;
+        }
+        
+        .hamburger-menu:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
+        
+        .hamburger-line {
+            width: 20px;
+            height: 2px;
+            background: #ffffff;
+            margin: 2px 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .hamburger-menu.active {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background: #00d4ff;
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: scale(0);
+        }
+        
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+            background: #00d4ff;
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 100px 2rem 2rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+            overflow-y: auto;
+        }
+        
+        .mobile-menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-menu-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .mobile-menu-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-header {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.2s;
+        }
+        
+        .mobile-menu-title {
+            font-size: 1.1rem;
+            color: #00d4ff;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .mobile-menu-subtitle {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+        
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-nav-links li {
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-nav-links li:nth-child(1) { transition-delay: 0.3s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(2) { transition-delay: 0.4s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(3) { transition-delay: 0.5s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(4) { transition-delay: 0.6s; }
+        .mobile-menu.active .mobile-nav-links li:nth-child(5) { transition-delay: 0.7s; }
+        
+        .mobile-menu.active .mobile-nav-links li {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .mobile-nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .mobile-nav-link:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            transform: translateX(8px);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+        
+        .mobile-menu-footer {
+            margin-top: auto;
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+        
+        .mobile-menu.active .mobile-menu-footer {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.8s;
+        }
+        
+        .mobile-contact-info {
+            margin-bottom: 1.5rem;
+        }
+        
+        .mobile-phone {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-phone:hover {
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            transform: scale(1.05);
+        }
+        
+        .mobile-cta {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .mobile-cta:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+        }
 
         /* === PAGE HEADER === */
         .page-header {
@@ -642,7 +905,6 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            opacity: 0.4;
             z-index: 1;
         }
         
@@ -652,8 +914,8 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .portfolio-image.civil-engineering::before {
-            background-image: url('images/civil-engineering-website.png');
+        .portfolio-image.bavarian-autoworks::before {
+            background-image: url('images/bavarian-autoworks-website.png');
         }
         
         .portfolio-image.dental::before {
@@ -1186,7 +1448,41 @@
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             
+            <!-- Mobile Hamburger Menu -->
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
         </nav>
+    </div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Complete Business Team</div>
+                <div class="mobile-menu-subtitle">Professional automation platform with dedicated staff working 24/7</div>
+            </div>
+            
+            <nav class="mobile-navigation">
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                    <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                    <li><a href="portfolio.html" class="mobile-nav-link">Portfolio</a></li>
+                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                    <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="mobile-menu-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:+14238555055" class="mobile-phone">(423) 855-5055</a>
+                    <div class="mobile-menu-subtitle">Ready to automate your business operations?</div>
+                </div>
+                <a href="contact.html" class="mobile-cta">Get Your Business Team Today</a>
+            </div>
+        </div>
     </div>
     
     
@@ -1253,14 +1549,14 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item scale-in">
-                    <div class="stat-number" data-target="67">0</div>
+                    <div class="stat-number" data-target="73">0</div>
                     <div class="stat-percentage">%</div>
-                    <div class="stat-label">of Marketing Companies<br>Disappear Mid-Project</div>
+                    <div class="stat-label">Small Businesses Missing<br>Lead-Generating Websites</div>
                 </div>
                 <div class="stat-item scale-in stagger-1">
-                    <div class="stat-number" data-target="80">0</div>
-                    <div class="stat-percentage">%</div>
-                    <div class="stat-label">of Small Businesses<br>Frustrated with Marketing</div>
+                    <div class="stat-number" data-target="127">0</div>
+                    <div class="stat-unit">K</div>
+                    <div class="stat-label">Average Lost Revenue<br>Per Year Without Online Leads</div>
                 </div>
                 <div class="stat-item scale-in stagger-2">
                     <div class="stat-number" data-target="6">0</div>
@@ -1277,47 +1573,23 @@
     </section>
 
     <!-- PORTFOLIO GRID -->
-    <section class="portfolio-section">
-        <div class="container">
-            <div class="portfolio-grid">
-                <!-- Civil Engineering Agency -->
-                <div class="portfolio-item scale-in">
-                    <div class="portfolio-image civil-engineering" style="position: relative; overflow: hidden;">
-                        <img src="images/municipal-networking.png" alt="Professional municipal meeting demonstrating community leadership and government networking relationships" style="width: 100%; height: 100%; object-fit: cover;">
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: #fff; padding: 1rem; font-size: 1.2rem; font-weight: 600; text-align: center;">
-                            Professional Design + Project Showcase = Major Contracts
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="portfolio-category">Civil Engineering</div>
-                        <h3>"Government contracts started reaching out after seeing our professional website"</h3>
-                        <p>High-end civil engineering website delivered in 1 day with clean grid layout showcasing major infrastructure projects. Professional presentation led to 3 government contract inquiries within first month. Project portfolio now speaks louder than any sales pitch.</p>
-                        <!-- Midjourney Prompt: 'landing page for a civil engineering agency, road marking, elegant website, clean grid thumbnail layout, masonry layout, seamless navigation menu, high-end UI/UX design, sharp and detailed visuals, minimalistic yet dynamic composition, refined typography, Figma and Dribbble inspired, polished and professional finish, construction cone' -->
-                        <div class="portfolio-tags">
-                            <span class="tag">Project Showcase</span>
-                            <span class="tag">Clean Grid Layout</span>
-                            <span class="tag">Government Contracts</span>
-                        </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Engineering Website</a>
-                    </div>
-                </div>
-
+  
                 <!-- Dental Clinic -->
                 <div class="portfolio-item scale-in stagger-1">
-                    <div class="portfolio-image dental" style="background: linear-gradient(135deg, #4facfe 0%, #00d2ff 100%); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
+                    <div class="portfolio-image dental" style="background: url('images/dental-website-laptop.png') center/cover; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 600;">
                         Modern Design + Online Booking = Booked Solid
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Healthcare</div>
-                        <h3>"Patients now book online instead of calling during business hours"</h3>
-                        <p>Professional dental website delivered in 1 day with modern, patient-friendly design and integrated booking system. Online appointments increased 300% while phone interruptions decreased dramatically. Patients love the convenience and our staff loves the efficiency.</p>
-                        <!-- Midjourney Prompt: 'ui/ux design for a beautiful landing page for a dental clinic, modern and ultrarealistic mockup' -->
+                        <h3>"Patients call during root canals because we had no online booking system"</h3>
+                        <p>Most dental practices still rely on phone-only scheduling, creating constant interruptions during procedures. We build professional websites with online booking, automated appointment reminders, and patient communication systems. Patients book themselves 24/7 while you focus on their care, not answering phones.</p>
+                        <!-- Midjourney Prompt: 'professional dental office interior, real dentist working with patient, modern equipment, clean clinical environment, natural lighting, authentic dental practice photography, no visible text or signage' -->
                         <div class="portfolio-tags">
                             <span class="tag">Online Booking</span>
-                            <span class="tag">Modern Design</span>
-                            <span class="tag">Patient-Friendly</span>
+                            <span class="tag">Appointment Automation</span>
+                            <span class="tag">Patient Communications</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Dental Website</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1328,15 +1600,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Restaurant</div>
-                        <h3>"Customers started ordering online after seeing our beautiful food photos"</h3>
-                        <p>Professional sushi restaurant website delivered in 1 day with stunning food photography and visual menu layout. Online orders increased 200% while phone orders decreased. Customers love browsing dishes with high-quality photos before deciding what to order.</p>
-                        <!-- Midjourney Prompt: 'menu of a sushi restaurant with a lot of plats and photo of the plates' -->
+                        <h3>"Beautiful sushi, but no way for customers to see it online before ordering"</h3>
+                        <p>Most restaurants rely on word-of-mouth and basic listings, missing massive online opportunities. We create stunning food photography websites with online ordering, social media showcases of daily specials, and automated customer follow-up. Let customers fall in love with your food before they even arrive.</p>
+                        <!-- Midjourney Prompt: 'busy sushi restaurant kitchen during dinner service, real chefs preparing fresh sushi, professional kitchen environment, authentic restaurant atmosphere, natural lighting, no visible text or signage' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Visual Menu</span>
                             <span class="tag">Food Photography</span>
                             <span class="tag">Online Ordering</span>
+                            <span class="tag">Social Showcases</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Restaurant Website</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1347,15 +1619,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">E-commerce</div>
-                        <h3>"Our conversion rate jumped from 1.2% to 4.8% after the website redesign"</h3>
-                        <p>Modern e-commerce website delivered in 1 day with UX-focused interface, large product cards, and streamlined checkout process. Conversion rate increased 300% while cart abandonment dropped 60%. Professional design builds instant trust with online shoppers.</p>
-                        <!-- Midjourney Prompt: 'modern e-commerce website homepage concept, widescreen, desktop mockup, UX-focused interface, large product cards, rounded buttons, minimalistic UI, grey and bright orange color scheme, soft shadows, sans-serif font, high contrast elements, professional and playful vibe' -->
+                        <h3>"Customers add to cart, then disappear forever - we had no follow-up system"</h3>
+                        <p>Many online stores have basic websites but no automated systems to recover lost sales. We build complete e-commerce platforms with cart abandonment recovery, customer follow-up sequences, and automated product recommendations. Turn one-time browsers into lifetime customers with systematic nurturing.</p>
+                        <!-- Midjourney Prompt: 'modern e-commerce fulfillment center, real products being packaged, professional warehouse environment, authentic business photography, natural lighting, no visible text labels or signage' -->
                         <div class="portfolio-tags">
-                            <span class="tag">UX-Focused Design</span>
-                            <span class="tag">High Conversion</span>
-                            <span class="tag">Modern Interface</span>
+                            <span class="tag">Cart Recovery</span>
+                            <span class="tag">Customer Nurturing</span>
+                            <span class="tag">Automated Follow-up</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your E-commerce Store</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1366,15 +1638,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Wholesale B2B</div>
-                        <h3>"Large contractors started placing bulk orders through our professional website"</h3>
-                        <p>Clean, modern wholesale hardware website delivered in 1 day with B2B-focused design and bulk ordering system. Major distributors and contractors now place orders directly online instead of calling. Professional presentation elevated our brand from small supplier to trusted industry partner.</p>
-                        <!-- Midjourney Prompt: 'clean modern home page layout for a wholesale hardware business in white black and red accents' -->
+                        <h3>"Contractors needed bulk quotes, but our website just showed a phone number"</h3>
+                        <p>Most wholesale businesses have outdated websites with no online quoting or contractor portal. We build professional B2B platforms with instant bulk quote systems, contractor account management, and automated order tracking. Let contractors do business with you 24/7, even when your office is closed.</p>
+                        <!-- Midjourney Prompt: 'professional warehouse with construction materials, real hardware inventory, industrial shelving, authentic wholesale business environment, natural lighting, no visible text or price tags' -->
                         <div class="portfolio-tags">
-                            <span class="tag">B2B Focus</span>
-                            <span class="tag">Bulk Ordering</span>
-                            <span class="tag">Professional Design</span>
+                            <span class="tag">Bulk Quote System</span>
+                            <span class="tag">Contractor Portal</span>
+                            <span class="tag">24/7 Ordering</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your B2B Website</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1385,15 +1657,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Automotive E-commerce</div>
-                        <h3>"Car enthusiasts finally found a professional wheel store they could trust"</h3>
-                        <p>Specialized automotive wheels e-commerce website delivered in 1 day with 3D product visualization and dark, premium UI design. Online sales increased 350% as car enthusiasts appreciated the professional presentation. Premium design elevated brand from basic parts seller to trusted performance specialist.</p>
-                        <!-- Midjourney Prompt: 'ecommerce website homepage UI for wheels store, UI design, no moockup, dark colors, 3d design' -->
+                        <h3>"Car enthusiasts couldn't check wheel fitment online - constant confusion"</h3>
+                        <p>Most automotive parts websites lack proper fitment tools or educational content, creating endless customer confusion. We build intelligent automotive platforms with vehicle-specific fitment checkers, educational content about wheel specs, and automated customer guidance. Let customers find exactly what fits their car without calling you.</p>
+                        <!-- Midjourney Prompt: 'professional automotive wheel showroom, real car wheels on display, clean automotive parts store interior, authentic business environment, natural lighting, no visible text or brand labels' -->
                         <div class="portfolio-tags">
-                            <span class="tag">3D Visualization</span>
-                            <span class="tag">Premium UI</span>
-                            <span class="tag">Automotive Specialist</span>
+                            <span class="tag">Fitment Checker</span>
+                            <span class="tag">Educational Content</span>
+                            <span class="tag">Vehicle-Specific</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Auto Store</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1404,15 +1676,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Legal Services</div>
-                        <h3>"Corporate clients started seeking us out after seeing our professional rebrand"</h3>
-                        <p>Sophisticated law firm branding and website delivered in 1 day with warm, trust-building design and complete visual identity system. High-value clients began approaching the firm directly instead of shopping around. Professional presentation elevated perception from local practice to premium legal partner.</p>
-                        <!-- Midjourney Prompt: 'A sophisticated branding composition showing a warm-toned logo design for a modern law firm, displayed on clean stationery, digital screens, and a minimal website mockup. The visual identity blends solidity and motion a symbol that evokes both trust and strategic vision. Background includes warm, inviting tones (terracotta, soft sand, muted blues), with subtle accents of innovation. Surrounding elements show human-centered imagery: portraits of empathetic lawyers in real business contexts, client collaboration moments, and subtle references to growth and opportunity. Clear, elegant, and emotionally resonant design.' -->
+                        <h3>"Potential clients called, left voicemails, never heard back - no capture system"</h3>
+                        <p>Most law firms have basic websites with just contact forms that disappear into email inboxes. We build professional legal platforms with automated consultation scheduling, lead capture systems, and authority-building content that positions you as the expert. Turn website visitors into qualified consultations automatically.</p>
+                        <!-- Midjourney Prompt: 'professional law office conference room, real attorneys in business meeting, sophisticated legal environment, natural lighting, authentic business photography, no visible text or documents' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Complete Branding</span>
-                            <span class="tag">Trust-Building Design</span>
-                            <span class="tag">Premium Clients</span>
+                            <span class="tag">Consultation Scheduling</span>
+                            <span class="tag">Lead Capture</span>
+                            <span class="tag">Authority Building</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Legal Brand</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1423,15 +1695,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">Luxury Real Estate</div>
-                        <h3>"Ultra-high-net-worth clients began inquiring about our Caribbean portfolio"</h3>
-                        <p>Luxury real estate website delivered in 1 day featuring elegant hero sections, Caribbean villa showcases, and sophisticated dark blue design aesthetic. Elite international buyers started making direct inquiries instead of working through brokers. Premium presentation attracted the caliber of clients the firm always wanted.</p>
-                        <!-- Midjourney Prompt: 'Design of website for real estate company that sells global luxury properties and homes, using dark blue and black color palette. The design should feature an elegant hero section with images showcasing luxurious villa in the caribbean, sleek typography, modern elements like icons or other symbols representing the advanced technology used by drive to create digital marketing materials. Include call-to-action buttons for contact information and sections such as 'our Port Norval golf club'' -->
+                        <h3>"High-end buyers wanted exclusive previews, but we only had basic MLS listings"</h3>
+                        <p>Most luxury realtors rely on standard MLS platforms that don't create exclusive experiences for high-net-worth clients. We build sophisticated luxury portals with private property showcases, exclusive market insights, and VIP client communication systems. Make luxury buyers feel special before they even see a property.</p>
+                        <!-- Midjourney Prompt: 'luxury real estate showing, professional realtor with high-end clients, elegant mansion interior, sophisticated business meeting, natural lighting, authentic luxury real estate photography, no visible text or signage' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Luxury Properties</span>
-                            <span class="tag">Global Portfolio</span>
-                            <span class="tag">Elite Clients</span>
+                            <span class="tag">Exclusive Showcases</span>
+                            <span class="tag">VIP Portals</span>
+                            <span class="tag">Private Access</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Luxury Site</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1442,15 +1714,15 @@
                     </div>
                     <div class="portfolio-content">
                         <div class="portfolio-category">SaaS Technology</div>
-                        <h3>"Enterprise clients started requesting demos after seeing our modern interface"</h3>
-                        <p>Modern SaaS website delivered in 1 day featuring glassmorphism UI, 4 distinct product sections with color-coded infographics, and seamless integration of collaborative workspace imagery. Enterprise prospects began requesting product demos directly instead of comparing competitors. Cutting-edge design positioned company as innovation leader.</p>
-                        <!-- Midjourney Prompt: 'modern minimalist SaaS company website and PowerPoint design samples in 16:9 layout. uplight,style raw, sleek white interface with glassmorphism UI, clean layout, friendly typography, bright lighting, soft shadows. accent colors: vibrant purple, magenta, ocean blue, teal, 4 distinct product sections each color coded circular infographic showing process for the 4 products in separate panel. overlay of people working on laptops and computers, diversity, collaborative workspace, seamless integration of website UI and whitepaper layout mockups' -->
+                        <h3>"Enterprise prospects filled forms, disappeared into email chaos - no qualification"</h3>
+                        <p>Most SaaS companies have basic contact forms that create unqualified lead chaos for sales teams. We build intelligent SaaS platforms with automated lead scoring, demo qualification systems, and enterprise prospect nurturing workflows. Only qualified, sales-ready prospects reach your expensive sales team.</p>
+                        <!-- Midjourney Prompt: 'modern tech office environment, real software developers working, professional startup atmosphere, collaborative workspace, natural lighting, authentic technology company photography, no visible screens or text' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Glassmorphism UI</span>
-                            <span class="tag">Multi-Product</span>
-                            <span class="tag">Enterprise Ready</span>
+                            <span class="tag">Lead Scoring</span>
+                            <span class="tag">Demo Qualification</span>
+                            <span class="tag">Sales-Ready Leads</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your SaaS Site</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
 
@@ -1460,107 +1732,70 @@
                         Artisan Luxury + Premium Design = Collector Market
                     </div>
                     <div class="portfolio-content">
-                        <div class="portfolio-category">Luxury Artisan</div>
-                        <h3>"Knife collectors worldwide started placing custom orders through our website"</h3>
-                        <p>Ultra-luxury artisan cutlery website delivered in 1 day featuring minimalist beige aesthetic, elegant typography, and premium product photography. International collectors began commissioning custom pieces directly instead of waiting for craft shows. Sophisticated design elevated handcrafted knives to investment-grade art pieces.</p>
-                        <!-- Midjourney Prompt: 'Ultra-luxury homepage design for "DJ Legacy Artisan Cutlery" minimalist layout on warm beige background, elegant black serif logo and navigation, full-width hero shot of a hand-forged knife with subtle gold accents, refined grid of four knife collection cards with high-contrast product photos, sleek newsletter signup form, stylish footer with social icons; clean white space, premium editorial typography, Dribbble/Behance quality, Adobe XD mockup feel' -->
+                        <div class="portfolio-category">Local Artisan</div>
+                        <h3>"Local knife maker with incredible skills, but people only found him through word-of-mouth"</h3>
+                        <p>Talented artisans often rely entirely on word-of-mouth and have no online presence to showcase their incredible work. We build beautiful craft portfolios with online galleries, custom order systems, and social media showcases of the creation process. Help customers discover and commission your unique artistry online.</p>
+                        <!-- Midjourney Prompt: 'artisan craftsman forging custom knife, professional workshop environment, real metalworking tools, authentic craftsmanship photography, natural lighting, no visible text or brand labels' -->
                         <div class="portfolio-tags">
-                            <span class="tag">Ultra-Luxury</span>
-                            <span class="tag">Artisan Craft</span>
-                            <span class="tag">Collector Market</span>
+                            <span class="tag">Online Portfolio</span>
+                            <span class="tag">Custom Commissions</span>
+                            <span class="tag">Process Showcase</span>
                         </div>
-                        <a href="contact.html" class="portfolio-link">Get Your Artisan Site</a>
+                        <a href="contact.html" class="portfolio-link">Get Your Complete System</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CASE STUDIES SECTION -->
+    <!-- FEATURED SUCCESS STORY -->
     <section class="case-studies">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Real Client Stories</div>
-                <h2 class="section-title slide-up stagger-1">What Happens When You Get Your Website Fast + Social Media That Actually Works</h2>
-                <p class="section-subtitle slide-up stagger-2">No likes, followers, or engagement rate reports. Just business owners who stopped wasting money on vanity metrics and started generating real revenue.</p>
+                <div class="section-badge slide-up">Featured Success Story</div>
+                <h2 class="section-title slide-up stagger-1">Local Client (Central Valley): BavarianAutoWerks.com</h2>
+                <p class="section-subtitle slide-up stagger-2">From basic repair shop to premium BMW specialist - how a 1-day website transformed a local automotive business.</p>
             </div>
             
             <div class="case-study-grid">
-                <div class="case-study fade-in">
-                    <!-- Midjourney Prompt: 'Professional Latina restaurant owner in her 40s standing confidently in her bustling restaurant kitchen, customers visible dining in background, warm lighting, authentic atmosphere, showing success and pride, realistic photography style, --ar 1:1 --v 6' -->
-                    <img src="images/restaurant-owner-jennifer.png" alt="Jennifer Martinez, Restaurant Owner" class="case-study-image">
+                <div class="case-study fade-in" style="max-width: 800px; margin: 0 auto;">
                     <div class="case-study-content">
                         <div class="case-study-header">
-                            <h3>"I canceled my $3K Facebook ad budget and I'm making more money than ever"</h3>
-                            <div class="case-study-industry">Jennifer Martinez, Local Restaurant Owner</div>
+                            <h3>"BMW owners finally found a shop that explains what's wrong before they even drive over"</h3>
+                            <div class="case-study-industry">BavarianAutoWerks.com - BMW Specialty Service</div>
                         </div>
                         <div class="case-study-stats">
                             <div class="stat">
-                                <span class="stat-number">$25K</span>
-                                <span class="stat-label">Monthly Revenue</span>
+                                <span class="stat-number">Custom</span>
+                                <span class="stat-label">Code Checker Tool</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">Zero</span>
-                                <span class="stat-label">Ad Spend</span>
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Auto Booking</span>
                             </div>
                             <div class="stat">
-                                <span class="stat-number">187</span>
-                                <span class="stat-label">New Customers</span>
+                                <span class="stat-number">Automated</span>
+                                <span class="stat-label">Lead Capture</span>
                             </div>
                         </div>
-                        <p>"Those Facebook ads were eating my profits alive with barely any customers to show for it. Now Instagram posts and automated DM responses bring in $25K monthly in direct orders. Every comment about our food turns into a reservation or takeout order. Best part? Zero ad spend."</p>
-                    </div>
-                </div>
-
-                <div class="case-study fade-in stagger-1">
-                    <!-- Midjourney Prompt: 'Professional African American business consultant in his 50s in modern office setting, confident posture, multiple monitors showing business analytics, LinkedIn open on screen, successful consultant aesthetic, realistic photography, --ar 1:1 --v 6' -->
-                    <img src="images/consultant-marcus.png" alt="Marcus Thompson, B2B Consultant" class="case-study-image">
-                    <div class="case-study-content">
-                        <div class="case-study-header">
-                            <h3>"I went from cold calling 50 people a week to having prospects call me"</h3>
-                            <div class="case-study-industry">Marcus Thompson, B2B Consulting Firm</div>
+                        <p>"The code checker tool changed everything. BMW owners can input their diagnostic codes and instantly understand what's wrong, see repair costs, and book appointments automatically. I wake up each morning knowing exactly what's scheduled for the day. No more phone tag, no more explaining the same codes repeatedly."</p>
+                        
+                        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                            <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Technical Features Built:</h4>
+                            <ul style="color: rgba(255,255,255,0.8); line-height: 1.8;">
+                                <li>• <strong>Interactive Code Checker:</strong> Customers input BMW codes, get instant explanations + cost estimates</li>
+                                <li>• <strong>Educational Database:</strong> Common BMW codes with symptoms and repair guidance</li>
+                                <li>• <strong>Automated Booking:</strong> Customers schedule their own appointments 24/7</li>
+                                <li>• <strong>Lead Capture Forms:</strong> Automatically collect customer details and car information</li>
+                                <li>• <strong>Calendar Integration:</strong> Owner sees daily schedule without manual coordination</li>
+                            </ul>
                         </div>
-                        <div class="case-study-stats">
-                            <div class="stat">
-                                <span class="stat-number">$45K</span>
-                                <span class="stat-label">Monthly Revenue</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">12</span>
-                                <span class="stat-label">Qualified Leads/Week</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">Zero</span>
-                                <span class="stat-label">Cold Calling</span>
-                            </div>
+                        
+                        <div style="margin-top: 2rem; text-align: center;">
+                            <a href="https://bavarianautowerks.com" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background: rgba(0,212,255,0.1); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); border-radius: 6px; text-decoration: none; transition: all 0.3s ease;">
+                                View BavarianAutoWerks.com →
+                            </a>
                         </div>
-                        <p>"Cold calling was soul-crushing and barely worked - maybe 1 out of 50 calls turned into anything. Now LinkedIn posts and automated follow-ups bring me 12 qualified prospects weekly who actually want to talk to me. I stopped chasing and started attracting."</p>
-                    </div>
-                </div>
-
-                <div class="case-study fade-in stagger-3">
-                    <!-- Midjourney Prompt: 'Asian American salon owner in her 30s in upscale beauty salon, modern styling chairs, clients getting services in background, professional and successful atmosphere, warm lighting, realistic photography style, --ar 1:1 --v 6' -->
-                    <img src="images/salon-owner-sarah.png" alt="Sarah Chen, Salon Owner" class="case-study-image">
-                    <div class="case-study-content">
-                        <div class="case-study-header">
-                            <h3>"Three marketing companies took my money and left me with nothing to show for it"</h3>
-                            <div class="case-study-industry">Sarah Chen, Local Beauty Salon Owner</div>
-                        </div>
-                        <div class="case-study-stats">
-                            <div class="stat">
-                                <span class="stat-number">$30K</span>
-                                <span class="stat-label">Monthly Revenue</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">3-Month</span>
-                                <span class="stat-label">Booking Waitlist</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number">Zero</span>
-                                <span class="stat-label">Wasted Ad Spend</span>
-                            </div>
-                        </div>
-                        <p>"$18K down the drain on marketing companies who gave me pretty posts but zero appointments. My calendar was still empty after 18 months of their 'strategy.' Now my website launched in 1 day and Instagram actually fills my appointment book. I'm booked solid for 3 months."</p>
                     </div>
                 </div>
             </div>
@@ -1804,6 +2039,82 @@
                 statsObserver.observe(item);
             });
         });
+
+        // === MOBILE MENU FUNCTIONALITY ===
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        
+        // Toggle mobile menu
+        hamburgerMenu.addEventListener('click', function() {
+            const isActive = hamburgerMenu.classList.contains('active');
+            
+            if (isActive) {
+                // Close menu
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                // Open menu
+                hamburgerMenu.classList.add('active');
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Handle mobile menu responsiveness
+        const navMenu = document.querySelector('.nav-menu');
+        
+        function checkScreenSize() {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                navMenu.style.display = 'none';
+                hamburgerMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'flex';
+                hamburgerMenu.style.display = 'none';
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('active')) {
+                    hamburgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+        
+        // Initial check
+        checkScreenSize();
+        
+        // Check on window resize
+        window.addEventListener('resize', checkScreenSize);
 
     </script>
 </body>
