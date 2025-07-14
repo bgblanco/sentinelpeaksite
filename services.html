@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Sentinel Peak Advisors | Website & Digital Marketing Solutions</title>
-    <meta name="description" content="Professional website renovations, social media management, and comprehensive digital marketing programs. Choose from individual services or complete packages designed for every business size and budget.">
+    <title>Digital Solutions for Local Businesses | Sentinel Peak Solutions</title>
+    <meta name="description" content="Branded websites, social content systems, and CRM automation for local businesses. Fast, mobile-optimized solutions that actually work. No agency fluff, just results.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -57,7 +57,9 @@
             --grid-margin: clamp(1rem, 5vw, 3rem);
             
             /* Colors */
-            --color-bg: #000000;
+            --color-bg: #0c0c0c;
+            --color-primary: #44c3c3;
+            --color-accent: #00f7a5;
             --color-text: #ffffff;
             --color-text-muted: rgba(255, 255, 255, 0.6);
             --color-border: rgba(255, 255, 255, 0.1);
@@ -256,25 +258,25 @@
         
         .glow-hover:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.3);
         }
         
         .glow-hover-strong:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.4);
             border-color: rgba(0, 212, 255, 0.6);
         }
         
         .glow-hover-accent:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.3);
-            color: #00d4ff;
+            background: rgba(68, 195, 195, 0.1);
+            border-color: rgba(68, 195, 195, 0.3);
+            color: var(--color-primary);
         }
         
         .glow-hover-button:hover {
-            background: #00d4ff;
+            background: var(--color-primary);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.4);
         }
 
         /* === NAVIGATION BAR === */
@@ -368,16 +370,16 @@
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+            background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
             transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 2px;
         }
 
         .nav-link:hover {
-            color: #00d4ff;
-            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            color: var(--color-primary);
+            text-shadow: 0 0 15px rgba(68, 195, 195, 0.5);
             transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(68, 195, 195, 0.2);
         }
 
         .nav-link:hover::after,
@@ -415,7 +417,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(68, 195, 195, 0.1), transparent);
             transition: left 0.5s ease;
         }
         
@@ -424,10 +426,10 @@
         }
         
         .hamburger-menu:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.3);
+            background: rgba(68, 195, 195, 0.1);
+            border-color: rgba(68, 195, 195, 0.3);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.3);
         }
         
         .hamburger-line {
@@ -442,12 +444,12 @@
         
         .hamburger-menu.active {
             background: rgba(0, 212, 255, 0.15);
-            border-color: rgba(0, 212, 255, 0.4);
+            border-color: rgba(68, 195, 195, 0.4);
         }
         
         .hamburger-menu.active .hamburger-line:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
-            background: #00d4ff;
+            background: var(--color-primary);
         }
         
         .hamburger-menu.active .hamburger-line:nth-child(2) {
@@ -457,7 +459,7 @@
         
         .hamburger-menu.active .hamburger-line:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
-            background: #00d4ff;
+            background: var(--color-primary);
         }
         
         .mobile-menu {
@@ -523,7 +525,7 @@
         
         .mobile-menu-title {
             font-size: 1.1rem;
-            color: #00d4ff;
+            color: var(--color-primary);
             font-weight: 500;
             margin-bottom: 0.5rem;
             text-transform: uppercase;
@@ -583,7 +585,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(68, 195, 195, 0.1), transparent);
             transition: left 0.5s ease;
         }
         
@@ -592,11 +594,11 @@
         }
         
         .mobile-nav-link:hover {
-            background: rgba(0, 212, 255, 0.1);
-            border-color: rgba(0, 212, 255, 0.3);
-            color: #00d4ff;
+            background: rgba(68, 195, 195, 0.1);
+            border-color: rgba(68, 195, 195, 0.3);
+            color: var(--color-primary);
             transform: translateX(8px);
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            text-shadow: 0 0 10px rgba(68, 195, 195, 0.3);
         }
         
         .mobile-menu-footer {
@@ -623,7 +625,7 @@
             display: block;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #00d4ff;
+            color: var(--color-primary);
             text-decoration: none;
             margin-bottom: 0.5rem;
             transition: all 0.3s ease;
@@ -635,9 +637,9 @@
         }
         
         .mobile-cta {
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            color: #00d4ff;
+            background: rgba(68, 195, 195, 0.1);
+            border: 1px solid rgba(68, 195, 195, 0.3);
+            color: var(--color-primary);
             padding: 0.75rem 1.5rem;
             border-radius: 6px;
             text-decoration: none;
@@ -648,9 +650,9 @@
         }
         
         .mobile-cta:hover {
-            background: rgba(0, 212, 255, 0.2);
+            background: rgba(68, 195, 195, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.3);
         }
 
         /* === PAGE HEADER === */
@@ -759,7 +761,7 @@
         .service-card-detailed:hover .service-image {
             opacity: 1;
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.2);
         }
 
         .service-card-detailed::before {
@@ -936,8 +938,8 @@
 
         .pricing-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(0, 212, 255, 0.4);
-            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.2);
+            border-color: rgba(68, 195, 195, 0.4);
+            box-shadow: 0 20px 50px rgba(68, 195, 195, 0.2);
         }
 
         .pricing-card.featured {
@@ -1037,25 +1039,38 @@
         }
 
         .btn-primary:hover {
-            background: #00d4ff;
+            background: var(--color-primary);
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.4);
         }
 
         .btn-primary:active {
             transform: translateY(0);
         }
 
-        /* === CTA SECTION === */
-        .cta-section {
-            background: #000000;
-            padding: 10rem 0;
-            position: relative;
-            text-align: left;
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-primary);
+            border: 1px solid var(--color-primary);
         }
 
-        .cta-section::before {
+        .btn-secondary:hover {
+            background: var(--color-primary);
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.4);
+        }
+
+        /* === WEBSITE REDESIGN SECTION === */
+        .website-redesign-section {
+            background: #000000;
+            padding: 6rem 0;
+            position: relative;
+            text-align: center;
+        }
+
+        .website-redesign-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1065,27 +1080,120 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        .cta-content {
+        .redesign-content {
             position: relative;
             z-index: 2;
             max-width: 600px;
+            margin: 0 auto;
         }
 
-        .cta-title {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 300;
-            margin-bottom: 2rem;
+        .redesign-title {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
             color: #ffffff;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
         }
 
-        .cta-description {
+        .redesign-description {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
             line-height: 1.6;
             letter-spacing: 0.01em;
+        }
+
+        .redesign-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            text-align: left;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .redesign-features li {
+            padding: 0.5rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            font-size: var(--font-size-sm);
+        }
+
+        .redesign-features li::before {
+            content: '✓';
+            color: var(--color-accent);
+            margin-right: 1rem;
+            font-weight: 500;
+        }
+
+        /* === BOOKING SECTION === */
+        .booking-section {
+            background: var(--color-bg);
+            padding: 6rem 0 2rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .booking-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .booking-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .booking-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+        }
+
+        .booking-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 3rem;
+            line-height: 1.4;
+            letter-spacing: 0.01em;
+        }
+
+        .booking-widget {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .booking-widget {
+                padding: 1rem;
+                border-radius: var(--radius-md);
+            }
+            
+            .booking-widget iframe {
+                min-height: 500px !important;
+            }
+            
+            .website-redesign-section {
+                padding: 4rem 0;
+            }
+            
+            .booking-section {
+                padding: 4rem 0 1rem;
+            }
         }
 
         /* === FOOTER === */
@@ -1121,8 +1229,8 @@
         }
 
         .footer-section a:hover {
-            color: #00d4ff;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            color: var(--color-primary);
+            text-shadow: 0 0 10px rgba(68, 195, 195, 0.3);
             transform: translateX(3px);
         }
 
@@ -1153,9 +1261,9 @@
         }
 
         .social-link:hover {
-            background: #00d4ff;
+            background: var(--color-primary);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 8px 25px rgba(68, 195, 195, 0.4);
         }
 
         .footer-bottom {
@@ -1205,10 +1313,10 @@
             .nav-link:hover,
             .nav-link.active {
                 background: rgba(0, 212, 255, 0.15);
-                border-color: rgba(0, 212, 255, 0.4);
-                color: #00d4ff;
+                border-color: rgba(68, 195, 195, 0.4);
+                color: var(--color-primary);
                 transform: translateY(-1px);
-                box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+                box-shadow: 0 4px 15px rgba(68, 195, 195, 0.3);
             }
 
             .container {
@@ -1245,9 +1353,9 @@
         <nav class="navbar container">
             <div class="brand-container">
                 <a href="index.html" class="logo">
-                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" class="logo-image">
                 </a>
-                <span class="company-name">Sentinel Peak Advisors</span>
+                <span class="company-name">Sentinel Peak Solutions</span>
             </div>
             <!-- Desktop Navigation -->
             <ul class="nav-menu desktop-nav">
@@ -1271,8 +1379,8 @@
     <div class="mobile-menu" id="mobile-menu">
         <div class="mobile-menu-content">
             <div class="mobile-menu-header">
-                <div class="mobile-menu-title">Complete Business Team</div>
-                <div class="mobile-menu-subtitle">Professional automation platform with dedicated staff working 24/7</div>
+                <div class="mobile-menu-title">Digital Solutions</div>
+                <div class="mobile-menu-subtitle">Branded websites, social content systems, and CRM automation for local businesses</div>
             </div>
             
             <nav class="mobile-navigation">
@@ -1288,9 +1396,9 @@
             <div class="mobile-menu-footer">
                 <div class="mobile-contact-info">
                     <a href="tel:+14238555055" class="mobile-phone">(423) 855-5055</a>
-                    <div class="mobile-menu-subtitle">Ready to automate your business operations?</div>
+                    <div class="mobile-menu-subtitle">Ready to grow your local business online?</div>
                 </div>
-                <a href="contact.html" class="mobile-cta">Get Your Business Team Today</a>
+                <a href="contact.html" class="mobile-cta">Get Your Digital Solutions Today</a>
             </div>
         </div>
     </div>
@@ -1300,242 +1408,175 @@
     <section class="page-header">
         <div class="container">
             <div class="page-header-content fade-in">
-                <h1>Professional Website & Digital Marketing Services</h1>
-                <p>From individual website renovations to comprehensive marketing programs, we deliver professional results quickly. Choose the service level that fits your business needs and budget.</p>
+                <h1>Digital Solutions for Local Businesses</h1>
+                <p>Branded websites, social content systems, and CRM automation that actually work. Fast setup, mobile-optimized, and designed to get you more customers. No agency fluff, just results.</p>
             </div>
         </div>
     </section>
 
-    <!-- INDIVIDUAL SERVICES SECTION -->
+    <!-- CORE DIGITAL SOLUTIONS SECTION -->
     <section class="services-detailed">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge slide-up">Individual Services</div>
-                <h2 class="section-title slide-up stagger-1">Perfect for Local Businesses</h2>
-                <p class="section-subtitle slide-up stagger-2">Professional individual services designed for businesses that need specific solutions. Quality work at affordable prices with fast turnaround times.</p>
+                <div class="section-badge slide-up">Core Digital Solutions</div>
+                <h2 class="section-title slide-up stagger-1">Everything Your Local Business Needs</h2>
+                <p class="section-subtitle slide-up stagger-2">Three essential digital solutions that work together to grow your business. Choose individual services or save with our bundled pricing plans below.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card-detailed fade-in">
-                    <img src="images/website-renovation-service.png" alt="Professional website renovation service featuring modern aesthetic design with clean layouts and responsive elements" class="service-image">
                     <div class="service-header">
-                        <span class="service-icon-large">💻</span>
+                        <span class="service-icon-large">🌐</span>
                         <div>
-                            <h3>Website Renovation</h3>
-                            <div class="service-price">Starting at $997</div>
+                            <h3>Branded Websites</h3>
+                            <div class="service-price">Starting at $1,000 setup</div>
                         </div>
                     </div>
-                    <p class="service-description">Professional website updates and redesigns for local businesses. Modern, mobile-responsive design delivered quickly. Perfect for refreshing your online presence without the need for ongoing services.</p>
+                    <p class="service-description">Fast, mobile-optimized websites that convert visitors into customers. Professional design, lead capture forms, and SEO optimization included. Built for local businesses that need to stand out online.</p>
                     <ul class="service-features">
-                        <li>Modern, mobile-responsive design</li>
-                        <li>Professional content optimization</li>
-                        <li>SEO-friendly structure and performance</li>
-                        <li>Contact forms and lead capture setup</li>
-                        <li>Social media integration</li>
-                        <li>Training on how to update content</li>
-                        <li>30-day support and adjustments included</li>
+                        <li>Mobile-first responsive design</li>
+                        <li>Professional branding and messaging</li>
+                        <li>Lead capture forms and contact integration</li>
+                        <li>Local SEO optimization</li>
+                        <li>Fast loading speed and performance</li>
+                        <li>Google My Business integration</li>
+                        <li>Analytics and conversion tracking</li>
+                        <li>Free SSL certificate and hosting setup</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Your Quote →</a>
+                    <a href="#book-discovery" class="service-link">Book Discovery Call →</a>
                 </div>
 
                 <div class="service-card-detailed fade-in stagger-1">
-                    <img src="images/social-media-management-service.png" alt="Social media management service featuring YouTube, Twitter, and Instagram platform logos for comprehensive social media presence" class="service-image">
                     <div class="service-header">
                         <span class="service-icon-large">📱</span>
                         <div>
-                            <h3>Social Media Management</h3>
-                            <div class="service-price">Starting at $397/month</div>
+                            <h3>Social Content Systems</h3>
+                            <div class="service-price">Starting at $399/month</div>
                         </div>
                     </div>
-                    <p class="service-description">Monthly social media management for consistent online presence. Content creation, posting, and engagement management. Great for busy business owners who want professional social media without the complexity.</p>
+                    <p class="service-description">Automated social media posting with consistent branding across all platforms. Custom content creation, scheduling, and engagement management that keeps your business top-of-mind with customers.</p>
                     <ul class="service-features">
-                        <li>Content creation and scheduling</li>
-                        <li>2 platforms (Facebook + Instagram recommended)</li>
-                        <li>8-12 posts per month</li>
-                        <li>Basic engagement management</li>
-                        <li>Monthly performance reporting</li>
+                        <li>Automated content creation and posting</li>
+                        <li>Facebook, Instagram, and LinkedIn management</li>
+                        <li>Brand-consistent visual design</li>
+                        <li>Local business focused content</li>
+                        <li>Engagement and comment management</li>
+                        <li>Monthly analytics and performance reports</li>
                         <li>Hashtag research and optimization</li>
-                        <li>No long-term contracts</li>
+                        <li>Integration with your website and CRM</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Get Started →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- PREMIUM PROGRAMS SECTION -->
-    <section class="services-detailed">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge slide-up">Premium Programs</div>
-                <h2 class="section-title slide-up stagger-1">Comprehensive Growth Solutions</h2>
-                <p class="section-subtitle slide-up stagger-2">Complete marketing programs for businesses ready to scale. Website plus ongoing strategic marketing with dedicated account management and advanced features.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card-detailed fade-in">
-                    <img src="images/service-fast-launch-workspace.png" alt="Professional consultant working intensively at multi-monitor setup demonstrating speed and technical competence for fast launch programs" class="service-image">
-                    <div class="service-header">
-                        <span class="service-icon-large">01</span>
-                        <div>
-                            <h3>Fast Launch Program</h3>
-                            <div class="service-price">$2,497 setup + $697/month</div>
-                        </div>
-                    </div>
-                    <p class="service-description">For qualified businesses needing immediate market presence. Professional website delivered in 24 hours plus strategic social media management. Total program value: $6,197+. Your investment: $2,497 setup + $697 monthly.</p>
-                    <ul class="service-features">
-                        <li>Professional website delivered in 1 day</li>
-                        <li>2 social media platforms (Facebook + Instagram or LinkedIn)</li>
-                        <li>12 lead-focused posts per month</li>
-                        <li>Website + social media lead tracking</li>
-                        <li>Comment and DM response management</li>
-                        <li>Monthly lead reports (not vanity metrics)</li>
-                        <li>90-day results commitment</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Apply Now →</a>
-                </div>
-
-                <div class="service-card-detailed fade-in stagger-1">
-                    <img src="images/service-growth-accelerator-training.png" alt="Business consultant presenting growth strategies and data visualization to engaged team showing scaling expertise and measurable results" class="service-image">
-                    <div class="service-header">
-                        <span class="service-icon-large">02</span>
-                        <div>
-                            <h3>Growth Accelerator Program</h3>
-                            <div class="service-price">$3,497 setup + $997/month</div>
-                        </div>
-                    </div>
-                    <p class="service-description">Our most selective program for growth-focused businesses. Professional website in 24 hours plus comprehensive social media strategy. Total program value: $11,997+. Your investment: $3,497 setup + $997 monthly.</p>
-                    <ul class="service-features">
-                        <li>Professional website delivered in 1 day</li>
-                        <li>3 social media platforms (Facebook, Instagram, LinkedIn)</li>
-                        <li>20 lead-focused posts per month</li>
-                        <li>Advanced lead tracking and scoring</li>
-                        <li>Complete engagement management (comments, DMs, reviews)</li>
-                        <li>Weekly lead generation and ROI reports</li>
-                        <li>Dedicated account manager and monthly strategy calls</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Apply Now →</a>
+                    <a href="#book-discovery" class="service-link">Book Strategy Call →</a>
                 </div>
 
                 <div class="service-card-detailed fade-in stagger-2">
-                    <img src="images/service-market-dominator-boardroom.png" alt="Confident business leader presenting premium strategies in executive boardroom demonstrating market authority and enterprise leadership" class="service-image">
                     <div class="service-header">
-                        <span class="service-icon-large">03</span>
+                        <span class="service-icon-large">⚙️</span>
                         <div>
-                            <h3>Market Dominator Program</h3>
-                            <div class="service-price">$4,997 setup + $1,497/month</div>
+                            <h3>CRM & Automation</h3>
+                            <div class="service-price">Starting at $249/month</div>
                         </div>
                     </div>
-                    <p class="service-description">Elite program for market-leading businesses. Professional website in 24 hours plus complete marketing dominance system. Total program value: $21,997+. Your investment: $4,997 setup + $1,497 monthly.</p>
+                    <p class="service-description">Organized customer data and automated follow-ups that turn leads into customers. Never lose track of potential business again with smart automation that works 24/7.</p>
                     <ul class="service-features">
-                        <li>Professional website delivered in 1 day</li>
-                        <li>All social platforms + Google My Business optimization</li>
-                        <li>30 lead-focused posts per month + video content</li>
-                        <li>Multi-channel lead capture (social, email, SMS, reviews)</li>
-                        <li>Real-time lead notification and scoring</li>
-                        <li>Custom sales funnels and conversion optimization</li>
-                        <li>Weekly strategy calls + priority support</li>
+                        <li>Customer relationship management system</li>
+                        <li>Automated email and SMS follow-ups</li>
+                        <li>Lead scoring and pipeline management</li>
+                        <li>Appointment booking and reminders</li>
+                        <li>Review automation and reputation management</li>
+                        <li>Integration with website and social platforms</li>
+                        <li>Customer data organization and tracking</li>
+                        <li>Sales process automation and reporting</li>
                     </ul>
-                    <a href="contact.html" class="service-link">Apply Now →</a>
-                </div>
-
-                <div class="service-card-detailed fade-in stagger-3">
-                    <div class="service-header">
-                        <span class="service-icon-large">04</span>
-                        <div>
-                            <h3>Program Guarantees & Commitments</h3>
-                            <div class="service-price">What every accepted business receives</div>
-                        </div>
-                    </div>
-                    <p class="service-description">Every program includes ironclad commitments with no hidden costs. Unlike agencies that overpromise, we guarantee reliable delivery and transparent communication. Here's what every accepted business receives.</p>
-                    <ul class="service-features">
-                        <li>24-hour website delivery guarantee</li>
-                        <li>Dedicated account manager and direct access</li>
-                        <li>Month-to-month flexibility (no long contracts)</li>
-                        <li>Weekly reporting and communication guarantee</li>
-                        <li>Complete ownership of all accounts and data</li>
-                        <li>Transparent pricing with no hidden fees</li>
-                        <li>90-day satisfaction guarantee</li>
-                    </ul>
-                    <a href="contact.html" class="service-link">Apply Now →</a>
+                    <a href="#book-discovery" class="service-link">Book Automation Call →</a>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- PRICING PACKAGES SECTION -->
     <section class="pricing-section">
         <div class="container">
             <div class="section-header">
                 <div class="section-badge slide-up">Simple, Transparent Pricing</div>
-                <h2 class="section-title slide-up stagger-1">Premium Marketing Programs</h2>
-                <p class="section-subtitle slide-up stagger-2">Comprehensive programs for businesses ready to scale. Month-to-month flexibility after setup means you only continue when getting results. Professional service with measurable outcomes.</p>
+                <h2 class="section-title slide-up stagger-1">Digital Solutions That Work</h2>
+                <p class="section-subtitle slide-up stagger-2">Clear pricing for local businesses. No hidden fees, no long contracts. Start small and scale up as your business grows.</p>
             </div>
             
             <div class="pricing-grid">
                 <div class="pricing-card scale-in">
                     <div class="pricing-header">
-                        <h3>Fast Launch Program</h3>
-                        <div class="price">$2,497</div>
-                        <div class="price-period">setup + $697/month</div>
+                        <h3>Launch Plan</h3>
+                        <div class="price">$1,000</div>
+                        <div class="price-period">setup + $249/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website delivered in 24 hours</li>
-                        <li>2 strategic social media platforms</li>
-                        <li>12 lead-focused posts monthly</li>
-                        <li>Integrated website + social tracking</li>
-                        <li>Monthly performance reports</li>
-                        <li>90-day satisfaction guarantee</li>
+                        <li>Mobile-optimized website</li>
+                        <li>Local SEO setup</li>
+                        <li>Client dashboard access</li>
+                        <li>Monthly performance snapshot</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                    <a href="#book-discovery" class="btn btn-primary">Get Started</a>
                 </div>
 
                 <div class="pricing-card featured scale-in stagger-1">
                     <div class="pricing-header">
-                        <h3>Growth Accelerator Program</h3>
-                        <div class="price">$3,497</div>
-                        <div class="price-period">setup + $997/month</div>
+                        <h3>Automate Plan</h3>
+                        <div class="price">$1,500</div>
+                        <div class="price-period">setup + $399/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website delivered in 24 hours</li>
-                        <li>3 strategic social media platforms</li>
-                        <li>20 lead-focused posts monthly</li>
-                        <li>Advanced automation and tracking</li>
-                        <li>Complete engagement management</li>
-                        <li>Weekly reports and strategy calls</li>
-                        <li>Dedicated account manager</li>
+                        <li>Everything in Launch</li>
+                        <li>Automated social posting</li>
+                        <li>Lead capture + follow-up automation</li>
+                        <li>Google review booster</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                    <a href="#book-discovery" class="btn btn-primary">Get Started</a>
                 </div>
 
                 <div class="pricing-card scale-in stagger-2">
                     <div class="pricing-header">
-                        <h3>Market Dominator Program</h3>
-                        <div class="price">$4,997</div>
-                        <div class="price-period">setup + $1,497/month</div>
+                        <h3>Dominate Plan</h3>
+                        <div class="price">$2,000</div>
+                        <div class="price-period">setup + $699/month</div>
                     </div>
                     <ul class="pricing-features">
-                        <li>Professional website delivered in 24 hours</li>
-                        <li>All platforms plus Google My Business</li>
-                        <li>30 posts monthly plus video content</li>
-                        <li>Multi-channel lead capture systems</li>
-                        <li>Custom sales funnels and automation</li>
-                        <li>Weekly strategy calls and priority support</li>
-                        <li>Complete market domination strategy</li>
+                        <li>Everything in Automate</li>
+                        <li>Advanced workflows + ROI dashboard</li>
+                        <li>Reputation management</li>
+                        <li>Multi-location support</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary">Apply Now</a>
+                    <a href="#book-discovery" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-section">
+    <!-- WEBSITE REDESIGN OFFER SECTION -->
+    <section class="website-redesign-section">
         <div class="container">
-            <div class="cta-content fade-in">
-                <h2 class="cta-title">Ready to Grow Your Business Online?</h2>
-                <p class="cta-description">Whether you need a simple website renovation or a comprehensive marketing program, we have the right solution for your business. Professional service, fast delivery, and measurable results guaranteed.</p>
-                <div class="hero-buttons">
-                    <a href="contact.html" class="btn btn-primary">Get Your Free Quote</a>
-                    <a href="tel:650-586-5889" class="btn btn-secondary">Call Now: (650) 586-5889</a>
+            <div class="redesign-content fade-in">
+                <h2 class="redesign-title">Need Just a Website Refresh?</h2>
+                <p class="redesign-description">We still offer standalone redesigns for local businesses that just want a better site — no automation required.</p>
+                <ul class="redesign-features">
+                    <li>Custom-built for your brand</li>
+                    <li>Mobile-first design</li>
+                    <li>Launch-ready in as little as 7 days</li>
+                </ul>
+                <a href="#book-discovery" class="btn btn-secondary">Book a Redesign Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CALENDAR BOOKING SECTION -->
+    <section class="booking-section" id="book-discovery">
+        <div class="container">
+            <div class="booking-content fade-in">
+                <h2 class="booking-title">🎯 Book Your Discovery Call</h2>
+                <p class="booking-description">No pressure. Just clarity.</p>
+                <div class="booking-widget">
+                    <iframe src="https://links.sentinelpeaksolutions.com/widget/booking/osVSgI6Z4UzrDdcU68w1" 
+                            style="width: 100%; border: none; overflow: hidden; min-height: 600px;" 
+                            scrolling="no"></iframe>
                 </div>
             </div>
         </div>
@@ -1546,16 +1587,16 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3>Sentinel Peak Advisors</h3>
-                    <p>Professional web and digital marketing solutions for businesses of all sizes. From individual website renovations to comprehensive marketing programs, we deliver quality results with fast turnaround times.</p>
+                    <h3>Sentinel Peak Solutions</h3>
+                    <p>Digital solutions for local businesses that actually work. Branded websites, social content systems, and CRM automation designed to grow your business. No agency fluff, just results.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3>Digital Solutions</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">Website Renovation - Starting at $997</a></li>
-                        <li><a href="services.html">Social Media Management - $397/month</a></li>
-                        <li><a href="services.html">Fast Launch Program - $2,497 setup</a></li>
-                        <li><a href="services.html">Growth & Dominator Programs</a></li>
+                        <li><a href="services.html">Branded Websites - Starting at $1,000</a></li>
+                        <li><a href="services.html">Social Content Systems - $399/month</a></li>
+                        <li><a href="services.html">CRM & Automation - $249/month</a></li>
+                        <li><a href="services.html">Launch, Automate & Dominate Plans</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1570,12 +1611,12 @@
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <p>📧 info@sentinelpeaksolutions.com</p>
-                    <p>📞 (650) 586-5889</p>
-                    <p>📍 Fresno, CA</p>
+                    <p>📞 (423) 855-5055</p>
+                    <p>📍 Tennessee</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1618,9 +1659,14 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    // Add offset for fixed navbar
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
@@ -1797,5 +1843,8 @@
         // Check on window resize
         window.addEventListener('resize', checkScreenSize);
     </script>
+    
+    <!-- GoHighLevel Calendar Widget Script -->
+    <script src="https://links.sentinelpeaksolutions.com/js/form_embed.js" type="text/javascript"></script>
 </body>
 </html>

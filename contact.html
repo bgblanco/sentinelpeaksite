@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply - Sentinel Peak Advisors | Exclusive Business Growth Programs</title>
+    <title>Contact - Sentinel Peak Solutions | Digital Solutions for Local Businesses</title>
     <meta name="description" content="Apply for exclusive business growth programs. Significant upfront investment required. Only 3 qualified businesses accepted monthly. Professional website in 24 hours.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,7 +57,9 @@
             --grid-margin: clamp(1rem, 5vw, 3rem);
             
             /* Colors */
-            --color-bg: #000000;
+            --color-bg: #0c0c0c;
+            --color-primary: #44c3c3;
+            --color-accent: #00f7a5;
             --color-text: #ffffff;
             --color-text-muted: rgba(255, 255, 255, 0.6);
             --color-border: rgba(255, 255, 255, 0.1);
@@ -621,6 +623,42 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
+        /* === CALENDAR WIDGET STYLES === */
+        .calendar-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(68, 195, 195, 0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 100%;
+            box-shadow: 0 10px 40px rgba(68, 195, 195, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .calendar-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #44c3c3, transparent);
+        }
+
+        .calendar-widget {
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-height: 600px;
+        }
+
+        .calendar-widget iframe {
+            min-height: 600px;
+            background: transparent;
+        }
+
         .form-title {
             font-size: var(--font-size-3xl);
             margin-bottom: var(--space-md);
@@ -1122,9 +1160,9 @@
         <nav class="container">
             <div class="brand-container">
                 <a href="index.html" class="logo">
-                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Advisors" class="logo-image">
+                    <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" class="logo-image">
                 </a>
-                <span class="company-name">Sentinel Peak Advisors</span>
+                <span class="company-name">Sentinel Peak Solutions</span>
             </div>
             <!-- Desktop Navigation -->
             <ul class="nav-links desktop-nav">
@@ -1176,8 +1214,8 @@
     <!-- PAGE HEADER -->
     <section class="page-header">
         <div class="container">
-            <h1>Apply for Exclusive Business Growth Programs</h1>
-            <p>Extremely limited acceptance: Only 3 qualified businesses monthly. Significant upfront investment required. Professional website delivered in 24 hours plus strategic marketing.</p>
+            <h1>Get Your Digital Solutions Working Today</h1>
+            <p>Book your free discovery call. See exactly how we'll modernize your website, automate your social media, and organize your customer data — all through your private business control center.</p>
         </div>
     </section>
 
@@ -1185,130 +1223,40 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-container">
-                <!-- CONTACT FORM -->
-                <div class="contact-form">
-                    <h2 class="form-title">Submit Your Application for Consideration</h2>
-                    <p class="form-subtitle">EXTREMELY LIMITED: Only 3 qualified businesses accepted monthly. Significant upfront investment required. Professional website in 24 hours plus strategic marketing. We'll contact qualified applicants within 2 hours.</p>
+                <!-- CALENDAR WIDGET SECTION -->
+                <div class="calendar-section">
+                    <h2 class="section-title">Book Your Free Discovery Call</h2>
+                    <p class="section-subtitle">No high-pressure sales. No agency fluff. Just an honest conversation about your digital systems and how we can help you modernize them.</p>
                     
-                    <form action="https://formspree.io/f/xldnoqwv" method="POST">
-                        <input type="hidden" name="_next" value="thankyou.html">
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
+                    <!-- Calendar Widget Container -->
+                    <div class="calendar-container">
+                        <div class="calendar-widget">
+                            <iframe src="https://links.sentinelpeaksolutions.com/widget/booking/osVSgI6Z4UzrDdcU68w1" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="osVSgI6Z4UzrDdcU68w1_1752457036207"></iframe>
+                            <script src="https://links.sentinelpeaksolutions.com/js/form_embed.js" type="text/javascript"></script>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Service Interested In *</label>
-                            <select id="service" name="service" required>
-                                <option value="">Select a service</option>
-                                <option value="fast-launch-program">Fast Launch Program ($2,497 setup + $697/month)</option>
-                                <option value="growth-accelerator-program">Growth Accelerator Program ($3,497 setup + $997/month)</option>
-                                <option value="market-dominator-program">Market Dominator Program ($4,997 setup + $1,497/month)</option>
-                                <option value="qualification-call">Schedule Qualification Call</option>
-                                <option value="custom">Custom Solution</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="budget">Monthly Marketing Budget</label>
-                            <select id="budget" name="budget">
-                                <option value="">Select budget range</option>
-                                <option value="2k-3k">$2,000 - $3,000/month (minimum)</option>
-                                <option value="3k-5k">$3,000 - $5,000/month</option>
-                                <option value="5k-10k">$5,000 - $10,000/month</option>
-                                <option value="10k-plus">$10,000+/month</option>
-                                <option value="not-sure">Not Sure Yet</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="timeline">When Do You Need Your Website + Marketing?</label>
-                            <select id="timeline" name="timeline">
-                                <option value="">Select timeline</option>
-                                <option value="asap">ASAP - Ready to invest and start immediately</option>
-                                <option value="this-week">This Week</option>
-                                <option value="1-month">Within 1 month</option>
-                                <option value="2-3-months">2-3 months</option>
-                                <option value="not-urgent">Just exploring options</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">What's Your Biggest Challenge Right Now? *</label>
-                            <textarea id="message" name="message" placeholder="Tell us what's frustrating you most: Need a website fast? Getting likes but no customers? Been burned by companies that stop returning calls? Spending money with no ROI? The more specific, the better we can help..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Submit Application for Review</button>
-                    </form>
+                    </div>
                     
                 </div>
 
                 <!-- CONTACT INFORMATION -->
                 <div class="contact-info">
-                    <h2 class="info-title">Application Process for Qualified Businesses</h2>
-                    <p class="info-subtitle">Exclusive programs with significant upfront investment. See exactly what qualified businesses receive and our ironclad commitments.</p>
+                    <h2 class="info-title">Prefer to Call or Email?</h2>
+                    <p class="info-subtitle">We're here to answer your questions about modernizing your digital systems.</p>
                     
                     <div class="contact-methods">
                         <div class="contact-method">
-                            <div class="method-icon">⚡</div>
+                            <div class="method-icon">📞</div>
                             <div class="method-info">
-                                <h3>24-Hour Website Guarantee</h3>
-                                <p>Professional website delivered in 24 hours, guaranteed</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">💰</div>
-                            <div class="method-info">
-                                <h3>Transparent Investment</h3>
-                                <p>Setup investments from $2,497 + monthly fees from $697</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">🛡️</div>
-                            <div class="method-info">
-                                <h3>Quality Commitment</h3>
-                                <p>We stand behind our work</p>
+                                <h3>Call Us Direct</h3>
+                                <p>(650) 586-5889<br>Free consultation available</p>
                             </div>
                         </div>
                         
                         <div class="contact-method">
                             <div class="method-icon">📧</div>
                             <div class="method-info">
-                                <h3>Email</h3>
-                                <p>info@sentinelpeaksolutions.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-method">
-                            <div class="method-icon">📞</div>
-                            <div class="method-info">
-                                <h3>Phone</h3>
-                                <p>650-586-5889</p>
+                                <h3>Email Us</h3>
+                                <p>info@sentinelpeaksolutions.com<br>We typically respond within 2 hours</p>
                             </div>
                         </div>
                         
@@ -1316,21 +1264,27 @@
                             <div class="method-icon">📍</div>
                             <div class="method-info">
                                 <h3>Location</h3>
-                                <p>Fresno, CA<br>Serving Nationwide</p>
+                                <p>Fresno, CA<br>Serving local businesses nationwide</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">🌐</div>
+                            <div class="method-info">
+                                <h3>What We Provide</h3>
+                                <p>Branded websites, social content systems, and CRM automation</p>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="office-hours">
-                        <h3>Our Commitments</h3>
-                        <ul class="hours-list">
-                            <li><span class="day">Delivery</span><span class="time">1 day or less</span></li>
-                            <li><span class="day">Response Time</span><span class="time">Within 2 hours</span></li>
-                            <li><span class="day">Contract Length</span><span class="time">No long-term contracts</span></li>
-                            <li><span class="day">Hidden Fees</span><span class="time">Zero. Ever.</span></li>
-                            <li><span class="day">Satisfaction</span><span class="time">Our commitment to you</span></li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li>✅ Modern, mobile-optimized websites</li>
+                        <li>✅ Automated social media content</li>
+                        <li>✅ Customer data organization</li>
+                        <li>✅ Text & email follow-up automation</li>
+                        <li>✅ Lead tracking & management</li>
+                        <li>✅ All connected in one platform</li>
+                    </ul>
                     
                 </div>
             </div>
@@ -1387,7 +1341,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Sentinel Peak Advisors</h3>
+                    <h3>Sentinel Peak Solutions</h3>
                     <p>The only social media management service that turns followers into customers. Advanced CRM integration, lead-focused content, and real ROI tracking.</p>
                 </div>
                 
@@ -1420,7 +1374,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Sentinel Peak Advisors. All rights reserved.</p>
+                <p>&copy; 2024 Sentinel Peak Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
