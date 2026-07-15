@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Showcase | See Every Module in Action | Sentinel Peak Solutions</title>
+    <meta name="description" content="Visual showcase of our complete platform. CRM, automation, AI agents, reputation management, social tools. See exactly how each module works.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Platform Showcase | Sentinel Peak Solutions">
+    <meta property="og:description" content="See every module in action. Real screenshots, real results.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/software-showcase.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* V2 Portfolio Styles */
+        .showcase-hero-v2 {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .showcase-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            padding: var(--space-3xl) 0;
+        }
+
+        .showcase-card-v2 {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            cursor: pointer;
+        }
+
+        .showcase-card-v2:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.15);
+        }
+
+        .showcase-card-v2 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .showcase-card-content-v2 {
+            padding: var(--space-lg);
+        }
+
+        .showcase-card-v2 h3 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+        }
+
+        .showcase-problem {
+            color: #ff6b6b;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .showcase-result {
+            color: var(--color-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .module-section-v2 {
+            padding: var(--space-3xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .module-section-v2:last-child {
+            border-bottom: none;
+        }
+
+        .module-header-v2 {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .module-title-v2 {
+            font-size: var(--font-size-3xl);
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .module-description-v2 {
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Lightbox Styles */
+        .lightbox-v2 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-v2.active {
+            display: flex;
+        }
+
+        .lightbox-content-v2 {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content-v2 img {
+            max-width: 100%;
+            max-height: 80vh;
+            border-radius: var(--radius-lg);
+        }
+
+        .lightbox-caption-v2 {
+            background: var(--color-surface);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-md);
+            max-width: 600px;
+        }
+
+        .lightbox-close-v2 {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            color: var(--color-text);
+            font-size: 2rem;
+            cursor: pointer;
+            background: var(--color-surface);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--color-border);
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background: rgba(68, 195, 195, 0.1);
+            color: var(--color-primary);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            margin-bottom: var(--space-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .showcase-grid-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html" class="active">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html" class="active">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="showcase-hero-v2">
+        <div class="container">
+            <h1 class="hero-headline-v2">See every module in action</h1>
+            <p class="hero-subheadline-v2" style="max-width: 600px; margin: 0 auto;">
+                Real screenshots. Real workflows. Real results.
+                Click any module to see how it solves specific business problems.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Competitive Intelligence Section -->
+    <section class="module-section-v2" id="intelligence" style="background: linear-gradient(135deg, rgba(44, 139, 139, 0.08) 0%, var(--color-surface) 100%);">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2" style="color: var(--color-primary);">Competitive Intelligence Suite</h2>
+                <p class="module-description-v2">
+                    Exclusive AI-powered tools that give you unfair advantages.
+                    Analyze what works, create what converts, dominate your market.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <!-- Viral Content Analyzer Cards -->
+                <div class="showcase-card-v2" id="viral-analyzer" onclick="openLightbox('images/viral_content_analyer_overview.png', 'Viral Content Analyzer', 'Complete dashboard showing competitor content analysis, engagement metrics, and viral patterns.')">
+                    <img src="images/viral_content_analyer_overview.png" alt="Viral Content Analyzer" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge" style="background: linear-gradient(135deg, #ff6b6b, #ff8e53);">EXCLUSIVE</span>
+                        <h3>Viral Content Scanner</h3>
+                        <p class="showcase-problem">Problem: Creating blind content</p>
+                        <p class="showcase-result">Result: Know what goes viral</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/viral_content_analyer_competior_analyze.png', 'Competitor Analysis', 'Deep dive into competitor social media performance and content strategies.')">
+                    <img src="images/viral_content_analyer_competior_analyze.png" alt="Competitor Analysis" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Intelligence</span>
+                        <h3>Competitor Deep Dive</h3>
+                        <p class="showcase-problem">Problem: Unknown competitor strategies</p>
+                        <p class="showcase-result">Result: See everything they do</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/viral_content_analyzer_recreation_lab.png', 'Content Recreation Lab', 'AI-powered templates to recreate viral content with your brand.')">
+                    <img src="images/viral_content_analyzer_recreation_lab.png" alt="Recreation Lab" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">AI-Powered</span>
+                        <h3>Recreation Templates</h3>
+                        <p class="showcase-problem">Problem: Starting from scratch</p>
+                        <p class="showcase-result">Result: Proven templates ready</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/viral_content_analyer_reports3.png', 'Performance Reports', 'Detailed analytics on content performance and viral triggers.')">
+                    <img src="images/viral_content_analyer_reports3.png" alt="Performance Reports" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Analytics</span>
+                        <h3>Viral Trigger Analysis</h3>
+                        <p class="showcase-problem">Problem: Guessing what works</p>
+                        <p class="showcase-result">Result: Data-driven content</p>
+                    </div>
+                </div>
+
+                <!-- UGC Ad Generator Cards -->
+                <div class="showcase-card-v2" id="ugc-generator" onclick="openLightbox('images/ugc_ad_generator_griptee.png', 'UGC Ad Generator', 'Create professional user-generated content style ads without hiring creators.')">
+                    <img src="images/ugc_ad_generator_griptee.png" alt="UGC Ad Generator" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge" style="background: linear-gradient(135deg, #667eea, #764ba2);">PROPRIETARY</span>
+                        <h3>UGC Video Creator</h3>
+                        <p class="showcase-problem">Problem: $5,000+ agency costs</p>
+                        <p class="showcase-result">Result: Pro ads in minutes</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/ugc_ad_generator_confirm.png', 'Ad Confirmation', 'Review and approve generated ads before publishing.')">
+                    <img src="images/ugc_ad_generator_confirm.png" alt="Ad Confirmation" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Production</span>
+                        <h3>Instant Ad Production</h3>
+                        <p class="showcase-problem">Problem: Weeks of production</p>
+                        <p class="showcase-result">Result: Same-day delivery</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Examples Section -->
+            <div id="ugc-videos" style="margin-top: var(--space-3xl); padding: var(--space-2xl); background: rgba(0, 0, 0, 0.3); border-radius: var(--radius-lg); border: 2px solid var(--color-primary);">
+                <h3 style="font-size: var(--font-size-2xl); color: var(--color-primary); text-align: center; margin-bottom: var(--space-xl);">
+                    🎬 Live Demo: Image → Professional Video Ad
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: var(--space-2xl); align-items: center; margin-bottom: var(--space-2xl);">
+                    <div>
+                        <h4 style="color: var(--color-text); margin-bottom: var(--space-md);">The Input:</h4>
+                        <img src="images/ugc_ad_generator_griptee.png" alt="Grip Tee Product Image" style="width: 100%; border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-top: var(--space-sm);">
+                            One product photo + "Sentinel Peak Grip Tee"
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 style="color: var(--color-text); margin-bottom: var(--space-md);">The Output (60 seconds later):</h4>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg);">
+                            <div>
+                                <video controls playsinline preload="metadata" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 2px solid var(--color-primary); margin-bottom: var(--space-sm);">
+                                    <source src="images/ugc_vid1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    <a href="images/ugc_vid1.mp4" download style="color: var(--color-primary);">Download Video</a>
+                                </video>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); text-align: center;">
+                                    Version A: Lifestyle Focus<br>
+                                    <span style="color: #ff6b6b;">Agency cost: $5,000</span>
+                                </p>
+                            </div>
+                            <div>
+                                <video controls playsinline preload="metadata" style="width: 100%; height: auto; border-radius: var(--radius-md); border: 2px solid var(--color-primary); margin-bottom: var(--space-sm);">
+                                    <source src="images/ugc_vid2.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                    <a href="images/ugc_vid2.mp4" download style="color: var(--color-primary);">Download Video</a>
+                                </video>
+                                <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); text-align: center;">
+                                    Version B: Product Benefits<br>
+                                    <span style="color: #ff6b6b;">Agency cost: $5,000</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(68, 195, 195, 0.1)); border-radius: var(--radius-md); padding: var(--space-xl); border: 1px solid var(--color-primary);">
+                    <h4 style="color: var(--color-primary); margin-bottom: var(--space-md);">💡 The Game-Changing Use Cases:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg);">
+                        <div>
+                            <strong style="color: var(--color-text); display: block; margin-bottom: var(--space-sm);">Dropshippers:</strong>
+                            <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                                Test product demand BEFORE ordering inventory. Create ads for any product image from AliExpress.
+                                Our clients exclusively use this for A/B testing new products.
+                            </p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-text); display: block; margin-bottom: var(--space-sm);">Product Launchers:</strong>
+                            <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                                Create buzz before manufacturing. Test market response with professional ads using just prototypes
+                                or 3D renders. Validate demand without spending on production.
+                            </p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-text); display: block; margin-bottom: var(--space-sm);">Competitive Testing:</strong>
+                            <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                                Create ads for competitors' products to understand what messaging works. Test your product
+                                against theirs in the market without revealing your hand.
+                            </p>
+                        </div>
+                        <div>
+                            <strong style="color: var(--color-text); display: block; margin-bottom: var(--space-sm);">Instant Variations:</strong>
+                            <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+                                Generate 10+ variations in minutes for split testing. Different actors, scripts, angles, all
+                                from the same product image. Find winners fast.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-2xl); padding: var(--space-xl); background: rgba(68, 195, 195, 0.05); border-radius: var(--radius-lg); border: 1px solid rgba(68, 195, 195, 0.2);">
+                <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Combined ROI Impact</h3>
+                <p style="font-size: var(--font-size-2xl); color: var(--color-text); margin-bottom: var(--space-sm);">
+                    <strong>Save $8,000+/month</strong>
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    Replace agency retainers, content creators, and competitive analysis tools.<br>
+                    These exclusive features alone justify the entire platform investment.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Competitive Intelligence Section -->
+
+    <!-- SPS V2 BUILD START: CRM Section -->
+    <section class="module-section-v2" id="crm">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">CRM & Contact Management</h2>
+                <p class="module-description-v2">
+                    Every customer interaction tracked. Every opportunity visible.
+                    Replace scattered spreadsheets with one source of truth.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/contacts_overview.png', 'Contact Management', 'Complete customer profiles with interaction history, notes, and custom fields.')">
+                    <img src="images/contacts_overview.png" alt="Contact Management" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">CRM Core</span>
+                        <h3>Contact Management</h3>
+                        <p class="showcase-problem">Problem: Customer data in 10 places</p>
+                        <p class="showcase-result">Result: Single customer view</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/pipelines_overview.png', 'Sales Pipeline', 'Visual pipeline tracking with drag-drop stages and automated actions.')">
+                    <img src="images/pipelines_overview.png" alt="Sales Pipeline" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Sales</span>
+                        <h3>Pipeline Management</h3>
+                        <p class="showcase-problem">Problem: Lost deals in email</p>
+                        <p class="showcase-result">Result: 28% more closes</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/opourtunities_overview2.png', 'Opportunity Tracking', 'Track deal values, probabilities, and forecast revenue accurately.')">
+                    <img src="images/opourtunities_overview2.png" alt="Opportunity Tracking" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Revenue</span>
+                        <h3>Opportunity Tracking</h3>
+                        <p class="showcase-problem">Problem: No revenue visibility</p>
+                        <p class="showcase-result">Result: Accurate forecasting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CRM Section -->
+
+    <!-- SPS V2 BUILD START: Automation Section -->
+    <section class="module-section-v2" id="automation" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">Automation & Workflows</h2>
+                <p class="module-description-v2">
+                    Build workflows that run your business 24/7.
+                    From simple follow-ups to complex multi-step processes.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/automations_overview2.png', 'Workflow Builder', 'Visual workflow builder with triggers, conditions, and actions.')">
+                    <img src="images/automations_overview2.png" alt="Workflow Builder" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Automation</span>
+                        <h3>Workflow Builder</h3>
+                        <p class="showcase-problem">Problem: Manual repetitive tasks</p>
+                        <p class="showcase-result">Result: 15 hours saved weekly</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/automations_template.png', 'Automation Templates', 'Pre-built templates for common business workflows.')">
+                    <img src="images/automations_template.png" alt="Automation Templates" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Templates</span>
+                        <h3>Pre-Built Workflows</h3>
+                        <p class="showcase-problem">Problem: Starting from scratch</p>
+                        <p class="showcase-result">Result: Launch in minutes</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/automations_settings.png', 'Workflow Settings', 'Advanced settings for timing, conditions, and branching logic.')">
+                    <img src="images/automations_settings.png" alt="Workflow Settings" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Logic</span>
+                        <h3>Smart Conditions</h3>
+                        <p class="showcase-problem">Problem: One-size-fits-all</p>
+                        <p class="showcase-result">Result: Personalized paths</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Automation Section -->
+
+    <!-- SPS V2 BUILD START: Calendar Section -->
+    <section class="module-section-v2" id="calendar">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">Calendar & Scheduling</h2>
+                <p class="module-description-v2">
+                    Let customers book when convenient. Reduce no-shows with automated reminders.
+                    Sync all team calendars in real-time.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/calander_overview.png', 'Calendar Overview', 'Complete calendar system with online booking and team sync.')">
+                    <img src="images/calander_overview.png" alt="Calendar Overview" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Scheduling</span>
+                        <h3>Calendar System</h3>
+                        <p class="showcase-problem">Problem: Phone tag booking</p>
+                        <p class="showcase-result">Result: 24/7 self-booking</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/calander_appointments.png', 'Appointment Management', 'Manage all appointments with automatic reminders and rescheduling.')">
+                    <img src="images/calander_appointments.png" alt="Appointment Management" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Appointments</span>
+                        <h3>Appointment Manager</h3>
+                        <p class="showcase-problem">Problem: 30% no-shows</p>
+                        <p class="showcase-result">Result: <10% with reminders</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/calander_connections.png', 'Calendar Integrations', 'Sync with Google, Outlook, and other calendar systems.')">
+                    <img src="images/calander_connections.png" alt="Calendar Integrations" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Sync</span>
+                        <h3>Calendar Sync</h3>
+                        <p class="showcase-problem">Problem: Double bookings</p>
+                        <p class="showcase-result">Result: Real-time sync</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Calendar Section -->
+
+    <!-- SPS V2 BUILD START: Reputation Section -->
+    <section class="module-section-v2" id="reputation" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">Reputation Management</h2>
+                <p class="module-description-v2">
+                    Monitor reviews across all platforms. Respond instantly.
+                    Build 5-star reputation systematically.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/reputation_reviews_data.png', 'Review Dashboard', 'Monitor all reviews from one dashboard with instant alerts.')">
+                    <img src="images/reputation_reviews_data.png" alt="Review Dashboard" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Reviews</span>
+                        <h3>Review Monitoring</h3>
+                        <p class="showcase-problem">Problem: Missed bad reviews</p>
+                        <p class="showcase-result">Result: Instant alerts</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/reputation_data1.png', 'Reputation Analytics', 'Track sentiment trends and benchmark against competitors.')">
+                    <img src="images/reputation_data1.png" alt="Reputation Analytics" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Analytics</span>
+                        <h3>Sentiment Analysis</h3>
+                        <p class="showcase-problem">Problem: No trend visibility</p>
+                        <p class="showcase-result">Result: Proactive improvements</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/reputation_gmb_optimization.png', 'Google Business Optimization', 'Optimize Google Business Profile for maximum visibility.')">
+                    <img src="images/reputation_gmb_optimization.png" alt="GMB Optimization" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Local SEO</span>
+                        <h3>Google Business</h3>
+                        <p class="showcase-problem">Problem: Low local visibility</p>
+                        <p class="showcase-result">Result: Top 3 rankings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Reputation Section -->
+
+    <!-- SPS V2 BUILD START: Social Section -->
+    <section class="module-section-v2" id="social">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">Social Media Management</h2>
+                <p class="module-description-v2">
+                    Plan, create, and publish to all platforms from one place.
+                    Track what works. Scale what converts.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/social_planner_overview.png', 'Social Calendar', 'Visual content calendar for all social platforms.')">
+                    <img src="images/social_planner_overview.png" alt="Social Calendar" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Planning</span>
+                        <h3>Content Calendar</h3>
+                        <p class="showcase-problem">Problem: Random posting</p>
+                        <p class="showcase-result">Result: Consistent presence</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/social_planner_templates.png', 'Content Templates', 'Professional templates ready to customize for your brand.')">
+                    <img src="images/social_planner_templates.png" alt="Content Templates" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Design</span>
+                        <h3>Content Templates</h3>
+                        <p class="showcase-problem">Problem: Design bottleneck</p>
+                        <p class="showcase-result">Result: Pro designs instantly</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/social_planner_analytics_data2.png', 'Social Analytics', 'Track engagement and optimize posting strategy.')">
+                    <img src="images/social_planner_analytics_data2.png" alt="Social Analytics" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Analytics</span>
+                        <h3>Performance Tracking</h3>
+                        <p class="showcase-problem">Problem: Guessing what works</p>
+                        <p class="showcase-result">Result: Data-driven content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Social Section -->
+
+    <!-- SPS V2 BUILD START: AI Tools Section -->
+    <section class="module-section-v2" id="ai-tools" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">AI Agents & Intelligence</h2>
+                <p class="module-description-v2">
+                    Deploy AI agents that handle conversations, qualify leads,
+                    and book appointments 24/7.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/AI_agents_overview.png', 'AI Agent Dashboard', 'Manage all AI agents and conversations from one place.')">
+                    <img src="images/AI_agents_overview.png" alt="AI Agent Dashboard" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">AI</span>
+                        <h3>AI Agent Platform</h3>
+                        <p class="showcase-problem">Problem: 24/7 coverage cost</p>
+                        <p class="showcase-result">Result: AI handles nights</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/agents_create.png', 'Agent Builder', 'Create custom AI agents for specific business needs.')">
+                    <img src="images/agents_create.png" alt="Agent Builder" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Builder</span>
+                        <h3>Custom AI Agents</h3>
+                        <p class="showcase-problem">Problem: Generic responses</p>
+                        <p class="showcase-result">Result: Brand-specific AI</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/conversations_overview.png', 'Unified Inbox', 'All conversations from all channels in one inbox.')">
+                    <img src="images/conversations_overview.png" alt="Unified Inbox" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Communication</span>
+                        <h3>Unified Inbox</h3>
+                        <p class="showcase-problem">Problem: Messages everywhere</p>
+                        <p class="showcase-result">Result: One conversation hub</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: AI Tools Section -->
+
+    <!-- SPS V2 BUILD START: Analytics Section -->
+    <section class="module-section-v2" id="analytics">
+        <div class="container">
+            <div class="module-header-v2">
+                <h2 class="module-title-v2">Analytics & Reporting</h2>
+                <p class="module-description-v2">
+                    Real data. Real insights. Know exactly what drives revenue
+                    and where to focus resources.
+                </p>
+            </div>
+
+            <div class="showcase-grid-v2">
+                <div class="showcase-card-v2" onclick="openLightbox('images/dashboard_overview.png', 'Main Dashboard', 'Complete business metrics in one customizable dashboard.')">
+                    <img src="images/dashboard_overview.png" alt="Main Dashboard" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Dashboard</span>
+                        <h3>Business Dashboard</h3>
+                        <p class="showcase-problem">Problem: Data in silos</p>
+                        <p class="showcase-result">Result: Unified metrics</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/dashboard_data1.png', 'Advanced Analytics', 'Drill down into any metric with custom reports.')">
+                    <img src="images/dashboard_data1.png" alt="Advanced Analytics" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">Reports</span>
+                        <h3>Custom Analytics</h3>
+                        <p class="showcase-problem">Problem: Surface metrics only</p>
+                        <p class="showcase-result">Result: Deep insights</p>
+                    </div>
+                </div>
+
+                <div class="showcase-card-v2" onclick="openLightbox('images/dashboard_lead_source.png', 'Lead Attribution', 'Track where leads come from and what converts.')">
+                    <img src="images/dashboard_lead_source.png" alt="Lead Attribution" loading="lazy">
+                    <div class="showcase-card-content-v2">
+                        <span class="category-badge">ROI</span>
+                        <h3>Source Tracking</h3>
+                        <p class="showcase-problem">Problem: Unknown ROI</p>
+                        <p class="showcase-result">Result: Clear attribution</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Analytics Section -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Ready to see it work for your business?</h2>
+            <p class="section-subtitle-v2">
+                Every module shown here is part of one integrated platform.
+                No separate logins. No data silos. Just one system that works.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn-v2">Schedule a demo →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Lightbox -->
+    <div class="lightbox-v2" id="lightbox">
+        <span class="lightbox-close-v2" onclick="closeLightbox()">×</span>
+        <div class="lightbox-content-v2">
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-caption-v2">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+    <!-- SPS V2 BUILD END: Lightbox -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted);">
+                    <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">
+                        See how these tools solve your specific problems →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Lightbox functionality
+        function openLightbox(imageSrc, title, description) {
+            document.getElementById('lightbox-image').src = imageSrc;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-description').textContent = description;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox when clicking outside
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>

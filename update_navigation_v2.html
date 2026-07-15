@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Template for V2 Pages</title>
+</head>
+<body>
+    <!--
+    INSTRUCTIONS: Copy this navigation HTML to replace the navigation section in all v2 pages.
+    Update the 'active' class on the appropriate menu item for each page.
+    -->
+
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index_v2.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index_v2.html">Home</a></li>
+                <li><a href="services_v2.html">Services</a></li>
+                <li><a href="portfolio_v2.html">Platform</a></li>
+                <li><a href="about_v2.html">About</a></li>
+                <li><a href="contact_v2.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index_v2.html">Home</a></li>
+            <li><a href="services_v2.html">Services</a></li>
+            <li><a href="portfolio_v2.html">Platform</a></li>
+            <li><a href="about_v2.html">About</a></li>
+            <li><a href="contact_v2.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!--
+    ALSO ADD THESE TO EACH PAGE:
+
+    1. In the <head> section after other CSS files:
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    2. At the end of the body, after other scripts:
+    <script src="js/navigation-v2.js"></script>
+    -->
+</body>
+</html>

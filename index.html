@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites, SEO, Reviews & Viral Content Marketing | Sentinel Peak Solutions</title>
+    <meta name="description" content="Done-for-you growth for local businesses: professional websites, Google reviews, SEO, branding, and viral content analysis. See the work we've delivered.">
+    <meta name="keywords" content="website creation, local SEO, google reviews management, branding, viral content analyzer, social media marketing, Fresno web design">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Websites, SEO, Reviews & Viral Content Marketing | Sentinel Peak Solutions">
+    <meta property="og:description" content="Done-for-you growth: websites, reviews, SEO, branding, and content that performs. See our work.">
+    <meta property="og:image" content="images/viral_content_analyzer_overview2.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/software-showcase.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* V2 Page-Specific Styles */
+        .hero-v2 {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .hero-v2 .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+        }
+
+        .hero-headline-v2 {
+            font-size: var(--font-size-5xl);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-headline-v2 strong {
+            color: var(--color-primary);
+            font-weight: 500;
+        }
+
+        .hero-subheadline-v2 {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-muted);
+            max-width: 640px;
+            margin-bottom: var(--space-2xl);
+            line-height: 1.5;
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-lg);
+            margin: var(--space-3xl) 0;
+        }
+
+        .platform-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            transition: all var(--transition-medium);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.1);
+        }
+
+        .platform-card .card-icon {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .platform-card h3 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-xl);
+        }
+
+        .platform-card p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin-bottom: var(--space-lg);
+            flex-grow: 1;
+        }
+
+        .platform-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            border: 1px solid var(--color-border);
+        }
+
+        .platform-card .card-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+        }
+
+        .platform-card .card-link:hover {
+            text-decoration: underline;
+        }
+
+        .section-v2 {
+            padding: var(--space-4xl) 0;
+        }
+
+        .section-header-v2 {
+            text-align: center;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .section-title-v2 {
+            font-size: var(--font-size-4xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-subtitle-v2 {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .educational-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            margin: var(--space-3xl) 0;
+        }
+
+        .educational-content {
+            padding: var(--space-xl);
+        }
+
+        .educational-content h3 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-lg);
+            color: var(--color-primary);
+        }
+
+        .educational-content .problem {
+            margin-bottom: var(--space-md);
+        }
+
+        .educational-content .problem strong {
+            color: var(--color-text);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .educational-image {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .educational-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cta-section-v2 {
+            text-align: center;
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(180deg, var(--color-bg) 0%, rgba(44, 139, 139, 0.05) 100%);
+        }
+
+        .btn-v2 {
+            display: inline-block;
+            padding: var(--space-md) var(--space-xl);
+            background: var(--color-primary);
+            color: var(--color-bg);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all var(--transition-medium);
+        }
+
+        .btn-v2:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.3);
+        }
+
+        /* Selected Work Strip */
+        .work-strip {
+            padding: var(--space-4xl) 0;
+            background: var(--color-surface);
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+
+        .work-card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-medium);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .work-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--color-primary);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: contain;
+            background: #ffffff;
+            padding: var(--space-lg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .work-card img.logo-dark {
+            background: #0c0c0c;
+        }
+
+        .work-card-body {
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .work-tag {
+            display: inline-block;
+            align-self: flex-start;
+            background: rgba(68, 195, 195, 0.12);
+            color: var(--color-primary);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .work-card h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-xs);
+        }
+
+        .work-card p {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: var(--space-md);
+        }
+
+        .work-card .card-link {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+        }
+
+        .work-card .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Platform Proof Band */
+        .proof-band {
+            padding: var(--space-4xl) 0;
+        }
+
+        .proof-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-2xl);
+        }
+
+        .proof-images img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+        }
+
+        /* Intelligence Tools Section Styles */
+        .intelligence-tools-section {
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(135deg, rgba(44, 139, 139, 0.08) 0%, var(--color-bg) 50%, rgba(44, 139, 139, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intelligence-tools-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(68, 195, 195, 0.03) 0%, transparent 70%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .tool-showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-2xl);
+            margin-top: var(--space-3xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tool-showcase-card {
+            background: rgba(12, 12, 12, 0.95);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(68, 195, 195, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--transition-medium);
+        }
+
+        .tool-showcase-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-primary);
+            box-shadow: 0 20px 40px rgba(68, 195, 195, 0.2);
+        }
+
+        .tool-badge {
+            position: absolute;
+            top: var(--space-lg);
+            right: var(--space-lg);
+            background: linear-gradient(135deg, var(--color-primary), rgba(68, 195, 195, 0.8));
+            color: var(--color-bg);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .tool-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(68, 195, 195, 0.2), rgba(68, 195, 195, 0.05));
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            font-size: var(--font-size-2xl);
+        }
+
+        .tool-showcase-card h3 {
+            font-size: var(--font-size-2xl);
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+        }
+
+        .tool-tagline {
+            color: var(--color-primary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
+        }
+
+        .tool-problem {
+            color: #ff6b6b;
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 2px solid #ff6b6b;
+        }
+
+        .tool-solution {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: var(--space-lg);
+        }
+
+        .tool-features {
+            list-style: none;
+            margin-bottom: var(--space-lg);
+        }
+
+        .tool-features li {
+            color: var(--color-text-muted);
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+        }
+
+        .tool-features li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+
+        .tool-roi {
+            background: rgba(68, 195, 195, 0.1);
+            border: 1px solid rgba(68, 195, 195, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .tool-roi strong {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            display: block;
+        }
+
+        .tool-roi span {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .tool-preview {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            margin-bottom: var(--space-lg);
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .tool-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Video Grid Styles */
+        .video-showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+        }
+
+        .video-showcase-grid video {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .platform-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .educational-block {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-headline-v2 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .tool-showcase-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-showcase-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .video-showcase-grid video {
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="hero-v2">
+        <div class="container">
+            <span class="hero-eyebrow">Done-for-you growth</span>
+            <h1 class="hero-headline-v2">
+                We build your website, get you found,<br>
+                and make your content <strong>perform</strong>.
+            </h1>
+            <p class="hero-subheadline-v2">
+                Websites, Google reviews, SEO, branding, and viral content analysis,
+                handled by one team, powered by our own platform. Real work for real
+                businesses, delivered in 7-14 days.
+            </p>
+            <div class="hero-buttons">
+                <a href="portfolio.html" class="btn-v2">See our work →</a>
+                <a href="contact.html" class="btn-secondary">Start a project</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: What We Do (5 Pillars) -->
+    <section class="section-v2">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">What we do</h2>
+                <p class="section-subtitle-v2">
+                    Five services that work together to grow your business,
+                    from the first Google search to a repeat customer.
+                </p>
+            </div>
+
+            <div class="platform-grid">
+                <div class="platform-card">
+                    <img src="images/viral_content_analyzer_overview2.png" alt="Viral Content Analyzer dashboard" loading="lazy">
+                    <div class="card-icon">📊</div>
+                    <h3>Viral Content Analyzer</h3>
+                    <p>
+                        See exactly why your competitors go viral, then do it better.
+                        We analyze what performs in your industry and turn it into
+                        content built for your brand.
+                    </p>
+                    <a href="services.html#content" class="card-link">How it works →</a>
+                </div>
+
+                <div class="platform-card">
+                    <img src="images/websites_templates.png" alt="Website design templates" loading="lazy">
+                    <div class="card-icon">🖥️</div>
+                    <h3>Website Creation</h3>
+                    <p>
+                        A professional, fast, mobile-ready website that turns visitors
+                        into customers, designed, built, and launched in 7-14 days.
+                    </p>
+                    <a href="services.html#websites" class="card-link">See website services →</a>
+                </div>
+
+                <div class="platform-card">
+                    <img src="images/reputation_gmb_optimization.png" alt="Google reviews and reputation dashboard" loading="lazy">
+                    <div class="card-icon">⭐</div>
+                    <h3>Google Reviews &amp; Reputation</h3>
+                    <p>
+                        More 5-star reviews, automatically. We help you request, capture,
+                        and showcase reviews, and optimize the Google profile customers
+                        see first.
+                    </p>
+                    <a href="services.html#reviews" class="card-link">Grow your reviews →</a>
+                </div>
+
+                <div class="platform-card">
+                    <img src="images/reputation_gmb_optimization2.png" alt="Search visibility and local SEO" loading="lazy">
+                    <div class="card-icon">🔎</div>
+                    <h3>SEO &amp; Get Found</h3>
+                    <p>
+                        Show up when customers search for what you sell. We handle local
+                        SEO, Google Business optimization, and the on-page work that ranks.
+                    </p>
+                    <a href="services.html#seo" class="card-link">Get found on Google →</a>
+                </div>
+
+                <div class="platform-card">
+                    <img src="images/marketing_brand_board.png" alt="Brand board and marketing campaign assets" loading="lazy">
+                    <div class="card-icon">🎨</div>
+                    <h3>Branding &amp; Marketing Campaigns</h3>
+                    <p>
+                        A cohesive brand and campaigns that bring people back: logos,
+                        brand boards, email and SMS campaigns, and social content that
+                        stays on message.
+                    </p>
+                    <a href="services.html#branding" class="card-link">Build your brand →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: What We Do -->
+
+    <!-- SPS V2 BUILD START: Viral Content Spotlight -->
+    <section class="intelligence-tools-section" id="content-intelligence">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">Content that's engineered, not guessed</h2>
+                <p class="section-subtitle-v2">
+                    Our Viral Content Analyzer is the difference between posting and hoping,
+                    and knowing what will perform before you hit publish.
+                </p>
+            </div>
+
+            <div class="tool-showcase-grid">
+                <!-- Viral Content Analyzer -->
+                <div class="tool-showcase-card">
+                    <span class="tool-badge">Proprietary</span>
+                    <div class="tool-icon">📊</div>
+                    <h3>Viral Content Analyzer</h3>
+                    <p class="tool-tagline">Decode what goes viral in your industry</p>
+
+                    <p class="tool-problem">
+                        Spending hours creating content that gets 3 likes while competitors
+                        go viral daily.
+                    </p>
+
+                    <p class="tool-solution">
+                        We scan the top performers in your market, break down exactly why
+                        their content worked, and build a recreation plan for your brand.
+                        You get content backed by data, not guesswork.
+                    </p>
+
+                    <img src="images/viral_content_analyzer_overview2.png"
+                         alt="Viral Content Analyzer Interface"
+                         class="tool-preview"
+                         onclick="window.location.href='platform.html#intelligence'">
+
+                    <ul class="tool-features">
+                        <li>Analyze competitors' viral posts instantly</li>
+                        <li>See the engagement patterns and triggers behind them</li>
+                        <li>Get recreation templates tailored to your brand</li>
+                        <li>Track trending topics in real time</li>
+                        <li>Know what will perform before you post</li>
+                    </ul>
+
+                    <a href="portfolio.html#pm-lounge" class="btn-v2" style="width: 100%; text-align: center;">
+                        See it in a real case study →
+                    </a>
+                </div>
+
+                <!-- UGC Ad Generator (supporting) -->
+                <div class="tool-showcase-card">
+                    <span class="tool-badge">Bonus Tool</span>
+                    <div class="tool-icon">🎬</div>
+                    <h3>UGC Ad Generator</h3>
+                    <p class="tool-tagline">From a product photo to a ready-to-run video ad</p>
+
+                    <p class="tool-problem">
+                        Agencies charge $5,000+ per ad, DIY looks amateur, and good creators
+                        are booked out for months.
+                    </p>
+
+                    <p class="tool-solution">
+                        <strong style="color: var(--color-primary);">Upload a product image + name = professional UGC video ads.</strong>
+                        We tested it with a simple branded golf tee, and the result looked like
+                        agency work. Perfect for testing products and campaigns before you spend big.
+                    </p>
+
+                    <div style="background: rgba(0, 0, 0, 0.5); border-radius: var(--radius-md); padding: var(--space-md); margin: var(--space-md) 0; border: 1px solid var(--color-primary);">
+                        <p style="color: var(--color-primary); font-weight: 600; margin-bottom: var(--space-sm);">
+                            🎯 Real Example: Sentinel Peak Grip Tee
+                        </p>
+                        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm); margin-bottom: var(--space-sm);">
+                            Input: one product photo + "Grip Tee"<br>
+                            Output: two ready-to-run video ads for TikTok / Instagram
+                        </p>
+                        <div class="video-showcase-grid">
+                            <video controls playsinline preload="metadata" style="width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+                                <source src="images/ugc_vid1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                <a href="images/ugc_vid1.mp4" download style="color: var(--color-primary);">Download Video 1</a>
+                            </video>
+                            <video controls playsinline preload="metadata" style="width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+                                <source src="images/ugc_vid2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                                <a href="images/ugc_vid2.mp4" download style="color: var(--color-primary);">Download Video 2</a>
+                            </video>
+                        </div>
+                    </div>
+
+                    <ul class="tool-features">
+                        <li>Test products and offers before you invest</li>
+                        <li>Generate multiple variations for A/B testing</li>
+                        <li>Professional-looking actors and scripts included</li>
+                        <li>Every format: Stories, Reels, TikTok, YouTube Shorts</li>
+                    </ul>
+
+                    <a href="services.html#content" class="btn-v2" style="width: 100%; text-align: center;">
+                        Explore content services →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Viral Content Spotlight -->
+
+    <!-- SPS V2 BUILD START: Website Creation Block -->
+    <section class="section-v2" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="educational-block">
+                <div class="educational-content">
+                    <h3>Websites That Win Customers</h3>
+                    <div class="problem">
+                        <strong>The Problem:</strong>
+                        <p>70% of potential customers judge your business by your website,
+                        and leave if it looks dated, loads slowly, or doesn't work on their phone.</p>
+                    </div>
+                    <div class="problem">
+                        <strong>How We Fix It:</strong>
+                        <p>We design and build a fast, modern, mobile-ready site around your
+                        goals: clear messaging, easy booking or ordering, and the tools to
+                        capture every lead. Live in 7-14 days, with a late-delivery guarantee.</p>
+                    </div>
+                    <a href="portfolio.html" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">See sites we've built →</a>
+                </div>
+                <div class="educational-image">
+                    <img src="images/websites_overview.png" alt="Website builder overview" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Website Creation Block -->
+
+    <!-- SPS V2 BUILD START: Google Reviews Block -->
+    <section class="section-v2">
+        <div class="container">
+            <div class="educational-block">
+                <div class="educational-image">
+                    <img src="images/reputation_reviews_data.png" alt="Review generation and tracking" loading="lazy">
+                </div>
+                <div class="educational-content">
+                    <h3>More Reviews, Better Reputation</h3>
+                    <div class="problem">
+                        <strong>The Problem:</strong>
+                        <p>Customers trust businesses with recent, positive reviews, but happy
+                        customers rarely leave one unless you ask at the right moment.</p>
+                    </div>
+                    <div class="problem">
+                        <strong>How We Fix It:</strong>
+                        <p>We automate review requests by text and email right after a great
+                        experience, route feedback so issues get handled privately, and optimize
+                        your Google Business Profile so the reviews actually get seen.</p>
+                    </div>
+                    <a href="services.html#reviews" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">Grow your reviews →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Google Reviews Block -->
+
+    <!-- SPS V2 BUILD START: SEO Block -->
+    <section class="section-v2" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="educational-block">
+                <div class="educational-content">
+                    <h3>Get Found When It Counts</h3>
+                    <div class="problem">
+                        <strong>The Problem:</strong>
+                        <p>If you're not on the first page when customers search, you don't
+                        exist to them, and your competitors get the call instead.</p>
+                    </div>
+                    <div class="problem">
+                        <strong>How We Fix It:</strong>
+                        <p>We handle local SEO, Google Business optimization, and the on-page
+                        essentials (titles, structure, speed, and content) that help you
+                        rank for the searches that actually bring in business.</p>
+                    </div>
+                    <a href="services.html#seo" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">Improve your visibility →</a>
+                </div>
+                <div class="educational-image">
+                    <img src="images/reputation_gmb_optimization1.png" alt="Local SEO and Google Business optimization" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: SEO Block -->
+
+    <!-- SPS V2 BUILD START: Branding Block -->
+    <section class="section-v2">
+        <div class="container">
+            <div class="educational-block">
+                <div class="educational-image">
+                    <img src="images/marketing_brand_board_3.png" alt="Brand board and campaign assets" loading="lazy">
+                </div>
+                <div class="educational-content">
+                    <h3>A Brand People Remember</h3>
+                    <div class="problem">
+                        <strong>The Problem:</strong>
+                        <p>Inconsistent branding makes even a great business look small and
+                        forgettable, and one-off posts don't build momentum.</p>
+                    </div>
+                    <div class="problem">
+                        <strong>How We Fix It:</strong>
+                        <p>We create a cohesive brand identity and run marketing campaigns
+                        across email, SMS, and social, so every touchpoint looks like you and
+                        keeps customers coming back.</p>
+                    </div>
+                    <a href="services.html#branding" class="card-link" style="color: var(--color-primary); font-weight: 600; text-decoration: none;">Build your brand →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Branding Block -->
+
+    <!-- SPS V2 BUILD START: Selected Work -->
+    <section class="work-strip">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">Selected work</h2>
+                <p class="section-subtitle-v2">
+                    A few of the businesses we've helped, with websites, branding, custom
+                    tools, and content analysis.
+                </p>
+            </div>
+
+            <div class="work-grid">
+                <div class="work-card">
+                    <img src="images/logo-pmlounge.png" alt="The PM Lounge logo" loading="lazy">
+                    <div class="work-card-body">
+                        <span class="work-tag">Analytics &amp; Content</span>
+                        <h3>The PM Lounge</h3>
+                        <p>Social media analytics and viral content analysis to guide what to post.</p>
+                        <a href="portfolio.html#pm-lounge" class="card-link">View case study →</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="images/logo-noefdzcigars.jpg" alt="Noe FDZ Cigars logo" class="logo-dark" loading="lazy">
+                    <div class="work-card-body">
+                        <span class="work-tag">Website &amp; Branding</span>
+                        <h3>Noe FDZ Cigars</h3>
+                        <p>Website creation and brand identity for a premium cigar business.</p>
+                        <a href="portfolio.html#noe-fdz-cigars" class="card-link">View case study →</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="images/logo-bavarianautowerks.jpg" alt="Bavarian AutoWerkz logo" loading="lazy">
+                    <div class="work-card-body">
+                        <span class="work-tag">Website &amp; Custom Tool</span>
+                        <h3>Bavarian AutoWerks</h3>
+                        <p>Website plus a custom ethanol calculator built for their customers.</p>
+                        <a href="portfolio.html#bavarian-autowerks" class="card-link">View case study →</a>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <img src="images/logo-wrapmyride.jpg" alt="Wrap My Ride Fresno logo" class="logo-dark" loading="lazy">
+                    <div class="work-card-body">
+                        <span class="work-tag">Website</span>
+                        <h3>Wrap My Ride Fresno</h3>
+                        <p>A bold, conversion-focused website for a vehicle wrap shop.</p>
+                        <a href="portfolio.html#wrap-my-ride" class="card-link">View case study →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="portfolio.html" class="btn-v2">See all our work →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Selected Work -->
+
+    <!-- SPS V2 BUILD START: Platform Proof Band -->
+    <section class="proof-band">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">Powered by our own platform</h2>
+                <p class="section-subtitle-v2">
+                    Every service runs on software we built and operate ourselves,
+                    so your website, reviews, campaigns, and analytics all live in one place.
+                </p>
+            </div>
+            <div class="proof-images">
+                <img src="images/dashboard_overview.png" alt="Analytics dashboard" loading="lazy">
+                <img src="images/social_planner_statistics_data.png" alt="Social media analytics" loading="lazy">
+                <img src="images/reputation_review_trends.png" alt="Review trends reporting" loading="lazy">
+                <img src="images/automations_overview2.png" alt="Marketing automation workflows" loading="lazy">
+            </div>
+            <div style="text-align: center; margin-top: var(--space-2xl);">
+                <a href="platform.html" class="btn-secondary">Explore the platform →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Platform Proof Band -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Ready to grow?</h2>
+            <p class="section-subtitle-v2">
+                Tell us what you need: a new website, more reviews, better search rankings,
+                a stronger brand, or content that finally performs. We'll show you exactly how we'd do it.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn-v2">Start a project →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">
+                    Sentinel Peak Solutions: websites, reviews, SEO, branding, and content that performs.
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">
+                        Let's build something that grows your business →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Work | Websites, Branding & Content Case Studies | Sentinel Peak Solutions</title>
+    <meta name="description" content="Real businesses we've helped grow: websites, branding, custom tools, and social media content analysis. See what we delivered and visit the live sites.">
+    <meta name="keywords" content="web design portfolio, case studies, website examples, branding portfolio, Fresno web design work">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Our Work | Sentinel Peak Solutions">
+    <meta property="og:description" content="Real businesses we've helped grow. See the work and visit the live sites.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/software-showcase.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        .work-hero-v2 {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .work-hero-v2 .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .work-hero-v2 h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.02em;
+        }
+
+        .work-hero-v2 p {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        .work-note {
+            max-width: 800px;
+            margin: var(--space-lg) auto 0;
+            padding: 0 var(--space-lg);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+        }
+
+        .case-study {
+            padding: var(--space-4xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .case-study:nth-child(even) {
+            background: var(--color-surface);
+        }
+
+        .case-study .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .case-study:nth-child(even) .case-media {
+            order: 2;
+        }
+
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xs);
+            margin-bottom: var(--space-md);
+        }
+
+        .case-tag {
+            display: inline-block;
+            background: rgba(68, 195, 195, 0.12);
+            color: var(--color-primary);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+        }
+
+        .case-content h2 {
+            font-size: var(--font-size-3xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+        }
+
+        .case-block {
+            margin-bottom: var(--space-md);
+        }
+
+        .case-block strong {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: var(--space-xs);
+        }
+
+        .case-block p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .case-actions {
+            margin-top: var(--space-lg);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .case-media {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .case-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .case-media-stack {
+            display: grid;
+            gap: var(--space-md);
+        }
+
+        .case-media-stack img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+        }
+
+        /* Logo tile treatment (used when we show a client logo rather than a screenshot) */
+        .logo-tile {
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2xl);
+            min-height: 280px;
+        }
+
+        .logo-tile img {
+            width: auto;
+            max-width: 100%;
+            max-height: 220px;
+            object-fit: contain;
+        }
+
+        .cta-section-v2 {
+            text-align: center;
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(180deg, var(--color-bg) 0%, rgba(44, 139, 139, 0.05) 100%);
+        }
+
+        .section-title-v2 {
+            font-size: var(--font-size-4xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-subtitle-v2 {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .case-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .case-study:nth-child(even) .case-media {
+                order: 0;
+            }
+
+            .work-hero-v2 h1 {
+                font-size: var(--font-size-3xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html" class="active">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="work-hero-v2">
+        <div class="container">
+            <h1>Real businesses. Real work.</h1>
+            <p>
+                A selection of projects we've delivered, from full websites and branding
+                to custom tools and social media content analysis. Where a site is live,
+                we've linked it so you can see the work for yourself.
+            </p>
+        </div>
+        <p class="work-note">
+            Each project below reflects the specific scope of work we delivered. Some were
+            one-time engagements rather than ongoing partnerships.
+        </p>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Case Study - The PM Lounge -->
+    <section class="case-study" id="pm-lounge">
+        <div class="container">
+            <div class="case-grid">
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Social Media Analytics</span>
+                        <span class="case-tag">Viral Content Analyzer</span>
+                    </div>
+                    <h2>The PM Lounge</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>Posting regularly but unsure which content actually moved the needle,
+                        and no clear way to know what to create next.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We ran their social presence through our Viral Content Analyzer,
+                        breaking down what was performing in their space and why. From that, we
+                        built a data-backed content plan focused on the formats and topics most
+                        likely to land with their audience.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>A clear, repeatable content direction grounded in real engagement
+                        data instead of guesswork, so every post starts from what's proven to work.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="services.html#content" class="btn-v2">Explore content services →</a>
+                    </div>
+                </div>
+                <div class="case-media logo-tile">
+                    <img src="images/logo-pmlounge.png" alt="The PM Lounge logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - The PM Lounge -->
+
+    <!-- SPS V2 BUILD START: Case Study - Noe FDZ Cigars -->
+    <section class="case-study" id="noe-fdz-cigars">
+        <div class="container">
+            <div class="case-grid">
+                <div class="case-media logo-tile" style="background: #0c0c0c;">
+                    <img src="images/logo-noefdzcigars.jpg" alt="Noe FDZ Cigars logo" loading="lazy">
+                </div>
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Website Creation</span>
+                        <span class="case-tag">Branding</span>
+                    </div>
+                    <h2>Noe FDZ Cigars</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>A premium cigar brand that needed an online presence as refined as
+                        the product, one that conveyed craft and quality from the first click.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We designed and built a full website and shaped the brand identity
+                        around it: visual style, tone, and layout that positions the business
+                        as a premium name and makes it easy for customers to explore and connect.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>A polished, mobile-ready site with a cohesive brand that gives the
+                        business a professional home online and room to grow.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="https://noefdzcigars.com/" target="_blank" rel="noopener" class="btn-v2">Visit live site →</a>
+                        <a href="services.html#websites" class="btn-secondary">Website services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - Noe FDZ Cigars -->
+
+    <!-- SPS V2 BUILD START: Case Study - Bavarian AutoWerks -->
+    <section class="case-study" id="bavarian-autowerks">
+        <div class="container">
+            <div class="case-grid">
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Website Creation</span>
+                        <span class="case-tag">Custom Tool</span>
+                    </div>
+                    <h2>Bavarian AutoWerks</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>An automotive specialist that needed a professional website, plus a
+                        practical tool their customers could actually use, not just marketing pages.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We built their website and developed a <strong>custom ethanol
+                        calculator</strong> tailored to their customers' needs: a genuinely useful,
+                        interactive tool that sets them apart from competitors and keeps visitors
+                        on the site.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>A credible, modern website with a one-of-a-kind feature that turns a
+                        simple visit into a reason to come back.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="https://bavarianautowerks.com/" target="_blank" rel="noopener" class="btn-v2">Visit live site →</a>
+                        <a href="services.html#websites" class="btn-secondary">Website services</a>
+                    </div>
+                </div>
+                <div class="case-media logo-tile">
+                    <img src="images/logo-bavarianautowerks.jpg" alt="Bavarian AutoWerkz logo" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - Bavarian AutoWerks -->
+
+    <!-- SPS V2 BUILD START: Case Study - Wrap My Ride Fresno -->
+    <section class="case-study" id="wrap-my-ride">
+        <div class="container">
+            <div class="case-grid">
+                <div class="case-media logo-tile" style="background: #0c0c0c;">
+                    <img src="images/logo-wrapmyride.jpg" alt="Wrap My Ride Fresno logo" loading="lazy">
+                </div>
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Website Creation</span>
+                    </div>
+                    <h2>Wrap My Ride Fresno</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>A vehicle wrap shop in a visual, image-driven business that needed a
+                        website bold enough to match their work and clear enough to drive inquiries.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We created a striking, conversion-focused website that showcases their
+                        wraps, communicates the service clearly, and makes it easy for customers
+                        to get in touch and request a quote.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>A professional online presence that reflects the quality of their work
+                        and turns visitors into leads.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="https://wrapmyridefresno.com/" target="_blank" rel="noopener" class="btn-v2">Visit live site →</a>
+                        <a href="services.html#websites" class="btn-secondary">Website services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - Wrap My Ride Fresno -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Your business could be next.</h2>
+            <p class="section-subtitle-v2">
+                Whether you need a new website, a stronger brand, better content, or a custom
+                tool built just for you. Tell us the goal and we'll show you how we'd get there.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn-v2">Start a project →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">
+                    Sentinel Peak Solutions: websites, reviews, SEO, branding, and content that performs.
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">
+                        Let's build something that grows your business →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+</body>
+</html>

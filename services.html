@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Websites, SEO, Reviews, Branding & Content | Sentinel Peak Solutions</title>
+    <meta name="description" content="Done-for-you services: website creation, local SEO, Google reviews, branding and marketing campaigns, and viral content analysis. Delivered in 7-14 days.">
+    <meta name="keywords" content="website creation, local SEO services, google reviews management, branding services, marketing campaigns, viral content analyzer">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Services | Sentinel Peak Solutions">
+    <meta property="og:description" content="Websites, SEO, reviews, branding, and content that performs, done for you.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/software-showcase.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* V2 Services Page Styles */
+        .services-hero-v2 {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .pain-section-v2 {
+            padding: var(--space-3xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .pain-section-v2:last-child {
+            border-bottom: none;
+        }
+
+        .pain-header {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .pain-eyebrow {
+            display: inline-block;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .pain-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+            color: var(--color-text);
+        }
+
+        .pain-problem {
+            font-size: var(--font-size-lg);
+            color: #ff6b6b;
+            margin-bottom: var(--space-sm);
+        }
+
+        .pain-impact {
+            color: var(--color-text-muted);
+            max-width: 700px;
+            line-height: 1.6;
+        }
+
+        .solution-block-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            margin-top: var(--space-2xl);
+        }
+
+        .solution-content {
+            padding: var(--space-xl);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+        }
+
+        .solution-content h4 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .solution-point {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-md);
+            border-left: 2px solid var(--color-primary);
+        }
+
+        .solution-point strong {
+            display: block;
+            color: var(--color-text);
+            margin-bottom: var(--space-sm);
+        }
+
+        .solution-point p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        .solution-visual {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            transition: all var(--transition-medium);
+        }
+
+        .solution-visual:hover {
+            transform: scale(1.02);
+            border-color: var(--color-primary);
+        }
+
+        .solution-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .feature-grid-v2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .feature-item-v2 {
+            padding: var(--space-md);
+            background: var(--color-surface);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+        }
+
+        .feature-item-v2 strong {
+            color: var(--color-primary);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .pricing-note {
+            margin-top: var(--space-lg);
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(68, 195, 195, 0.08);
+            border: 1px solid rgba(68, 195, 195, 0.2);
+            border-radius: var(--radius-md);
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .pricing-note strong {
+            color: var(--color-primary);
+        }
+
+        .cta-inline {
+            margin-top: var(--space-xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .cta-inline a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+
+        .cta-inline a:hover {
+            color: var(--color-accent);
+        }
+
+        @media (max-width: 768px) {
+            .solution-block-v2 {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid-v2 {
+                grid-template-columns: 1fr;
+            }
+
+            .solution-visual {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="services-hero-v2">
+        <div class="container">
+            <h1 class="hero-headline-v2">Everything you need to get found and grow</h1>
+            <p class="hero-subheadline-v2" style="max-width: 700px; margin: 0 auto;">
+                Five done-for-you services that work together: a website that converts,
+                the SEO and reviews to get you seen, a brand people remember, and content
+                built on data. Most projects launch in 7-14 days.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Website Creation -->
+    <section class="pain-section-v2" id="websites">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">Website Creation</span>
+                <h2 class="pain-title">A website that turns visitors into customers</h2>
+                <p class="pain-problem">The problem: 70% of customers judge your business by your website</p>
+                <p class="pain-impact">
+                    A slow, dated, or hard-to-use site quietly sends customers to your competitors.
+                    A great one earns trust in seconds and makes it effortless to book, buy, or call.
+                </p>
+            </div>
+
+            <div class="solution-block-v2">
+                <div class="solution-content">
+                    <h4>What we do</h4>
+
+                    <div class="solution-point">
+                        <strong>Custom design, built around your goals</strong>
+                        <p>Clean, modern, on-brand design focused on the actions that grow your
+                        business: booking, ordering, calling, or buying.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Fast and mobile-ready</strong>
+                        <p>Loads quickly and looks great on every screen, so you never lose the
+                        majority of visitors who arrive on their phone.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Built to capture leads</strong>
+                        <p>Contact forms, booking, and follow-up wired in from day one, so every
+                        visitor becomes a chance to win the business.</p>
+                    </div>
+
+                    <div class="feature-grid-v2">
+                        <div class="feature-item-v2">
+                            <strong>Custom Tools</strong>
+                            <small>Calculators &amp; interactive features</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>E-Commerce</strong>
+                            <small>Sell online out of the box</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>SEO-Ready</strong>
+                            <small>Built to be found on Google</small>
+                        </div>
+                    </div>
+
+                    <div class="pricing-note">
+                        <strong>Starting at $1,000 setup</strong> + hosting/management from $99/mo.
+                        Growth and Premium builds available. Delivered in 7-14 days, or 20% off if we're late.
+                    </div>
+                </div>
+
+                <div class="solution-visual">
+                    <img src="images/websites_overview.png" alt="Website design and builder" loading="lazy">
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <a href="portfolio.html">See websites we've built →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Website Creation -->
+
+    <!-- SPS V2 BUILD START: SEO -->
+    <section class="pain-section-v2" id="seo" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">SEO &amp; Get Found</span>
+                <h2 class="pain-title">Show up when customers search</h2>
+                <p class="pain-problem">The problem: if you're not on page one, you don't exist</p>
+                <p class="pain-impact">
+                    Most people never scroll past the first few results. If your competitors rank
+                    and you don't, they get the call, even when your business is better.
+                </p>
+            </div>
+
+            <div class="solution-block-v2">
+                <div class="solution-visual">
+                    <img src="images/reputation_gmb_optimization1.png" alt="Local SEO and Google Business optimization" loading="lazy">
+                </div>
+
+                <div class="solution-content">
+                    <h4>What we do</h4>
+
+                    <div class="solution-point">
+                        <strong>Local SEO &amp; Google Business</strong>
+                        <p>We optimize your Google Business Profile and local listings so you show
+                        up in the map pack when nearby customers search.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>On-page essentials</strong>
+                        <p>Titles, structure, speed, and content tuned around the keywords that
+                        actually bring in business, not vanity terms.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Content that ranks</strong>
+                        <p>Pages and posts written to answer what your customers are searching for,
+                        building visibility that compounds over time.</p>
+                    </div>
+
+                    <div class="feature-grid-v2">
+                        <div class="feature-item-v2">
+                            <strong>Keyword Strategy</strong>
+                            <small>Target what converts</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Map Pack</strong>
+                            <small>Rank in local search</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Speed &amp; Structure</strong>
+                            <small>Technical fundamentals</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <a href="platform.html#reputation">See our local SEO tools →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: SEO -->
+
+    <!-- SPS V2 BUILD START: Google Reviews -->
+    <section class="pain-section-v2" id="reviews">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">Google Reviews &amp; Reputation</span>
+                <h2 class="pain-title">More 5-star reviews, automatically</h2>
+                <p class="pain-problem">The problem: 90% of customers read reviews before they buy</p>
+                <p class="pain-impact">
+                    Happy customers rarely leave a review unless you ask at the right moment,
+                    and one unanswered bad review can cost you dozens of sales.
+                </p>
+            </div>
+
+            <div class="solution-block-v2">
+                <div class="solution-visual">
+                    <img src="images/reputation_reviews_data.png" alt="Review generation and reputation dashboard" loading="lazy">
+                </div>
+
+                <div class="solution-content">
+                    <h4>What we do</h4>
+
+                    <div class="solution-point">
+                        <strong>Automated review requests</strong>
+                        <p>Happy customers get a review invite by text and email at the perfect
+                        moment. More reviews, on autopilot.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Smart feedback routing</strong>
+                        <p>Unhappy customers reach you privately first, so issues get resolved
+                        before they become public one-star reviews.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Monitor &amp; respond</strong>
+                        <p>Track reviews across Google, Facebook, and more from one place, and
+                        show them off on your website with review widgets.</p>
+                    </div>
+
+                    <div class="feature-grid-v2">
+                        <div class="feature-item-v2">
+                            <strong>Review Widgets</strong>
+                            <small>Display proof on your site</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Instant Alerts</strong>
+                            <small>Never miss a review</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Trend Tracking</strong>
+                            <small>Watch your rating climb</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <a href="platform.html#reputation">See reputation tools →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Google Reviews -->
+
+    <!-- SPS V2 BUILD START: Branding & Marketing -->
+    <section class="pain-section-v2" id="branding" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">Branding &amp; Marketing Campaigns</span>
+                <h2 class="pain-title">A brand people remember, and campaigns that bring them back</h2>
+                <p class="pain-problem">The problem: inconsistent branding makes great businesses look small</p>
+                <p class="pain-impact">
+                    Mismatched logos, colors, and messaging make you forgettable. And one-off posts
+                    or emails don't build the momentum that turns customers into regulars.
+                </p>
+            </div>
+
+            <div class="solution-block-v2">
+                <div class="solution-content">
+                    <h4>What we do</h4>
+
+                    <div class="solution-point">
+                        <strong>Brand identity</strong>
+                        <p>Logo, colors, and a brand board that keep you looking consistent and
+                        professional everywhere customers see you.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Email &amp; SMS campaigns</strong>
+                        <p>Promotions, announcements, and follow-ups that reach customers where
+                        they actually pay attention: their inbox and phone.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Social content that stays on message</strong>
+                        <p>Planned, on-brand social content so your presence looks intentional and
+                        keeps you top of mind.</p>
+                    </div>
+
+                    <div class="feature-grid-v2">
+                        <div class="feature-item-v2">
+                            <strong>Brand Boards</strong>
+                            <small>Consistent everywhere</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Campaigns</strong>
+                            <small>Email, SMS &amp; social</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Templates</strong>
+                            <small>On-brand, ready to go</small>
+                        </div>
+                    </div>
+
+                    <div class="pricing-note">
+                        <strong>Social media management from $599/mo</strong> (Basic),
+                        $1,299/mo (Standard), $1,899/mo (Premium).
+                    </div>
+                </div>
+
+                <div class="solution-visual">
+                    <img src="images/marketing_brand_board.png" alt="Brand board and marketing campaign assets" loading="lazy">
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <a href="platform.html#social">See branding &amp; campaign tools →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Branding & Marketing -->
+
+    <!-- SPS V2 BUILD START: Content Intelligence -->
+    <section class="pain-section-v2" id="content" style="background: linear-gradient(135deg, rgba(44, 139, 139, 0.08) 0%, var(--color-surface) 100%);">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">Viral Content Analyzer</span>
+                <h2 class="pain-title">Content that's engineered, not guessed</h2>
+                <p class="pain-problem">The problem: hours of content that gets 3 likes while competitors go viral</p>
+                <p class="pain-impact">
+                    Posting and hoping is expensive and slow. Knowing what will perform before you
+                    publish is the difference between wasted effort and steady growth.
+                </p>
+            </div>
+
+            <div class="solution-block-v2">
+                <div class="solution-visual">
+                    <img src="images/viral_content_analyzer_overview2.png" alt="Viral Content Analyzer" loading="lazy">
+                </div>
+
+                <div class="solution-content">
+                    <h4>What we do</h4>
+
+                    <div class="solution-point">
+                        <strong>Viral Content Analyzer</strong>
+                        <p>We scan the top performers in your market, break down exactly why their
+                        content worked, and turn it into a recreation plan for your brand.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>Data-backed content plan</strong>
+                        <p>You get direction based on real engagement patterns and trending topics,
+                        not guesswork, so every post starts from what's proven to work.</p>
+                    </div>
+
+                    <div class="solution-point">
+                        <strong>UGC Ad Generator (bonus)</strong>
+                        <p>Turn a single product photo into ready-to-run video ads in minutes,
+                        perfect for testing offers and products before you invest.</p>
+                    </div>
+
+                    <div class="feature-grid-v2">
+                        <div class="feature-item-v2">
+                            <strong>Competitor Analysis</strong>
+                            <small>See what's working</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Recreation Templates</strong>
+                            <small>Built for your brand</small>
+                        </div>
+                        <div class="feature-item-v2">
+                            <strong>Trend Tracking</strong>
+                            <small>Post at the right time</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <a href="portfolio.html#pm-lounge">See it in a real case study →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Content Intelligence -->
+
+    <!-- SPS V2 BUILD START: The Engine -->
+    <section class="pain-section-v2" style="background: var(--color-surface);">
+        <div class="container">
+            <div class="pain-header">
+                <span class="pain-eyebrow">The engine behind it all</span>
+                <h2 class="pain-title">One platform running your growth</h2>
+                <p class="pain-impact">
+                    Every service above runs on software we built and operate ourselves:
+                    CRM, automation, analytics, reviews, and social, all connected. That means
+                    your website, campaigns, reviews, and reporting live in one place, with no
+                    duct-taped tools and no data falling through the cracks.
+                </p>
+            </div>
+            <div class="cta-inline" style="border-top: none; padding-top: 0;">
+                <a href="platform.html">Explore the platform in detail →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: The Engine -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Not sure where to start?</h2>
+            <p class="section-subtitle-v2">
+                Tell us your goal: more customers, a new website, better reviews, or content that
+                performs, and we'll recommend exactly what you need. No pressure, no jargon.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn-v2">Start a project →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">
+                    Sentinel Peak Solutions: websites, reviews, SEO, branding, and content that performs.
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">
+                        Tell us your goal. We'll show you how to reach it →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+</body>
+</html>

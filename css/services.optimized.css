@@ -1,0 +1,29 @@
+/* services.optimized.css — sentinelpeaksolutions.com */
+/* Scope: Services hub + Web Design (Basic/Standard/Premium) + Social (Basic/Standard/Premium) */
+
+/* 1) UX sanity: allow text selection everywhere (overrides any previous select-none) */
+html, body { user-select: text !important; }
+
+/* 2) Headings rhythm on service pages */
+main h1 { line-height: 1.05; margin-block: clamp(16px, 2vw, 28px) clamp(12px, 1.5vw, 20px); }
+main h2 { line-height: 1.12; margin-block: clamp(12px, 1.6vw, 22px) clamp(10px, 1.2vw, 18px); }
+main h3 { line-height: 1.18; margin-block: clamp(8px, 1.2vw, 16px) clamp(8px, 1vw, 14px); }
+
+/* 3) Images: prevent layout shifts (keeps current look) */
+img { max-width: 100%; height: auto; }
+
+/* 4) Buttons: keep existing look, improve focus states for keyboard users */
+.btn:focus-visible { outline: 2px solid var(--color-primary-light); outline-offset: 2px; }
+
+/* 5) Cards/sections: tighter spacing on mobile without visual redesign */
+@media (max-width: 900px) {
+  .glass-card { padding: max(1rem, 3vw); }
+  .section, .page-header { padding: max(3rem, 8vw) 0; }
+}
+
+/* 6) Reduce excessive parallax/animation for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll, .animate-slide-left, .animate-slide-right, .animate-scale, .fade-in, .slide-up, .scale-in { 
+    transition: none !important; transform: none !important; opacity: 1 !important; 
+  }
+}

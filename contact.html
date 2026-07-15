@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Start Your Project | Sentinel Peak Solutions</title>
+    <meta name="description" content="Tell us your goal: a new website, more reviews, better SEO, stronger branding, or content that performs. We'll show you exactly how we'd deliver it.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact Sentinel Peak Solutions">
+    <meta property="og:description" content="Tell us what's slowing your business down. Get real solutions.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* V2 Contact Page Styles */
+        .contact-hero-v2 {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .contact-container-v2 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-3xl) var(--space-lg);
+        }
+
+        .contact-grid-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            margin-top: var(--space-3xl);
+        }
+
+        .contact-form-section {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            min-height: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+        }
+
+        .form-group-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
+        .form-group-v2 label {
+            color: var(--color-text);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+        }
+
+        .form-group-v2 input,
+        .form-group-v2 select,
+        .form-group-v2 textarea {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            color: var(--color-text);
+            font-size: var(--font-size-base);
+            transition: all var(--transition-fast);
+        }
+
+        .form-group-v2 input:focus,
+        .form-group-v2 select:focus,
+        .form-group-v2 textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(68, 195, 195, 0.1);
+        }
+
+        .form-group-v2 textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit-v2 {
+            background: var(--color-primary);
+            color: var(--color-bg);
+            border: none;
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-xl);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-medium);
+        }
+
+        .form-submit-v2:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.3);
+        }
+
+        .contact-info-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2xl);
+        }
+
+        .process-box-v2 {
+            background: rgba(44, 139, 139, 0.05);
+            border: 1px solid rgba(44, 139, 139, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .process-box-v2 h3 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .process-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: var(--space-md);
+            align-items: flex-start;
+        }
+
+        .timeline-marker {
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            color: var(--color-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content strong {
+            color: var(--color-text);
+            display: block;
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline-content p {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+
+        .faq-section-v2 {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+        }
+
+        .faq-section-v2 h3 {
+            color: var(--color-text);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .faq-item-v2 {
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--space-lg) 0;
+        }
+
+        .faq-item-v2:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question-v2 {
+            color: var(--color-text);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer-v2 {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            padding-left: var(--space-md);
+            display: none;
+        }
+
+        .faq-item-v2.active .faq-answer-v2 {
+            display: block;
+        }
+
+        .faq-toggle {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            transition: transform var(--transition-fast);
+        }
+
+        .faq-item-v2.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        .contact-methods-v2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-lg);
+            margin-top: var(--space-3xl);
+        }
+
+        .contact-method-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+        }
+
+        .contact-method-card h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .contact-method-card p {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid-v2 {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-methods-v2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="contact-hero-v2">
+        <div class="container">
+            <h1 class="hero-headline-v2">
+                Let's start your project.
+            </h1>
+            <p class="hero-subheadline-v2" style="max-width: 640px; margin: 0 auto;">
+                Tell us your goal: a new website, more Google reviews, better search rankings,
+                a stronger brand, or content that finally performs. We'll show you exactly how we'd deliver it.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Contact Grid -->
+    <section>
+        <div class="contact-container-v2">
+            <div class="contact-grid-v2">
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <h2 style="font-size: var(--font-size-2xl); margin-bottom: var(--space-xl);">
+                        Start the Conversation
+                    </h2>
+
+                    <iframe
+                        src="https://links.sentinelpeaksolutions.com/widget/form/i67NaSkAwDxqv8m6ZMvo"
+                        style="width:100%;height:100%;border:none;border-radius:3px"
+                        id="inline-i67NaSkAwDxqv8m6ZMvo"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Contact Form"
+                        data-height="752"
+                        data-layout-iframe-id="inline-i67NaSkAwDxqv8m6ZMvo"
+                        data-form-id="i67NaSkAwDxqv8m6ZMvo"
+                        title="Contact Form"
+                    >
+                    </iframe>
+                </div>
+
+                <!-- Process & Info -->
+                <div class="contact-info-section">
+                    <div class="process-box-v2">
+                        <h3>What Happens Next</h3>
+                        <div class="process-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">1</div>
+                                <div class="timeline-content">
+                                    <strong>Within 2 Hours</strong>
+                                    <p>We review your submission and prepare initial insights about your specific situation.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">2</div>
+                                <div class="timeline-content">
+                                    <strong>Same Day Response</strong>
+                                    <p>You'll receive a personalized email outlining how we'd approach your project and what it would include.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">3</div>
+                                <div class="timeline-content">
+                                    <strong>Discovery Call (Optional)</strong>
+                                    <p>If it makes sense, we'll hop on a quick 20-minute call to align on goals and show you examples.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-marker">4</div>
+                                <div class="timeline-content">
+                                    <strong>Clear Next Steps</strong>
+                                    <p>No pressure. Just a clear plan with scope, timeline (typically 7-14 days), and pricing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-section-v2">
+                        <h3>Common Questions</h3>
+
+                        <div class="faq-item-v2">
+                            <div class="faq-question-v2" onclick="toggleFAQ(this)">
+                                How quickly can you deliver?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer-v2">
+                                Most websites launch within 7-14 days. We handle the entire build
+                                while you keep running your business, and if we're late, you get 20% off the final invoice.
+                            </div>
+                        </div>
+
+                        <div class="faq-item-v2">
+                            <div class="faq-question-v2" onclick="toggleFAQ(this)">
+                                What does it cost?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer-v2">
+                                Websites start at $1,000 setup, with hosting and management from $99/mo.
+                                Social media management starts at $599/mo. We'll give you a clear, fixed quote
+                                before any work begins. No surprises. Payment is 50% upfront, 50% on completion.
+                            </div>
+                        </div>
+
+                        <div class="faq-item-v2">
+                            <div class="faq-question-v2" onclick="toggleFAQ(this)">
+                                Do I have to buy everything at once?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer-v2">
+                                No. Start with what you need most (a website, reviews, SEO, branding, or content)
+                                and add more later. Many clients begin with one service and grow from there.
+                            </div>
+                        </div>
+
+                        <div class="faq-item-v2">
+                            <div class="faq-question-v2" onclick="toggleFAQ(this)">
+                                Will this work for my industry?
+                                <span class="faq-toggle">+</span>
+                            </div>
+                            <div class="faq-answer-v2">
+                                We've worked across cigars, automotive, vehicle wraps, hospitality, and more.
+                                We tailor every website, brand, and content plan to your business. Check out our
+                                <a href="portfolio.html" style="color: var(--color-primary); text-decoration: none;">work</a> to see real examples.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Contact Grid -->
+
+    <!-- SPS V2 BUILD START: Alternative Contact Methods -->
+    <section style="background: var(--color-surface); padding: var(--space-3xl) 0;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: var(--font-size-3xl); margin-bottom: var(--space-xl);">
+                Other Ways to Connect
+            </h2>
+
+            <div class="contact-methods-v2">
+                <div class="contact-method-card">
+                    <h4>Quick Question?</h4>
+                    <p>Text us at<br><strong style="color: var(--color-text);">(559) 245-6571</strong></p>
+                    <p style="margin-top: var(--space-sm);">Response within 1 hour during business hours</p>
+                </div>
+
+                <div class="contact-method-card">
+                    <h4>Email Direct</h4>
+                    <p>Send details to<br><strong style="color: var(--color-text);">info@sentinelpeaksolutions.com</strong></p>
+                    <p style="margin-top: var(--space-sm);">We'll respond same business day</p>
+                </div>
+
+                <div class="contact-method-card">
+                    <h4>Book a Call</h4>
+                    <p>Talk through your goals<br><strong style="color: var(--color-text);">20-minute intro call</strong></p>
+                    <p style="margin-top: var(--space-sm);">
+                        <a href="#" style="color: var(--color-primary); text-decoration: none;">
+                            Schedule directly →
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Alternative Contact Methods -->
+
+    <!-- SPS V2 BUILD START: Final CTA -->
+    <section style="padding: var(--space-3xl) 0; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-lg);">
+                Your competitors aren't waiting.<br>
+                Neither should you.
+            </h2>
+            <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">
+                Every day without a strong website, good reviews, and content that performs is
+                business going to someone else. Let's build something that grows your business.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Final CTA -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted);">
+                    Sentinel Peak Solutions • Fresno, CA • Built to solve real problems
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+    <script src="https://links.sentinelpeaksolutions.com/js/form_embed.js"></script>
+
+    <script>
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,327 @@
+{
+  "build_version": "2.0.0",
+  "build_date": "2024-01-15",
+  "build_approach": "Clean rebuild without legacy code",
+  "pages": {
+    "index_v2.html": {
+      "title": "Business Intelligence Platform",
+      "sections": [
+        {
+          "name": "Hero",
+          "content": "Disconnected tools. Missed opportunities. We fix both.",
+          "word_count": 42,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Platform Overview",
+          "content": "Three pillars - CRM, Automation, Analytics",
+          "word_count": 156,
+          "tone_validation": "balanced",
+          "images": [
+            "contacts_overview.png",
+            "automations_overview2.png",
+            "dashboard_overview.png"
+          ]
+        },
+        {
+          "name": "Lead Management Education",
+          "content": "Problem-solution format for lead tracking",
+          "word_count": 98,
+          "tone_validation": "balanced",
+          "images": ["pipelines_overview.png"]
+        },
+        {
+          "name": "Automation Education",
+          "content": "Complexity without friction explanation",
+          "word_count": 94,
+          "tone_validation": "balanced",
+          "images": ["automations_template.png"]
+        },
+        {
+          "name": "Calendar Education",
+          "content": "Scheduling friction and no-show solutions",
+          "word_count": 87,
+          "tone_validation": "balanced",
+          "images": ["calander_overview.png"]
+        }
+      ],
+      "total_word_count": 477,
+      "overall_tone": "Problem-focused, solution-oriented, no hype"
+    },
+    "services_v2.html": {
+      "title": "Platform Solutions by Problem",
+      "sections": [
+        {
+          "name": "Hero",
+          "content": "Solutions by what's broken",
+          "word_count": 38,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Lead Management Pain",
+          "content": "60% lead loss problem and CRM solution",
+          "word_count": 245,
+          "tone_validation": "balanced",
+          "images": ["pipelines_overview.png"]
+        },
+        {
+          "name": "Follow-ups Pain",
+          "content": "15+ hours manual work and automation fix",
+          "word_count": 238,
+          "tone_validation": "balanced",
+          "images": ["automations_overview3.png"]
+        },
+        {
+          "name": "Scheduling Pain",
+          "content": "30% no-show rates and calendar solution",
+          "word_count": 226,
+          "tone_validation": "balanced",
+          "images": ["calander_appointments.png"]
+        },
+        {
+          "name": "Reputation Pain",
+          "content": "Bad reviews impact and management solution",
+          "word_count": 232,
+          "tone_validation": "balanced",
+          "images": ["reputation_reviews_data.png"]
+        },
+        {
+          "name": "Visibility Pain",
+          "content": "Inconsistent posting and social tools",
+          "word_count": 219,
+          "tone_validation": "balanced",
+          "images": ["social_planner_overview.png"]
+        },
+        {
+          "name": "Analytics Pain",
+          "content": "Flying blind and unified reporting",
+          "word_count": 214,
+          "tone_validation": "balanced",
+          "images": ["dashboard_data1.png"]
+        }
+      ],
+      "total_word_count": 1412,
+      "overall_tone": "Problem-first, educational, clear solutions"
+    },
+    "portfolio_v2.html": {
+      "title": "Platform Showcase",
+      "sections": [
+        {
+          "name": "Hero",
+          "content": "See every module in action",
+          "word_count": 28,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "CRM Section",
+          "content": "Contact, pipeline, opportunity modules",
+          "word_count": 126,
+          "tone_validation": "balanced",
+          "images": [
+            "contacts_overview.png",
+            "pipelines_overview.png",
+            "opourtunities_overview2.png"
+          ]
+        },
+        {
+          "name": "Automation Section",
+          "content": "Workflow builder and templates",
+          "word_count": 108,
+          "tone_validation": "balanced",
+          "images": [
+            "automations_overview2.png",
+            "automations_template.png",
+            "automations_settings.png"
+          ]
+        },
+        {
+          "name": "Calendar Section",
+          "content": "Booking and appointment management",
+          "word_count": 114,
+          "tone_validation": "balanced",
+          "images": [
+            "calander_overview.png",
+            "calander_appointments.png",
+            "calander_connections.png"
+          ]
+        },
+        {
+          "name": "Reputation Section",
+          "content": "Review monitoring and management",
+          "word_count": 102,
+          "tone_validation": "balanced",
+          "images": [
+            "reputation_reviews_data.png",
+            "reputation_data1.png",
+            "reputation_gmb_optimization.png"
+          ]
+        },
+        {
+          "name": "Social Section",
+          "content": "Content planning and analytics",
+          "word_count": 96,
+          "tone_validation": "balanced",
+          "images": [
+            "social_planner_overview.png",
+            "social_planner_templates.png",
+            "social_planner_analytics_data2.png"
+          ]
+        },
+        {
+          "name": "AI Tools Section",
+          "content": "AI agents and unified inbox",
+          "word_count": 84,
+          "tone_validation": "balanced",
+          "images": [
+            "AI_agents_overview.png",
+            "agents_create.png",
+            "conversations_overview.png"
+          ]
+        },
+        {
+          "name": "Analytics Section",
+          "content": "Dashboards and reporting",
+          "word_count": 90,
+          "tone_validation": "balanced",
+          "images": [
+            "dashboard_overview.png",
+            "dashboard_data1.png",
+            "dashboard_lead_source.png"
+          ]
+        }
+      ],
+      "total_word_count": 748,
+      "overall_tone": "Visual-focused, minimal copy, result-oriented"
+    },
+    "about_v2.html": {
+      "title": "About - We Build Tools That Run Businesses",
+      "sections": [
+        {
+          "name": "Hero",
+          "content": "Tools that run businesses, not campaigns",
+          "word_count": 38,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Origin Story",
+          "content": "Built from necessity and operational experience",
+          "word_count": 342,
+          "tone_validation": "balanced",
+          "images": [
+            "launchpad_overview.png",
+            "automations_overview3.png"
+          ]
+        },
+        {
+          "name": "Philosophy",
+          "content": "Built not bought, integration, simplicity",
+          "word_count": 276,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Technology Stack",
+          "content": "Architecture and approach explanation",
+          "word_count": 298,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "By The Numbers",
+          "content": "Key metrics and achievements",
+          "word_count": 72,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Mission Statement",
+          "content": "Simplify operations through integrated software",
+          "word_count": 86,
+          "tone_validation": "balanced",
+          "images": []
+        }
+      ],
+      "total_word_count": 1112,
+      "overall_tone": "Authentic, experience-driven, technical confidence"
+    },
+    "contact_v2.html": {
+      "title": "Contact - Tell Us What's Broken",
+      "sections": [
+        {
+          "name": "Hero",
+          "content": "Tell us what's slowing your business down",
+          "word_count": 26,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Contact Form",
+          "content": "Problem-focused form fields",
+          "word_count": 124,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Process Timeline",
+          "content": "What happens next - 4 clear steps",
+          "word_count": 156,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "FAQ Section",
+          "content": "Common questions answered directly",
+          "word_count": 248,
+          "tone_validation": "balanced",
+          "images": []
+        },
+        {
+          "name": "Alternative Contact",
+          "content": "Phone, email, demo booking options",
+          "word_count": 94,
+          "tone_validation": "balanced",
+          "images": []
+        }
+      ],
+      "total_word_count": 648,
+      "overall_tone": "Direct, helpful, process-focused"
+    }
+  },
+  "image_usage_summary": {
+    "total_unique_images": 27,
+    "categories": {
+      "crm": ["contacts_overview.png", "pipelines_overview.png", "opourtunities_overview2.png"],
+      "automation": ["automations_overview2.png", "automations_overview3.png", "automations_template.png", "automations_settings.png"],
+      "calendar": ["calander_overview.png", "calander_appointments.png", "calander_connections.png"],
+      "reputation": ["reputation_reviews_data.png", "reputation_data1.png", "reputation_gmb_optimization.png"],
+      "social": ["social_planner_overview.png", "social_planner_templates.png", "social_planner_analytics_data2.png"],
+      "ai": ["AI_agents_overview.png", "agents_create.png", "conversations_overview.png"],
+      "analytics": ["dashboard_overview.png", "dashboard_data1.png", "dashboard_lead_source.png"],
+      "platform": ["launchpad_overview.png"]
+    }
+  },
+  "tone_validation_summary": {
+    "pages_validated": 5,
+    "all_balanced": true,
+    "issues_found": [],
+    "strengths": [
+      "Problem-first approach throughout",
+      "No marketing buzzwords or hype",
+      "Clear value propositions",
+      "Educational focus",
+      "Result-oriented messaging"
+    ]
+  },
+  "technical_details": {
+    "css_reused": ["base.css", "components.css", "software-showcase.css"],
+    "js_reused": ["animations.js"],
+    "new_css_created": false,
+    "responsive": true,
+    "accessibility": "ARIA labels and keyboard navigation included",
+    "performance": "Lazy loading implemented for images"
+  }
+}

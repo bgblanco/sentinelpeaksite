@@ -1,0 +1,161 @@
+/**
+ * Scroll Components CSS
+ * 
+ * Provides reusable scroll progress bar and back-to-top button components.
+ * Extracted from portfolio.html for modular use across all pages.
+ * 
+ * Components included:
+ * - .page-progress: Fixed scroll progress bar at top
+ * - .scroll-to-top: Floating back-to-top button
+ * 
+ * Color scheme: #2c8b8b Sentinel Peak brand teal with gradient variations
+ */
+
+/* === SCROLL PROGRESS BAR === */
+.page-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #2c8b8b, #44c3c3);
+    z-index: 1001;
+    /* Hardware acceleration for smooth animations */
+    will-change: width;
+    transform: translateZ(0);
+    /* Optimized transition for 60fps */
+    transition: width 0.1s linear;
+}
+
+/* === BACK-TO-TOP BUTTON === */
+.scroll-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    width: 60px;
+    height: 60px;
+    background: rgba(44, 139, 139, 0.1);
+    border: 2px solid rgba(44, 139, 139, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    /* Hardware acceleration and performance optimizations */
+    will-change: opacity, visibility, transform;
+    transform: translateZ(0);
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    backdrop-filter: blur(15px);
+    z-index: 999;
+    /* Improve touch target for mobile */
+    touch-action: manipulation;
+}
+
+/* Visible state for back-to-top button */
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hover effects for back-to-top button */
+.scroll-to-top:hover {
+    background: rgba(44, 139, 139, 0.2);
+    border-color: rgba(44, 139, 139, 0.6);
+    transform: translateY(-5px) translateZ(0);
+    box-shadow: 0 15px 40px rgba(44, 139, 139, 0.3);
+}
+
+/* Mobile optimizations - remove hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .scroll-to-top:hover {
+        background: rgba(44, 139, 139, 0.1);
+        border-color: rgba(44, 139, 139, 0.3);
+        transform: translateZ(0);
+        box-shadow: none;
+    }
+    
+    /* Larger touch target for mobile */
+    .scroll-to-top {
+        width: 70px;
+        height: 70px;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}
+
+/* SVG arrow styling */
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+    color: #2c8b8b;
+    /* Hardware acceleration for smooth SVG animations */
+    will-change: transform;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for SVG arrow */
+.scroll-to-top:hover svg {
+    transform: translateY(-3px) translateZ(0);
+}
+
+/* Disable SVG animations on mobile for better performance */
+@media (hover: none) and (pointer: coarse) {
+    .scroll-to-top svg {
+        transition: none;
+    }
+    
+    .scroll-to-top:hover svg {
+        transform: translateZ(0);
+    }
+}
+
+/* === RESPONSIVE BREAKPOINTS === */
+
+/* Large desktop screens (1600px+) */
+@media (min-width: 1600px) {
+    .scroll-to-top {
+        width: 70px;
+        height: 70px;
+        right: 4rem;
+        bottom: 4rem;
+    }
+    
+    .scroll-to-top svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* === ACCESSIBILITY IMPROVEMENTS === */
+
+/* Ensure button is keyboard accessible */
+.scroll-to-top:focus {
+    outline: 2px solid #2c8b8b;
+    outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .page-progress {
+        transition: none;
+    }
+    
+    .scroll-to-top {
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .scroll-to-top svg {
+        transition: none;
+    }
+    
+    .scroll-to-top:hover {
+        transform: none;
+    }
+    
+    .scroll-to-top:hover svg {
+        transform: none;
+    }
+}

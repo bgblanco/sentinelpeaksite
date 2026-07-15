@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Your Growth Partner for Websites, SEO & Marketing | Sentinel Peak Solutions</title>
+    <meta name="description" content="A done-for-you growth partner that built its own platform. We help businesses get found, look professional, and grow, from a first website to a sale-ready brand.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Sentinel Peak Solutions">
+    <meta property="og:description" content="A growth partner that built its own tools to get clients real results.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* V2 About Page Styles */
+        .about-hero-v2 {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .about-content-v2 {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-3xl) 0;
+        }
+
+        .story-section-v2 {
+            padding: var(--space-3xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .story-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+            margin: var(--space-2xl) 0;
+        }
+
+        .story-content h3 {
+            font-size: var(--font-size-2xl);
+            color: var(--color-primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .story-content p {
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: var(--space-md);
+        }
+
+        .highlight-box {
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-primary);
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+        }
+
+        .highlight-box strong {
+            color: var(--color-text);
+            display: block;
+            margin-bottom: var(--space-sm);
+        }
+
+        .tech-stack-v2 {
+            padding: var(--space-3xl) 0;
+            background: var(--color-surface);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .tech-item {
+            padding: var(--space-lg);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+        }
+
+        .tech-item h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .tech-item p {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+        }
+
+        .philosophy-section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .philosophy-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .philosophy-card h3 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            margin: var(--space-3xl) 0;
+        }
+
+        .value-item {
+            text-align: center;
+        }
+
+        .value-number {
+            font-size: var(--font-size-4xl);
+            color: var(--color-primary);
+            font-weight: 300;
+            margin-bottom: var(--space-sm);
+        }
+
+        .value-label {
+            color: var(--color-text);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .value-description {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .team-section-v2 {
+            padding: var(--space-3xl) 0;
+            background: var(--color-surface);
+        }
+
+        .sidebar-educational {
+            background: rgba(44, 139, 139, 0.05);
+            border: 1px solid rgba(44, 139, 139, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin: var(--space-2xl) 0;
+        }
+
+        .sidebar-educational h4 {
+            color: var(--color-primary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .sidebar-educational ul {
+            list-style: none;
+        }
+
+        .sidebar-educational li {
+            padding: var(--space-sm) 0;
+            color: var(--color-text-muted);
+            padding-left: var(--space-md);
+            border-left: 2px solid var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        @media (max-width: 768px) {
+            .story-block {
+                grid-template-columns: 1fr;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="about-hero-v2">
+        <div class="container">
+            <h1 class="hero-headline-v2">
+                A growth partner that builds,<br>
+                not just advises.
+            </h1>
+            <p class="hero-subheadline-v2" style="max-width: 700px;">
+                Sentinel Peak Solutions helps businesses get found and grow: websites, SEO,
+                reviews, branding, and content. We began inside real operations, and we built
+                our own platform because off-the-shelf tools couldn't deliver the results our clients needed.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Story Section -->
+    <section class="story-section-v2">
+        <div class="container">
+            <div class="about-content-v2">
+                <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-2xl);">
+                    The Origin: Built From Necessity
+                </h2>
+
+                <div class="story-block">
+                    <div class="story-content">
+                        <h3>Started in Operations</h3>
+                        <p>
+                            We didn't start as a software company. We started running
+                            marketing campaigns, managing client relationships, and trying
+                            to scale businesses with off-the-shelf tools.
+                        </p>
+                        <p>
+                            Every platform promised integration. None actually talked to each other.
+                            Data lived in silos. Automation required five different subscriptions.
+                            We were spending more time managing tools than growing businesses.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/launchpad_overview.png" alt="Platform Development"
+                             style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>The Breaking Point</strong>
+                    <p>
+                        After losing a major client because a lead fell through three different systems,
+                        we decided to build what we actually needed. Not another integration layer.
+                        Not another dashboard aggregator. One platform, built from scratch, where
+                        every component was designed to work together.
+                    </p>
+                </div>
+
+                <div class="story-block">
+                    <div>
+                        <img src="images/automations_overview3.png" alt="Building Automations"
+                             style="width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                    </div>
+                    <div class="story-content">
+                        <h3>Years of Development</h3>
+                        <p>
+                            What started as internal tools grew into a complete platform.
+                            Every feature came from a real need. Every workflow from actual use.
+                            No venture capital pushing growth. No features built for demos.
+                        </p>
+                        <p>
+                            Just tools that had to work, because our own business depended on them.
+                            When they worked for us, we knew they'd work for others facing
+                            the same operational chaos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Story Section -->
+
+    <!-- SPS V2 BUILD START: Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="about-content-v2">
+                <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-2xl); text-align: center;">
+                    Our Development Philosophy
+                </h2>
+
+                <div class="philosophy-card">
+                    <h3>Built, Not Bought</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7;">
+                        We didn't take shortcuts with off-the-shelf solutions. We didn't patch together
+                        disconnected services and hope they'd work. Instead, we built every component from the ground up.
+                        Why? Because when you control the entire stack, everything just works.
+                        No compatibility issues. No feature limitations. No waiting for vendor updates.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <h3>Integration Without Friction</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7;">
+                        Every module shares the same database. Every action updates everywhere instantly.
+                        When a lead books an appointment, the CRM knows. When a sale closes, automations trigger.
+                        When a review posts, workflows activate. This isn't integration; it's one unified system.
+                    </p>
+                </div>
+
+                <div class="philosophy-card">
+                    <h3>Complexity Made Simple</h3>
+                    <p style="color: var(--color-text-muted); line-height: 1.7;">
+                        Powerful doesn't mean complicated. Every feature went through the "can my mom use this?" test.
+                        If it required a manual, we rebuilt it. If it needed training, we simplified it.
+                        The result: enterprise capability with small business simplicity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Philosophy Section -->
+
+    <!-- SPS V2 BUILD START: Tech Stack Section -->
+    <section class="tech-stack-v2">
+        <div class="container">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-lg); text-align: center;">
+                Our Technology Approach
+            </h2>
+            <p style="text-align: center; color: var(--color-text-muted); max-width: 700px; margin: 0 auto;">
+                Modern architecture. Proven reliability. Built to scale from solo operations
+                to enterprise deployments without breaking.
+            </p>
+
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Real-Time Data Sync</h4>
+                    <p>
+                        Every change reflects instantly across all modules.
+                        No refresh needed. No sync delays. Just live data everywhere.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <h4>API-First Design</h4>
+                    <p>
+                        Everything accessible via API. Build custom integrations.
+                        Connect legacy systems. Export to any platform.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <h4>Multi-Tenant Architecture</h4>
+                    <p>
+                        Each account completely isolated. Bank-level security.
+                        Your data stays yours. No cross-contamination.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <h4>Auto-Scaling Infrastructure</h4>
+                    <p>
+                        Handles 10 users or 10,000. Automatic resource allocation.
+                        No performance degradation at scale.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <h4>Machine Learning Pipeline</h4>
+                    <p>
+                        AI that learns from your business. Pattern recognition.
+                        Predictive analytics. Smarter over time.
+                    </p>
+                </div>
+
+                <div class="tech-item">
+                    <h4>Edge Computing</h4>
+                    <p>
+                        Processing near your users. Reduced latency.
+                        Faster response times. Better user experience.
+                    </p>
+                </div>
+            </div>
+
+            <div class="sidebar-educational">
+                <h4>Why We Build Everything Ourselves</h4>
+                <ul>
+                    <li>No vendor lock-in or surprise price changes</li>
+                    <li>Features built from actual needs, not market trends</li>
+                    <li>Complete control over security and compliance</li>
+                    <li>Instant bug fixes without waiting for vendors</li>
+                    <li>Custom features possible for enterprise clients</li>
+                    <li>One support team that knows the entire platform</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Tech Stack Section -->
+
+    <!-- SPS V2 BUILD START: Values Section -->
+    <section style="padding: var(--space-3xl) 0;">
+        <div class="container">
+            <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-2xl); text-align: center;">
+                By The Numbers
+            </h2>
+
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-number">2017</div>
+                    <div class="value-label">Founded</div>
+                    <div class="value-description">Started from operational needs</div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-number">5+</div>
+                    <div class="value-label">Years Development</div>
+                    <div class="value-description">Continuous platform evolution</div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-number">50+</div>
+                    <div class="value-label">Modules Built</div>
+                    <div class="value-description">Every tool from scratch</div>
+                </div>
+            </div>
+
+            <div class="value-grid">
+                <div class="value-item">
+                    <div class="value-number">24/7</div>
+                    <div class="value-label">Platform Uptime</div>
+                    <div class="value-description">Reliability you can count on</div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-number">1</div>
+                    <div class="value-label">Unified System</div>
+                    <div class="value-description">Everything connected</div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-number">0</div>
+                    <div class="value-label">Third-Party Dependencies</div>
+                    <div class="value-description">Complete control</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Values Section -->
+
+    <!-- SPS V2 BUILD START: Team Section -->
+    <section class="team-section-v2">
+        <div class="container">
+            <div class="about-content-v2">
+                <h2 style="font-size: var(--font-size-3xl); margin-bottom: var(--space-2xl); text-align: center;">
+                    Built By Operators, For Operators
+                </h2>
+                <p style="text-align: center; color: var(--color-text-muted); max-width: 700px; margin: 0 auto var(--space-2xl);">
+                    We come from the trenches of real business operations. We've felt the pain of
+                    a dated website, missed reviews, and content that goes nowhere, so we know
+                    exactly what it takes to fix it. That experience drives every project we take on.
+                </p>
+
+                <div style="text-align: center; padding: var(--space-2xl); background: var(--color-bg); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                    <h3 style="font-size: var(--font-size-2xl); color: var(--color-primary); margin-bottom: var(--space-lg);">
+                        Our Mission
+                    </h3>
+                    <p style="font-size: var(--font-size-lg); color: var(--color-text); line-height: 1.7; max-width: 600px; margin: 0 auto;">
+                        Give every business the online presence, reputation, and marketing of a
+                        much bigger company, done for them, powered by our own platform, so they
+                        can focus on running the business.
+                    </p>
+                </div>
+
+                <div class="sidebar-educational" style="margin-top: var(--space-2xl);">
+                    <h4>Preparing your business for sale?</h4>
+                    <p style="color: var(--color-text-muted); line-height: 1.7;">
+                        We also offer an <strong style="color: var(--color-text);">Equity Partnership Program</strong>
+                        for qualified businesses. We invest in the digital transformation that raises your
+                        valuation: a stronger brand, better visibility, and measurable growth, so you're
+                        positioned to sell or scale. <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">Ask us if you qualify →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Team Section -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Ready to grow your business?</h2>
+            <p class="section-subtitle-v2">
+                See the work we've delivered for real businesses, then tell us your goal.
+                Websites, reviews, SEO, branding, and content that performs.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="portfolio.html" class="btn-v2">See our work →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">
+                    Built from experience. Refined through use. Ready for your business.
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    <a href="platform.html" style="color: var(--color-primary); text-decoration: none;">
+                        Explore the platform →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+</body>
+</html>
