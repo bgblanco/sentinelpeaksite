@@ -11,7 +11,7 @@ class UniversalHeader {
             brandName: 'Sentinel Peak Solutions',
             logoSrc: 'images/sentinel-peak-logo.png',
             logoAlt: 'Sentinel Peak Solutions - Digital Solutions for Local Businesses',
-            phone: '(559) 245-6571',
+            email: 'info@sentinelpeaksolutions.com',
             location: 'Fresno, CA • Central Valley',
             links: [
                 { href: 'index.html', text: 'Home', page: 'index' },
@@ -135,7 +135,7 @@ class UniversalHeader {
                     <!-- Mobile Menu Footer -->
                     <div class="mobile-menu-footer">
                         <div class="mobile-contact-info">
-                            <a href="tel:+15592456571" class="mobile-phone">${this.navigationData.phone}</a>
+                            <a href="mailto:info@sentinelpeaksolutions.com" class="mobile-phone">${this.navigationData.email}</a>
                             <p class="mobile-location">${this.navigationData.location}</p>
                         </div>
                     </div>
