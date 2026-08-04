@@ -178,31 +178,14 @@
             object-fit: contain;
         }
 
-        /* Placeholder tile for video stills Benjamin will supply */
-        .case-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            min-height: 200px;
-            background: var(--color-surface);
-            border: 1px dashed var(--color-border);
-            border-radius: var(--radius-md);
-            color: var(--color-text-muted);
-            text-align: center;
-            padding: var(--space-lg);
+        /* Two portrait video stills shown side by side */
+        .case-media-pair {
+            grid-template-columns: 1fr 1fr;
         }
 
-        .case-placeholder-icon {
-            font-size: var(--font-size-2xl);
-            opacity: 0.7;
-        }
-
-        .case-placeholder-label {
-            font-size: var(--font-size-xs);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .case-media-pair img {
+            height: 100%;
+            object-fit: cover;
         }
 
         .cta-section-v2 {
@@ -498,28 +481,10 @@
     <section class="case-study" id="video-content">
         <div class="container">
             <div class="case-grid">
-                <!--
-                  BENJAMIN: drop the real still frames here to replace the placeholders below.
-                  Expected files (add to /images): case-retail-still.jpg (shipping/printing retailer),
-                  case-fitness-still.jpg (fitness studio). Once added, delete the two
-                  .case-placeholder blocks and uncomment the .case-media-stack image block.
-                -->
-                <div class="case-media-stack">
-                    <div class="case-placeholder">
-                        <span class="case-placeholder-icon">🎬</span>
-                        <span class="case-placeholder-label">Retail video still</span>
-                    </div>
-                    <div class="case-placeholder">
-                        <span class="case-placeholder-icon">🎬</span>
-                        <span class="case-placeholder-label">Fitness video still</span>
-                    </div>
-                </div>
-                <!--
-                <div class="case-media-stack">
+                <div class="case-media-stack case-media-pair">
                     <img src="images/case-retail-still.jpg" alt="Short-form video content for a local shipping and printing retailer" loading="lazy">
                     <img src="images/case-fitness-still.jpg" alt="Short-form video content for a local fitness studio" loading="lazy">
                 </div>
-                -->
                 <div class="case-content">
                     <div class="case-tags">
                         <span class="case-tag">Video Content</span>
