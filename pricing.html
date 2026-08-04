@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Websites, Plans & Projects | Sentinel Peak Solutions</title>
+    <meta name="description" content="Simple, transparent pricing for local businesses: ongoing growth plans and one-time website projects, with setup included and nothing hidden.">
+    <meta name="keywords" content="web design pricing, social media management pricing, local SEO pricing, google reviews management cost, Fresno web design pricing">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/sentinel-peak-logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/sentinel-peak-logo.png">
+    <meta name="theme-color" content="#0c0c0c">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pricing | Sentinel Peak Solutions">
+    <meta property="og:description" content="Ongoing growth plans and one-time website projects. Setup included, nothing hidden.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Existing CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/software-showcase.css">
+    <link rel="stylesheet" href="css/navigation-v2.css">
+
+    <style>
+        /* === Pricing hero === */
+        .pricing-hero {
+            padding: calc(var(--space-4xl) + 80px) 0 var(--space-3xl);
+            text-align: center;
+            background: linear-gradient(180deg, rgba(44, 139, 139, 0.05) 0%, var(--color-bg) 100%);
+        }
+
+        .pricing-hero .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .pricing-hero h1 {
+            font-size: var(--font-size-5xl);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.02em;
+        }
+
+        .pricing-hero p {
+            font-size: var(--font-size-xl);
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+
+        /* === Shared section === */
+        .section-v2 {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-v2 .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        .section-header-v2 {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-title-v2 {
+            font-size: var(--font-size-4xl);
+            font-weight: 300;
+            margin-bottom: var(--space-md);
+        }
+
+        .section-subtitle-v2 {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* === Wedge / audit callout === */
+        .wedge {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .wedge-card {
+            background: linear-gradient(135deg, rgba(44, 139, 139, 0.12) 0%, var(--color-surface) 60%);
+            border: 2px solid var(--color-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: var(--space-2xl);
+            align-items: center;
+        }
+
+        .wedge-eyebrow {
+            display: inline-block;
+            color: var(--color-primary);
+            font-weight: 600;
+            font-size: var(--font-size-sm);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .wedge-card h3 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .wedge-card h3 .wedge-price {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .wedge-list {
+            list-style: none;
+            margin: 0 0 var(--space-md);
+            padding: 0;
+        }
+
+        .wedge-list li {
+            color: var(--color-text-muted);
+            padding: var(--space-xs) 0 var(--space-xs) var(--space-lg);
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .wedge-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+
+        .wedge-credit {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .wedge-cta {
+            text-align: center;
+        }
+
+        .wedge-cta .btn-v2 {
+            width: 100%;
+        }
+
+        /* === Plan cards === */
+        .plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            align-items: stretch;
+        }
+
+        .plan-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all var(--transition-medium);
+        }
+
+        .plan-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(68, 195, 195, 0.1);
+        }
+
+        .plan-card.featured {
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 1px var(--color-primary);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: calc(-1 * var(--space-sm));
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--color-primary), rgba(68, 195, 195, 0.8));
+            color: var(--color-bg);
+            padding: 4px 14px;
+            border-radius: var(--radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .plan-name {
+            font-size: var(--font-size-xl);
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .plan-price {
+            font-size: var(--font-size-4xl);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .plan-price .plan-per {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-muted);
+            font-weight: 400;
+        }
+
+        .plan-setup {
+            color: var(--color-primary);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            margin-top: var(--space-xs);
+        }
+
+        .plan-tagline {
+            color: var(--color-text);
+            font-style: italic;
+            margin: var(--space-md) 0 var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 0 0 var(--space-lg);
+            padding: 0;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            color: var(--color-text-muted);
+            padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .plan-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        .plan-setup-note {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            font-style: italic;
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--space-md);
+            margin-bottom: var(--space-lg);
+            line-height: 1.5;
+        }
+
+        .plan-addon {
+            background: rgba(68, 195, 195, 0.08);
+            border: 1px solid rgba(68, 195, 195, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            font-size: var(--font-size-sm);
+            color: var(--color-text-muted);
+            margin-bottom: var(--space-lg);
+            line-height: 1.5;
+        }
+
+        .plan-addon strong {
+            color: var(--color-primary);
+        }
+
+        .plan-card .btn-v2 {
+            width: 100%;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Enterprise line */
+        .enterprise-line {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            color: var(--color-text-muted);
+            font-size: var(--font-size-base);
+        }
+
+        .enterprise-line a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .enterprise-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* === One-time projects (visually distinct surface) === */
+        .projects-section {
+            background: var(--color-surface);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .project-card .plan-price {
+            color: var(--color-text);
+        }
+
+        /* Brand identity add-on band */
+        .brand-addon {
+            max-width: 900px;
+            margin: var(--space-2xl) auto 0;
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+        }
+
+        .brand-addon .brand-icon {
+            font-size: var(--font-size-4xl);
+        }
+
+        .brand-addon h3 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .brand-addon h3 .brand-price {
+            color: var(--color-primary);
+        }
+
+        .brand-addon p {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .brand-addon ul {
+            list-style: none;
+            margin: var(--space-sm) 0 0;
+            padding: 0;
+            color: var(--color-text-muted);
+        }
+
+        .brand-addon ul li {
+            padding: 2px 0 2px var(--space-lg);
+            position: relative;
+        }
+
+        .brand-addon ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: 700;
+        }
+
+        /* === CTA === */
+        .cta-section-v2 {
+            text-align: center;
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(180deg, var(--color-bg) 0%, rgba(44, 139, 139, 0.05) 100%);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: var(--font-size-3xl);
+            }
+
+            .wedge-card {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .brand-addon {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .brand-addon ul li {
+                display: inline-block;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SPS V2 BUILD START: Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="nav-wrapper">
+            <a href="index.html" class="logo">
+                <img src="images/sentinel-peak-logo.png" alt="Sentinel Peak Solutions" width="40" height="40">
+                <span>Sentinel Peak Solutions</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="platform.html">Platform</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="platform.html">Platform</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+    <!-- SPS V2 BUILD END: Navigation -->
+
+    <!-- SPS V2 BUILD START: Hero -->
+    <section class="pricing-hero">
+        <div class="container">
+            <h1>Simple pricing. No guessing what you get.</h1>
+            <p>
+                Whether you need a new website built or ongoing growth handled for you,
+                here's exactly what it costs, including setup, with nothing hidden.
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Hero -->
+
+    <!-- SPS V2 BUILD START: Wedge Offer -->
+    <section class="section-v2">
+        <div class="container wedge">
+            <div class="wedge-card">
+                <div class="wedge-content">
+                    <span class="wedge-eyebrow">Start here if you're not sure</span>
+                    <h3>The Viral Audit <span class="wedge-price">$199</span></h3>
+                    <ul class="wedge-list">
+                        <li>A teardown of what's winning right now in your category and local market</li>
+                        <li>7–10 rebuilt content concepts mapped to your brand</li>
+                        <li>A Google snapshot: your profile + review standing vs. 2 local competitors</li>
+                        <li>Delivered in 3–5 business days</li>
+                    </ul>
+                    <p class="wedge-credit">
+                        Credited toward your first month if you continue into a plan, applies
+                        to either the plan fee or the setup fee below, not both.
+                    </p>
+                </div>
+                <div class="wedge-cta">
+                    <a href="contact.html" class="btn-v2">Get Your Viral Audit →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Wedge Offer -->
+
+    <!-- SPS V2 BUILD START: Ongoing Plans -->
+    <section class="section-v2">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">Ongoing plans</h2>
+                <p class="section-subtitle-v2">
+                    Monthly growth handled for you, get found, get reviewed, and keep your
+                    content working. Each plan includes a one-time setup so nothing feels
+                    hidden later.
+                </p>
+            </div>
+
+            <div class="plan-grid">
+                <!-- Starter -->
+                <div class="plan-card">
+                    <h3 class="plan-name">Starter</h3>
+                    <div class="plan-price">$499<span class="plan-per">/mo</span></div>
+                    <div class="plan-setup">+ $199 one-time setup</div>
+                    <p class="plan-tagline">Get found, get reviewed.</p>
+                    <ul class="plan-features">
+                        <li>Google Business Profile management</li>
+                        <li>Automated review requests (SMS + email)</li>
+                        <li>Intelligence-backed review responses</li>
+                        <li>Monthly reputation snapshot</li>
+                    </ul>
+                    <p class="plan-setup-note">
+                        Setup covers: claiming/optimizing your Google profile, connecting
+                        review automation, initial account build.
+                    </p>
+                    <div class="plan-addon">
+                        <strong>Add-on:</strong> Local SEO &amp; Google Business optimization
+                        for +$300/mo. Already included starting at Growth.
+                    </div>
+                    <a href="contact.html" class="btn-v2">Start Here →</a>
+                </div>
+
+                <!-- Growth -->
+                <div class="plan-card featured">
+                    <span class="plan-badge">Most Popular</span>
+                    <h3 class="plan-name">Growth</h3>
+                    <div class="plan-price">$1,499<span class="plan-per">/mo</span></div>
+                    <div class="plan-setup">+ $349 one-time setup</div>
+                    <p class="plan-tagline">Everything in Starter, plus content and local search.</p>
+                    <ul class="plan-features">
+                        <li>Viral Content Analyzer: monthly content plan built from what's working in your category</li>
+                        <li>4 rebuilt posts/mo, ready to publish</li>
+                        <li>Local SEO &amp; Google Business optimization (the "Get Found" work)</li>
+                        <li>Review automation + response management</li>
+                        <li>Monthly performance report</li>
+                    </ul>
+                    <p class="plan-setup-note">
+                        Setup covers: everything in Starter, plus content system build and a
+                        competitor benchmark.
+                    </p>
+                    <a href="contact.html" class="btn-v2">Start Here →</a>
+                </div>
+
+                <!-- Full-Service -->
+                <div class="plan-card">
+                    <h3 class="plan-name">Full-Service</h3>
+                    <div class="plan-price">$2,497<span class="plan-per">/mo</span></div>
+                    <div class="plan-setup">+ $499 one-time setup</div>
+                    <p class="plan-tagline">Everything in Growth, plus one photographer who handles it all.</p>
+                    <ul class="plan-features">
+                        <li>One on-site shoot per month, photo and video together, no separate crews to coordinate</li>
+                        <li>Edited reels + posts from that shoot, scheduled across platforms</li>
+                        <li>Local SEO &amp; Google Business optimization</li>
+                        <li>Full review + reputation management</li>
+                        <li>Priority support</li>
+                    </ul>
+                    <p class="plan-setup-note">
+                        Setup covers: everything in Growth, plus scheduling your first shoot
+                        and brand asset intake.
+                    </p>
+                    <a href="contact.html" class="btn-v2">Let's Talk →</a>
+                </div>
+            </div>
+
+            <p class="enterprise-line">
+                Larger or multi-location account? <a href="contact.html">Let's build a custom plan →</a>
+            </p>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Ongoing Plans -->
+
+    <!-- SPS V2 BUILD START: One-Time Projects -->
+    <section class="section-v2 projects-section">
+        <div class="container">
+            <div class="section-header-v2">
+                <h2 class="section-title-v2">One-time projects</h2>
+                <p class="section-subtitle-v2">
+                    Websites and branding are project-based, not subscriptions. Designed,
+                    built, and launched in 7–14 days.
+                </p>
+            </div>
+
+            <div class="plan-grid">
+                <!-- Essential Site -->
+                <div class="plan-card project-card">
+                    <h3 class="plan-name">Essential Site</h3>
+                    <div class="plan-price">$1,997</div>
+                    <p class="plan-tagline">A clean, professional site that gets you online right.</p>
+                    <ul class="plan-features">
+                        <li>Up to 5 pages</li>
+                        <li>Mobile-ready, fast-loading</li>
+                        <li>Contact/lead capture built in</li>
+                        <li>Live in 7–14 days</li>
+                    </ul>
+                    <a href="contact.html" class="btn-v2">Start a Project →</a>
+                </div>
+
+                <!-- Custom Site -->
+                <div class="plan-card project-card">
+                    <h3 class="plan-name">Custom Site</h3>
+                    <div class="plan-price">$3,497</div>
+                    <p class="plan-tagline">Built around your goals, not a template.</p>
+                    <ul class="plan-features">
+                        <li>Up to 10 pages, fully custom design</li>
+                        <li>Booking, ordering, or quote-request tools</li>
+                        <li>On-page SEO foundation included</li>
+                        <li>Live in 7–14 days</li>
+                    </ul>
+                    <a href="contact.html" class="btn-v2">Start a Project →</a>
+                </div>
+
+                <!-- Custom Tool / Advanced Build -->
+                <div class="plan-card project-card">
+                    <h3 class="plan-name">Custom Tool / Advanced Build</h3>
+                    <div class="plan-price">$4,997<span class="plan-per"> starting</span></div>
+                    <p class="plan-tagline">For something no template can do (like the ethanol calculator built for Bavarian AutoWerks).</p>
+                    <ul class="plan-features">
+                        <li>Scoped individually based on what the tool needs to do</li>
+                    </ul>
+                    <a href="contact.html" class="btn-v2">Start a Project →</a>
+                </div>
+            </div>
+
+            <!-- Brand Identity add-on -->
+            <div class="brand-addon">
+                <div class="brand-icon">🎨</div>
+                <div>
+                    <h3>Brand Identity add-on <span class="brand-price">+$750</span></h3>
+                    <p>Pairs with any site project.</p>
+                    <ul>
+                        <li>Logo, brand board, and visual style guide</li>
+                        <li>Ensures the new site and future content stay on-brand</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: One-Time Projects -->
+
+    <!-- SPS V2 BUILD START: CTA Section -->
+    <section class="cta-section-v2">
+        <div class="container">
+            <h2 class="section-title-v2">Not sure which one you need?</h2>
+            <p class="section-subtitle-v2">
+                Most local businesses start with a website, then add a plan to keep it
+                growing. Tell us where you're at and we'll point you to the right one.
+            </p>
+            <div style="margin-top: var(--space-2xl);">
+                <a href="contact.html" class="btn-v2">Talk to us →</a>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: CTA Section -->
+
+    <!-- SPS V2 BUILD START: Footer -->
+    <footer style="background: var(--color-bg); padding: var(--space-3xl) 0; border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="color: var(--color-text-muted); margin-bottom: var(--space-md);">
+                    Sentinel Peak Solutions: websites, reviews, SEO, branding, and content that performs.
+                </p>
+                <p style="color: var(--color-text-muted);">
+                    <a href="contact.html" style="color: var(--color-primary); text-decoration: none;">
+                        Let's build something that grows your business →
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- SPS V2 BUILD END: Footer -->
+
+    <!-- Existing JS -->
+    <script src="js/animations.js"></script>
+    <script src="js/navigation-v2.js"></script>
+</body>
+</html>
