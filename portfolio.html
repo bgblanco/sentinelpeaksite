@@ -178,6 +178,33 @@
             object-fit: contain;
         }
 
+        /* Placeholder tile for video stills Benjamin will supply */
+        .case-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            min-height: 200px;
+            background: var(--color-surface);
+            border: 1px dashed var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text-muted);
+            text-align: center;
+            padding: var(--space-lg);
+        }
+
+        .case-placeholder-icon {
+            font-size: var(--font-size-2xl);
+            opacity: 0.7;
+        }
+
+        .case-placeholder-label {
+            font-size: var(--font-size-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
         .cta-section-v2 {
             text-align: center;
             padding: var(--space-4xl) 0;
@@ -225,6 +252,7 @@
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="portfolio.html" class="active">Work</a></li>
                 <li><a href="platform.html">Platform</a></li>
                 <li><a href="about.html">About</a></li>
@@ -245,6 +273,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
             <li><a href="portfolio.html" class="active">Work</a></li>
             <li><a href="platform.html">Platform</a></li>
             <li><a href="about.html">About</a></li>
@@ -425,6 +454,103 @@
         </div>
     </section>
     <!-- SPS V2 BUILD END: Case Study - Wrap My Ride Fresno -->
+
+    <!-- SPS V2 BUILD START: Case Study - Reviews -->
+    <section class="case-study" id="review-management">
+        <div class="container">
+            <div class="case-grid">
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Google Reviews</span>
+                        <span class="case-tag">Reputation</span>
+                    </div>
+                    <h2>A Local Restaurant Group</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>Reviews were coming in steadily, but nobody had time to read
+                        through them for patterns, let alone respond to each one.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We set up automated review tracking and used intelligence-backed
+                        data to summarize sentiment and recurring themes, so leadership could
+                        see what customers were actually saying without digging through dozens
+                        of posts.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>A clear, ongoing picture of reputation trends, with issues surfaced
+                        early instead of buried in a feed.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="services.html#reviews" class="btn-v2">Grow your reviews →</a>
+                    </div>
+                </div>
+                <div class="case-media">
+                    <img src="images/reputation_review_trends.png" alt="Review sentiment and reputation trends dashboard" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - Reviews -->
+
+    <!-- SPS V2 BUILD START: Case Study - Video Content -->
+    <section class="case-study" id="video-content">
+        <div class="container">
+            <div class="case-grid">
+                <!--
+                  BENJAMIN: drop the real still frames here to replace the placeholders below.
+                  Expected files (add to /images): case-retail-still.jpg (shipping/printing retailer),
+                  case-fitness-still.jpg (fitness studio). Once added, delete the two
+                  .case-placeholder blocks and uncomment the .case-media-stack image block.
+                -->
+                <div class="case-media-stack">
+                    <div class="case-placeholder">
+                        <span class="case-placeholder-icon">🎬</span>
+                        <span class="case-placeholder-label">Retail video still</span>
+                    </div>
+                    <div class="case-placeholder">
+                        <span class="case-placeholder-icon">🎬</span>
+                        <span class="case-placeholder-label">Fitness video still</span>
+                    </div>
+                </div>
+                <!--
+                <div class="case-media-stack">
+                    <img src="images/case-retail-still.jpg" alt="Short-form video content for a local shipping and printing retailer" loading="lazy">
+                    <img src="images/case-fitness-still.jpg" alt="Short-form video content for a local fitness studio" loading="lazy">
+                </div>
+                -->
+                <div class="case-content">
+                    <div class="case-tags">
+                        <span class="case-tag">Video Content</span>
+                        <span class="case-tag">Social Media</span>
+                    </div>
+                    <h2>Local Retail &amp; Fitness Brands</h2>
+                    <div class="case-block">
+                        <strong>The challenge</strong>
+                        <p>Two very different local businesses, a shipping and printing
+                        retailer, and a fitness studio, both needed content that actually
+                        looked professional on social, without hiring a full production crew.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>What we did</strong>
+                        <p>We shot and edited short-form video built for how each business
+                        actually shows up to customers: one grounded in everyday service, the
+                        other in energy and community.</p>
+                    </div>
+                    <div class="case-block">
+                        <strong>The result</strong>
+                        <p>Real, usable video content each business could point to and post,
+                        a starting point for building this into an ongoing content plan.</p>
+                    </div>
+                    <div class="case-actions">
+                        <a href="pricing.html" class="btn-v2">See what ongoing content looks like →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Case Study - Video Content -->
 
     <!-- SPS V2 BUILD START: CTA Section -->
     <section class="cta-section-v2">
