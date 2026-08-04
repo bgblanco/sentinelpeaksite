@@ -178,14 +178,103 @@
             object-fit: contain;
         }
 
-        /* Two portrait video stills shown side by side */
-        .case-media-pair {
-            grid-template-columns: 1fr 1fr;
+        /* === Slideshow (used inside .case-media) === */
+        .sps-slider {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: #000;
         }
 
-        .case-media-pair img {
+        .sps-slider--portrait {
+            max-width: 380px;
+            margin: 0 auto;
+            aspect-ratio: 3 / 4;
+        }
+
+        .sps-slider--wide {
+            aspect-ratio: 16 / 10;
+        }
+
+        .sps-track {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .sps-slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
             height: 100%;
             object-fit: cover;
+            opacity: 0;
+            transition: opacity var(--transition-medium);
+        }
+
+        .sps-slider--wide .sps-slide {
+            object-fit: contain;
+            background: #0c0c0c;
+        }
+
+        .sps-slide.is-active {
+            opacity: 1;
+        }
+
+        .sps-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(12, 12, 12, 0.6);
+            color: #fff;
+            font-size: 1.4rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background var(--transition-fast);
+            z-index: 2;
+        }
+
+        .sps-arrow:hover {
+            background: var(--color-primary);
+            color: var(--color-bg);
+        }
+
+        .sps-prev { left: var(--space-sm); }
+        .sps-next { right: var(--space-sm); }
+
+        .sps-dots {
+            position: absolute;
+            bottom: var(--space-sm);
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 2;
+        }
+
+        .sps-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            background: rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: background var(--transition-fast), transform var(--transition-fast);
+        }
+
+        .sps-dot.is-active {
+            background: var(--color-primary);
+            transform: scale(1.3);
         }
 
         .cta-section-v2 {
@@ -444,33 +533,55 @@
             <div class="case-grid">
                 <div class="case-content">
                     <div class="case-tags">
+                        <span class="case-tag">Google Business Profile</span>
                         <span class="case-tag">Google Reviews</span>
                         <span class="case-tag">Reputation</span>
                     </div>
-                    <h2>A Local Restaurant Group</h2>
+                    <h2>The Red Chickz</h2>
                     <div class="case-block">
                         <strong>The challenge</strong>
-                        <p>Reviews were coming in steadily, but nobody had time to read
-                        through them for patterns, let alone respond to each one.</p>
+                        <p>A busy Nashville hot chicken spot in Fresno with a strong 4.8-star
+                        reputation and hundreds of reviews, but a Google Business Profile that
+                        wasn't fully optimized or actively managed.</p>
                     </div>
                     <div class="case-block">
                         <strong>What we did</strong>
-                        <p>We set up automated review tracking and used intelligence-backed
-                        data to summarize sentiment and recurring themes, so leadership could
-                        see what customers were actually saying without digging through dozens
-                        of posts.</p>
+                        <p>We took over their Google Business Profile inside our platform:
+                        optimizing the listing (photos, description, contact and chat options),
+                        tracking incoming reviews, and using intelligence-backed data to surface
+                        sentiment and recurring themes, so the team could see what customers were
+                        actually saying without digging through the feed.</p>
                     </div>
                     <div class="case-block">
                         <strong>The result</strong>
-                        <p>A clear, ongoing picture of reputation trends, with issues surfaced
-                        early instead of buried in a feed.</p>
+                        <p>A more complete, better-optimized profile with a rising optimization
+                        score, and an organized view of a growing review base the team can act
+                        on instead of guessing.</p>
                     </div>
                     <div class="case-actions">
                         <a href="services.html#reviews" class="btn-v2">Grow your reviews →</a>
                     </div>
                 </div>
-                <div class="case-media">
-                    <img src="images/reputation_review_trends.png" alt="Review sentiment and reputation trends dashboard" loading="lazy">
+                <div class="case-media" style="border: none;">
+                    <!--
+                      BENJAMIN: save the 5 Red Chickz screenshots into /images as
+                      redchickz-1.jpg ... redchickz-5.jpg and they slot into this slideshow
+                      automatically. Until then, the reputation dashboard slide below shows
+                      as a safe fallback (broken/missing slides auto-hide).
+                    -->
+                    <div class="sps-slider sps-slider--wide" data-slider data-autoplay="5000">
+                        <div class="sps-track">
+                            <img class="sps-slide" src="images/redchickz-1.jpg" alt="The Red Chickz Google Business Profile media management" loading="lazy">
+                            <img class="sps-slide" src="images/redchickz-2.jpg" alt="The Red Chickz Google Business Profile optimization score" loading="lazy">
+                            <img class="sps-slide" src="images/redchickz-3.jpg" alt="The Red Chickz Google Business Profile contact and chat setup" loading="lazy">
+                            <img class="sps-slide" src="images/redchickz-4.jpg" alt="The Red Chickz Google Business Profile photos" loading="lazy">
+                            <img class="sps-slide" src="images/redchickz-5.jpg" alt="The Red Chickz Google Business Profile overview" loading="lazy">
+                            <img class="sps-slide" src="images/reputation_review_trends.png" alt="Reputation and review trends dashboard" loading="lazy">
+                        </div>
+                        <button class="sps-arrow sps-prev" type="button" aria-label="Previous slide">&#8249;</button>
+                        <button class="sps-arrow sps-next" type="button" aria-label="Next slide">&#8250;</button>
+                        <div class="sps-dots"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -481,9 +592,18 @@
     <section class="case-study" id="video-content">
         <div class="container">
             <div class="case-grid">
-                <div class="case-media-stack case-media-pair">
-                    <img src="images/case-retail-still.jpg" alt="Short-form video content for a local shipping and printing retailer" loading="lazy">
-                    <img src="images/case-fitness-still.jpg" alt="Short-form video content for a local fitness studio" loading="lazy">
+                <div class="case-media" style="border: none;">
+                    <div class="sps-slider sps-slider--portrait" data-slider data-autoplay="4500">
+                        <div class="sps-track">
+                            <img class="sps-slide" src="images/sps-video-1.jpg" alt="Short-form video shoot for a local shipping and printing retailer" loading="lazy">
+                            <img class="sps-slide" src="images/sps-video-2.jpg" alt="Short-form video content for a local fitness studio" loading="lazy">
+                            <img class="sps-slide" src="images/sps-video-3.jpg" alt="Fitness studio training footage" loading="lazy">
+                            <img class="sps-slide" src="images/sps-video-4.jpg" alt="Fitness studio branded video content" loading="lazy">
+                        </div>
+                        <button class="sps-arrow sps-prev" type="button" aria-label="Previous slide">&#8249;</button>
+                        <button class="sps-arrow sps-next" type="button" aria-label="Next slide">&#8250;</button>
+                        <div class="sps-dots"></div>
+                    </div>
                 </div>
                 <div class="case-content">
                     <div class="case-tags">
@@ -552,5 +672,89 @@
     <!-- Existing JS -->
     <script src="js/animations.js"></script>
     <script src="js/navigation-v2.js"></script>
+
+    <!-- Case study slideshows -->
+    <script>
+        (function () {
+            function initSlider(root) {
+                var track = root.querySelector('.sps-track');
+                var dotsWrap = root.querySelector('.sps-dots');
+                var prev = root.querySelector('.sps-prev');
+                var next = root.querySelector('.sps-next');
+                var idx = 0;
+                var timer = null;
+
+                function slides() {
+                    return Array.prototype.slice.call(root.querySelectorAll('.sps-slide'));
+                }
+
+                function stop() {
+                    if (timer) { clearInterval(timer); timer = null; }
+                }
+
+                function start() {
+                    var ms = parseInt(root.getAttribute('data-autoplay') || '0', 10);
+                    if (ms > 0 && slides().length > 1) {
+                        stop();
+                        timer = setInterval(function () { go(idx + 1); }, ms);
+                    }
+                }
+
+                function restart() { stop(); start(); }
+
+                function go(n) {
+                    var s = slides();
+                    if (!s.length) return;
+                    idx = (n + s.length) % s.length;
+                    s.forEach(function (el, i) { el.classList.toggle('is-active', i === idx); });
+                    var dots = dotsWrap.querySelectorAll('.sps-dot');
+                    dots.forEach(function (d, i) { d.classList.toggle('is-active', i === idx); });
+                }
+
+                function build() {
+                    var s = slides();
+                    dotsWrap.innerHTML = '';
+                    var multiple = s.length > 1;
+                    if (prev) prev.style.display = multiple ? '' : 'none';
+                    if (next) next.style.display = multiple ? '' : 'none';
+                    dotsWrap.style.display = multiple ? '' : 'none';
+                    if (multiple) {
+                        s.forEach(function (el, i) {
+                            var d = document.createElement('button');
+                            d.type = 'button';
+                            d.className = 'sps-dot';
+                            d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                            d.addEventListener('click', function () { go(i); restart(); });
+                            dotsWrap.appendChild(d);
+                        });
+                    }
+                    if (idx >= s.length) idx = 0;
+                    go(idx);
+                    start();
+                }
+
+                // Drop slides whose image is missing/broken, then rebuild controls.
+                function prune(img) {
+                    img.parentNode && img.parentNode.removeChild(img);
+                    build();
+                }
+                slides().forEach(function (img) {
+                    img.addEventListener('error', function () { prune(img); });
+                    if (img.complete && img.naturalWidth === 0) { prune(img); }
+                });
+
+                if (prev) prev.addEventListener('click', function () { go(idx - 1); restart(); });
+                if (next) next.addEventListener('click', function () { go(idx + 1); restart(); });
+                root.addEventListener('mouseenter', stop);
+                root.addEventListener('mouseleave', start);
+
+                build();
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                document.querySelectorAll('[data-slider]').forEach(initSlider);
+            });
+        })();
+    </script>
 </body>
 </html>
