@@ -80,10 +80,12 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4 {
     font-family: var(--font-heading);
-    /* Never let a long word overflow the viewport on narrow screens */
+    /* Wrap whole words to the next line on narrow screens.
+       No hyphenation and no mid-word breaks; only a single word wider
+       than the whole viewport is broken, as a last resort. */
     overflow-wrap: break-word;
-    word-break: break-word;
-    hyphens: auto;
+    word-break: normal;
+    hyphens: none;
 }
 
 h1, .h1 {
