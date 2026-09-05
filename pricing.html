@@ -209,18 +209,11 @@
             margin: 0;
         }
 
-        /* ===== PROOF / STATS ===== */
+        /* ===== PROOF ===== */
         .proof-section {
             background: var(--color-surface);
             border-top: 1px solid var(--color-border);
             border-bottom: 1px solid var(--color-border);
-        }
-
-        .stat-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--space-lg);
-            margin-bottom: var(--space-xl);
         }
 
         .proof-cta {
@@ -233,30 +226,28 @@
             margin-bottom: var(--space-md);
         }
 
-        .stat-card {
+        /* Pending testimonial component (used when {{PENDING_CLIENT_QUOTE}} is filled) */
+        .proof-quote {
+            max-width: 720px;
+            margin: 0 auto var(--space-xl);
             text-align: center;
-            padding: var(--space-lg);
+            padding: var(--space-xl);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            background: rgba(68, 195, 195, 0.06);
         }
 
-        .stat-num {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-5xl);
-            font-weight: 600;
-            color: var(--color-primary);
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .stat-label {
-            color: var(--color-text-muted);
-            margin-top: var(--space-sm);
-            line-height: 1.4;
-        }
-
-        .stat-label strong {
+        .proof-quote blockquote {
+            margin: 0 0 var(--space-sm);
             color: var(--color-text);
-            display: block;
+            font-size: var(--font-size-xl);
+            line-height: 1.5;
+        }
+
+        .proof-quote cite {
+            color: var(--color-primary);
             font-weight: 600;
+            font-style: normal;
         }
 
         /* ===== VALUE STACK ===== */
@@ -280,8 +271,60 @@
         }
 
         .value-card .value-icon {
-            font-size: var(--font-size-3xl);
+            color: var(--color-primary);
             margin-bottom: var(--space-sm);
+        }
+
+        .value-card .value-icon svg {
+            width: 34px;
+            height: 34px;
+            display: block;
+        }
+
+        /* ===== PRICING RANGE ===== */
+        .price-range {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-lg);
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .price-range-item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+        }
+
+        .price-range-label {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .price-range-value {
+            font-family: var(--font-heading);
+            font-size: var(--font-size-3xl);
+            font-weight: 600;
+            color: var(--color-primary);
+            line-height: 1.05;
+        }
+
+        .price-range-note {
+            color: var(--color-text-muted);
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-sm);
+            line-height: 1.4;
+        }
+
+        @media (max-width: 560px) {
+            .price-range {
+                grid-template-columns: 1fr;
+            }
         }
 
         .value-card h3 {
@@ -475,8 +518,7 @@
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 900px) {
-            .stepper,
-            .stat-grid {
+            .stepper {
                 grid-template-columns: repeat(2, 1fr);
             }
 
@@ -502,7 +544,6 @@
 
         @media (max-width: 560px) {
             .stepper,
-            .stat-grid,
             .risk-grid {
                 grid-template-columns: 1fr;
             }
@@ -638,32 +679,20 @@
     <section class="funnel-section proof-section">
         <div class="funnel-container">
             <div class="funnel-head reveal">
-                <span class="funnel-eyebrow">Real results</span>
-                <h2>Work that moves the numbers</h2>
-                <p>Average results we see for the local businesses we partner with.</p>
+                <span class="funnel-eyebrow">Proof</span>
+                <h2>See the work for yourself</h2>
+                <p>The websites, brands, and content we have built for local businesses.</p>
             </div>
 
-            <div class="stat-grid">
-                <div class="stat-card reveal">
-                    <div class="stat-num" data-target="45" data-prefix="+" data-suffix="%">+0%</div>
-                    <div class="stat-label"><strong>Patient bookings</strong> Medical, average</div>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-num" data-target="60" data-prefix="+" data-suffix="%">+0%</div>
-                    <div class="stat-label"><strong>Online orders</strong> Restaurant, average</div>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-num" data-target="50" data-prefix="+" data-suffix="%">+0%</div>
-                    <div class="stat-label"><strong>Qualified leads</strong> Service, average</div>
-                </div>
-                <div class="stat-card reveal">
-                    <div class="stat-num" data-target="40" data-prefix="+" data-suffix="%">+0%</div>
-                    <div class="stat-label"><strong>Total revenue</strong> Overall, average</div>
-                </div>
+            <!-- {{PENDING_CLIENT_QUOTE}} One real client quote replaces the removed stat row. Uncomment when received.
+            <div class="proof-quote">
+                <blockquote>QUOTE TEXT</blockquote>
+                <cite>Client name, Business</cite>
             </div>
+            -->
 
             <div class="proof-cta reveal">
-                <p>See the websites, brands, and campaigns behind the numbers.</p>
+                <p>See the websites, brands, and campaigns we have delivered.</p>
                 <a href="portfolio.html" class="btn-secondary">View Our Work</a>
             </div>
         </div>
@@ -684,22 +713,43 @@
 
             <div class="value-grid">
                 <div class="value-card reveal">
-                    <div class="value-icon">&#128187;</div>
+                    <div class="value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="13" rx="2"></rect>
+                            <path d="M8 21h8M12 17v4"></path>
+                        </svg>
+                    </div>
                     <h3>A website that performs</h3>
                     <p>Fast, mobile-ready, and built to turn visitors into customers.</p>
                 </div>
                 <div class="value-card reveal">
-                    <div class="value-icon">&#11088;</div>
+                    <div class="value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3l2.6 5.3 5.9.9-4.25 4.1 1 5.8L12 16.9 6.75 19.2l1-5.8L3.5 9.2l5.9-.9z"></path>
+                        </svg>
+                    </div>
                     <h3>Google reviews on autopilot</h3>
                     <p>Automated review requests and responses that build your reputation.</p>
                 </div>
                 <div class="value-card reveal">
-                    <div class="value-icon">&#128205;</div>
+                    <div class="value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 21s-7-5.6-7-11a7 7 0 0 1 14 0c0 5.4-7 11-7 11z"></path>
+                            <circle cx="12" cy="10" r="2.5"></circle>
+                        </svg>
+                    </div>
                     <h3>Local SEO that gets you found</h3>
                     <p>Google Business optimization so the right customers find you first.</p>
                 </div>
                 <div class="value-card reveal">
-                    <div class="value-icon">&#127912;</div>
+                    <div class="value-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3a9 9 0 1 0 0 18c1.4 0 2.2-1.1 2-2.2-.2-1 .6-1.8 1.6-1.8H18a3 3 0 0 0 3-3c0-4.9-4-8-9-8z"></path>
+                            <circle cx="7.5" cy="10.5" r="1"></circle>
+                            <circle cx="12" cy="7.5" r="1"></circle>
+                            <circle cx="16.5" cy="10.5" r="1"></circle>
+                        </svg>
+                    </div>
                     <h3>Branding and content</h3>
                     <p>A cohesive brand and viral-informed content that keeps people coming back.</p>
                 </div>
@@ -727,6 +777,31 @@
         </div>
     </section>
     <!-- SPS V2 BUILD END: Value Stack -->
+
+    <!-- SPS V2 BUILD START: Pricing Range -->
+    <section class="funnel-section" id="what-it-costs">
+        <div class="funnel-container">
+            <div class="funnel-head reveal">
+                <span class="funnel-eyebrow">Straight answer</span>
+                <h2>What it costs after the free homepage</h2>
+                <p>No surprises. Here is the range most local businesses land in. We scope the exact number to what your business needs.</p>
+            </div>
+
+            <div class="price-range reveal">
+                <div class="price-range-item">
+                    <div class="price-range-label">One-time website build</div>
+                    <div class="price-range-value">{{NEEDS_REAL_DATA: build price range}}</div>
+                    <p class="price-range-note">A complete, launched website.</p>
+                </div>
+                <div class="price-range-item">
+                    <div class="price-range-label">Ongoing management</div>
+                    <div class="price-range-value">{{NEEDS_REAL_DATA: monthly management range}}</div>
+                    <p class="price-range-note">Reviews, SEO, content, and updates handled for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPS V2 BUILD END: Pricing Range -->
 
     <!-- SPS V2 BUILD START: FAQ -->
     <section class="funnel-section proof-section">
@@ -757,8 +832,10 @@
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            Once you are a client and your site is launched, the work is yours.
-                            We build it to grow with your business, not to lock you in.
+                            Your domain, your content, and your images are yours to keep. The site
+                            itself is built and runs on our platform for as long as you are a
+                            client, which is what keeps it fast, secure, and managed without extra
+                            work on your end.
                         </div>
                     </div>
                 </div>
@@ -781,8 +858,9 @@
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            If we deliver your project late, you get 20% off your final invoice.
-                            We hold ourselves to the timeline we promise you.
+                            Our guarantee covers your paid build: once you approve the homepage and
+                            the project starts, we commit to a launch date in writing, timed from
+                            that approval day. If we miss it, you get 20% off that build invoice.
                         </div>
                     </div>
                 </div>
@@ -805,9 +883,7 @@
                     </button>
                     <div class="faq-a">
                         <div class="faq-a-inner">
-                            It depends on what your business needs, which is exactly what the free
-                            homepage and a short conversation are for. We scope the right plan to
-                            your goals, with setup included and nothing hidden.
+                            See the ranges in <a href="#what-it-costs" style="color: var(--color-primary);">What it costs after the free homepage</a> above. We scope the exact number to your goals, with setup included and nothing hidden.
                         </div>
                     </div>
                 </div>
