@@ -153,7 +153,6 @@
         }
 
         .slot--wide { aspect-ratio: 16 / 10; }
-        .slot--shot { aspect-ratio: 4 / 3; }
 
         .slot-img {
             position: absolute;
@@ -229,44 +228,6 @@
 
         .work-strip-body a:hover { text-decoration: underline; }
 
-        /* === Website types grid === */
-        .types-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-        }
-
-        .type-tile {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            transition: border-color var(--transition-medium), transform var(--transition-medium);
-        }
-
-        .type-tile:hover {
-            border-color: var(--color-primary);
-            transform: translateY(-4px);
-        }
-
-        .type-media {
-            aspect-ratio: 16 / 10;
-        }
-
-        .type-body {
-            padding: var(--space-lg);
-        }
-
-        .type-body h3 {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--space-xs);
-        }
-
-        .type-body p {
-            color: var(--color-text-muted);
-            line-height: 1.5;
-        }
-
         /* === Testimonial (used by commented-out pending components) === */
         .case-testimonial {
             margin-top: var(--space-lg);
@@ -309,6 +270,11 @@
             aspect-ratio: 16 / 10;
         }
 
+        /* Square, contain-fit slider for mixed-orientation brand assets */
+        .sps-slider--square {
+            aspect-ratio: 1 / 1;
+        }
+
         .sps-track {
             width: 100%;
             height: 100%;
@@ -325,7 +291,8 @@
             transition: opacity var(--transition-medium);
         }
 
-        .sps-slider--wide .sps-slide {
+        .sps-slider--wide .sps-slide,
+        .sps-slider--square .sps-slide {
             object-fit: contain;
             background: #0c0c0c;
         }
@@ -426,14 +393,6 @@
         }
 
         /* === Responsive === */
-        @media (min-width: 768px) {
-            .types-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (min-width: 1024px) {
-            .types-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
         @media (max-width: 768px) {
             .case-grid {
                 grid-template-columns: 1fr;
@@ -509,26 +468,16 @@
         <div class="container">
             <div class="case-grid">
                 <div class="case-media">
-                    <!-- Interim: existing brand logo. Replace with images/portfolio/noe-fdz/hero.png when supplied. -->
-                    <div class="slot slot--logo">
-                        <img class="slot-img" fetchpriority="high"
-                             src="images/portfolio/noe-fdz/hero.png"
-                             data-fallback="images/logo-noefdzcigars.jpg"
-                             alt="Noe FDZ Cigars brand and website design">
-                    </div>
-                    <div class="case-media-details">
-                        <!-- New slot: images/portfolio/noe-fdz/detail-1.png -->
-                        <div class="slot slot--shot">
-                            <img class="slot-img" loading="lazy"
-                                 src="images/portfolio/noe-fdz/detail-1.png"
-                                 alt="Detail of the Noe FDZ Cigars custom website layout">
+                    <div class="sps-slider sps-slider--square" data-slider data-autoplay="5000">
+                        <div class="sps-track">
+                            <img class="sps-slide" fetchpriority="high" src="images/noe4.png" alt="Noe FDZ 49 La Puerta Negra brand emblem">
+                            <img class="sps-slide" loading="lazy" src="images/noe1.jpg" alt="Noe FDZ Cigars presented in a branded humidor">
+                            <img class="sps-slide" loading="lazy" src="images/noe3.PNG" alt="Players in Action official cigar badge for Lorenzo Neal by Noe FDZ Cigars">
+                            <img class="sps-slide" loading="lazy" src="images/noe2.PNG" alt="Noe FDZ Cigars named an official cigar of the 2026 NFL Draft community experience in Pittsburgh">
                         </div>
-                        <!-- New slot: images/portfolio/noe-fdz/detail-2.png -->
-                        <div class="slot slot--shot">
-                            <img class="slot-img" loading="lazy"
-                                 src="images/portfolio/noe-fdz/detail-2.png"
-                                 alt="Detail of the Noe FDZ Cigars brand styling">
-                        </div>
+                        <button class="sps-arrow sps-prev" type="button" aria-label="Previous slide">&#8249;</button>
+                        <button class="sps-arrow sps-next" type="button" aria-label="Next slide">&#8250;</button>
+                        <div class="sps-dots"></div>
                     </div>
                 </div>
                 <div class="case-content">
@@ -740,86 +689,6 @@
         </div>
     </section>
     <!-- SPS V2 BUILD END: Secondary Work Strip -->
-
-    <!-- SPS V2 BUILD START: Website Types Grid (A5) -->
-    <section class="section-v2" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-        <div class="container">
-            <div class="section-header-v2">
-                <h2 class="section-title-v2">The shapes local businesses usually need</h2>
-                <p class="section-subtitle-v2">
-                    Find the one that sounds like you, then let's build your homepage free and go
-                    from there.
-                </p>
-            </div>
-            <div class="types-grid">
-                <!-- images/site-types/ecommerce.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/ecommerce.png" alt="E-commerce store website type"></div>
-                    <div class="type-body">
-                        <h3>E-commerce Store</h3>
-                        <p>Usually needs a product catalog, secure checkout, and inventory that stays in sync.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/restaurant.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/restaurant.png" alt="Restaurant and food service website type"></div>
-                    <div class="type-body">
-                        <h3>Restaurant &amp; Food Service</h3>
-                        <p>Usually needs a menu, online ordering or reservations, and photos that make the food the star.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/professional-services.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/professional-services.png" alt="Professional services website type"></div>
-                    <div class="type-body">
-                        <h3>Professional Services</h3>
-                        <p>Usually needs clear service pages, credibility signals, and a simple way to book or request a consult.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/home-services.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/home-services.png" alt="Home services and trades website type"></div>
-                    <div class="type-body">
-                        <h3>Home Services &amp; Trades</h3>
-                        <p>Usually needs service-area coverage, quote request forms, and proof of past work.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/automotive.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/automotive.png" alt="Automotive website type"></div>
-                    <div class="type-body">
-                        <h3>Automotive</h3>
-                        <p>Usually needs service listings, a gallery of past work, and an easy path to request an estimate.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/salon-spa.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/salon-spa.png" alt="Salon, spa and personal care website type"></div>
-                    <div class="type-body">
-                        <h3>Salon, Spa &amp; Personal Care</h3>
-                        <p>Usually needs online booking, a service and pricing menu, and a gallery that shows the vibe.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/fitness.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/fitness.png" alt="Fitness and studio website type"></div>
-                    <div class="type-body">
-                        <h3>Fitness &amp; Studio</h3>
-                        <p>Usually needs class schedules, membership or trial signup, and content that shows the energy.</p>
-                    </div>
-                </div>
-                <!-- images/site-types/real-estate.png -->
-                <div class="type-tile">
-                    <div class="slot type-media"><img class="slot-img" loading="lazy" src="images/site-types/real-estate.png" alt="Real estate website type"></div>
-                    <div class="type-body">
-                        <h3>Real Estate</h3>
-                        <p>Usually needs property listings, lead capture, and fast, image-heavy pages.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SPS V2 BUILD END: Website Types Grid -->
 
     <!-- SPS V2 BUILD START: CTA Section (A6) -->
     <section class="cta-section-v2">
