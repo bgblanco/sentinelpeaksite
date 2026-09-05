@@ -140,33 +140,6 @@
             gap: var(--space-md);
         }
 
-        /* Real client metrics (approved figures only) */
-        .case-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
-            margin: var(--space-lg) 0;
-            padding: var(--space-lg) 0;
-            border-top: 1px solid var(--color-border);
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .case-metric-value {
-            font-family: var(--font-heading);
-            font-size: var(--font-size-2xl);
-            font-weight: 600;
-            color: var(--color-primary);
-            line-height: 1;
-            letter-spacing: -0.02em;
-        }
-
-        .case-metric-label {
-            color: var(--color-text-muted);
-            font-size: var(--font-size-sm);
-            margin-top: 6px;
-            line-height: 1.3;
-        }
-
         /* === Media frames / redaction-safe screenshots === */
         /* Consistent aspect ratio, subtle border + inner shadow, no hover zoom,
            no lightbox. Redacted regions read as intentional. */
@@ -194,17 +167,6 @@
         /* Logo interim assets sit contained on a light tile */
         .slot--logo { background: #ffffff; aspect-ratio: 16 / 10; }
         .slot--logo .slot-img { object-fit: contain; padding: var(--space-xl); }
-
-        .case-figure {
-            margin: 0;
-        }
-
-        .case-figure figcaption {
-            color: var(--color-text-muted);
-            font-size: var(--font-size-sm);
-            line-height: 1.4;
-            margin-top: var(--space-sm);
-        }
 
         /* === Secondary work strip === */
         .work-strip {
@@ -484,10 +446,6 @@
             .work-hero-v2 h1 {
                 font-size: var(--font-size-3xl);
             }
-
-            .case-metrics {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
 </head>
@@ -607,6 +565,8 @@
 
                     <div class="case-actions">
                         <a href="https://noefdzcigars.com/" target="_blank" rel="noopener" class="btn-v2">Visit live site →</a>
+                        <!-- {{NEEDS_REAL_DATA: Noe FDZ Instagram URL}} paste the profile URL into href below -->
+                        <a href="{{NEEDS_REAL_DATA: Noe FDZ Instagram URL}}" target="_blank" rel="noopener" class="btn-secondary">See their Instagram →</a>
                         <a href="services.html#websites" class="btn-secondary">Website services</a>
                     </div>
                 </div>
@@ -620,33 +580,35 @@
         <div class="container">
             <div class="case-grid case-grid--mirror">
                 <div class="case-media">
-                    <!-- New slot: images/portfolio/pm-lounge/metrics-overview.png (pre-redacted) -->
-                    <figure class="case-figure">
-                        <div class="slot slot--wide">
-                            <img class="slot-img" loading="lazy"
-                                 src="images/portfolio/pm-lounge/metrics-overview.png"
-                                 alt="Social analytics summary showing total impressions and engagement for a small-follower account">
-                        </div>
-                        <figcaption>Eight posts generated over 92,000 impressions against a 287-follower base.</figcaption>
-                    </figure>
-                    <!-- New slot: images/portfolio/pm-lounge/engagement-breakdown.png (pre-redacted) -->
-                    <figure class="case-figure">
-                        <div class="slot slot--wide">
-                            <img class="slot-img" loading="lazy"
-                                 src="images/portfolio/pm-lounge/engagement-breakdown.png"
-                                 alt="Engagement breakdown by platform showing Instagram as the largest source of reach">
-                        </div>
-                        <figcaption>Instagram carried the reach: 89.48K impressions and a 161.66% rise in engagement, with 505 likes and 345 comments.</figcaption>
-                    </figure>
-                    <!-- New slot: images/portfolio/pm-lounge/audience-demographics.png (pre-redacted) -->
-                    <figure class="case-figure">
-                        <div class="slot slot--wide">
-                            <img class="slot-img" loading="lazy"
-                                 src="images/portfolio/pm-lounge/audience-demographics.png"
-                                 alt="Audience demographics chart showing gender split and largest age ranges">
-                        </div>
-                        <figcaption>The responding audience skews female (53.0%) over male (29.8%), concentrated in the 25–34 and 35–44 age ranges.</figcaption>
-                    </figure>
+                    <!-- Client logo (kept) -->
+                    <div class="slot slot--logo">
+                        <img class="slot-img" loading="lazy" src="images/logo-pmlounge.png" alt="The PM Lounge logo">
+                    </div>
+                    <!--
+                        Platform analytics screenshots. Save cropped exports to the paths below.
+                        BEFORE saving: crop out the browser chrome and address bar (it contains an
+                        internal location ID) so the frames look intentional. Recommend NOT using an
+                        engagement/impressions view that exposes the LinkedIn +1200% (base of one)
+                        or the Facebook impressions drop, to keep the story honest.
+                    -->
+                    <!-- images/portfolio/pm-lounge/overview.png -->
+                    <div class="slot slot--wide">
+                        <img class="slot-img" loading="lazy"
+                             src="images/portfolio/pm-lounge/overview.png"
+                             alt="Social analytics overview: posts, followers, impressions, likes, and comments in one view">
+                    </div>
+                    <!-- images/portfolio/pm-lounge/posts.png -->
+                    <div class="slot slot--wide">
+                        <img class="slot-img" loading="lazy"
+                             src="images/portfolio/pm-lounge/posts.png"
+                             alt="Posts published broken down by channel">
+                    </div>
+                    <!-- images/portfolio/pm-lounge/demographics.png -->
+                    <div class="slot slot--wide">
+                        <img class="slot-img" loading="lazy"
+                             src="images/portfolio/pm-lounge/demographics.png"
+                             alt="Audience demographics: gender split and largest age ranges">
+                    </div>
                 </div>
                 <div class="case-content">
                     <div class="case-tags">
@@ -655,45 +617,16 @@
                     </div>
                     <h2>The PM Lounge</h2>
                     <div class="case-block">
-                        <strong>The headline</strong>
-                        <p>Eight posts reached more than 92,000 impressions against a base of just
-                        287 followers. Reach far beyond your existing audience is what content
-                        selection buys you, not simply posting more often.</p>
+                        <strong>What we did</strong>
+                        <p>We ran their social presence through our platform's analytics, tracking
+                        reach, engagement, and audience across every channel in one place, so
+                        content decisions come from real signals instead of guesswork.</p>
                     </div>
-
-                    <div class="case-metrics">
-                        <div>
-                            <div class="case-metric-value">8</div>
-                            <div class="case-metric-label">Posts published</div>
-                        </div>
-                        <div>
-                            <div class="case-metric-value">92.37K</div>
-                            <div class="case-metric-label">Total impressions</div>
-                        </div>
-                        <div>
-                            <div class="case-metric-value">287</div>
-                            <div class="case-metric-label">Followers</div>
-                        </div>
-                        <div>
-                            <div class="case-metric-value">89.48K</div>
-                            <div class="case-metric-label">Instagram impressions</div>
-                        </div>
-                        <div>
-                            <div class="case-metric-value">+161.66%</div>
-                            <div class="case-metric-label">Instagram engagement change</div>
-                        </div>
-                        <div>
-                            <div class="case-metric-value">505 / 345</div>
-                            <div class="case-metric-label">Likes / comments</div>
-                        </div>
-                    </div>
-
                     <div class="case-block">
-                        <strong>Who is actually responding</strong>
-                        <p>The audience data, majority female (53.0%) over male (29.8%) and
-                        concentrated in the 25–34 and 35–44 age ranges, tells the business exactly
-                        who is engaging. That means the next round of content and offers can be
-                        aimed at real people rather than guessed at.</p>
+                        <strong>What it shows</strong>
+                        <p>Reach climbed well beyond their existing follower base, and the audience
+                        breakdown makes clear who is actually responding, so the next round of
+                        content can be aimed rather than guessed.</p>
                     </div>
 
                     <!-- {{PENDING_CLIENT_QUOTE}} Owner testimonial coming in writing. Uncomment when received.
@@ -704,7 +637,9 @@
                     -->
 
                     <div class="case-actions">
-                        <a href="services.html#content" class="btn-v2">Explore content services →</a>
+                        <!-- {{NEEDS_REAL_DATA: PM Lounge Instagram URL}} paste the profile URL into href below -->
+                        <a href="{{NEEDS_REAL_DATA: PM Lounge Instagram URL}}" target="_blank" rel="noopener" class="btn-v2">See their Instagram →</a>
+                        <a href="services.html#content" class="btn-secondary">Explore content services</a>
                     </div>
                 </div>
             </div>
