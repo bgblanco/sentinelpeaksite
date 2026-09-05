@@ -1,11 +1,9 @@
 /* ============================================================
    Free Homepage funnel page interactivity (vanilla JS)
    - Scroll reveal for sections
-   - Animated stat counters
    - FAQ accordion (accessible)
    - Sticky mobile CTA show/hide
    - Smooth scroll for in-page anchors
-   - Lead form: honeypot + validation + Web3Forms submit
    ============================================================ */
 (function () {
     'use strict';
@@ -43,48 +41,6 @@
             });
         }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
         revealEls.forEach(function (el) { revealObserver.observe(el); });
-    }
-
-    /* ---------- Animated stat counters ---------- */
-    var counters = Array.prototype.slice.call(document.querySelectorAll('.stat-num'));
-
-    function renderCounter(el, value) {
-        var prefix = el.getAttribute('data-prefix') || '';
-        var suffix = el.getAttribute('data-suffix') || '';
-        el.textContent = prefix + value + suffix;
-    }
-
-    function runCounter(el) {
-        var target = parseInt(el.getAttribute('data-target'), 10) || 0;
-        if (reduceMotion) { renderCounter(el, target); return; }
-        var duration = 1200;
-        var start = null;
-        function step(ts) {
-            if (start === null) start = ts;
-            var progress = Math.min((ts - start) / duration, 1);
-            var eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
-            renderCounter(el, Math.round(eased * target));
-            if (progress < 1) requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-    }
-
-    if (counters.length) {
-        if (reduceMotion || !('IntersectionObserver' in window)) {
-            counters.forEach(function (el) {
-                renderCounter(el, parseInt(el.getAttribute('data-target'), 10) || 0);
-            });
-        } else {
-            var counterObserver = new IntersectionObserver(function (entries, obs) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        runCounter(entry.target);
-                        obs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-            counters.forEach(function (el) { counterObserver.observe(el); });
-        }
     }
 
     /* ---------- FAQ accordion ---------- */
